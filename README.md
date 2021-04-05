@@ -17,8 +17,9 @@ This token standard can replace current ERC20 LP token. ERC-659 has more complex
 pragma solidity ^0.6.2;
 
 import '@sgmfinance/erc-659/blob/main/contracts/util/IERC659.sol';
+import '@sgmfinance/erc-659/blob/main/contracts/ERC659data.sol';
 
-contract MyTestToken is IERC659 {
+contract MyTestToken is IERC659, ERC659data {
   ...
 }
 ```

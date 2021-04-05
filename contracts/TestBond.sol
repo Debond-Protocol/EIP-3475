@@ -1,6 +1,7 @@
 pragma solidity ^0.6.2;
 import "./util/IERC659.sol";
 import "./util/SafeMath.sol";
+import "./ERC659data.sol";
 // SPDX-License-Identifier: apache 2.0
 /*
     Copyright 2020 Sigmoid Foundation <info@SGM.finance>
@@ -18,29 +19,15 @@ import "./util/SafeMath.sol";
     limitations under the License.
 */
 
- contract TestBond is IERC659{
-    using SafeMath for uint256;
+contract TestBond is IERC659, ERC659data{
     
-    mapping (address => mapping( uint256 =>mapping(uint256=> uint256))) private _balances;
     
-    mapping (uint256 => mapping(uint256 => uint256)) private _activeSupply;
-    
-    mapping (uint256 => mapping(uint256 => uint256)) private _burnedSupply;
-  
-    mapping (uint256 => mapping(uint256 => uint256)) private _redeemedSupply;
-
-    mapping (uint256 => address) private _bankAddress;
-    
-    mapping (uint256 => string) private _Symbol;
-    
-    mapping (uint256 => mapping(uint256=> mapping(uint256=> uint256))) public _info;
-
-    mapping (uint256 => uint256)  public last_bond_nonce;
     mapping (uint256 => uint256)  public _Fibonacci_number;
     mapping (uint256 => uint256)  public _Fibonacci_epoch;
     mapping (uint256 => uint256)  public _genesis_nonce_time;
-    mapping (uint256 => uint256[]) public _nonceCreated;
+    
     address public dev_address=msg.sender;
+   
 
 
     constructor () public {
@@ -57,9 +44,11 @@ import "./util/SafeMath.sol";
         _bankAddress[class]=bank_contract;
         return true;
     }   
-      function getNonceCreated(uint256 class) public view returns (uint256[] memory){
+    
+    function getNonceCreated(uint256 class) public override view returns (uint256[] memory){
         return _nonceCreated[class];
     }
+
     function createBondClass(uint256 class, address bank_contract, string memory bond_symbol, uint256 Fibonacci_number, uint256 Fibonacci_epoch)public returns (bool) {
         require(msg.sender==dev_address, "ERC659: operator unauthorized");
         _Symbol[class]=bond_symbol;
