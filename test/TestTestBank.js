@@ -9,7 +9,7 @@ const TestTokenaContract = contract.fromArtifact("TestTokena");
 [owner, sender, receiver, token_contract_address, bond_contract_address] = accounts;
 describe("bankContract", function () {
     it('migrateContract', async function () {
-        //部署合约
+    
         TestBankInstance = await TestBankContract.new( { from: owner });
         TestBondInstance = await TestBondContract.new( { from: owner });
         TestTokenInstance = await TestTokenContract.new("test","ts",18, { from: owner });
@@ -165,7 +165,7 @@ describe("TestBond", function () {
         const amountA=await TestBondInstance.balanceOf(owner,1,1,{from:owner});
         assert.equal(2, amountA);
         const bool= await TestBondInstance.redeemBond(owner,1,[1],[1],{from:owner});
-        //赎回后再次查询应该是0
+        //balanceshould be 0
         const amountB=await TestBondInstance.balanceOf(owner,1,1,{from:owner});
         assert.equal(1, amountB);
     });
