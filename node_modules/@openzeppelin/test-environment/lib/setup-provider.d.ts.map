@@ -1,0 +1,1 @@
+{"version":3,"file":"setup-provider.d.ts","sourceRoot":"","sources":["../src/setup-provider.ts"],"names":[],"mappings":"AAAA,OAAO,IAAI,MAAM,MAAM,CAAC;AACxB,OAAO,EAAE,QAAQ,EAAE,MAAM,WAAW,CAAC;AAErC,OAAO,YAAY,MAAM,iBAAiB,CAAC;AAE3C,QAAA,MAAM,QAAQ,cAAqB,CAAC;AAIpC,QAAA,MAAM,IAAI,MAA4B,CAAC;AAEvC,OAAO,EAAE,IAAI,EAAE,QAAQ,EAAE,CAAC"}
