@@ -1,6 +1,13 @@
+
+
 ## Specification
 
-##### totalSupply()**
+```solidity
+pragma solidity ^0.6.2;
+import '@sgmfinance/erc-659/blob/main/contracts/util/IERC659.sol';
+```
+
+##### totalSupply()
 
 `"totalSupply()"` allows anyone to read the total supply of a given class nonce and bond nonce, this include burned and redeemed Supply 
 
@@ -11,10 +18,8 @@ The `"nonce"` is the nonce of the bond. This param is for distinctions of the is
 Returns the active supply of the bond in question. — e.g. `"5821200000000"`.
 
 ```
-function totalSupply( uint256 class, uint256 nonce) external view  returns (uint256);
+function totalSupply( uint256 class, uint256 nonce) external view returns (uint256);
 ```
-
-
 
 **activeSupply()**
 
@@ -27,10 +32,8 @@ The `"nonce"` is the nonce of the bond. This param is for distinctions of the is
 Returns the active supply of the bond in question. — e.g. `"5821200000000"`.
 
 ```
-function activeSupply( uint256 class, uint256 nonce) external view  returns (uint256);
+function activeSupply( uint256 class, uint256 nonce) external view returns (uint256);
 ```
-
-
 
 ##### burnedSupply()
 
@@ -43,10 +46,8 @@ The `"nonce"` is the nonce of the bond. This param is for distinctions of the is
 Returns the active supply of the bond in question. — e.g. `"612300000000"`.
 
 ```
-function burnedSupply( uint256 class, uint256 nonce) external view  returns (uint256);
+function burnedSupply( uint256 class, uint256 nonce) external view returns (uint256);
 ```
-
-
 
 ##### redeemedSupply**()**
 
@@ -59,10 +60,8 @@ The `"nonce"` is the nonce of the bond. This param is for distinctions of the is
 Returns the active supply of the bond in question. — e.g. `"612300000000"`.
 
 ```
-function redeemedSupply( uint256 class, uint256 nonce) external view  returns (uint256);
+function redeemedSupply( uint256 class, uint256 nonce) external view returns (uint256);
 ```
-
-
 
 ##### balanceOf()
 
@@ -80,8 +79,6 @@ Returns the balance of the giving bond class and bond nonce. — e.g. `"57130000
 function balanceOf(address account, uint256 class, uint256 nonce) external view returns (uint256);
 ```
 
-
-
 ##### getBondSymbol()
 
 `"getBondSymbol()"` allows anyone to read the symbol of a bond class.
@@ -95,8 +92,6 @@ Returns the symbol string of the bond class. — e.g. bond symbol=`"SASH-BUSD bo
 ```
 function getBondSymbol(uint256 class) external view returns (uint256);
 ```
-
-
 
 ##### getBondInfo()
 
@@ -112,8 +107,6 @@ Returns the bond symbol and a list of uint256 parameters of a bond nonce. — e.
 function getBondInfo(uint256 class, uint256 nonce) external view returns (string memory BondSymbol, uint256 timestamp, uint256 info2, uint256 info3, uint256 info4, uint256 info5,uint256 info6);
 ```
 
-
-
 ##### **bondIsRedeemable()**
 
 `"bondIsRedeemble()"` allows anyone to check if a bond is redeemable.*** the conditions of redemption can be speechified with one or several internal functions.*
@@ -127,8 +120,6 @@ Returns `"true"` if the cited bond is redeemable. and `"false"`if is not.
 ```
 function bondIsRedeemable(uint256 class, uint256 nonce) external view returns (bool);
 ```
-
-
 
 ##### issueBond()
 
@@ -148,15 +139,13 @@ e.g.
 issueBond(0x2d03B6C79B75eE7aB35298878D05fe36DC1fE8Ef,0,1000);
 ```
 
-those input mean“ issuing to wallet address, 1000of bond class 0."  Returns a bool.
+those input mean“ issuing to wallet address, 1000of bond class 0." Returns a bool.
 
 `"true"` if the bond are issued. and `"false"`if are not.
 
 ```
- function issueBond(address _to, uint256  class, uint256 _amount) external returns(bool);
+ function issueBond(address _to, uint256 class, uint256 _amount) external returns(bool);
 ```
-
-
 
 ##### redeemBond()
 
@@ -185,10 +174,8 @@ Returns a bool
 `"true"` if the bond are redeemed and `"false"`if are not.
 
 ```
-function redeemBond(address _from, uint256 class, uint256[] calldata nonce, uint256[] calldata _amount) external returns(bool);  
+function redeemBond(address _from, uint256 class, uint256[] calldata nonce, uint256[] calldata _amount) external returns(bool);
 ```
-
-
 
 ##### transferBond()
 
@@ -222,8 +209,6 @@ Returns a bool.
 function transferBond(address _from, address _to, uint256[] calldata class, uint256[] calldata nonce, uint256[] calldata _amount) external returns(bool);
 ```
 
-
-
 ##### burnBond()
 
 `"burnBond()"` allows the transfer of any number of bond types from an address to another.
@@ -254,9 +239,12 @@ Returns a bool.
 function transferBond(address _from, address _to, uint256[] calldata class, uint256[] calldata nonce, uint256[] calldata _amount) external returns(bool);
 ```
 
-
-
 ### Data structure
+
+```solidity
+pragma solidity ^0.6.2;
+import '@sgmfinance/erc-659/blob/main/contracts/ERC659data.sol';
+```
 
 `"_balances"`Is the mapping from bond class and nonce to account balances.
 
@@ -272,8 +260,6 @@ address 0x2d03B6C79B75eE7aB35298878D05fe36DC1fE8Ef possess 500000000 of bond cla
 mapping (address => mapping( uint256 =>mapping(uint256=> uint256))) private _balances;
 ```
 
-
-
 `"_totalSupply"`Is the mapping from bond class and nonce to the total active supply.
 
 ***total supply = total supply +burned supply +redeemed supply.*
@@ -285,10 +271,8 @@ mapping (address => mapping( uint256 =>mapping(uint256=> uint256))) private _bal
 *1 =>(5 => 25000000000); this example gives the total supply of： bond class 1, bond nonce 5 has a total supply of 25000000000 .*
 
 ```
-mapping (uint256 =>  mapping(uint256 => uint256)) private _activeSupply;
+mapping (uint256 => mapping(uint256 => uint256)) private _activeSupply;
 ```
-
-
 
 "_activeSupply"`Is the mapping from bond class and nonce to the total active supply.
 
@@ -301,10 +285,8 @@ mapping (uint256 =>  mapping(uint256 => uint256)) private _activeSupply;
 *1 =>(5 => 25000000000); this example gives the total active supply of: bond class 1, bond nonce 5 has a total active supply of 25000000000 .*
 
 ```
-mapping (uint256 =>  mapping(uint256 => uint256)) private _activeSupply;
+mapping (uint256 => mapping(uint256 => uint256)) private _activeSupply;
 ```
-
-
 
 `"_burnedSupply"`Is the mapping from bond class and nonce to the total burned supply.
 
@@ -320,8 +302,6 @@ mapping (uint256 =>  mapping(uint256 => uint256)) private _activeSupply;
 mapping (uint256 =>  mapping(uint256 => uint256)) private _burnedSupply;
 ```
 
-
-
 `"_redeemedSupply"`Is the mapping from bond class and nonce to the total active supply.
 
 *** redeemed supply = total supply - active supply - burned supply.*
@@ -336,8 +316,6 @@ mapping (uint256 =>  mapping(uint256 => uint256)) private _burnedSupply;
 mapping (uint256 =>  mapping(uint256 => uint256)) private _redeemedSupply;
 ```
 
-
-
 `"_Symbol"`Is the mapping from bond class to a string of bond symbol.
 
 2D array of bond class => bond symbol.
@@ -350,15 +328,13 @@ e.g.
 mapping ( uint256 =>mapping(uint256=> string[])) private _info;
 ```
 
-
-
 `"_info"`Is the mapping from bond class and nonce to a string list of uint256.
 
 3D array of bond class => (bond nonce => bond info).
 
 in this list, [(bond symbol), (timestamp),(3rd string)]
 
-e.g. `["1615584000",(2rd uint256)...]`
+e.g. `["1615584000",(2nd uint256)...]`
 
 ***This function allows the return of a list of uint256. every bond contract can have their own list. But the first string in the list MUST be the UTC time code of the issuing time,*
 
@@ -367,10 +343,6 @@ e.g. `["1615584000",(2rd uint256)...]`
 ```
 mapping ( uint256 =>mapping(uint256=> string[])) private _info;
 ```
-
-
-
-
 
 ### EVENT
 
@@ -384,9 +356,7 @@ e.g.
 event eventIssueBond(address _operator, address _to, uint256 class, uint256 nonce, uint256 _amount); 
 ```
 
-
-
-`"eventRedeemBond"` MUST trigger when Bonds are redeemed. This SHOULD not include zero value redemption. When burn a bond  MUST not create this event(Use`"eventBurnBond" ` instead).
+`"eventRedeemBond"` MUST trigger when Bonds are redeemed. This SHOULD not include zero value redemption. When burn a bond MUST not create this event(Use`"eventBurnBond" ` instead).
 
 e.g. 
 
@@ -396,9 +366,7 @@ e.g.
 event eventRedeemBond(address _operator, address _from, uint256 class, uint256 nonce, uint256 _amount);
 ```
 
-
-
-`"eventBurnBond"` MUST trigger when Bonds are burned. This SHOULD not include zero value burning. When redeem a bond  MUST not create this event(Use`"event redeemBond" ` instead).
+`"eventBurnBond"` MUST trigger when Bonds are burned. This SHOULD not include zero value burning. When redeem a bond MUST not create this event(Use`"event redeemBond" ` instead).
 
 e.g. 
 
@@ -408,9 +376,7 @@ e.g.
 event eventBurnBond(address _operator, address _from, uint256 class, uint256 nonce, uint256 _amount);
 ```
 
-
-
-`"eventTransferBond"` MUST trigger when Bonds are transferred. This SHOULD not include zero value transfers. Transfer event with the `_from`  `0x0`  MUST not create this event(Use`"event issueBond" `instead ).  Transfer event with the `_to`  `0x0`  MUST not create this event(Use`"event redeemBond" `when redemption, and `"event burnBond" `when burning).
+`"eventTransferBond"` MUST trigger when Bonds are transferred. This SHOULD not include zero value transfers. Transfer event with the `_from` `0x0` MUST not create this event(Use`"event issueBond" `instead ). Transfer event with the `_to` `0x0` MUST not create this event(Use`"event redeemBond" `when redemption, and `"event burnBond" `when burning).
 
 e.g.
 
@@ -420,3 +386,4 @@ e.g.
 event eventTransferBond(address _operator, address _from, address _to, uint256 class, uint256 nonce, uint256 _amount);
 ```
 
+## 
