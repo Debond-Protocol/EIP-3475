@@ -35,7 +35,7 @@ New functions built in ERC-659 Multiple Callable Bonds Standard, will allow the 
 
 ## Specification
 
-A detailed specification document can be found at [SPECIFICATIONS.md](<https://github.com/sgmfinance/erc-659/SPECIFICATIONS.md>).
+A detailed specification document can be found at [SPECIFICATIONS.md](<https://github.com/sgmfinance/erc-659/blob/main/SPECIFICATIONS.md>).
 
 ## Security Review
 
