@@ -1,37 +1,3 @@
----
-eip: <659>
-title: <ERC-659 Multiple Callable Bonds Standard>
-author: <Yohji Sakamoto (info@sgm.finance)
-discussions-to: <URL>
-status: Draft
-type: <Standards Track>
-category : <ERC>
-created: <2021-03-21>
-requires:
-
----
-
-Standard interface discussion at [ERC-1155](https://github.com/ethereum/EIPs/issues/1155). 
-
-## Getting started
-
-### Install
-
-`yarn add @sgmfinance/erc-659` or `npm install @sgmfinance/erc-659`
-
-### Usage
-
-```solidity
-pragma solidity ^0.6.2;
-
-import '@sgmfinance/EIP-659/contracts/ERC-659.sol';
-
-contract MyTestToken is ERC659 {
-  ...
-}
-```
-
-
 
 ## Simple Summary
 
