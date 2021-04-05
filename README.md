@@ -9,7 +9,7 @@ This token standard can replace current ERC20 LP token. ERC-659 has more complex
 
 ### Install
 
-`yarn add @sgmfinance/erc-659` or `npm install @sgmfinance/erc-659`
+`git clone https://github.com/sgmfinance/erc-659`
 
 ### Usage
 
