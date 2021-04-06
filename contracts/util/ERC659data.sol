@@ -19,6 +19,4 @@ contract ERC659data {
     
     mapping (uint256 => uint256[]) public _nonceCreated;
     
-    mapping (uint256 => address) public token_contract;
-  
 }
