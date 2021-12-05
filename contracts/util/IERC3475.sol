@@ -1,7 +1,7 @@
 pragma solidity ^0.6.8;
 
 
-interface IERC659 {
+interface IERC3475 {
     function setBond(uint256 class, address  bank_contract) external returns (bool);
     function totalSupply( uint256 class, uint256 nonce) external view returns (uint256);
     function activeSupply( uint256 class, uint256 nonce) external view returns (uint256);
