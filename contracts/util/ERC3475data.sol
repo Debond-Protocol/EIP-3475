@@ -1,6 +1,6 @@
 pragma solidity ^0.6.8;
 
-contract ERC659data {
+contract ERC3475data {
     mapping (address => mapping( uint256 =>mapping(uint256=> uint256))) public _balances;
     
     mapping (uint256 => mapping(uint256 => uint256)) public _activeSupply;
