@@ -44,6 +44,6 @@ There are no known security considerations for this EIP. More security considera
 
 ## LICENSE
 
-Copyright (c) 2021-present Yu LIU [DeBond](https://DeBond.org).
+Copyright (c) 2021-present Yu LIU, [DeBond](https://DeBond.org).
 
 Licensed under [Apache-2.0](./LICENSE)
