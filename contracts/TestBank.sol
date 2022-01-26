@@ -1,6 +1,6 @@
 pragma solidity ^0.6.8;
 import "./util/IERC20.sol";
-import "./util/IERC659.sol";
+import "./util/IERC3475.sol";
 import "./util/ITestToken.sol";
 // SPDX-License-Identifier: apache 2.0
 /*
@@ -27,7 +27,7 @@ interface ITestBank {
     
 }
 
-contract TestBank{
+contract TestBank is ITestBank{
     string private _name;
     string private _symbol;
     uint8 private _decimals;
@@ -40,23 +40,23 @@ contract TestBank{
     }
     
       
-    function setContract(uint256 class, address token_contract_address,address bond_contract_address) public returns (bool) {
+    function setContract(uint256 class, address token_contract_address,address bond_contract_address) external override returns (bool) {
         require(msg.sender==dev_address);
         token_contract[class] = token_contract_address;
         bond_contract = bond_contract_address;
         return (true);
     }
     
-    function buyBond(address input_token, address _to, uint256 amount_USD_in) public returns (bool){
+    function buyBond(address input_token, address _to, uint256 amount_USD_in) external override returns (bool){
         uint256 amount_bond_out = amount_USD_in*2;
         require(IERC20(input_token).transferFrom(msg.sender, address(this), amount_USD_in),'Not enough deposit.');
-        IERC659(bond_contract).issueBond(_to, 0, amount_bond_out);
+        IERC3475(bond_contract).issueBond(_to, 0, amount_bond_out);
         return(true);
     }
     
   
-    function redeemBond(address _from, address _to, uint256 class, uint256[] memory nonce, uint256[] memory _amount) public returns (bool){
-    assert( IERC659(bond_contract).redeemBond(_from, class, nonce, _amount));
+    function redeemBond(address _from, address _to, uint256 class, uint256[] calldata nonce, uint256[] calldata _amount) external override returns (bool){
+    assert( IERC3475(bond_contract).redeemBond(_from, class, nonce, _amount));
     uint256 amount_token_mint;
     for (uint i=0; i<_amount.length; i++){
         amount_token_mint+=_amount[i];

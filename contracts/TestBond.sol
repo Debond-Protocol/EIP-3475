@@ -1,7 +1,7 @@
 pragma solidity ^0.6.2;
-import "./util/IERC659.sol";
 import "./util/SafeMath.sol";
-import "./util/ERC659data.sol";
+import "./util/IERC3475.sol";
+import "./util/ERC3475data.sol";
 // SPDX-License-Identifier: apache 2.0
 /*
     Copyright 2020 Sigmoid Foundation <info@SGM.finance>
@@ -19,7 +19,7 @@ import "./util/ERC659data.sol";
     limitations under the License.
 */
 
-contract TestBond is IERC659, ERC659data{
+contract TestBond is IERC3475, ERC3475data{
     
     
     mapping (uint256 => uint256)  public _Fibonacci_number;
@@ -39,25 +39,15 @@ contract TestBond is IERC659, ERC659data{
         
     }
     
-    function setBond(uint256 class, address  bank_contract)public override returns (bool) {
-        require(msg.sender==dev_address, "ERC659: operator unauthorized");
-        _bankAddress[class]=bank_contract;
-        return true;
-    }   
+//    function setBond(uint256 class, address  bank_contract)public override returns (bool) {
+//        require(msg.sender==dev_address, "ERC659: operator unauthorized");
+//        _bankAddress[class]=bank_contract;
+//        return true;
+//    }
     
     function getNonceCreated(uint256 class) public override view returns (uint256[] memory){
         return _nonceCreated[class];
     }
-
-    function createBondClass(uint256 class, address bank_contract, string memory bond_symbol, uint256 Fibonacci_number, uint256 Fibonacci_epoch)public returns (bool) {
-        require(msg.sender==dev_address, "ERC659: operator unauthorized");
-        _Symbol[class]=bond_symbol;
-        _bankAddress[class]=bank_contract;
-        _Fibonacci_number[class]=Fibonacci_number;
-        _Fibonacci_epoch[class]=Fibonacci_epoch;
-        _genesis_nonce_time[class]=0;
-        return true;
-    }   
     
     function totalSupply( uint256 class, uint256 nonce) public override view returns (uint256) {
     
@@ -83,18 +73,18 @@ contract TestBond is IERC659, ERC659data{
         
         return _Symbol[class]; 
     }     
-    function getBondInfo(uint256 class, uint256 nonce) public view override returns (string memory BondSymbol, uint256 timestamp, uint256 info2, uint256 info3, uint256 info4, uint256 info5,uint256 info6) {
-        BondSymbol=_Symbol[class];
-        timestamp=_info[class][nonce][1];
-        info2=_info[class][nonce][2];
-        info3=_info[class][nonce][3];
-        info4=_info[class][nonce][4];
-        info5=_info[class][nonce][5];
-        info6=_info[class][nonce][6];
+    function getBondInfo(uint256 class, uint256 nonce) public view override returns (string memory bondSymbol, uint256 timestamp, uint256 info2, uint256 info3, uint256 info4, uint256 info5,uint256 info6) {
+        bondSymbol =_Symbol[class];
+        timestamp= _nonceInfo[class][nonce][1];
+        info2= _nonceInfo[class][nonce][2];
+        info3= _nonceInfo[class][nonce][3];
+        info4= _nonceInfo[class][nonce][4];
+        info5= _nonceInfo[class][nonce][5];
+        info6= _nonceInfo[class][nonce][6];
     } 
     function bondIsRedeemable(uint256 class, uint256 nonce) public override view returns (bool){
         
-        if(uint(_info[class][nonce][1])<now){
+        if(uint(_nonceInfo[class][nonce][1])<now){
             uint256 total_liquidity;
             uint256 needed_liquidity;
             //uint256 available_liquidity;
@@ -107,79 +97,27 @@ contract TestBond is IERC659, ERC659data{
                 needed_liquidity += (_activeSupply[class][i]+_redeemedSupply[class][i])*2;
                 }
                 
-            if(total_liquidity>=needed_liquidity){
-               
-                return(true);
-                
-                }
-            
-            else{
-                return(false);
-            }
+            return total_liquidity >= needed_liquidity;
+
          }
          
-    else{
+    else {
             return(false);
         }
 
              
-         }
-         
-    function _createBond(address _to, uint256 class, uint256 nonce, uint256 _amount) private returns(bool) {
-    
-        if(last_bond_nonce[class]<nonce)
-        {last_bond_nonce[class]=nonce;}
-        _nonceCreated[class].push(nonce);
-        _info[class][nonce][1]=_genesis_nonce_time[class] + (nonce) * _Fibonacci_epoch[class];
-        _balances[_to][class][nonce]+=_amount;
-        _activeSupply[class][nonce]+=_amount;
-        emit eventIssueBond(msg.sender, _to, class,nonce, _amount);
-        return(true);
     }
-    function _issueBond(address _to, uint256 class, uint256 nonce, uint256 _amount) private returns(bool) {
-       
-       
-        if (totalSupply(class,nonce)==0){
-            _createBond(_to,class,nonce,_amount);
-            return(true);
-            }
-            
-        else{
-            
-            _balances[_to][class][nonce]+=_amount;
-            _activeSupply[class][nonce]+=_amount;
-            emit eventIssueBond(msg.sender, _to, class,last_bond_nonce[class], _amount);
-            return(true);
-            }
-    }    
-    function _redeemBond(address _from, uint256 class, uint256 nonce, uint256 _amount) private returns(bool) {
-       
-        _balances[_from][class][nonce]-=_amount;
-        _activeSupply[class][nonce]-=_amount;
-        _redeemedSupply[class][nonce]+=_amount;
-        emit eventRedeemBond( msg.sender,_from, class, nonce, _amount);
-        return(true);
-    }    
-    function _transferBond(address _from, address _to, uint256 class, uint256 nonce, uint256 _amount) private returns(bool){      
-        _balances[_from][class][nonce]-=_amount;
-        _balances[_to][class][nonce]+=_amount;
-        emit eventTransferBond( msg.sender,_from,_to, class, nonce, _amount);
-        return(true);
-    
-            }
-    function _burnBond(address _from, uint256 class, uint256 nonce, uint256 _amount) private returns(bool){      
-        _balances[_from][class][nonce]-=_amount;
-        emit eventBurnBond( msg.sender,_from, class, nonce, _amount);
-        return(true);
-    
-            }
-            
+
+
+
     function issueBond(address _to, uint256  class, uint256 _amount) external override returns(bool){
         //require(msg.sender==_bankAddress[class], "ERC659: operator unauthorized");
         require(_to != address(0), "ERC659: issue bond to the zero address");
         require(_amount >= 100, "ERC659: invalid amount");
-        if(_genesis_nonce_time[class]==0){_genesis_nonce_time[class]=now-now % _Fibonacci_epoch[class];}
-        uint256  now_nonce=(now-_genesis_nonce_time[class])/_Fibonacci_epoch[class];
+        if(_genesis_nonce_time[class]==0) {
+            _genesis_nonce_time[class]=now-now % _Fibonacci_epoch[class];
+        }
+        uint256  now_nonce=(now -_genesis_nonce_time[class])/_Fibonacci_epoch[class];
         uint256 FibonacciTimeEponge0=1;
         uint256 FibonacciTimeEponge1=2;
         uint256 FibonacciTimeEponge;
@@ -250,5 +188,64 @@ contract TestBond is IERC659, ERC659data{
             
         }
         return(true);
+    }
+
+//    function createBondClass(uint256 class, address bank_contract, string memory bond_symbol, uint256 Fibonacci_number, uint256 Fibonacci_epoch)public returns (bool) {
+//        require(msg.sender==dev_address, "ERC659: operator unauthorized");
+//        _Symbol[class]=bond_symbol;
+//        _bankAddress[class]=bank_contract;
+//        _Fibonacci_number[class]=Fibonacci_number;
+//        _Fibonacci_epoch[class]=Fibonacci_epoch;
+//        _genesis_nonce_time[class]=0;
+//        return true;
+//    }
+
+    function _createBond(address _to, uint256 class, uint256 nonce, uint256 _amount) private returns(bool) {
+
+        if(last_bond_nonce[class]<nonce)
+        {last_bond_nonce[class]=nonce;}
+        _nonceCreated[class].push(nonce);
+        _nonceInfo[class][nonce][1]=_genesis_nonce_time[class] + (nonce) * _Fibonacci_epoch[class];
+        _balances[_to][class][nonce]+=_amount;
+        _activeSupply[class][nonce]+=_amount;
+        emit eventIssueBond(msg.sender, _to, class,nonce, _amount);
+        return(true);
+    }
+    function _issueBond(address _to, uint256 class, uint256 nonce, uint256 _amount) private returns(bool) {
+
+
+        if (totalSupply(class,nonce)==0){
+            _createBond(_to,class,nonce,_amount);
+            return(true);
+        }
+
+        else{
+
+            _balances[_to][class][nonce]+=_amount;
+            _activeSupply[class][nonce]+=_amount;
+            emit eventIssueBond(msg.sender, _to, class,last_bond_nonce[class], _amount);
+            return(true);
+        }
+    }
+    function _redeemBond(address _from, uint256 class, uint256 nonce, uint256 _amount) private returns(bool) {
+
+        _balances[_from][class][nonce]-=_amount;
+        _activeSupply[class][nonce]-=_amount;
+        _redeemedSupply[class][nonce]+=_amount;
+        emit eventRedeemBond( msg.sender,_from, class, nonce, _amount);
+        return(true);
+    }
+    function _transferBond(address _from, address _to, uint256 class, uint256 nonce, uint256 _amount) private returns(bool){
+        _balances[_from][class][nonce]-=_amount;
+        _balances[_to][class][nonce]+=_amount;
+        emit eventTransferBond( msg.sender,_from,_to, class, nonce, _amount);
+        return(true);
+
+    }
+    function _burnBond(address _from, uint256 class, uint256 nonce, uint256 _amount) private returns(bool){
+        _balances[_from][class][nonce]-=_amount;
+        emit eventBurnBond( msg.sender,_from, class, nonce, _amount);
+        return(true);
+
     }
 }
