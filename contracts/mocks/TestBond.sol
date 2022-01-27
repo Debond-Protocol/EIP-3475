@@ -23,27 +23,24 @@ contract TestBond is IERC3475, ERC3475data{
    
 
 
-    constructor () public {
+    constructor (string _bondSymbol , uint _initFibonaccinumb , uint _initFibonacciEpoch , uint _genesis_nonce_time ) public {
         
-        _Symbol[0]="SASH-USD Bond";
-        _Fibonacci_number[0]=8;
+        _Symbol[0]= _bondSymbol;
+        _Fibonacci_number[0]= 8;
         _Fibonacci_epoch[0]=1;
         _genesis_nonce_time[0]=0;
         
     }
     
     function setBond(uint256 class, address  bank_contract)public override returns (bool) {
-        require(msg.sender==dev_address, "ERC659: operator unauthorized");
+        require(msg.sender==dev_address, "ERC3475: operator unauthorized");
         _bankAddress[class]=bank_contract;
         return true;
     }   
     
-    function getNonceCreated(uint256 class) public override view returns (uint256[] memory){
-        return _nonceCreated[class];
-    }
-
+   
     function createBondClass(uint256 class, address bank_contract, string memory bond_symbol, uint256 Fibonacci_number, uint256 Fibonacci_epoch)public returns (bool) {
-        require(msg.sender==dev_address, "ERC659: operator unauthorized");
+        require(msg.sender==dev_address, "ERC3475: operator unauthorized");
         _Symbol[class]=bond_symbol;
         _bankAddress[class]=bank_contract;
         _Fibonacci_number[class]=Fibonacci_number;
@@ -51,7 +48,15 @@ contract TestBond is IERC3475, ERC3475data{
         _genesis_nonce_time[class]=0;
         return true;
     }   
-    
+
+
+
+
+
+    function getNonceCreated(uint256 class) public override view returns (uint256[] memory){
+        return _nonceCreated[class];
+    }
+ 
     function totalSupply( uint256 class, uint256 nonce) public override view returns (uint256) {
     
        return _activeSupply[class][nonce]+_burnedSupply[class][nonce]+_redeemedSupply[class][nonce];
@@ -69,7 +74,7 @@ contract TestBond is IERC3475, ERC3475data{
         return _redeemedSupply[class][nonce];
     }
     function balanceOf(address account, uint256 class, uint256 nonce) public override view returns (uint256){
-        require(account != address(0), "ERC659: balance query for the zero address");
+        require(account != address(0), "ERC3475: balance query for the zero address");
         return _balances[account][class][nonce];
     }
     function getBondSymbol(uint256 class) view public override returns (string memory){
@@ -168,9 +173,9 @@ contract TestBond is IERC3475, ERC3475data{
             }
             
     function issueBond(address _to, uint256  class, uint256 _amount) external override returns(bool){
-        //require(msg.sender==_bankAddress[class], "ERC659: operator unauthorized");
-        require(_to != address(0), "ERC659: issue bond to the zero address");
-        require(_amount >= 100, "ERC659: invalid amount");
+        //require(msg.sender==_bankAddress[class], "ERC3475: operator unauthorized");
+        require(_to != address(0), "ERC3475: issue bond to the zero address");
+        require(_amount >= 100, "ERC3475: invalid amount");
         //TODO: 
         if(_genesis_nonce_time[class]==0){_genesis_nonce_time[class]= now-now % _Fibonacci_epoch[class];}
         uint256  now_nonce=(now-_genesis_nonce_time[class])/_Fibonacci_epoch[class];
@@ -211,10 +216,10 @@ contract TestBond is IERC3475, ERC3475data{
       return(true);
 }
     function redeemBond(address _from, uint256 class, uint256[] calldata nonce, uint256[] calldata  _amount) external override returns(bool){
-        require(msg.sender==_bankAddress[class] || msg.sender==_from, "ERC659: operator unauthorized");
+        require(msg.sender==_bankAddress[class] || msg.sender==_from, "ERC3475: operator unauthorized");
         for (uint i=0; i<nonce.length; i++) {
-            require(_balances[_from][class][nonce[i]] >= _amount[i], "ERC659: not enough bond for redemption");
-            require(bondIsRedeemable(class,nonce[i])==true, "ERC659: can't redeem bond before it's redemption day");
+            require(_balances[_from][class][nonce[i]] >= _amount[i], "ERC3475: not enough bond for redemption");
+            require(bondIsRedeemable(class,nonce[i])==true, "ERC3475: can't redeem bond before it's redemption day");
             require(_redeemBond(_from,class,nonce[i],_amount[i]));
         }
         
@@ -225,9 +230,9 @@ contract TestBond is IERC3475, ERC3475data{
     function transferBond(address _from, address _to, uint256[] calldata class, uint256[] calldata nonce, uint256[] calldata _amount) external override returns(bool){ 
         
         for (uint n=0; n<nonce.length; n++) {
-            require(msg.sender==_bankAddress[class[n]] || msg.sender==_from, "ERC659: operator unauthorized");
-            require(_balances[_from][class[n]][nonce[n]] >= _amount[n], "ERC659: not enough bond to transfer");
-            require(_to!=address(0), "ERC659: cant't transfer to zero bond, use 'burnBond()' instead");
+            require(msg.sender==_bankAddress[class[n]] || msg.sender==_from, "ERC3475: operator unauthorized");
+            require(_balances[_from][class[n]][nonce[n]] >= _amount[n], "ERC3475: not enough bond to transfer");
+            require(_to!=address(0), "ERC3475: cant't transfer to zero bond, use 'burnBond()' instead");
             require(_transferBond(_from, _to, class[n], nonce[n], _amount[n]));
            
             
@@ -237,8 +242,8 @@ contract TestBond is IERC3475, ERC3475data{
     function burnBond(address _from, uint256[] calldata class, uint256[] calldata nonce, uint256[] calldata _amount) external override returns(bool){
    
         for (uint n=0; n<nonce.length; n++) {
-            require(msg.sender==_bankAddress[class[n]] || msg.sender==_from, "ERC659: operator unauthorized");
-            require(_balances[_from][class[n]][nonce[n]] >= _amount[n], "ERC659: not enough bond to burn");
+            require(msg.sender==_bankAddress[class[n]] || msg.sender==_from, "ERC3475: operator unauthorized");
+            require(_balances[_from][class[n]][nonce[n]] >= _amount[n], "ERC3475: not enough bond to burn");
             require(_burnBond(_from, class[n], nonce[n], _amount[n]));
            
             
