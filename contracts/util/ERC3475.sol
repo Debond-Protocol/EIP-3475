@@ -87,4 +87,36 @@ contract ERC3475 is IERC3475, ERC3475data {
 
     }
 
+
+    /// @notice  during minting / swapping of the LP , allows to burn the bonds based on the given amount. 
+    /// @dev Explain to a developer any extra details
+    /// @param Documents a parameter just like in doxygen (must be followed by parameter name)
+    /// @return Documents the return variables of a contract’s function state variable
+    function burnBond(address _from, uint256[] calldata class, uint256[] calldata nonce, uint256[] calldata _amount) external   returns (bool) {
+        // insuring the caller is legitimate  for the given class.
+         for (uint n=0; n<nonce.length; n++) {
+        require(msg.sender == _bankAddress[class[n]] || msg.sender==_from, "ERC3475: operator unauthorized");
+        require(_balances[_from][class[n]][nonce[n]] >= _amount[n], "ERC3475: insufficient bonds to burn");
+        require(_burnBond(_from, class[n], nonce[n], _amount[n]));
+         }
+    }
+
+    function _burnBond(address _from, uint256 class, uint256 nonce, uint256 _amount) private returns(bool){
+        _balances[_from][class][nonce]-=_amount;
+        emit eventBurnBond( msg.sender,_from, class, nonce, _amount);
+        return(true);
+
+    }
+
+
+
+    function  issueBond(address _to, uint256 class, uint256 _amount) external returns (bool) {}
+
+
+    function redeemBond(address _from, uint256 class, uint256[] calldata nonce, uint256[] calldata _amount) external returns (bool) {}
+
+
+
+    function transferBond(address _from, address _to, uint256[] calldata class, uint256[] calldata nonce, uint256[] calldata _amount) external returns(bool) {}
+
 }
