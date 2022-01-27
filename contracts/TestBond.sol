@@ -44,8 +44,8 @@ contract TestBond is IERC3475, ERC3475data{
 //        _bankAddress[class]=bank_contract;
 //        return true;
 //    }
-    
-    function getNonceCreated(uint256 class) public override view returns (uint256[] memory){
+        // note: the below functiion  was orignally  defined as override but there has no inherited class 
+    function getNonceCreated(uint256 class) public  view returns (uint256[] memory){
         return _nonceCreated[class];
     }
     
@@ -74,6 +74,7 @@ contract TestBond is IERC3475, ERC3475data{
         return _Symbol[class]; 
     }     
     function getBondInfo(uint256 class, uint256 nonce) public view override returns (string memory bondSymbol, uint256 timestamp, uint256 info2, uint256 info3, uint256 info4, uint256 info5,uint256 info6) {
+      // better if info can be an String[] for storing the nonces of arbitrary classType
         bondSymbol =_Symbol[class];
         timestamp= _nonceInfo[class][nonce][1];
         info2= _nonceInfo[class][nonce][2];
