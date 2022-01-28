@@ -23,12 +23,12 @@ contract TestToken is ERC20{
      * @dev Returns the name of the token.
      */
      
-    function setContract(address contract_address) public returns (bool) {
+    function setContract(address contract_address) public {
         require(msg.sender==dev_address);
         bank_contract = contract_address;
     }
     
-    function mint(address _to, uint256 _amount) public returns (bool) {
+    function mint(address _to, uint256 _amount) public {
         require(msg.sender==bank_contract);
         _mint(_to, _amount);
     }

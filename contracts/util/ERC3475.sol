@@ -8,6 +8,16 @@ import "./ERC3475data.sol";
 
 contract ERC3475 is IERC3475, ERC3475data {
 
+    mapping(uint256 => uint256)  private _Fibonacci_number;
+    mapping(uint256 => uint256)  private _Fibonacci_epoch;
+    mapping(uint256 => uint256)  private _genesis_nonce_time;
+
+    constructor() public {
+        _Fibonacci_number[0] = 8;
+        _Fibonacci_epoch[0] = 1;
+        _genesis_nonce_time[0] = 0;
+    }
+
     function totalSupply(uint256 class, uint256 nonce) public override view returns (uint256) {
 
         return _activeSupply[class][nonce] + _burnedSupply[class][nonce] + _redeemedSupply[class][nonce];
@@ -34,18 +44,13 @@ contract ERC3475 is IERC3475, ERC3475data {
         return _balances[account][class][nonce];
     }
 
-    function balanceOf(address account, uint256 class, uint256 nonce) public override view returns (uint256){
-        require(account != address(0), "ERC659: balance query for the zero address");
-        return _balances[account][class][nonce];
-    }
-
     function getBondSymbol(uint256 class) view public override returns (string memory){
 
-        return _Symbol[class];
+        return _symbols[class];
     }
 
     function getBondInfo(uint256 class, uint256 nonce) public view override returns (string memory bondSymbol, uint256 timestamp, uint256 info2, uint256 info3, uint256 info4, uint256 info5, uint256 info6) {
-        bondSymbol = _Symbol[class];
+        bondSymbol = _symbols[class];
         timestamp = _nonceInfo[class][nonce][1];
         info2 = _nonceInfo[class][nonce][2];
         info3 = _nonceInfo[class][nonce][3];
@@ -54,69 +59,169 @@ contract ERC3475 is IERC3475, ERC3475data {
         info6 = _nonceInfo[class][nonce][6];
     }
 
-    function bondIsRedeemable(uint256 class, uint256 nonce) public override view returns (bool) { // TODO we need to know the domain of that function, if it is general
+    function bondIsRedeemable(uint256 class, uint256 nonce) public override view returns (bool) {// TODO we need to know the domain of that function, if it is general
 
-        if(uint(_nonceInfo[class][nonce][1])<now){
+        if (uint(_nonceInfo[class][nonce][1]) < now) {
             uint256 total_liquidity;
             uint256 needed_liquidity;
             //uint256 available_liquidity;
 
-            for (uint i=0; i<=last_bond_nonce[class]; i++) {
-                total_liquidity += _activeSupply[class][i]+_redeemedSupply[class][i];
+            for (uint i = 0; i <= _lastBondNonces[class]; i++) {
+                total_liquidity += _activeSupply[class][i] + _redeemedSupply[class][i];
             }
 
-            for (uint i=0; i<=nonce; i++) {
-                needed_liquidity += (_activeSupply[class][i]+_redeemedSupply[class][i])*2;
+            for (uint i = 0; i <= nonce; i++) {
+                needed_liquidity += (_activeSupply[class][i] + _redeemedSupply[class][i]) * 2;
             }
 
-            if(total_liquidity>=needed_liquidity){
+            if (total_liquidity >= needed_liquidity) {
 
-                return(true);
+                return (true);
 
             }
 
-            else{
-                return(false);
+            else {
+                return (false);
             }
         }
 
-        else{
-            return(false);
+        else {
+            return (false);
         }
 
 
     }
 
 
-    /// @notice  during minting / swapping of the LP , allows to burn the bonds based on the given amount. 
-    /// @dev Explain to a developer any extra details
-    /// @param Documents a parameter just like in doxygen (must be followed by parameter name)
-    /// @return Documents the return variables of a contract’s function state variable
-    function burnBond(address _from, uint256[] calldata class, uint256[] calldata nonce, uint256[] calldata _amount) external   returns (bool) {
+
+    function burnBond(address _from, uint256[] calldata class, uint256[] calldata nonce, uint256[] calldata _amount) external override {
         // insuring the caller is legitimate  for the given class.
-         for (uint n=0; n<nonce.length; n++) {
-        require(msg.sender == _bankAddress[class[n]] || msg.sender==_from, "ERC3475: operator unauthorized");
-        require(_balances[_from][class[n]][nonce[n]] >= _amount[n], "ERC3475: insufficient bonds to burn");
-        require(_burnBond(_from, class[n], nonce[n], _amount[n]));
-         }
-    }
-
-    function _burnBond(address _from, uint256 class, uint256 nonce, uint256 _amount) private returns(bool){
-        _balances[_from][class][nonce]-=_amount;
-        emit eventBurnBond( msg.sender,_from, class, nonce, _amount);
-        return(true);
-
+        for (uint n = 0; n < nonce.length; n++) {
+            require(msg.sender == _issuers[class[n]] || msg.sender == _from, "ERC3475: operator unauthorized");
+            require(_balances[_from][class[n]][nonce[n]] >= _amount[n], "ERC3475: insufficient bonds to burn");
+            require(_burnBond(_from, class[n], nonce[n], _amount[n]));
+        }
     }
 
 
+    function issueBond(address _to, uint256 class, uint256 _amount) external override {
+        //require(msg.sender==_bankAddress[class], "ERC659: operator unauthorized");
+        require(_to != address(0), "ERC659: issue bond to the zero address");
+        require(_amount >= 100, "ERC659: invalid amount");
+        if (_genesis_nonce_time[class] == 0) {
+            _genesis_nonce_time[class] = now - now % _Fibonacci_epoch[class];
+        }
+        uint256 now_nonce = (now - _genesis_nonce_time[class]) / _Fibonacci_epoch[class];
+        uint256 FibonacciTimeEponge0 = 1;
+        uint256 FibonacciTimeEponge1 = 2;
+        uint256 FibonacciTimeEponge;
+        uint256 amount_out_eponge;
+        for (uint i = 0; i < _Fibonacci_number[class]; i++) {
+            if (i == 0) {FibonacciTimeEponge = 1;}
+            else {
+                if (i == 1) {FibonacciTimeEponge = 2;}
+                else {
+                    FibonacciTimeEponge = (FibonacciTimeEponge0 + FibonacciTimeEponge1);
+                    FibonacciTimeEponge0 = FibonacciTimeEponge1;
+                    FibonacciTimeEponge1 = FibonacciTimeEponge;
 
-    function  issueBond(address _to, uint256 class, uint256 _amount) external returns (bool) {}
+                }
+            }
+            amount_out_eponge += FibonacciTimeEponge;
+        }
+
+        amount_out_eponge = _amount * 1e3 / amount_out_eponge;
+        FibonacciTimeEponge = 0;
+        FibonacciTimeEponge0 = 1;
+        FibonacciTimeEponge1 = 2;
+        for (uint i = 0; i < _Fibonacci_number[class]; i++) {
+            if (i == 0) {FibonacciTimeEponge = 1;}
+            else {
+                if (i == 1) {FibonacciTimeEponge = 2;}
+                else {
+                    FibonacciTimeEponge = (FibonacciTimeEponge0 + FibonacciTimeEponge1);
+                    FibonacciTimeEponge0 = FibonacciTimeEponge1;
+                    FibonacciTimeEponge1 = FibonacciTimeEponge;
+                }
+            }
+            require(_issueBond(_to, class, now_nonce + FibonacciTimeEponge, amount_out_eponge * FibonacciTimeEponge / 1e3) == true);
+        }
+    }
 
 
-    function redeemBond(address _from, uint256 class, uint256[] calldata nonce, uint256[] calldata _amount) external returns (bool) {}
+    function redeemBond(address _from, uint256 class, uint256[] calldata nonce, uint256[] calldata _amount) external override {
+        require(msg.sender == _issuers[class] || msg.sender == _from, "ERC659: operator unauthorized");
+        for (uint i = 0; i < nonce.length; i++) {
+            require(_balances[_from][class][nonce[i]] >= _amount[i], "ERC659: not enough bond for redemption");
+            require(bondIsRedeemable(class, nonce[i]) == true, "ERC659: can't redeem bond before it's redemption day");
+            require(_redeemBond(_from, class, nonce[i], _amount[i]));
+        }
+
+    }
+
+    function transferBond(address _from, address _to, uint256[] calldata class, uint256[] calldata nonce, uint256[] calldata _amount) external override {
+
+        for (uint n = 0; n < nonce.length; n++) {
+            require(msg.sender == _issuers[class[n]] || msg.sender == _from, "ERC659: operator unauthorized");
+            require(_balances[_from][class[n]][nonce[n]] >= _amount[n], "ERC659: not enough bond to transfer");
+            require(_to != address(0), "ERC659: cant't transfer to zero bond, use 'burnBond()' instead");
+            require(_transferBond(_from, _to, class[n], nonce[n], _amount[n]));
+        }
+    }
+
+    function _issueBond(address _to, uint256 class, uint256 nonce, uint256 _amount) private returns (bool) {
 
 
+        if (totalSupply(class, nonce) == 0) {
+            _createBond(_to, class, nonce, _amount);
+            return (true);
+        }
 
-    function transferBond(address _from, address _to, uint256[] calldata class, uint256[] calldata nonce, uint256[] calldata _amount) external returns(bool) {}
+        else {
+
+            _balances[_to][class][nonce] += _amount;
+            _activeSupply[class][nonce] += _amount;
+            emit eventIssueBond(msg.sender, _to, class, _lastBondNonces[class], _amount);
+            return (true);
+        }
+    }
+
+    function _createBond(address _to, uint256 class, uint256 nonce, uint256 _amount) private {
+
+        if (_lastBondNonces[class] < nonce) {
+            _lastBondNonces[class] = nonce;
+        }
+        _nonces[class].push(nonce);
+        _nonceInfo[class][nonce][1] = _genesis_nonce_time[class] + (nonce) * _Fibonacci_epoch[class];
+        // TODO here we are missing nonce informations at creation
+        _balances[_to][class][nonce] += _amount;
+        _activeSupply[class][nonce] += _amount;
+        emit eventIssueBond(msg.sender, _to, class, nonce, _amount);
+    }
+
+    function _redeemBond(address _from, uint256 class, uint256 nonce, uint256 _amount) private returns (bool) {
+
+        _balances[_from][class][nonce] -= _amount;
+        _activeSupply[class][nonce] -= _amount;
+        _redeemedSupply[class][nonce] += _amount;
+        emit eventRedeemBond(msg.sender, _from, class, nonce, _amount);
+        return (true);
+    }
+
+    function _transferBond(address _from, address _to, uint256 class, uint256 nonce, uint256 _amount) private returns (bool){
+        _balances[_from][class][nonce] -= _amount;
+        _balances[_to][class][nonce] += _amount;
+        emit eventTransferBond(msg.sender, _from, _to, class, nonce, _amount);
+        return (true);
+
+    }
+
+    function _burnBond(address _from, uint256 class, uint256 nonce, uint256 _amount) private returns (bool){
+        _balances[_from][class][nonce] -= _amount;
+        _burnedSupply[class][nonce] += _amount;
+        emit eventBurnBond(msg.sender, _from, class, nonce, _amount);
+        return (true);
+
+    }
 
 }

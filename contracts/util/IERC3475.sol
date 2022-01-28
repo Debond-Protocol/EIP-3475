@@ -59,19 +59,19 @@ interface IERC3475 {
      * @dev Issuing any number of bond types to an address.
      * !! The calling of this function needs to be restricted to bond issuer contract !!
      */
-    function issueBond(address _to, uint256 class, uint256 _amount) external returns (bool);
+    function issueBond(address _to, uint256 class, uint256 _amount) external;
 
     /**
      * @dev Redemption of any number of bond types from an address.
      */
-    function redeemBond(address _from, uint256 class, uint256[] calldata nonce, uint256[] calldata _amount) external returns (bool);
+    function redeemBond(address _from, uint256 class, uint256[] calldata nonce, uint256[] calldata _amount) external;
 
     /**
      * @dev Transfer of any number of bond types from an address to another.
      */
-    function transferBond(address _from, address _to, uint256[] calldata class, uint256[] calldata nonce, uint256[] calldata _amount) external returns (bool);
+    function transferBond(address _from, address _to, uint256[] calldata class, uint256[] calldata nonce, uint256[] calldata _amount) external;
 
-    function burnBond(address _from, uint256[] calldata class, uint256[] calldata nonce, uint256[] calldata _amount) external returns (bool);
+    function burnBond(address _from, uint256[] calldata class, uint256[] calldata nonce, uint256[] calldata _amount) external;
 
     event eventIssueBond(address _operator, address _to, uint256 class, uint256 nonce, uint256 _amount);
     event eventRedeemBond(address _operator, address _from, uint256 class, uint256 nonce, uint256 _amount);

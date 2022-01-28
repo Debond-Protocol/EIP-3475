@@ -56,7 +56,7 @@ contract TestBank is ITestBank{
     
   
     function redeemBond(address _from, address _to, uint256 class, uint256[] calldata nonce, uint256[] calldata _amount) external override returns (bool){
-    assert( IERC3475(bond_contract).redeemBond(_from, class, nonce, _amount));
+    IERC3475(bond_contract).redeemBond(_from, class, nonce, _amount);
     uint256 amount_token_mint;
     for (uint i=0; i<_amount.length; i++){
         amount_token_mint+=_amount[i];

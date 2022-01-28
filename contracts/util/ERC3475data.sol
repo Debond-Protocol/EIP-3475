@@ -5,14 +5,14 @@ pragma solidity ^0.6.8;
 
 contract ERC3475data {
 
-    mapping(address => mapping(uint256 => mapping(uint256 => uint256))) private _balances;
-    mapping(uint256 => mapping(uint256 => uint256)) private _activeSupply;
-    mapping(uint256 => mapping(uint256 => uint256)) private _burnedSupply;
-    mapping(uint256 => mapping(uint256 => uint256)) private _redeemedSupply;
-    mapping(uint256 => mapping(uint256 => mapping(uint256 => uint256))) private _nonceInfo;
-    mapping (uint256 => address) private _bankAddress;
-    mapping (uint256 => string) public _Symbol;
-    mapping (uint256 => uint256)  public last_bond_nonce;
-    mapping (uint256 => uint256[]) public _nonceCreated;
+    mapping(address => mapping(uint256 => mapping(uint256 => uint256))) internal _balances;
+    mapping(uint256 => mapping(uint256 => uint256)) internal _activeSupply;
+    mapping(uint256 => mapping(uint256 => uint256)) internal _burnedSupply;
+    mapping(uint256 => mapping(uint256 => uint256)) internal _redeemedSupply;
+    mapping(uint256 => mapping(uint256 => mapping(uint256 => uint256))) internal _nonceInfo;
+    mapping (uint256 => address) internal _issuers;
+    mapping (uint256 => string) internal _symbols;
+    mapping (uint256 => uint256)  internal _lastBondNonces;
+    mapping (uint256 => uint256[]) internal _nonces;
     
 }
