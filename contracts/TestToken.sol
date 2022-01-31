@@ -1,5 +1,5 @@
 pragma solidity ^0.6.8;
-import "./util/ERC20.sol";
+import "./ERC20/ERC20.sol";
 // SPDX-License-Identifier: apache 2.0
 contract TestToken is ERC20{
     string private _name;

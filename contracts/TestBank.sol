@@ -27,10 +27,7 @@ interface ITestBank {
     
 }
 
-contract TestBank is ITestBank{
-    string private _name;
-    string private _symbol;
-    uint8 private _decimals;
+contract TestBank is ITestBank {
     mapping (uint256 => address) public token_contract;
     address public bond_contract;
     address public dev_address;

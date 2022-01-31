@@ -1,7 +1,7 @@
 pragma solidity ^0.6.2;
 
-import "./util/SafeMath.sol";
-import "./util/ERC3475.sol";
+import "./library/SafeMath.sol";
+import "./ERC3475/ERC3475.sol";
 // SPDX-License-Identifier: apache 2.0
 /*
     Copyright 2020 Sigmoid Foundation <info@SGM.finance>
