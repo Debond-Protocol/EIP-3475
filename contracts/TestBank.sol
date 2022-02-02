@@ -1,7 +1,7 @@
 pragma solidity ^0.6.8;
-import "./util/IERC20.sol";
-import "./util/IERC3475.sol";
-import "./util/ITestToken.sol";
+import "./ERC20/IERC20.sol";
+import "./ERC3475/IERC3475.sol";
+import "./ITestToken.sol";
 // SPDX-License-Identifier: apache 2.0
 /*
     Copyright 2020 Sigmoid Foundation <info@SGM.finance>
@@ -45,20 +45,20 @@ contract TestBank is ITestBank {
     }
     
     function buyBond(address input_token, address _to, uint256 amount_USD_in) external override returns (bool){
-        uint256 amount_bond_out = amount_USD_in*2;
-        require(IERC20(input_token).transferFrom(msg.sender, address(this), amount_USD_in),'Not enough deposit.');
-        IERC3475(bond_contract).issueBond(_to, 0, amount_bond_out);
+//        uint256 amount_bond_out = amount_USD_in*2;
+//        require(IERC20(input_token).transferFrom(msg.sender, address(this), amount_USD_in),'Not enough deposit.');
+//        IERC3475(bond_contract).issueBond(_to, 0, amount_bond_out);
         return(true);
     }
     
   
     function redeemBond(address _from, address _to, uint256 class, uint256[] calldata nonce, uint256[] calldata _amount) external override returns (bool){
-    IERC3475(bond_contract).redeemBond(_from, class, nonce, _amount);
-    uint256 amount_token_mint;
-    for (uint i=0; i<_amount.length; i++){
-        amount_token_mint+=_amount[i];
-        }
-    ITestToken(token_contract[class]).mint(_to,amount_token_mint);
+//    IERC3475(bond_contract).redeemBond(_from, class, nonce, _amount);
+//    uint256 amount_token_mint;
+//    for (uint i=0; i<_amount.length; i++){
+//        amount_token_mint+=_amount[i];
+//        }
+//    ITestToken(token_contract[class]).mint(_to,amount_token_mint);
     return(true);      
     }
     

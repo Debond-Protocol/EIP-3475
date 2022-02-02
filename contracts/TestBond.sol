@@ -28,7 +28,7 @@ contract TestBond is ERC3475 {
 
     constructor () public {
 
-        _symbols[0] = "SASH-USD Bond";
+//        _symbols[0] = "SASH-USD Bond";
 
     }
 
@@ -39,9 +39,9 @@ contract TestBond is ERC3475 {
 //    }
     // note: the below functiion  was orignally  defined as override but there has no inherited class
 
-    function getNonceCreated(uint256 class) public view returns (uint256[] memory){
-        return _nonces[class];
-    }
+//    function getNonceCreated(uint256 class) public view returns (uint256[] memory){
+//        return _nonces[class];
+//    }
 
 //    function createBondClass(uint256 class, address bank_contract, string memory bond_symbol, uint256 Fibonacci_number, uint256 Fibonacci_epoch) public returns (bool) {
 //        require(msg.sender == dev_address, "ERC659: operator unauthorized");
