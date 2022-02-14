@@ -25,7 +25,6 @@ contract ERC3475 is IERC3475 {
         InfoDescription infoDescription;
         mapping(address => uint256) balances;
         mapping(address => mapping(address => bool)) operatorApprovals;
-
     }
 
     struct Class{
