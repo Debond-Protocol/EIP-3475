@@ -12,6 +12,21 @@ interface IERC3475 {
     function totalSupply(uint256 classId, uint256 nonceId) external view returns (uint256);
 
     /**
+     * @dev Returns the redeemed supply of the bond in question
+     */
+    function redeemedSupply(uint256 classId, uint256 nonceId) external view returns (uint256);
+
+    /**
+     * @dev Returns the active supply of the bond in question
+     */
+    function activeSupply(uint256 classId, uint256 nonceId) external view returns (uint256);
+
+    /**
+     * @dev Returns the burned supply of the bond in question
+     */
+    function burnedSupply(uint256 classId, uint256 nonceId) external view returns (uint256);
+
+    /**
      * @dev Returns the balance of the giving bond classId and bond nonce
      */
     function balanceOf(address account, uint256 classId, uint256 nonceId) external view returns (uint256);
@@ -29,10 +44,16 @@ interface IERC3475 {
       * — e.g. ["DEBIT-BUSD","1615584000",(3rd uint256)...].** Every bond contract can have their own list.
       * But the first uint256 in the list MUST be the UTC time code of the issuing time.
      */
-    function infos(uint256 _classId, uint256 _nonceId) external view returns (string memory _symbol, uint256 timestamp, uint256 info2, uint256 info3, uint256 info4, uint256 info5, uint256 info6);
+    function infos(uint256 _classId, uint256 _nonceId) external view returns (string memory _symbol, uint256 startingDate, uint256 maturityDate, uint256 info3, uint256 info4, uint256 info5, uint256 info6);
 
 
     function transferFrom(address _from, address _to, uint256 _classId, uint256 _nonceId, uint256 _amount) external;
+
+    function issue(address _to, uint256 _classId, uint256 _nonceId, uint256 _amount) external;
+
+    function redeem(address _from, uint256 _classId, uint256 _nonceId, uint256 _amount) external;
+
+    function isRedeemable(uint256 _classId, uint256 _nonceId) external view returns (bool);
 
     function isApprovedFor(address account, address operator, uint256 _classId, uint256 _nonceId) external view returns (bool);
 
@@ -61,6 +82,10 @@ interface IERC3475 {
         When burning/destroying tokens, the `_to` argument MUST be set to `0x0` (i.e. zero address).
     */
     event Transfer(address indexed _operator, address indexed _from, address indexed _to, uint256 _classId, uint256 _nonceId, uint256 _amount);
+
+    event Redeem(address indexed _operator, address indexed _from, uint256 _classId, uint256 _nonceId, uint256 _amount);
+
+    event Issue(address indexed _operator, address indexed _to, uint256 _classId, uint256 _nonceId, uint256 _amount);
 
 
     /**

@@ -1,0 +1,5 @@
+build
+.idea
+types
+.env
+node_modules

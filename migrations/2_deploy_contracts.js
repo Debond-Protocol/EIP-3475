@@ -1,5 +1,5 @@
-const TestBank = artifacts.require("TestBank");
+const Bond = artifacts.require("Bond");
 
 module.exports = function (deployer) {
-  deployer.deploy(TestBank);
+  deployer.deploy(Bond);
 };

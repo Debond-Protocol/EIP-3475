@@ -38,6 +38,9 @@ contract ERC3475 is IERC3475 {
     mapping(uint256 => Class) internal classes; // from classId given
     uint256[] public classIdsArray;
 
+    function getClasses() public view returns (uint256[] memory) {
+        return classIdsArray;
+    }
 
     function totalSupply(uint256 classId, uint256 nonceId) public override view returns (uint256) {
         return classes[classId].nonces[nonceId]._activeSupply + classes[classId].nonces[nonceId]._redeemedSupply + classes[classId].nonces[nonceId]._burnedSupply;
@@ -113,29 +116,31 @@ contract ERC3475 is IERC3475 {
         return classes[classId].nonceIds;
     }
 
-    function _mint(address to, uint256 classId, uint256 nonceId, uint256 amount) internal virtual {
+    function issue(address to, uint256 classId, uint256 nonceId, uint256 amount) public virtual {
         require(to != address(0), "ERC3475: can't transfer to the zero address");
-        address from = address(0);
-        _transfer(from, to, classId, nonceId, amount);
-        classes[classId].nonces[nonceId]._activeSupply += amount;
-        emit Transfer(msg.sender, from, to, classId, nonceId, amount);
+        _issue(to, classId, nonceId, amount);
+        emit Issue(msg.sender, to, classId, nonceId, amount);
     }
 
-    function _burn(address from, uint256 classId, uint256 nonceId, uint256 amount) internal virtual {
+    function isRedeemable(uint256 _classId, uint256 _nonceId) public view returns (bool) {
+        return classes[_classId].nonces[_nonceId].maturityTimestamp <= block.timestamp;
+    }
+
+    function redeem(address from, uint256 classId, uint256 nonceId, uint256 amount) public virtual {
         require(from != address(0), "ERC3475: can't transfer to the zero address");
-        address to = address(0);
-        _transfer(from, to, classId, nonceId, amount);
-        classes[classId].nonces[nonceId]._burnedSupply += amount;
-        emit Transfer(msg.sender, from, to, classId, nonceId, amount);
+        require(isRedeemable(classId, nonceId));
+        _redeem(from, classId, nonceId, amount);
+        emit Redeem(msg.sender, from, classId, nonceId, amount);
     }
 
-    function createBond(uint256 classId, string memory _symbol, uint256 nonceId, uint256 startingTimestamp, uint256 maturityTimestamp) internal virtual {
+    function create(uint256 classId, string memory _symbol, uint256 startingTimestamp, uint256 maturityTimestamp) internal virtual {
         require(!classes[classId].exists, "cannot create new bond given class already exists");
         Class storage class = classes[classId];
         class.classId = classId;
         class.exists = true;
         class.symbol = _symbol;
         classIdsArray.push(classId);
+        uint256 nonceId = class.nonceIds.length;
 
         Nonce storage nonce = class.nonces[nonceId];
         nonce.nonceId = nonceId;
@@ -169,6 +174,18 @@ contract ERC3475 is IERC3475 {
         require(from != to, "ERC3475: can't transfer to the same address");
         classes[classId].nonces[nonceId].balances[from]-= amount;
         classes[classId].nonces[nonceId].balances[to] += amount;
+    }
+
+    function _issue(address to, uint256 classId, uint256 nonceId, uint256 amount) private {
+        classes[classId].nonces[nonceId].balances[to] += amount;
+        classes[classId].nonces[nonceId]._activeSupply += amount;
+    }
+
+    function _redeem(address from, uint256 classId, uint256 nonceId, uint256 amount) private {
+        require(classes[classId].nonces[nonceId].balances[from] >= amount);
+        classes[classId].nonces[nonceId].balances[from] -= amount;
+        classes[classId].nonces[nonceId]._activeSupply -= amount;
+        classes[classId].nonces[nonceId]._redeemedSupply += amount;
     }
 
 }
