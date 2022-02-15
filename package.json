@@ -1,7 +1,7 @@
 {
-  "name": "workgroup",
+  "name": "erc-3475",
   "version": "1.0.0",
-  "description": "",
+  "description": "ERC-3475 Multiple Callable Bonds Standard implementation =============================================",
   "main": "truffle-config.js",
   "directories": {
     "test": "test"
@@ -9,7 +9,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate-types": "npx typechain --target=truffle-v5 'build/contracts/*.json'",
-    "postinstall": "npx truffle compile && npm run generate-types"
   },
   "author": "",
   "license": "ISC",
@@ -33,5 +32,17 @@
     "ts-node": "^10.3.0",
     "typechain": "^5.2.0",
     "typescript": "^4.4.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeBond-Protocol/EIP-3475.git"
+  },
+  "keywords": [
+    "DeFi",
+    "Bond"
+  ],
+  "bugs": {
+    "url": "https://github.com/DeBond-Protocol/EIP-3475/issues"
+  },
+  "homepage": "https://github.com/DeBond-Protocol/EIP-3475#readme"
 }
