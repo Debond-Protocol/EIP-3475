@@ -116,21 +116,28 @@ contract ERC3475 is IERC3475 {
         return classes[classId].nonceIds;
     }
 
-    function issue(address to, uint256 classId, uint256 nonceId, uint256 amount) public virtual {
+    function issue(address to, uint256 classId, uint256 nonceId, uint256 amount) public virtual override {
+        require(classes[classId].exists && classes[classId].nonces[nonceId].exists, "ERC3475: only issue bond that has been created");
         require(to != address(0), "ERC3475: can't transfer to the zero address");
         _issue(to, classId, nonceId, amount);
         emit Issue(msg.sender, to, classId, nonceId, amount);
     }
 
-    function isRedeemable(uint256 _classId, uint256 _nonceId) public view returns (bool) {
+    function isRedeemable(uint256 _classId, uint256 _nonceId) public override view returns (bool) {
         return classes[_classId].nonces[_nonceId].maturityTimestamp <= block.timestamp;
     }
 
-    function redeem(address from, uint256 classId, uint256 nonceId, uint256 amount) public virtual {
+    function redeem(address from, uint256 classId, uint256 nonceId, uint256 amount) public virtual override {
         require(from != address(0), "ERC3475: can't transfer to the zero address");
         require(isRedeemable(classId, nonceId));
         _redeem(from, classId, nonceId, amount);
         emit Redeem(msg.sender, from, classId, nonceId, amount);
+    }
+
+    function burn(address from, uint256 classId, uint256 nonceId, uint256 amount) public virtual override {
+        require(from != address(0), "ERC3475: can't transfer to the zero address");
+        _burn(from, classId, nonceId, amount);
+        emit Burn(msg.sender, from, classId, nonceId, amount);
     }
 
     function create(uint256 classId, string memory _symbol, uint256 startingTimestamp, uint256 maturityTimestamp) internal virtual {
@@ -186,6 +193,13 @@ contract ERC3475 is IERC3475 {
         classes[classId].nonces[nonceId].balances[from] -= amount;
         classes[classId].nonces[nonceId]._activeSupply -= amount;
         classes[classId].nonces[nonceId]._redeemedSupply += amount;
+    }
+
+    function _burn(address from, uint256 classId, uint256 nonceId, uint256 amount) private {
+        require(classes[classId].nonces[nonceId].balances[from] >= amount);
+        classes[classId].nonces[nonceId].balances[from] -= amount;
+        classes[classId].nonces[nonceId]._activeSupply -= amount;
+        classes[classId].nonces[nonceId]._burnedSupply += amount;
     }
 
 }

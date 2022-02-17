@@ -46,12 +46,13 @@ interface IERC3475 {
      */
     function infos(uint256 _classId, uint256 _nonceId) external view returns (string memory _symbol, uint256 startingDate, uint256 maturityDate, uint256 info3, uint256 info4, uint256 info5, uint256 info6);
 
-
     function transferFrom(address _from, address _to, uint256 _classId, uint256 _nonceId, uint256 _amount) external;
 
     function issue(address _to, uint256 _classId, uint256 _nonceId, uint256 _amount) external;
 
     function redeem(address _from, uint256 _classId, uint256 _nonceId, uint256 _amount) external;
+
+    function burn(address _from, uint256 _classId, uint256 _nonceId, uint256 _amount) external;
 
     function isRedeemable(uint256 _classId, uint256 _nonceId) external view returns (bool);
 
@@ -84,6 +85,8 @@ interface IERC3475 {
     event Transfer(address indexed _operator, address indexed _from, address indexed _to, uint256 _classId, uint256 _nonceId, uint256 _amount);
 
     event Redeem(address indexed _operator, address indexed _from, uint256 _classId, uint256 _nonceId, uint256 _amount);
+
+    event Burn(address indexed _operator, address indexed _from, uint256 _classId, uint256 _nonceId, uint256 _amount);
 
     event Issue(address indexed _operator, address indexed _to, uint256 _classId, uint256 _nonceId, uint256 _amount);
 

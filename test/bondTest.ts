@@ -7,6 +7,7 @@ contract('Bond', async (accounts: string[]) => {
 
     let bondContract: BondInstance;
     const lender = accounts[1];
+    const secondaryBuyer = accounts[2];
 
     it('should return bond classIds', async () => {
         bondContract = await Bond.deployed();
@@ -21,7 +22,26 @@ contract('Bond', async (accounts: string[]) => {
         const activeSupply = (await bondContract.activeSupply(0, 0)).toNumber()
         assert.equal(balance, 1000);
         assert.equal(activeSupply, 1000);
+    })
 
+    it('should be able to transfer bonds to another address', async () => {
+        await bondContract.transferFrom(lender, secondaryBuyer, 0, 0, 1000, {from: lender})
+        const lenderBalance = (await bondContract.balanceOf(lender, 0, 0)).toNumber()
+        const secondaryBuyerBalance = (await bondContract.balanceOf(secondaryBuyer, 0, 0)).toNumber()
+        const activeSupply = (await bondContract.activeSupply(0, 0)).toNumber()
+        assert.equal(lenderBalance, 0);
+        assert.equal(secondaryBuyerBalance, 1000);
+        assert.equal(activeSupply, 1000);
+    })
+
+    it('should burn supply of the bond', async () => {
+        // await bondContract.transferFrom(lender, secondaryBuyer, 0, 0, 1000, {from: lender})
+        // const lenderBalance = (await bondContract.balanceOf(lender, 0, 0)).toNumber()
+        // const secondaryBuyerBalance = (await bondContract.balanceOf(secondaryBuyer, 0, 0)).toNumber()
+        // const activeSupply = (await bondContract.activeSupply(0, 0)).toNumber()
+        // assert.equal(lenderBalance, 0);
+        // assert.equal(secondaryBuyerBalance, 1000);
+        // assert.equal(activeSupply, 1000);
     })
 });
 
