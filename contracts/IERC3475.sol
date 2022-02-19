@@ -32,14 +32,6 @@ interface IERC3475 {
     function balanceOf(address account, uint256 classId, uint256 nonceId) external view returns (uint256);
 
     /**
-     * @dev Returns the symbol string of the bond classId.
-     * — e.g. bond symbol="DEBIT-BUSD bond".**DEBIT as the first half of the bond symbol represents the settlement token of the bond.
-     * BUSD as the second half of the bond symbol represents the token used for the perches of this bond.
-     * If the bond have more than one settlement token or buying token, the symbol should be "Token1,Token2-Token3,Token4 bond"
-     */
-    function symbol(uint256 _classId) external view returns (string memory);
-
-    /**
      * @dev Returns the bond symbol and a list of uint256 parameters of a bond nonce.
       * — e.g. ["DEBIT-BUSD","1615584000",(3rd uint256)...].** Every bond contract can have their own list.
       * But the first uint256 in the list MUST be the UTC time code of the issuing time.

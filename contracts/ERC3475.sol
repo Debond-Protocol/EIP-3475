@@ -27,7 +27,7 @@ contract ERC3475 is IERC3475 {
         mapping(address => mapping(address => bool)) operatorApprovals;
     }
 
-    struct Class{
+    struct Class {
         uint256 classId;
         bool exists;
         string symbol;
@@ -37,10 +37,6 @@ contract ERC3475 is IERC3475 {
 
     mapping(uint256 => Class) internal classes; // from classId given
     uint256[] public classIdsArray;
-
-    function getClasses() public view returns (uint256[] memory) {
-        return classIdsArray;
-    }
 
     function totalSupply(uint256 classId, uint256 nonceId) public override view returns (uint256) {
         return classes[classId].nonces[nonceId]._activeSupply + classes[classId].nonces[nonceId]._redeemedSupply + classes[classId].nonces[nonceId]._burnedSupply;
@@ -58,14 +54,10 @@ contract ERC3475 is IERC3475 {
         return classes[classId].nonces[nonceId]._burnedSupply;
     }
 
-    function balanceOf(address account, uint256 classId, uint256 nonceId) public override view returns (uint256){
+    function balanceOf(address account, uint256 classId, uint256 nonceId) public override view returns (uint256) {
         require(account != address(0), "ERC3475: balance query for the zero address");
 
         return classes[classId].nonces[nonceId].balances[account];
-    }
-
-    function symbol(uint256 classId) view public override returns (string memory){
-        return classes[classId].symbol;
     }
 
     function infos(uint256 classId, uint256 nonceId) public view override returns (string memory _symbol, uint256 _startingTimestamp, uint256 _maturityTimestamp, uint256 _info2, uint256 _info3, uint256 _info4, uint256 _info5) {
@@ -112,10 +104,6 @@ contract ERC3475 is IERC3475 {
         return true;
     }
 
-    function getNonces(uint256 classId) public view returns (uint256[] memory) {
-        return classes[classId].nonceIds;
-    }
-
     function issue(address to, uint256 classId, uint256 nonceId, uint256 amount) public virtual override {
         require(classes[classId].exists && classes[classId].nonces[nonceId].exists, "ERC3475: only issue bond that has been created");
         require(to != address(0), "ERC3475: can't transfer to the zero address");
@@ -140,14 +128,32 @@ contract ERC3475 is IERC3475 {
         emit Burn(msg.sender, from, classId, nonceId, amount);
     }
 
-    function create(uint256 classId, string memory _symbol, uint256 startingTimestamp, uint256 maturityTimestamp) internal virtual {
-        require(!classes[classId].exists, "cannot create new bond given class already exists");
+    function getClasses() public view returns (uint256[] memory) {
+        return classIdsArray;
+    }
+
+    function getNonces(uint256 classId) public view returns (uint256[] memory) {
+        return classes[classId].nonceIds;
+    }
+
+    function classExist(uint256 classId) public view returns (bool) {
+        return classes[classId].exists;
+    }
+
+    function nonceExist(uint256 classId, uint256 nonceId) public view returns (bool) {
+        return classes[classId].nonces[nonceId].exists;
+    }
+
+    function create(uint256 classId, uint256 nonceId, string memory _symbol, uint256 startingTimestamp, uint256 maturityTimestamp) internal virtual {
+        require(!(classes[classId].exists && classes[classId].nonces[nonceId].exists), "cannot create new bond as given class and nonce already exists");
+        require(startingTimestamp <= maturityTimestamp, "startingTime need to be before maturityDate");
         Class storage class = classes[classId];
-        class.classId = classId;
-        class.exists = true;
-        class.symbol = _symbol;
-        classIdsArray.push(classId);
-        uint256 nonceId = class.nonceIds.length;
+        if(!class.exists) {
+            class.classId = classId;
+            class.exists = true;
+            class.symbol = _symbol;
+            classIdsArray.push(classId);
+        }
 
         Nonce storage nonce = class.nonces[nonceId];
         nonce.nonceId = nonceId;
