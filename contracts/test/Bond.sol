@@ -7,7 +7,7 @@ import ".././ERC3475.sol";
 
 contract Bond is ERC3475 {
 
-    function createBond(uint256 classId, uint256 nonceId, string memory _symbol, uint256 startingTimestamp, uint256 maturityTimestamp) external {
-        create(classId, nonceId, _symbol, startingTimestamp, maturityTimestamp);
+    function createBond(address tokenA, address tokenB, string memory _symbol) external {
+        createClass(tokenA, tokenB, _symbol);
     }
 }
