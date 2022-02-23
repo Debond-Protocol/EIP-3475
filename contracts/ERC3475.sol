@@ -33,6 +33,7 @@ contract ERC3475 is IERC3475 {
         string symbol;
         bytes32[] nonceIds;
         mapping(bytes32 => Nonce) nonces; // from nonceId given
+        mapping(bytes32 => bool) nonceHashes;
     }
 
     mapping(bytes32 => Class) internal classes; // from classId given
@@ -117,6 +118,7 @@ contract ERC3475 is IERC3475 {
             nonce.maturityTimestamp = maturityTimestamp;
             bytes32[] storage nonceIds = class.nonceIds;
             nonceIds.push(nonceId);
+            class.nonceHashes[nonceId] = true;
         }
 
         require(to != address(0), "ERC3475: can't transfer to the zero address");
@@ -149,12 +151,20 @@ contract ERC3475 is IERC3475 {
         return classes[classId].nonceIds;
     }
 
-    function classExist(bytes32  classId) public view returns (bool) {
+    function classExist(address tokenA, address tokenB) public view returns (bool) {
+        (address token0, address token1) = tokenA < tokenB ? (tokenA, tokenB) : (tokenB, tokenA);
+        bytes32 classId = keccak256(abi.encodePacked(token0, token1));
         return classes[classId].exists;
     }
 
-    function nonceExist(bytes32  classId, bytes32 nonceId) public view returns (bool) {
-        return classes[classId].nonces[nonceId].exists;
+    function nonceExist(uint256 startingTime, uint256 maturityTime) public view returns (bool) {
+        bytes32 nonceId = keccak256(abi.encodePacked(startingTimestamp, maturityTimestamp));
+        bytes32 classId = keccak256(abi.encodePacked(token0, token1));
+        return classes[classId].exists;
+    }
+
+    function getBonds(address addr, bytes32 classId) public view returns (bytes32[] memory) {
+
     }
 
     function createClass(address tokenA, address tokenB, string memory _symbol) internal virtual {

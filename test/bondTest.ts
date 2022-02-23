@@ -36,9 +36,9 @@ contract('Bond', async (accounts: string[]) => {
         await bondContract.issue(lender, firstBondId, dateNow, dateNow + 120 * 24 * 3600, 7000, {from: accounts[0]})
         const nonceIds = await bondContract.getNonces(firstBondId)
         firstNonceId = nonceIds[0];
+        const lenderNonces = await bondContract.getBonds(lender, firstBondId);
         const balance = (await bondContract.balanceOf(lender, firstBondId, firstNonceId)).toNumber()
         const activeSupply = (await bondContract.activeSupply(firstBondId, firstNonceId)).toNumber()
-        console.log(nonceIds);
         assert.equal(balance, 14000);
         assert.equal(activeSupply, 14000);
     })
