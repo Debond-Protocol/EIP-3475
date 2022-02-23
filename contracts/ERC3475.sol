@@ -33,7 +33,8 @@ contract ERC3475 is IERC3475 {
         string symbol;
         bytes32[] nonceIds;
         mapping(bytes32 => Nonce) nonces; // from nonceId given
-        mapping(bytes32 => bool) nonceHashes;
+        mapping(address => mapping(bytes32 => bool)) noncesPerAddress;
+        mapping(address => bytes32[]) noncesPerAddressArray;
     }
 
     mapping(bytes32 => Class) internal classes; // from classId given
@@ -118,10 +119,15 @@ contract ERC3475 is IERC3475 {
             nonce.maturityTimestamp = maturityTimestamp;
             bytes32[] storage nonceIds = class.nonceIds;
             nonceIds.push(nonceId);
-            class.nonceHashes[nonceId] = true;
         }
 
-        require(to != address(0), "ERC3475: can't transfer to the zero address");
+        if(!class.noncesPerAddress[to][nonceId]) {
+            class.noncesPerAddressArray[to].push(nonceId);
+            class.noncesPerAddress[to][nonceId] = true;
+        }
+
+
+    require(to != address(0), "ERC3475: can't transfer to the zero address");
         _issue(to, classId, nonceId, amount);
         emit Issue(msg.sender, to, classId, nonceId, amount);
     }
@@ -157,14 +163,13 @@ contract ERC3475 is IERC3475 {
         return classes[classId].exists;
     }
 
-    function nonceExist(uint256 startingTime, uint256 maturityTime) public view returns (bool) {
-        bytes32 nonceId = keccak256(abi.encodePacked(startingTimestamp, maturityTimestamp));
-        bytes32 classId = keccak256(abi.encodePacked(token0, token1));
-        return classes[classId].exists;
+    function getNonceId(bytes32 classId, uint256 startingTime, uint256 maturityTime) public view returns (bytes32) {
+        bytes32 nonceId = keccak256(abi.encodePacked(startingTime, maturityTime));
+        return classes[classId].nonces[nonceId].nonceId;
     }
 
     function getBonds(address addr, bytes32 classId) public view returns (bytes32[] memory) {
-
+        return classes[classId].noncesPerAddressArray[addr];
     }
 
     function createClass(address tokenA, address tokenB, string memory _symbol) internal virtual {
