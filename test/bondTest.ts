@@ -15,52 +15,56 @@ contract('Bond', async (accounts: string[]) => {
     const USDTAddress = accounts[8];
     const USDCAddress = accounts[9];
 
-    let firstBondId: string
-    let firstNonceId: string
+    const DBITClassId = 0
+    const USDCClassId = 1
+    const USDTClassId = 2
+    const DAIClassId = 3
+
+    let firstNonceId: number;
 
     const dateNow = Date.now();
 
     it('should create new bonds ', async () => {
         bondContract = await Bond.deployed();
-        await bondContract.createBond(USDTAddress, DBITAddress,"DBIT-USDT");
-        await bondContract.createBond(USDCAddress, DBITAddress,"DBIT-USDC");
-        await bondContract.createBond(DAIAddress, DBITAddress, "DBIT-DAI");
+        await bondContract.createBond(DBITClassId, DBITAddress,"DBIT");
+        await bondContract.createBond(USDCClassId, USDCAddress,"USDC");
+        await bondContract.createBond(DAIClassId, DAIAddress, "DAI");
+        await bondContract.createBond(USDTClassId, USDTAddress, "USDT");
         const bonds = (await bondContract.getClasses())
-        firstBondId = bonds[0];
         console.log(bonds)
         assert.isArray(bonds);
     })
 
     it('should issue bonds to a lender ', async () => {
-        await bondContract.issue(lender, firstBondId, dateNow, dateNow + 120 * 24 * 3600, 7000, {from: accounts[0]})
-        await bondContract.issue(lender, firstBondId, dateNow, dateNow + 120 * 24 * 3600, 7000, {from: accounts[0]})
-        const nonceIds = await bondContract.getNonces(firstBondId)
+        await bondContract.issue(lender, DBITClassId, dateNow, dateNow + 120 * 24 * 3600, 7000, {from: accounts[0]})
+        await bondContract.issue(lender, DBITClassId, dateNow, dateNow + 120 * 24 * 3600, 7000, {from: accounts[0]})
+        const nonceIds = (await bondContract.getNonces(DBITClassId)).map(n => n.toNumber())
         firstNonceId = nonceIds[0];
-        const lenderNonces = await bondContract.getBonds(lender, firstBondId);
+        const lenderNonces = await bondContract.getBonds(lender, DBITClassId);
         console.log(lenderNonces);
-        const balance = (await bondContract.balanceOf(lender, firstBondId, firstNonceId)).toNumber()
-        const activeSupply = (await bondContract.activeSupply(firstBondId, firstNonceId)).toNumber()
+        const balance = (await bondContract.balanceOf(lender, DBITClassId, firstNonceId)).toNumber()
+        const activeSupply = (await bondContract.activeSupply(DBITClassId, firstNonceId)).toNumber()
         assert.equal(balance, 14000);
         assert.equal(activeSupply, 14000);
     })
     //
     it('should be able the lender to transfer bonds to another address', async () => {
-        await bondContract.transferFrom(lender, secondaryMarketBuyer, firstBondId, firstNonceId, 2000, {from: lender})
-        const lenderBalance = (await bondContract.balanceOf(lender, firstBondId, firstNonceId)).toNumber()
-        const secondaryBuyerBalance = (await bondContract.balanceOf(secondaryMarketBuyer, firstBondId, firstNonceId)).toNumber()
-        const activeSupply = (await bondContract.activeSupply(firstBondId, firstNonceId)).toNumber()
+        await bondContract.transferFrom(lender, secondaryMarketBuyer, DBITClassId, firstNonceId, 2000, {from: lender})
+        const lenderBalance = (await bondContract.balanceOf(lender, DBITClassId, firstNonceId)).toNumber()
+        const secondaryBuyerBalance = (await bondContract.balanceOf(secondaryMarketBuyer, DBITClassId, firstNonceId)).toNumber()
+        const activeSupply = (await bondContract.activeSupply(DBITClassId, firstNonceId)).toNumber()
         assert.equal(lenderBalance, 12000);
         assert.equal(secondaryBuyerBalance, 2000);
         assert.equal(activeSupply, 14000);
     })
     //
     it('should be able to manipulate bonds after approval', async () => {
-        await bondContract.setApprovalFor(operator, [firstBondId], [firstNonceId], true, {from: lender})
-        const isApproved = await bondContract.isApprovedFor(lender, operator, firstBondId, firstNonceId);
+        await bondContract.setApprovalFor(operator, [DBITClassId], [firstNonceId], true, {from: lender})
+        const isApproved = await bondContract.isApprovedFor(lender, operator, DBITClassId, firstNonceId);
         assert.isTrue(isApproved);
-        await bondContract.transferFrom(lender, secondaryMarketBuyer2, firstBondId, firstNonceId, 3000, {from: operator})
-        assert.equal((await bondContract.balanceOf(lender, firstBondId, firstNonceId)).toNumber(), 9000);
-        assert.equal((await bondContract.balanceOf(secondaryMarketBuyer2, firstBondId, firstNonceId)).toNumber(), 3000);
+        await bondContract.transferFrom(lender, secondaryMarketBuyer2, DBITClassId, firstNonceId, 3000, {from: operator})
+        assert.equal((await bondContract.balanceOf(lender, DBITClassId, firstNonceId)).toNumber(), 9000);
+        assert.equal((await bondContract.balanceOf(secondaryMarketBuyer2, DBITClassId, firstNonceId)).toNumber(), 3000);
 
     })
     //

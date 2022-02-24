@@ -20,15 +20,12 @@
     "web3": "^1.6.0"
   },
   "devDependencies": {
-    "@openzeppelin/truffle-upgrades": "^1.11.0",
     "@typechain/truffle-v5": "^5.1.0",
     "@types/chai": "^4.2.22",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.11.2",
     "eth-gas-reporter": "^0.2.23",
     "truffle": "^5.1.67",
-    "truffle-flattener": "github:jplew/truffle-flattener",
-    "truffle-plugin-verify": "^0.5.20",
     "ts-node": "^10.3.0",
     "typechain": "^5.2.0",
     "typescript": "^4.4.4"
