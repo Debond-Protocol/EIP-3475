@@ -63,10 +63,14 @@ contract ERC3475 is IERC3475 {
         return classes[classId].nonces[nonceId].balances[account];
     }
 
-    function infos(uint256 classId, uint256 nonceId) public view override returns (string memory _symbol, uint256 _startingTimestamp, uint256 _maturityTimestamp, uint256 _info2, uint256 _info3, uint256 _info4, uint256 _info5) {
+    function symbol(uint256 classId) public view override returns (string memory) {
+        Class storage class = classes[classId];
+        return class.symbol;
+    }
+
+    function infos(uint256 classId, uint256 nonceId) public view override returns (uint256 _startingTimestamp, uint256 _maturityTimestamp, uint256 _info2, uint256 _info3, uint256 _info4, uint256 _info5) {
         Class storage class = classes[classId];
         InfoDescription storage desc = class.nonces[nonceId].infoDescription;
-        _symbol = class.symbol;
         _startingTimestamp = class.nonces[nonceId].startingTimestamp;
         _maturityTimestamp = class.nonces[nonceId].maturityTimestamp;
         _info2 = desc.info2;
@@ -107,7 +111,24 @@ contract ERC3475 is IERC3475 {
         return true;
     }
 
-    function issue(address to, uint256 classId, uint256 startingTimestamp, uint256 maturityTimestamp, uint256 amount) public virtual override {
+    function issue(address to, uint256 classId, uint256 nonceId, uint256 amount) public virtual override {
+        require(classes[classId].exists, "ERC3475: only issue bond that has been created");
+        Class storage class = classes[classId];
+
+        Nonce storage nonce = class.nonces[nonceId];
+        require(nonceId == nonce.nonceId, "Error ERC-3475: nonceId given not found!");
+
+        if(!class.noncesPerAddress[to][nonceId]) {
+            class.noncesPerAddressArray[to].push(nonceId);
+            class.noncesPerAddress[to][nonceId] = true;
+        }
+
+        require(to != address(0), "ERC3475: can't transfer to the zero address");
+        _issue(to, classId, nonceId, amount);
+        emit Issued(msg.sender, to, classId, nonceId, amount);
+    }
+
+    function issueFromMaturityTime(address to, uint256 classId, uint256 startingTimestamp, uint256 maturityTimestamp, uint256 amount) public virtual {
         require(classes[classId].exists, "ERC3475: only issue bond that has been created");
         Class storage class = classes[classId];
         uint256 nonceId = maturityTimestamp;
@@ -121,23 +142,7 @@ contract ERC3475 is IERC3475 {
             uint256[] storage nonceIds = class.nonceIds;
             nonceIds.push(nonceId);
         }
-
-        if(!class.noncesPerAddress[to][nonceId]) {
-            class.noncesPerAddressArray[to].push(nonceId);
-            class.noncesPerAddress[to][nonceId] = true;
-        }
-
-
-    require(to != address(0), "ERC3475: can't transfer to the zero address");
-        _issue(to, classId, nonceId, amount);
-        emit Issue(msg.sender, to, classId, nonceId, amount);
-    }
-
-    function issueBatch(address to, uint256[] memory classIds, uint256[] memory startingTimestamps, uint256[] memory maturityTimestamps, uint256[] memory amounts) public virtual {
-        require(classIds.length == startingTimestamps.length && classIds.length == maturityTimestamps.length && classIds.length == amounts.length, "inputs not validated");
-        for(uint256 i = 0; i <= classIds.length; i++) {
-            issue(to, classIds[i], startingTimestamps[i], maturityTimestamps[i], amounts[i]);
-        }
+         issue(to, classId, nonceId, amount);
     }
 
     function isRedeemable(uint256 classId, uint256 nonceId) public override view returns (bool) {
@@ -148,13 +153,13 @@ contract ERC3475 is IERC3475 {
         require(from != address(0), "ERC3475: can't transfer to the zero address");
         require(isRedeemable(classId, nonceId));
         _redeem(from, classId, nonceId, amount);
-        emit Redeem(msg.sender, from, classId, nonceId, amount);
+        emit Redeemed(msg.sender, from, classId, nonceId, amount);
     }
 
     function burn(address from, uint256 classId, uint256 nonceId, uint256 amount) public virtual override {
         require(from != address(0), "ERC3475: can't transfer to the zero address");
         _burn(from, classId, nonceId, amount);
-        emit Burn(msg.sender, from, classId, nonceId, amount);
+        emit Burned(msg.sender, from, classId, nonceId, amount);
     }
 
     function getClasses() public view returns (uint256[] memory) {
@@ -165,7 +170,7 @@ contract ERC3475 is IERC3475 {
         return classes[classId].nonceIds;
     }
 
-    function getBonds(address addr, uint256 classId) public view returns (uint256[] memory) {
+    function noncesPerAddress(address addr, uint256 classId) public view returns (uint256[] memory) {
         return classes[classId].noncesPerAddressArray[addr];
     }
 
@@ -179,12 +184,19 @@ contract ERC3475 is IERC3475 {
         classIdsArray.push(classId);
     }
 
+    function issueFromMaturityTimeBatch(address to, uint256[] memory classIds, uint256[] memory startingTimestamps, uint256[] memory maturityTimestamps, uint256[] memory amounts) public virtual {
+        require(classIds.length == startingTimestamps.length && classIds.length == maturityTimestamps.length && classIds.length == amounts.length, "inputs not validated");
+        for(uint256 i = 0; i <= classIds.length; i++) {
+            issueFromMaturityTime(to, classIds[i], startingTimestamps[i], maturityTimestamps[i], amounts[i]);
+        }
+    }
+
     function _transferFrom(address from, address to, uint256 classId, uint256 nonceId, uint256 amount) private {
         require(from != address(0), "ERC3475: can't transfer from the zero address");
         require(to != address(0), "ERC3475: can't transfer to the zero address");
         require(classes[classId].nonces[nonceId].balances[from] >= amount, "ERC3475: not enough bond to transfer");
         _transfer(from, to, classId, nonceId, amount);
-        emit Transfer(msg.sender, from, to, classId, nonceId, amount);
+        emit Transferred(msg.sender, from, to, classId, nonceId, amount);
     }
 
     function _batchTransferFrom(address from, address to, uint256[] memory classIds, uint256[] memory nonceIds, uint256[] memory amounts) private {

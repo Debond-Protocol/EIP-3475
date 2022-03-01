@@ -36,11 +36,11 @@ contract('Bond', async (accounts: string[]) => {
     })
 
     it('should issue bonds to a lender ', async () => {
-        await bondContract.issue(lender, DBITClassId, dateNow, dateNow + 120 * 24 * 3600, 7000, {from: accounts[0]})
-        await bondContract.issue(lender, DBITClassId, dateNow, dateNow + 120 * 24 * 3600, 7000, {from: accounts[0]})
+        await bondContract.issueFromMaturityTime(lender, DBITClassId, dateNow, dateNow + 120 * 24 * 3600, 7000, {from: accounts[0]})
+        await bondContract.issueFromMaturityTime(lender, DBITClassId, dateNow, dateNow + 120 * 24 * 3600, 7000, {from: accounts[0]})
         const nonceIds = (await bondContract.getNonces(DBITClassId)).map(n => n.toNumber())
         firstNonceId = nonceIds[0];
-        const lenderNonces = await bondContract.getBonds(lender, DBITClassId);
+        const lenderNonces = await bondContract.noncesPerAddress(lender, DBITClassId);
         console.log(lenderNonces);
         const balance = (await bondContract.balanceOf(lender, DBITClassId, firstNonceId)).toNumber()
         const activeSupply = (await bondContract.activeSupply(DBITClassId, firstNonceId)).toNumber()
