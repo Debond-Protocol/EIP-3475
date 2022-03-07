@@ -95,7 +95,7 @@ contract ERC3475 is IERC3475 {
         _transferFrom(from, to, classId, nonceId, amount);
     }
 
-    function issue(address to, uint256 classId, uint256 nonceId, uint256 amount) public virtual override {
+    function issue(address to, uint256 classId, uint256 nonceId, uint256 amount) internal virtual {
         require(classes[classId].exists, "ERC3475: only issue bond that has been created");
         Class storage class = classes[classId];
 
@@ -112,7 +112,7 @@ contract ERC3475 is IERC3475 {
         emit Issued(msg.sender, to, classId, nonceId, amount);
     }
 
-    function issueFromMaturityTime(address to, uint256 classId, uint256 startingTimestamp, uint256 maturityTimestamp, uint256 amount) public virtual {
+    function issueFromMaturityTime(address to, uint256 classId, uint256 startingTimestamp, uint256 maturityTimestamp, uint256 amount) internal virtual {
         require(classes[classId].exists, "ERC3475: only issue bond that has been created");
         Class storage class = classes[classId];
         uint256 nonceId = maturityTimestamp;
@@ -133,14 +133,14 @@ contract ERC3475 is IERC3475 {
         return classes[classId].nonces[nonceId].maturityTimestamp <= block.timestamp;
     }
 
-    function redeem(address from, uint256 classId, uint256 nonceId, uint256 amount) public virtual override {
+    function redeem(address from, uint256 classId, uint256 nonceId, uint256 amount) internal virtual {
         require(from != address(0), "ERC3475: can't transfer to the zero address");
         require(isRedeemable(classId, nonceId));
         _redeem(from, classId, nonceId, amount);
         emit Redeemed(msg.sender, from, classId, nonceId, amount);
     }
 
-    function burn(address from, uint256 classId, uint256 nonceId, uint256 amount) public virtual override {
+    function burn(address from, uint256 classId, uint256 nonceId, uint256 amount) internal virtual {
         require(from != address(0), "ERC3475: can't transfer to the zero address");
         _burn(from, classId, nonceId, amount);
         emit Burned(msg.sender, from, classId, nonceId, amount);
