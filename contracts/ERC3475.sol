@@ -95,22 +95,6 @@ contract ERC3475 is IERC3475 {
         _transferFrom(from, to, classId, nonceId, amount);
     }
 
-    function batchTransferFrom(address from, address to, uint256[] memory classIds, uint256[] memory nonceIds, uint256[] memory amounts) public virtual override {
-        require(msg.sender == from || batchIsApprovedFor(from, msg.sender, classIds, nonceIds), "ERC3475: caller is not owner nor approved");
-        _batchTransferFrom(from, to, classIds, nonceIds, amounts);
-        emit TransferBatch(msg.sender, from, to, classIds, nonceIds, amounts);
-    }
-
-    function batchIsApprovedFor(address account, address operator, uint256[] memory classIds, uint256[] memory nonceIds) public view virtual override returns (bool) {
-        require(classIds.length == nonceIds.length, "ERC3475: _classes and _nonces length mismatch");
-        for (uint i = 0; i < classIds.length; i++) {
-            if (!classes[classIds[i]].nonces[nonceIds[i]].operatorApprovals[account][operator]) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     function issue(address to, uint256 classId, uint256 nonceId, uint256 amount) public virtual override {
         require(classes[classId].exists, "ERC3475: only issue bond that has been created");
         Class storage class = classes[classId];
@@ -182,6 +166,22 @@ contract ERC3475 is IERC3475 {
         class.symbol = _symbol;
         class.tokenAddress = tokenAddress;
         classIdsArray.push(classId);
+    }
+
+    function batchTransferFrom(address from, address to, uint256[] memory classIds, uint256[] memory nonceIds, uint256[] memory amounts) public virtual override {
+        require(msg.sender == from || batchIsApprovedFor(from, msg.sender, classIds, nonceIds), "ERC3475: caller is not owner nor approved");
+        _batchTransferFrom(from, to, classIds, nonceIds, amounts);
+        emit TransferBatch(msg.sender, from, to, classIds, nonceIds, amounts);
+    }
+
+    function batchIsApprovedFor(address account, address operator, uint256[] memory classIds, uint256[] memory nonceIds) public view virtual override returns (bool) {
+        require(classIds.length == nonceIds.length, "ERC3475: _classes and _nonces length mismatch");
+        for (uint i = 0; i < classIds.length; i++) {
+            if (!classes[classIds[i]].nonces[nonceIds[i]].operatorApprovals[account][operator]) {
+                return false;
+            }
+        }
+        return true;
     }
 
     function issueFromMaturityTimeBatch(address to, uint256[] memory classIds, uint256[] memory startingTimestamps, uint256[] memory maturityTimestamps, uint256[] memory amounts) public virtual {
