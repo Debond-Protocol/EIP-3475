@@ -43,12 +43,6 @@ interface IERC3475 {
 
     function transferFrom(address _from, address _to, uint256 classId, uint256 nonceId, uint256 _amount) external;
 
-//    function issue(address to, uint256 classId, uint256 nonceId, uint256 amount) external;
-//
-//    function redeem(address _from, uint256 classId, uint256 nonceId, uint256 _amount) external;
-//
-//    function burn(address _from, uint256 classId, uint256 nonceId, uint256 _amount) external;
-
     function isRedeemable(uint256 classId, uint256 nonceId) external view returns (bool);
 
     function isApprovedFor(address account, address operator, uint256 classId, uint256 nonceId) external view returns (bool);
