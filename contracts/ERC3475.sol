@@ -54,7 +54,7 @@ contract ERC3475 is IERC3475 {
     }
 
     function redeemedSupply(uint256 classId, uint256 nonceId) public override view returns (uint256) {
-        return classes[classId].nonces[nonceId]._burnedSupply;
+        return classes[classId].nonces[nonceId]._redeemedSupply;
     }
 
     function balanceOf(address account, uint256 classId, uint256 nonceId) public override view returns (uint256) {
@@ -100,7 +100,12 @@ contract ERC3475 is IERC3475 {
         Class storage class = classes[classId];
 
         Nonce storage nonce = class.nonces[nonceId];
-        require(nonceId == nonce.nonceId, "Error ERC-3475: nonceId given not found!");
+        if(!nonce.exists) {
+            nonce.nonceId = nonceId;
+            nonce.exists = true;
+            uint256[] storage nonceIds = class.nonceIds;
+            nonceIds.push(nonceId);
+        }
 
         if(!class.noncesPerAddress[to][nonceId]) {
             class.noncesPerAddressArray[to].push(nonceId);
@@ -112,25 +117,8 @@ contract ERC3475 is IERC3475 {
         emit Issued(msg.sender, to, classId, nonceId, amount);
     }
 
-    function issueFromMaturityTime(address to, uint256 classId, uint256 startingTimestamp, uint256 maturityTimestamp, uint256 amount) internal virtual {
-        require(classes[classId].exists, "ERC3475: only issue bond that has been created");
-        Class storage class = classes[classId];
-        uint256 nonceId = maturityTimestamp;
-
-        Nonce storage nonce = class.nonces[nonceId];
-        if(!nonce.exists) {
-            nonce.nonceId = nonceId;
-            nonce.exists = true;
-            nonce.startingTimestamp = startingTimestamp;
-            nonce.maturityTimestamp = maturityTimestamp;
-            uint256[] storage nonceIds = class.nonceIds;
-            nonceIds.push(nonceId);
-        }
-         issue(to, classId, nonceId, amount);
-    }
-
-    function isRedeemable(uint256 classId, uint256 nonceId) public override view returns (bool) {
-        return classes[classId].nonces[nonceId].maturityTimestamp <= block.timestamp;
+    function isRedeemable(uint256 classId, uint256 nonceId) public virtual override view returns (bool) {
+        return classes[classId].nonces[nonceId].exists && classes[classId].nonces[nonceId]._activeSupply > 0;
     }
 
     function redeem(address from, uint256 classId, uint256 nonceId, uint256 amount) internal virtual {
@@ -182,13 +170,6 @@ contract ERC3475 is IERC3475 {
             }
         }
         return true;
-    }
-
-    function issueFromMaturityTimeBatch(address to, uint256[] memory classIds, uint256[] memory startingTimestamps, uint256[] memory maturityTimestamps, uint256[] memory amounts) public virtual {
-        require(classIds.length == startingTimestamps.length && classIds.length == maturityTimestamps.length && classIds.length == amounts.length, "inputs not validated");
-        for(uint256 i = 0; i <= classIds.length; i++) {
-            issueFromMaturityTime(to, classIds[i], startingTimestamps[i], maturityTimestamps[i], amounts[i]);
-        }
     }
 
     function _transferFrom(address from, address to, uint256 classId, uint256 nonceId, uint256 amount) private {
