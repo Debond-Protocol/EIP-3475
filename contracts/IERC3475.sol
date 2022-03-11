@@ -141,10 +141,24 @@ interface IERC3475 {
     function isApprovedFor(address owner, address operator, uint256 classId) external view returns (bool);
 
     /**
-    * @dev when Issuing bonds, it SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created.
     * @notice MUST trigger when tokens are transferred, including zero value transfers.
     */
     event Transfer(address indexed _operator, address indexed _from, address indexed _to, uint256 classId, uint256 nonceId, uint256 amount);
+
+    /**
+    * @notice MUST trigger when tokens are issued
+    */
+    event Issue(address indexed _operator, address indexed _to, uint256 classId, uint256 nonceId, uint256 amount);
+
+    /**
+    * @notice MUST trigger when tokens are redeemed
+    */
+    event Redeem(address indexed _operator, address indexed _from, uint256 classId, uint256 nonceId, uint256 amount);
+
+    /**
+    * @notice MUST trigger when tokens are burned
+    */
+    event Burn(address indexed _operator, address indexed _from, uint256 classId, uint256 nonceId, uint256 amount);
 
     /**
     * @dev MUST emit when approval for a second party/operator address to manage all bonds from a classId given for an owner address is enabled or disabled (absence of an event assumes disabled).
