@@ -138,9 +138,14 @@ contract('Bond', async (accounts: string[]) => {
         assert.isString(symbol);
     })
 
-    it('should return the infos of a class and nonce of bond', async () => {
-        const infos = (await bondContract.infos(DBITClassId, firstNonceId));
-        console.log(JSON.stringify(infos))
+    it('should return the infos of a bond class given', async () => {
+        const infos = (await bondContract.classInfos(DBITClassId));
+        console.log("class infos: ", JSON.stringify(infos))
+    })
+
+    it('should return the infos of a nonce of bond class given', async () => {
+        const infos = (await bondContract.nonceInfos(DBITClassId, firstNonceId));
+        console.log("nonce infos: ", JSON.stringify(infos))
     })
 
     it('should return if an operator is approved on a class and nonce given for an address', async () => {

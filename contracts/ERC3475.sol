@@ -22,6 +22,7 @@ contract ERC3475 is IERC3475 {
         uint256 classId;
         bool exists;
         string symbol;
+        uint256[] infoDescription;
         mapping(address => mapping(address => bool)) operatorApprovals;
         mapping(uint256 => Nonce) nonces; // from nonceId given
     }
@@ -37,6 +38,9 @@ contract ERC3475 is IERC3475 {
         class.classId = 0;
         class.exists = true;
         class.symbol = "DBIT";
+        class.infoDescription.push(2);
+        class.infoDescription.push(3);
+        class.infoDescription.push(4);
 
         Nonce storage nonce = class.nonces[0];
         nonce.nonceId = 0;
@@ -122,7 +126,11 @@ contract ERC3475 is IERC3475 {
         return class.symbol;
     }
 
-    function infos(uint256 classId, uint256 nonceId) public view override returns (uint256[] memory) {
+    function classInfos(uint256 classId) public view override returns (uint256[] memory) {
+        return classes[classId].infoDescription;
+    }
+
+    function nonceInfos(uint256 classId, uint256 nonceId) public view override returns (uint256[] memory) {
         return classes[classId].nonces[nonceId].infoDescription;
     }
 

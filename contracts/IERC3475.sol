@@ -112,10 +112,16 @@ interface IERC3475 {
     function symbol(uint256 classId) external view returns (string memory);
 
     /**
+     * @dev Returns the informations for the class of given classId
+     * @notice Every bond contract can have their own list of class informations
+     */
+    function classInfos(uint256 classId) external view returns (uint256[] memory);
+
+    /**
      * @dev Returns the informations for the nonce of given classId and nonceId
      * @notice Every bond contract can have their own list. But the first uint256 in the list MUST be the UTC time code of the issuing time.
      */
-    function infos(uint256 classId, uint256 nonceId) external view returns (uint256[] memory);
+    function nonceInfos(uint256 classId, uint256 nonceId) external view returns (uint256[] memory);
 
     /**
      * @dev  allows anyone to check if a bond is redeemable.
