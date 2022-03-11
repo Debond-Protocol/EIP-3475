@@ -28,6 +28,24 @@ contract ERC3475 is IERC3475 {
 
     mapping(uint256 => Class) internal classes; // from classId given
 
+    /**
+    * @notice Here the constructor is just to initialize a class and nonce,
+    *         in practice you will have a function to create new class and nonce
+    */
+    constructor() {
+        Class storage class = classes[0];
+        class.classId = 0;
+        class.exists = true;
+        class.symbol = "DBIT";
+
+        Nonce storage nonce = class.nonces[0];
+        nonce.nonceId = 0;
+        nonce.exists = true;
+        nonce.infoDescription.push(5);
+        nonce.infoDescription.push(7);
+        nonce.infoDescription.push(8);
+    }
+
 
     // WRITE
 
