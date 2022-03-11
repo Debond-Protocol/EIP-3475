@@ -142,7 +142,7 @@ contract('Bond', async (accounts: string[]) => {
         const infos = (await bondContract.classInfos(DBITClassId));
         console.log("class infos: ", JSON.stringify(infos))
         infos.forEach(async i => {
-            console.log(await bondContract.classInfoDescriptions(i))
+            console.log(await bondContract.classInfoDescription(i))
         });
     })
 
@@ -150,7 +150,7 @@ contract('Bond', async (accounts: string[]) => {
         const infos = (await bondContract.nonceInfos(DBITClassId, firstNonceId));
         console.log("nonce infos: ", JSON.stringify(infos))
         infos.forEach(async i => {
-            console.log(await bondContract.nonceInfoDescriptions(i))
+            console.log(await bondContract.nonceInfoDescription(i))
         });
     })
 

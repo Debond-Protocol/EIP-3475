@@ -163,6 +163,14 @@ contract ERC3475 is IERC3475 {
         return classes[classId].nonces[nonceId].infos;
     }
 
+    function classInfoDescription(uint256 classInfo) external view returns (string memory) {
+        return classInfoDescriptions[classInfo];
+    }
+
+    function nonceInfoDescription(uint256 nonceInfo) external view returns (string memory) {
+        return nonceInfoDescriptions[nonceInfo];
+    }
+
     
     function isRedeemable(uint256 classId, uint256 nonceId) public override view returns (bool) {
         return classes[classId].nonces[nonceId]._activeSupply > 0;
