@@ -141,11 +141,17 @@ contract('Bond', async (accounts: string[]) => {
     it('should return the infos of a bond class given', async () => {
         const infos = (await bondContract.classInfos(DBITClassId));
         console.log("class infos: ", JSON.stringify(infos))
+        infos.forEach(async i => {
+            console.log(await bondContract.classInfoMapping(i))
+        });
     })
 
     it('should return the infos of a nonce of bond class given', async () => {
         const infos = (await bondContract.nonceInfos(DBITClassId, firstNonceId));
         console.log("nonce infos: ", JSON.stringify(infos))
+        infos.forEach(async i => {
+            console.log(await bondContract.nonceInfoMapping(i))
+        });
     })
 
     it('should return if an operator is approved on a class and nonce given for an address', async () => {

@@ -28,6 +28,8 @@ contract ERC3475 is IERC3475 {
     }
 
     mapping(uint256 => Class) internal classes; // from classId given
+    mapping(uint256 => string) public classInfoMapping;
+    mapping(uint256 => string) public nonceInfoMapping;
 
     /**
     * @notice Here the constructor is just to initialize a class and nonce,
@@ -38,16 +40,16 @@ contract ERC3475 is IERC3475 {
         class.classId = 0;
         class.exists = true;
         class.symbol = "DBIT";
-        class.infoDescription.push(2);
-        class.infoDescription.push(3);
-        class.infoDescription.push(4);
+        class.infoDescription.push(0); classInfoMapping[0] = "informationA of class A";
+        class.infoDescription.push(1); classInfoMapping[1] = "informationB of class is of type B";
+        class.infoDescription.push(2); classInfoMapping[2] = "informationC is a perfect example";
 
         Nonce storage nonce = class.nonces[0];
         nonce.nonceId = 0;
         nonce.exists = true;
-        nonce.infoDescription.push(5);
-        nonce.infoDescription.push(7);
-        nonce.infoDescription.push(8);
+        nonce.infoDescription.push(0); nonceInfoMapping[0] = "information nonce ";
+        nonce.infoDescription.push(1); nonceInfoMapping[1] = "informationA of nonce important";
+        nonce.infoDescription.push(2); nonceInfoMapping[2] = "informationE";
     }
 
 
