@@ -65,14 +65,14 @@ contract ERC3475 is IERC3475 {
 
     // WRITE
 
-    
+
     function transferFrom(address from, address to, uint256 classId, uint256 nonceId, uint256 amount) public virtual override {
         require(msg.sender == from || isApprovedFor(from, msg.sender, classId), "ERC3475: caller is not owner nor approved");
         _transferFrom(from, to, classId, nonceId, amount);
         emit Transfer(msg.sender, from, to, classId, nonceId, amount);
     }
 
-    
+
     function issue(address to, uint256 classId, uint256 nonceId, uint256 amount) external virtual override {
         require(classes[classId].exists, "ERC3475: only issue bond that has been created");
         Class storage class = classes[classId];
@@ -85,7 +85,7 @@ contract ERC3475 is IERC3475 {
         emit Issue(msg.sender, to, classId, nonceId, amount);
     }
 
-    
+
     function redeem(address from, uint256 classId, uint256 nonceId, uint256 amount) external virtual override {
         require(from != address(0), "ERC3475: can't transfer to the zero address");
         require(isRedeemable(classId, nonceId));
@@ -93,25 +93,25 @@ contract ERC3475 is IERC3475 {
         emit Redeem(msg.sender, from, classId, nonceId, amount);
     }
 
-    
+
     function burn(address from, uint256 classId, uint256 nonceId, uint256 amount) external virtual override {
         require(from != address(0), "ERC3475: can't transfer to the zero address");
         _burn(from, classId, nonceId, amount);
         emit Burn(msg.sender, from, classId, nonceId, amount);
     }
 
-    
+
     function approve(address spender, uint256 classId, uint256 nonceId, uint256 amount) external virtual override {
         classes[classId].nonces[nonceId].allowances[msg.sender][spender] = amount;
     }
 
-    
+
     function setApprovalFor(address operator, uint256 classId, bool approved) public virtual override {
         classes[classId].operatorApprovals[msg.sender][operator] = approved;
         emit ApprovalFor(msg.sender, operator, classId, approved);
     }
 
-    
+
     function batchApprove(address spender, uint256[] calldata classIds, uint256[] calldata nonceIds, uint256[] calldata amounts) external {
         require(classIds.length == nonceIds.length && classIds.length == amounts.length, "ERC3475 Input Error");
         for(uint256 i = 0; i < classIds.length; i++) {
@@ -120,45 +120,45 @@ contract ERC3475 is IERC3475 {
     }
     // READS
 
-    
+
     function totalSupply(uint256 classId, uint256 nonceId) public override view returns (uint256) {
         return classes[classId].nonces[nonceId]._activeSupply + classes[classId].nonces[nonceId]._redeemedSupply + classes[classId].nonces[nonceId]._burnedSupply;
     }
 
-    
+
     function activeSupply(uint256 classId, uint256 nonceId) public override view returns (uint256) {
         return classes[classId].nonces[nonceId]._activeSupply;
     }
 
-    
+
     function burnedSupply(uint256 classId, uint256 nonceId) public override view returns (uint256) {
         return classes[classId].nonces[nonceId]._burnedSupply;
     }
 
-    
+
     function redeemedSupply(uint256 classId, uint256 nonceId) public override view returns (uint256) {
         return classes[classId].nonces[nonceId]._burnedSupply;
     }
 
-    
+
     function balanceOf(address account, uint256 classId, uint256 nonceId) public override view returns (uint256) {
         require(account != address(0), "ERC3475: balance query for the zero address");
 
         return classes[classId].nonces[nonceId].balances[account];
     }
 
-    
+
     function symbol(uint256 classId) public view override returns (string memory) {
         Class storage class = classes[classId];
         return class.symbol;
     }
 
-    
+
     function classInfos(uint256 classId) public view override returns (uint256[] memory) {
         return classes[classId].infos;
     }
 
-    
+
     function nonceInfos(uint256 classId, uint256 nonceId) public view override returns (uint256[] memory) {
         return classes[classId].nonces[nonceId].infos;
     }
@@ -171,17 +171,17 @@ contract ERC3475 is IERC3475 {
         return nonceInfoDescriptions[nonceInfo];
     }
 
-    
+
     function isRedeemable(uint256 classId, uint256 nonceId) public override view returns (bool) {
         return classes[classId].nonces[nonceId]._activeSupply > 0;
     }
 
-    
+
     function allowance(address owner, address spender, uint256 classId, uint256 nonceId) external view returns (uint256) {
         return classes[classId].nonces[nonceId].allowances[owner][spender];
     }
 
-    
+
     function isApprovedFor(address owner, address operator, uint256 classId) public view virtual override returns (bool) {
         return classes[classId].operatorApprovals[owner][operator];
     }
