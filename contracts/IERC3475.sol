@@ -45,7 +45,7 @@ interface IERC3475 {
      * @param from argument is the address of the holder whose balance about to decrees.
      * @param classId is the class nonce of bond, the first bond class created will be 0, and so on.
      * @param nonceId is the nonce of the given bond class. This param is for distinctions of the issuing conditions of the bond.
-     * @param amount is the amount of the bond, that will be transferred from "_from"address to "_to" address.
+     * @param amount is the amount of the bond, that will be transferred from "_from"address to the address(0).
      */
     function burn(address from, uint256 classId, uint256 nonceId, uint256 amount) external;
 
