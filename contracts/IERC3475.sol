@@ -45,7 +45,7 @@ interface IERC3475 {
      * @param from argument is the address of the holder whose balance about to decrees.
      * @param classId is the class nonce of bond, the first bond class created will be 0, and so on.
      * @param nonceId is the nonce of the given bond class. This param is for distinctions of the issuing conditions of the bond.
-     * @param amount is the amount of the bond, that will be transferred from "_from"address to "_to" address.
+     * @param amount is the amount of the bond, that will be transferred from "_from"address to the address(0).
      */
     function burn(address from, uint256 classId, uint256 nonceId, uint256 amount) external;
 
@@ -115,31 +115,31 @@ interface IERC3475 {
      * @dev Returns the informations for the class of given classId
      * @notice Every bond contract can have their own list of class informations
      */
-    function classInfos(uint256 classId) external view returns (uint256[] memory);
+    function classValues(uint256 classId) external view returns (uint256[] memory);
 
     /**
      * @dev Returns the information description for a given class info
      * @notice Every bond contract can have their own list of class informations
      */
-    function classInfoDescription(uint256 classInfo) external view returns (string memory);
+    function classDescriptions(uint256 classInfo) external view returns (string memory);
 
     /**
      * @dev Returns the information description for a given nonce info
      * @notice Every bond contract can have their own list of nonce informations
      */
-    function nonceInfoDescription(uint256 nonceInfo) external view returns (string memory);
+    function nonceValues(uint256 classId, uint256 nonceId) external view returns (string memory);
 
     /**
      * @dev Returns the informations for the nonce of given classId and nonceId
      * @notice Every bond contract can have their own list. But the first uint256 in the list MUST be the UTC time code of the issuing time.
      */
-    function nonceInfos(uint256 classId, uint256 nonceId) external view returns (uint256[] memory);
+    function nonceDescriptions(uint256 classId) external view returns (uint256[] memory);
 
     /**
-     * @dev  allows anyone to check if a bond is redeemable.
-     * @notice the conditions of redemption can be specified with one or several internal functions.
+     * @dev Returns the informations about the progress needed to redeem the bond
+     * @notice Every bond contract can have their own logic concerning the progress definition.
      */
-    function isRedeemable(uint256 classId, uint256 nonceId) external view returns (bool);
+    function getProgress(uint256 classId, uint256 nonceId) external view returns (uint256 progressAchieved, uint256 progressRemaining);
 
     /**
      * @notice  Returns the amount which spender is still allowed to withdraw from owner.

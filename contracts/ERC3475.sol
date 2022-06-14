@@ -17,7 +17,7 @@ contract ERC3475 is IERC3475 {
         uint256 _activeSupply;
         uint256 _burnedSupply;
         uint256 _redeemedSupply;
-        uint256[] infos;
+        uint256[] values;
         mapping(address => uint256) balances;
         mapping(address => mapping(address => uint256)) allowances;
     }
@@ -30,14 +30,14 @@ contract ERC3475 is IERC3475 {
         uint256 classId;
         bool exists;
         string symbol;
-        uint256[] infos;
+        uint256[] values;
         mapping(address => mapping(address => bool)) operatorApprovals;
         mapping(uint256 => Nonce) nonces; // from nonceId given
+        string[] nonceInfoDescriptions; // mapping with nonce.infos
     }
 
     mapping(uint256 => Class) internal classes; // from classId given
     string[] public classInfoDescriptions; // mapping with class.infos
-    string[] public nonceInfoDescriptions; // mapping with nonce.infos
 
     /**
     * @notice Here the constructor is just to initialize a class and nonce,
@@ -49,17 +49,17 @@ contract ERC3475 is IERC3475 {
         class.classId = 0;
         class.exists = true;
         class.symbol = "DBIT";
-        class.infos.push(0); classInfoDescriptions.push("informationA of class A");
-        class.infos.push(1); classInfoDescriptions.push("informationB of class is of type B");
-        class.infos.push(2); classInfoDescriptions.push("informationC is a perfect example");
+        class.values.push(0); classInfoDescriptions.push("informationA of class A");
+        class.values.push(1); classInfoDescriptions.push("informationB of class is of type B");
+        class.values.push(2); classInfoDescriptions.push("informationC is a perfect example");
 
         // creating nonce
         Nonce storage nonce = class.nonces[0];
         nonce.nonceId = 0;
         nonce.exists = true;
-        nonce.infos.push(0); nonceInfoDescriptions.push("information nonce");
-        nonce.infos.push(1); nonceInfoDescriptions.push("informationA of nonce important");
-        nonce.infos.push(2); nonceInfoDescriptions.push("informationE");
+        nonce.values.push(0); nonceInfoDescriptions.push("information nonce");
+        nonce.values.push(1); nonceInfoDescriptions.push("informationA of nonce important");
+        nonce.values.push(2); nonceInfoDescriptions.push("informationE");
     }
 
 
@@ -153,26 +153,26 @@ contract ERC3475 is IERC3475 {
         return class.symbol;
     }
 
-
-    function classInfos(uint256 classId) public view override returns (uint256[] memory) {
-        return classes[classId].infos;
+    
+    function classValues(uint256 classId) public view override returns (uint256[] memory) {
+        return classes[classId].values;
     }
 
-
-    function nonceInfos(uint256 classId, uint256 nonceId) public view override returns (uint256[] memory) {
-        return classes[classId].nonces[nonceId].infos;
+    
+    function nonceValues(uint256 classId, uint256 nonceId) public view override returns (uint256[] memory) {
+        return classes[classId].nonces[nonceId].values;
     }
 
-    function classInfoDescription(uint256 classInfo) external view returns (string memory) {
+    function classDescriptions(uint256 classInfo) external view returns (string memory) {
         return classInfoDescriptions[classInfo];
     }
 
-    function nonceInfoDescription(uint256 nonceInfo) external view returns (string memory) {
+    function nonceDescriptions(uint256 classId) external view returns (string memory) {
         return nonceInfoDescriptions[nonceInfo];
     }
 
-
-    function isRedeemable(uint256 classId, uint256 nonceId) public override view returns (bool) {
+    
+    function getProgress(uint256 classId, uint256 nonceId) public override view returns (bool) {
         return classes[classId].nonces[nonceId]._activeSupply > 0;
     }
 
