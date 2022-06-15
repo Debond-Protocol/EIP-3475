@@ -17,7 +17,7 @@ contract ERC3475 is IERC3475 {
         uint256 _activeSupply;
         uint256 _burnedSupply;
         uint256 _redeemedSupply;
-        uint256[] values;
+        uint256[] values; // here in this implementation we have for each nonce an array of 2 values: Issuance Date, Maturity Date
         mapping(address => uint256) balances;
         mapping(address => mapping(address => uint256)) allowances;
     }
@@ -30,14 +30,14 @@ contract ERC3475 is IERC3475 {
         uint256 classId;
         bool exists;
         string symbol;
-        uint256[] values;
+        uint256[] values; // here for each class we have an array of 2 values: debt token address and period of the bond (6 months or 12 months for example)
+        string[] descriptions;
+        string[] nonceDescriptions;
         mapping(address => mapping(address => bool)) operatorApprovals;
         mapping(uint256 => Nonce) nonces; // from nonceId given
-        string[] nonceInfoDescriptions; // mapping with nonce.infos
     }
 
     mapping(uint256 => Class) internal classes; // from classId given
-    string[] public classInfoDescriptions; // mapping with class.infos
 
     /**
     * @notice Here the constructor is just to initialize a class and nonce,
@@ -49,17 +49,15 @@ contract ERC3475 is IERC3475 {
         class.classId = 0;
         class.exists = true;
         class.symbol = "DBIT";
-        class.values.push(0); classInfoDescriptions.push("informationA of class A");
-        class.values.push(1); classInfoDescriptions.push("informationB of class is of type B");
-        class.values.push(2); classInfoDescriptions.push("informationC is a perfect example");
+        class.values.push(1); class.descriptions.push("Id of token Address");
+        class.values.push(180 * 24 * 3600); class.descriptions.push("period of the class");
 
         // creating nonce
         Nonce storage nonce = class.nonces[0];
         nonce.nonceId = 0;
         nonce.exists = true;
-        nonce.values.push(0); nonceInfoDescriptions.push("information nonce");
-        nonce.values.push(1); nonceInfoDescriptions.push("informationA of nonce important");
-        nonce.values.push(2); nonceInfoDescriptions.push("informationE");
+        nonce.values.push(block.timestamp); class.nonceDescriptions.push("Issuance Date");
+        nonce.values.push(block.timestamp); class.nonceDescriptions.push("Maturity Date");
     }
 
 
@@ -88,7 +86,8 @@ contract ERC3475 is IERC3475 {
 
     function redeem(address from, uint256 classId, uint256 nonceId, uint256 amount) external virtual override {
         require(from != address(0), "ERC3475: can't transfer to the zero address");
-        require(isRedeemable(classId, nonceId));
+        (, uint256 progressRemaining) = getProgress(classId, nonceId);
+        require(progressRemaining == 0, "ERC3475 Error: Not redeemable");
         _redeem(from, classId, nonceId, amount);
         emit Redeem(msg.sender, from, classId, nonceId, amount);
     }
@@ -158,22 +157,26 @@ contract ERC3475 is IERC3475 {
         return classes[classId].values;
     }
 
+    function classDescriptions(uint256 classId) external view returns (string[] memory) {
+        return classes[classId].descriptions;
+    }
     
     function nonceValues(uint256 classId, uint256 nonceId) public view override returns (uint256[] memory) {
         return classes[classId].nonces[nonceId].values;
     }
 
-    function classDescriptions(uint256 classInfo) external view returns (string memory) {
-        return classInfoDescriptions[classInfo];
+    function nonceDescriptions(uint256 classId) external view returns (string[] memory) {
+        return classes[classId].nonceDescriptions;
     }
 
-    function nonceDescriptions(uint256 classId) external view returns (string memory) {
-        return nonceInfoDescriptions[nonceInfo];
-    }
-
-    
-    function getProgress(uint256 classId, uint256 nonceId) public override view returns (bool) {
-        return classes[classId].nonces[nonceId]._activeSupply > 0;
+    /**
+     * @notice ProgressAchieved and progressRemaining is abstract, here for the example we are giving time passed and time remaining.
+     */
+    function getProgress(uint256 classId, uint256 nonceId) public override view returns (uint256 progressAchieved, uint256 progressRemaining) {
+        uint256 issuanceDate = classes[classId].nonces[nonceId].values[0];
+        uint256 maturityDate = classes[classId].nonces[nonceId].values[1];
+        progressAchieved = block.timestamp > issuanceDate ? block.timestamp - issuanceDate : 0;
+        progressRemaining = block.timestamp < maturityDate ? maturityDate - block.timestamp : 0;
     }
 
 

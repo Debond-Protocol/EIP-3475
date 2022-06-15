@@ -139,18 +139,18 @@ contract('Bond', async (accounts: string[]) => {
     })
 
     it('should return the infos of a bond class given', async () => {
-        const infos = (await bondContract.classInfos(DBITClassId));
+        const infos = (await bondContract.classValues(DBITClassId));
         console.log("class infos: ", JSON.stringify(infos))
-        infos.forEach(async i => {
-            console.log(await bondContract.classInfoDescription(i))
+        infos.forEach( i => {
+            console.log(i.toNumber())
         });
     })
 
     it('should return the infos of a nonce of bond class given', async () => {
-        const infos = (await bondContract.nonceInfos(DBITClassId, firstNonceId));
+        const infos = (await bondContract.nonceValues(DBITClassId, firstNonceId));
         console.log("nonce infos: ", JSON.stringify(infos))
-        infos.forEach(async i => {
-            console.log(await bondContract.nonceInfoDescription(i))
+        infos.forEach(i => {
+            console.log(i.toNumber())
         });
     })
 
@@ -161,9 +161,9 @@ contract('Bond', async (accounts: string[]) => {
     })
 
     it('should return if is redeemable', async () => {
-        const isRedeemable = await bondContract.isRedeemable(DBITClassId, firstNonceId);
-        console.log("is Redeemable? : ", isRedeemable)
-        assert.isBoolean(isRedeemable);
+        const getProgress = await bondContract.getProgress(DBITClassId, firstNonceId);
+        console.log("is Redeemable? : ", getProgress[1].toNumber() == 0)
+        assert.isNumber(getProgress[0].toNumber());
     })
 
     it('should return allowance of a spender', async () => {
