@@ -17,9 +17,8 @@ This token standard can replace current ERC20 LP token. ERC-3475 has more comple
 pragma solidity ^0.8;
 
 import '@DeBond-Protocol/EIP-3475/tree/main/contracts/util/IERC3475.sol';
-import '@DeBond-Protocol/EIP-3475/tree/main/contracts/util/ERC3475data.sol';
 
-contract MyTestToken is ERC3475 {
+contract MyTestToken is IERC3475 {
   ...
 }
 ```
