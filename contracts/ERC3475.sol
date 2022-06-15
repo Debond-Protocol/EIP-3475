@@ -31,26 +31,29 @@ contract ERC3475 is IERC3475 {
         bool exists;
         string symbol;
         uint256[] values; // here for each class we have an array of 2 values: debt token address and period of the bond (6 months or 12 months for example)
-        string[] descriptions;
         string[] nonceDescriptions;
         mapping(address => mapping(address => bool)) operatorApprovals;
         mapping(uint256 => Nonce) nonces; // from nonceId given
     }
 
     mapping(uint256 => Class) internal classes; // from classId given
+    string[] _classDescriptions;
+
 
     /**
     * @notice Here the constructor is just to initialize a class and nonce,
     *         in practice you will have a function to create new class and nonce
     */
     constructor() {
+        _classDescriptions.push("Id of token Address");
+        _classDescriptions.push("period of the class");
         // creating class
         Class storage class = classes[0];
         class.classId = 0;
         class.exists = true;
         class.symbol = "DBIT";
-        class.values.push(1); class.descriptions.push("Id of token Address");
-        class.values.push(180 * 24 * 3600); class.descriptions.push("period of the class");
+        class.values.push(1);
+        class.values.push(180 * 24 * 3600);
 
         // creating nonce
         Nonce storage nonce = class.nonces[0];
@@ -157,8 +160,8 @@ contract ERC3475 is IERC3475 {
         return classes[classId].values;
     }
 
-    function classDescriptions(uint256 classId) external view returns (string[] memory) {
-        return classes[classId].descriptions;
+    function classDescriptions() external view returns (string[] memory) {
+        return _classDescriptions;
     }
     
     function nonceValues(uint256 classId, uint256 nonceId) public view override returns (uint256[] memory) {

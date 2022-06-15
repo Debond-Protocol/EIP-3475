@@ -121,7 +121,7 @@ interface IERC3475 {
      * @dev Returns the descriptions for a given class
      * @notice Every bond contract can have their own list of class informations
      */
-    function classDescriptions(uint256 classInfo) external view returns (string[] memory);
+    function classDescriptions() external view returns (string[] memory);
 
     /**
      * @dev Returns the values nonce
