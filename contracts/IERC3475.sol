@@ -6,9 +6,7 @@ pragma solidity ^0.8.0;
 
 interface IERC3475 {
 
-    // STRUCTU
-
-    
+    // STRUCT   
     /**
      * @dev structure allows the transfer of any given number of bonds from an address to another.
      * @title": "defning the title information",
