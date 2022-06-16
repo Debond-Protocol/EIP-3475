@@ -7,18 +7,6 @@ pragma solidity ^0.8.0;
 interface IERC3475 {
 
     // STRUCT   
-    /**
-     * @dev structure allows the transfer of any given number of bonds from an address to another.
-     * @title": "defning the title information",
-     * @type": "explaining the type of the title information added",
-    * @description": "little description about the information stored in  the bond",
-     */
-    struct METADATA {
-        string title;
-        string types;
-        string description;
-        string[] values;
-    }
 
     /**
      * @dev structure allows the transfer of any given number of bonds from an address to another.
@@ -115,7 +103,7 @@ interface IERC3475 {
     * @dev Returns the JSON metadata of the classes.
      * The metadata SHOULD follow a set of structure explained later in eip-3475.md
      */
-    function classMetadata() external view returns (METADATA[] memory);
+    function classMetadata() external view returns (string[] memory);
 
     /**
     * @dev Returns the values of given nonceId.
@@ -127,7 +115,7 @@ interface IERC3475 {
      * @dev Returns the JSON metadata of the nonces.
      * The metadata SHOULD follow a set of structure explained later in eip-3475.md
      */
-    function nonceMetadata(uint256 classId) external view returns (METADATA[] memory);
+    function nonceMetadata(uint256 classId) external view returns (string[] memory);
 
     /**
      * @dev Returns the informations about the progress needed to redeem the bond
@@ -145,7 +133,6 @@ interface IERC3475 {
      * Returns "True" if the operator is approved, "False" if not
      */
     function isApprovedFor(address _owner, address _operator, uint256 classId) external view returns (bool);
-
 
     // EVENTS
 
