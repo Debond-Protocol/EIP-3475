@@ -15,7 +15,7 @@ interface IERC3475 {
      */
     struct Metadata {
         string title;
-        string types;
+        string _type;
         string description;
         string[] values;
     }
@@ -27,8 +27,8 @@ interface IERC3475 {
      * @_amount is the _amount of the bond, that will be transferred from "_from" address to "_to" address.
      */
     struct Transaction {
-        uint256 classIds;
-        uint256 nonceIds;
+        uint256 classId;
+        uint256 nonceId;
         uint256 _amount;
     }
 
@@ -46,28 +46,28 @@ interface IERC3475 {
      * The calling of this function needs to be restricted to bond issuer contract.
      * @param _to is the address to which the bond will be issued.
      */
-    function issue(address _to, Transaction[] calldata _transaction) external;
+    function issue(address _to, Transaction[] calldata _transactions) external;
 
     /**
      * @dev allows redemption of any number of bond types from an address.
      * The calling of this function needs to be restricted to bond issuer contract.
      * @param _from is the address _from which the bond will be redeemed.
      */
-    function redeem(address _from, Transaction[] calldata _transaction) external;
+    function redeem(address _from, Transaction[] calldata _transactions) external;
 
     /**
      * @dev allows the transfer of any number of bond types from an address to another.
      * The calling of this function needs to be restricted to bond issuer contract.
      * @param _from argument is the address of the holder whose balance about to decrees.
      */
-    function burn(address _from, Transaction[] calldata _transaction) external;
+    function burn(address _from, Transaction[] calldata _transactions) external;
 
     /**
      * @dev Allows _spender to withdraw from your account multiple times, up to the _amount.
      * @notice If this function is called again it overwrites the current allowance with _amount.
      * @param _spender is the address the caller approve for his bonds
      */
-    function approve(address _spender, Transaction[] calldata _transaction) external;
+    function approve(address _spender, Transaction[] calldata _transactions) external;
 
     /**
      * @notice Enable or disable approval for a third party ("operator") to manage all of the caller's tokens.
@@ -151,22 +151,22 @@ interface IERC3475 {
     /**
      * @notice MUST trigger when tokens are transferred, including zero value transfers.
      */
-    event Transfer(address indexed _operator, address indexed _from, address indexed _to, Transaction[] _transaction);
+    event Transfer(address indexed _operator, address indexed _from, address indexed _to, Transaction[] _transactions);
 
     /**
      * @notice MUST trigger when tokens are issued
      */
-    event Issue(address indexed _operator, address indexed _to, Transaction[] _transaction);
+    event Issue(address indexed _operator, address indexed _to, Transaction[] _transactions);
 
     /**
      * @notice MUST trigger when tokens are redeemed
      */
-    event Redeem(address indexed _operator, address indexed _from, Transaction[] _transaction);
+    event Redeem(address indexed _operator, address indexed _from, Transaction[] _transactions);
 
     /**
      * @notice MUST trigger when tokens are burned
      */
-    event Burn(address indexed _operator, address indexed _from, Transaction[] _transaction);
+    event Burn(address indexed _operator, address indexed _from, Transaction[] _transactions);
 
     /**
      * @dev MUST emit when approval for a second party/operator address to manage all bonds from a classId given for an owner address is enabled or disabled (absence of an event assumes disabled).
