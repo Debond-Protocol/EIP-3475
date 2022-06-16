@@ -146,7 +146,6 @@ interface IERC3475 {
      */
     function isApprovedFor(address _owner, address _operator, uint256 classId) external view returns (bool);
 
-
     // EVENTS
 
     /**
