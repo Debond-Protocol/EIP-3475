@@ -1,0 +1,17 @@
+{
+  "name": "erc3475",
+  "version": "0.0.1",
+  "description": "contracts for EIP 3475",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "solidity",
+    "ethereum",
+    "debond",
+    "erc3475"
+  ],
+  "author": "Debond Team",
+  "license": "ISC"
+}
