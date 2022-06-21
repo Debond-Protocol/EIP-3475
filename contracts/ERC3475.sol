@@ -6,7 +6,8 @@ import "./IERC3475.sol";
 //@Yu The math library imported here support only 0.8.7 and above need to change the version of the library
 import "./utils/MathLibrary.sol";
 
-//@Yu need to add comments to functions and params based on the eip-3475.md file
+//@Yu need to add comments to functions and params based on the eip-3475.md file Also we need to fix all the problems related to spaces and lines. 
+//We need use one standard for all the codes.
 
 
 contract ERC3475 is IERC3475, MathLibrary {
