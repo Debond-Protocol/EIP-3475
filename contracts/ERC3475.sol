@@ -110,7 +110,7 @@ contract ERC3475 is IERC3475, MathLibrary {
                 _transactions[i]._amount <= allowance(_from, msg.sender, _transactions[i].classId, _transactions[i].nonceId),
                 "ERC3475:caller-not-owner-or-approved"
             );
-            _transferFrom(_from, _to, _transactions[0]);
+            _transferFrom(_from, _to, _transactions[i]);
         }
         emit Transfer(msg.sender, _from, _to, _transactions);
     }
@@ -175,7 +175,7 @@ contract ERC3475 is IERC3475, MathLibrary {
                 _transactions[i]._amount <= allowance(_from, msg.sender, _transactions[i].classId, _transactions[i].nonceId),
                 "ERC3475: caller-not-owner-or-approved"
             );
-            _transferFrom(_from, address(0), _transactions[0]);
+            _transferFrom(_from, address(0), _transactions[i]);
         }      
         emit Burn(msg.sender, _from, _transactions);
     }
