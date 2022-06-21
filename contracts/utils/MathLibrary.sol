@@ -4,7 +4,7 @@
 allows the basic arithmetic and evaluation operation converted in string.
  
 */
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.0;
 
 contract MathLibrary {
     //=== add two floating points. Input and output are all unsigned integers
