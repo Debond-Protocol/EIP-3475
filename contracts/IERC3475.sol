@@ -6,7 +6,8 @@ pragma solidity ^0.8.0;
 
 interface IERC3475 {
 
-    // STRUCTRE 
+
+    // STRUCTURE   
     /**
      * @dev structure allows the transfer of any given number of bonds from an address to another.
      * @title": "defning the title information",
@@ -32,6 +33,7 @@ interface IERC3475 {
         uint256 _amount;
     }
 
+    // WRITABLE
 
     // WRITABLE
     /**
@@ -40,14 +42,12 @@ interface IERC3475 {
      * @param _to argument is the address of the recipient whose balance is about to increased.
      */
     function transferFrom(address _from, address _to, TRANSACTION[] calldata _transaction) external;
-
     /**
      * @dev allows issuing of any number of bond types to an address.
      * The calling of this function needs to be restricted to bond issuer contract.
      * @param _to is the address to which the bond will be issued.
      */
     function issue(address _to, TRANSACTION[] calldata _transaction) external;
-
     /**
      * @dev allows redemption of any number of bond types from an address.
      * The calling of this function needs to be restricted to bond issuer contract.
@@ -61,14 +61,12 @@ interface IERC3475 {
      * @param _from argument is the address of the holder whose balance about to decrees.
      */
     function burn(address _from, TRANSACTION[] calldata _transaction) external;
-
     /**
      * @dev Allows _spender to withdraw from your account multiple times, up to the _amount.
      * @notice If this function is called again it overwrites the current allowance with _amount.
      * @param _spender is the address the caller approve for his bonds
      */
     function approve(address _spender, TRANSACTION[] calldata _transaction) external;
-
     /**
      * @notice Enable or disable approval for a third party ("operator") to manage all of the caller's tokens.
      * @dev MUST emit the ApprovalForAll event on success.
@@ -77,7 +75,6 @@ interface IERC3475 {
      * @param _approved "True" if the operator is approved, "False" to revoke approval
      */
     function setApprovalFor(address _operator, uint256 classId, bool _approved) external;
-
 
     // READABLES 
     /**
@@ -108,16 +105,14 @@ interface IERC3475 {
     /**
     * @dev Returns the values of given classId.
      * the metadata SHOULD follow a set of structure explained in eip-3475.md
-     * 
      */
-    function classValues(uint256 classId) external view returns (uint[] memory);
+    function classValues(uint256 classId) external view returns (uint256[] memory);
 
     /**
     * @dev Returns the JSON metadata of the classes.
      * The metadata SHOULD follow a set of structure explained later in eip-3475.md
      */
     function classMetadata() external view returns (METADATA[] memory);
-
     /**
     * @dev Returns the values of given nonceId.
      * The metadata SHOULD follow a set of structure explained in eip-3475.md
@@ -129,7 +124,6 @@ interface IERC3475 {
      * The metadata SHOULD follow a set of structure explained later in eip-3475.md
      */
     function nonceMetadata(uint256 classId) external view returns (METADATA[] memory);
-
     /**
      * @dev Returns the informations about the progress needed to redeem the bond
      * @notice Every bond contract can have their own logic concerning the progress definition.
@@ -163,12 +157,10 @@ interface IERC3475 {
      * @notice MUST trigger when tokens are redeemed
      */
     event Redeem(address indexed _operator, address indexed _from, TRANSACTION[] _transaction);
-
     /**
      * @notice MUST trigger when tokens are burned
      */
     event Burn(address indexed _operator, address indexed _from, TRANSACTION[] _transaction);
-
     /**
      * @dev MUST emit when approval for a second party/operator address to manage all bonds from a classId given for an owner address is enabled or disabled (absence of an event assumes disabled).
      */
