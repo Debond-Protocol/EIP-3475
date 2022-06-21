@@ -1,4 +1,3 @@
-import { before } from "mocha";
 import {ERC3475Instance} from "../types/truffle-contracts";
 
 
@@ -24,6 +23,11 @@ contract('Bond', async (accounts: string[]) => {
     const DBITClassId: number  = 0;
     const firstNonceId:  number = 0;
   
+
+    bondContract = await Bond.deployed();
+    await bondContract.init({from:accounts[0]});
+
+
     it('should issue bonds to a lender ', async () => {
         bondContract = await Bond.deployed();
         let _transactionIssuer : _transaction[] 
