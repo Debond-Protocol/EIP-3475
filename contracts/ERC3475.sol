@@ -6,11 +6,14 @@ import "./IERC3475.sol";
 //@Yu The math library imported here support only 0.8.7 and above need to change the version of the library
 import "./utils/MathLibrary.sol";
 
+
+import "@openzeppelin/contracts/access/Ownable.sol";
+
 //@Yu need to add comments to functions and params based on the eip-3475.md file Also we need to fix all the problems related to spaces and lines. 
 //We need use one standard for all the codes.
 
 
-contract ERC3475 is IERC3475, MathLibrary {
+contract ERC3475 is IERC3475, MathLibrary, Ownable {
     /** 
     * @notice this Struct is representing the NONCE properties as an object
     */
@@ -58,7 +61,12 @@ contract ERC3475 is IERC3475, MathLibrary {
      * in practice you will have a function to create new class and nonce
      */
     constructor() {
+       
+    }
 
+
+    //  to be deployed during the initial deployement cycle
+    function init() public onlyOwner  {
         // create class, in other implementation, a create class function can be added
         classes[0].exists = true;
 
@@ -94,7 +102,10 @@ contract ERC3475 is IERC3475, MathLibrary {
         classes[0]._nonceMetadata[0].title = "int";
         classes[0]._nonceMetadata[0].description = "maturity date";
 
+
     }
+
+
 
     // WRITABLE
     function transferFrom(
