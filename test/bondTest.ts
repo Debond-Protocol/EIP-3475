@@ -1,3 +1,4 @@
+import { before } from "mocha";
 import {ERC3475Instance} from "../types/truffle-contracts";
 
 
@@ -12,14 +13,30 @@ contract('Bond', async (accounts: string[]) => {
     const secondaryMarketBuyer2 = accounts[4];
     const spender = accounts[5];
 
-    const DBITClassId = 0
+    interface _transaction  {
+        classId: string | number | BN;
+        nonceId: string | number | BN;
+        _amount: string | number | BN;
+    }
 
-    const firstNonceId = 0;
 
+
+    const DBITClassId: number  = 0;
+    const firstNonceId:  number = 0;
+  
     it('should issue bonds to a lender ', async () => {
         bondContract = await Bond.deployed();
-        await bondContract.issue(lender, DBITClassId, firstNonceId, 7000, {from: accounts[0]})
-        await bondContract.issue(lender, DBITClassId, firstNonceId, 7000, {from: accounts[0]})
+        let _transactionIssuer : _transaction[] 
+        = 
+        [{
+            classId:DBITClassId,
+            nonceId:firstNonceId,
+            _amount: 7000 }];
+
+        //const transaction {}
+
+        await bondContract.issue(lender, _transactionIssuer, {from: accounts[0]})
+        await bondContract.issue(lender, _transactionIssuer, {from: accounts[0]})
         const balance = (await bondContract.balanceOf(lender, DBITClassId, firstNonceId)).toNumber()
         const activeSupply = (await bondContract.activeSupply(DBITClassId, firstNonceId)).toNumber()
         assert.equal(balance, 14000);
@@ -27,7 +44,15 @@ contract('Bond', async (accounts: string[]) => {
     })
     //
     it('should be able the lender to transfer bonds to another address', async () => {
-        await bondContract.transferFrom(lender, secondaryMarketBuyer, DBITClassId, firstNonceId, 2000, {from: lender})
+
+        const transferBonds : _transaction[] = [
+            {classId:DBITClassId,
+            nonceId:firstNonceId,
+            _amount: 2000
+
+            }];
+
+        await bondContract.transferFrom(lender, secondaryMarketBuyer, transferBonds, {from: lender})
         const lenderBalance = (await bondContract.balanceOf(lender, DBITClassId, firstNonceId)).toNumber()
         const secondaryBuyerBalance = (await bondContract.balanceOf(secondaryMarketBuyer, DBITClassId, firstNonceId)).toNumber()
         const activeSupply = (await bondContract.activeSupply(DBITClassId, firstNonceId)).toNumber()
@@ -37,10 +62,16 @@ contract('Bond', async (accounts: string[]) => {
     })
     //
     it('should be able to manipulate bonds after approval', async () => {
+        const transactionApproval : _transaction[] = [
+            {classId:DBITClassId,
+            nonceId:firstNonceId,
+            _amount: 2000
+
+            }];
         await bondContract.setApprovalFor(operator, DBITClassId, true, {from: lender})
         const isApproved = await bondContract.isApprovedFor(lender, operator, DBITClassId);
         assert.isTrue(isApproved);
-        await bondContract.transferFrom(lender, secondaryMarketBuyer2, DBITClassId, firstNonceId, 3000, {from: operator})
+        await bondContract.transferFrom(lender, secondaryMarketBuyer2, transactionApproval, {from: operator})
         assert.equal((await bondContract.balanceOf(lender, DBITClassId, firstNonceId)).toNumber(), 9000);
         assert.equal((await bondContract.balanceOf(secondaryMarketBuyer2, DBITClassId, firstNonceId)).toNumber(), 3000);
 
@@ -48,7 +79,14 @@ contract('Bond', async (accounts: string[]) => {
     //
     //
     it('should redeem bonds when conditions are met', async () => {
-        await bondContract.redeem(lender, DBITClassId, firstNonceId, 3000);
+        const redemptionTransaction : _transaction[] = [
+            {classId:DBITClassId,
+            nonceId:firstNonceId,
+            _amount: 2000
+
+            }];
+
+        await bondContract.redeem(lender, redemptionTransaction);
         assert.equal((await bondContract.balanceOf(lender, DBITClassId, firstNonceId)).toNumber(), 6000);
     })
 
@@ -57,31 +95,64 @@ contract('Bond', async (accounts: string[]) => {
 
 
     it('should transfer bonds from an caller address to another', async () => {
-        const tx = (await bondContract.transferFrom(lender, secondaryMarketBuyer, DBITClassId, firstNonceId, 500, {from: lender})).tx;
+
+        const transactionTransfer : _transaction[] = [
+            {classId:DBITClassId,
+            nonceId:firstNonceId,
+            _amount: 500
+
+            }];
+        const tx = (await bondContract.transferFrom(lender, secondaryMarketBuyer, transactionTransfer)).tx;
         console.log(tx)
         assert.isString(tx);
     })
 
     it('should issue bonds to a given address', async () => {
-        const tx = (await bondContract.issue(lender, DBITClassId, firstNonceId, 500)).tx;
+      
+        const transactionIssue : _transaction[] = [
+            {classId:DBITClassId,
+            nonceId:firstNonceId,
+            _amount: 500
+
+            }];
+
+      
+        const tx = (await bondContract.issue(lender, transactionIssue)).tx;
         console.log(tx)
         assert.isString(tx);
     })
 
     it('should redeem bonds from a given address', async () => {
-        const tx = (await bondContract.redeem(lender, DBITClassId, firstNonceId, 500)).tx;
+        const transactionRedeem : _transaction[] = [
+            {classId:DBITClassId,
+            nonceId:firstNonceId,
+            _amount: 500
+
+            }];
+
+        const tx = (await bondContract.redeem(lender, transactionRedeem)).tx;
         console.log(tx)
         assert.isString(tx);
     })
 
     it('should burn bonds from a given address', async () => {
-        const tx = (await bondContract.burn(lender, DBITClassId, firstNonceId, 500)).tx;
+        const transactionRedeem : _transaction[] = [
+            {classId:DBITClassId,
+            nonceId:firstNonceId,
+            _amount: 500
+            }];
+        const tx = (await bondContract.burn(lender, transactionRedeem)).tx;
         console.log(tx)
         assert.isString(tx);
     })
 
     it('should approve spender to manage a given amount of bonds from the caller address', async () => {
-        const tx = (await bondContract.approve(spender, DBITClassId, firstNonceId, 500, {from: lender})).tx;
+        const transactionApprove : _transaction[] = [
+            {classId:DBITClassId,
+            nonceId:firstNonceId,
+            _amount: 500
+            }];
+        const tx = (await bondContract.approve(spender, transactionApprove)).tx;
         console.log(tx)
         assert.isString(tx);
     })
@@ -93,7 +164,18 @@ contract('Bond', async (accounts: string[]) => {
     })
 
     it('should batch approve', async () => {
-        const tx = (await bondContract.batchApprove(spender, [DBITClassId], [firstNonceId], [500], {from: lender})).tx;
+       
+        const transactionApprove : _transaction[] = [
+            {classId:DBITClassId,
+            nonceId:firstNonceId,
+            _amount: 500
+            },
+            {classId:1, nonceId: 1, _amount:900 }
+        
+        ];
+       
+       
+        const tx = (await bondContract.approve(spender,transactionApprove)).tx;
         console.log(tx)
         assert.isString(tx);
     })
@@ -133,9 +215,10 @@ contract('Bond', async (accounts: string[]) => {
     })
 
     it('should return the symbol of a class of bond', async () => {
-        const symbol = (await bondContract.symbol(DBITClassId));
-        console.log(symbol)
-        assert.isString(symbol);
+        
+        const symbol: BN[] = (await bondContract.classValues(DBITClassId));
+        console.log(JSON.stringify(symbol[0]));
+        assert.isString(symbol.toString);
     })
 
     it('should return the infos of a bond class given', async () => {
