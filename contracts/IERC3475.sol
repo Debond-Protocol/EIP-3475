@@ -6,7 +6,7 @@ pragma solidity ^0.8.0;
 
 interface IERC3475 {
 
-    // STRUCT   
+    // STRUCTRE 
     /**
      * @dev structure allows the transfer of any given number of bonds from an address to another.
      * @title": "defning the title information",
@@ -32,8 +32,8 @@ interface IERC3475 {
         uint256 _amount;
     }
 
-    // WRITABLE
 
+    // WRITABLE
     /**
      * @dev allows the transfer of a bond from an address to another (either single or in batches).
      * @param _from argument is the address of the holder whose balance about to decrease.
@@ -78,8 +78,8 @@ interface IERC3475 {
      */
     function setApprovalFor(address _operator, uint256 classId, bool _approved) external;
 
-    // READABLES 
 
+    // READABLES 
     /**
      * @dev Returns the total supply of the bond in question.
      */
@@ -149,7 +149,6 @@ interface IERC3475 {
 
 
     // EVENTS
-
     /**
      * @notice MUST trigger when tokens are transferred, including zero value transfers.
      */
