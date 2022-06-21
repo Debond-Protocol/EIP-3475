@@ -27,16 +27,16 @@ interface IERC3475 {
      * @_amount is the _amount of the bond, that will be transferred from "_from" address to "_to" address.
      */
     struct TRANSACTION {
-        uint256 classIds;
-        uint256 nonceIds;
+        uint256 classId;
+        uint256 nonceId;
         uint256 _amount;
     }
 
     // WRITABLE
 
     /**
-     * @dev allows the transfer of a bond from an address to another.
-     * @param _from argument is the address of the holder whose balance about to decrees.
+     * @dev allows the transfer of a bond from an address to another (either single or in batches).
+     * @param _from argument is the address of the holder whose balance about to decrease.
      * @param _to argument is the address of the recipient whose balance is about to increased.
      */
     function transferFrom(address _from, address _to, TRANSACTION[] calldata _transaction) external;
@@ -108,8 +108,9 @@ interface IERC3475 {
     /**
     * @dev Returns the values of given classId.
      * the metadata SHOULD follow a set of structure explained in eip-3475.md
+     * 
      */
-    function classValues(uint256 classId) external view returns (uint256[] memory);
+    function classValues(uint256 classId) external view returns (uint[] memory);
 
     /**
     * @dev Returns the JSON metadata of the classes.
