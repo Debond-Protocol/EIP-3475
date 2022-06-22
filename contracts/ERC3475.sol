@@ -121,13 +121,13 @@ contract ERC3475 is IERC3475, MathLibrary, Ownable {
             _to != address(0),
             "ERC3475: can't transfer to the zero address"
         );
-        uint256 len = _transactions.length;
-        for (uint256 i = 0; i < len; i++) {
-            require(
+        require(
                 msg.sender == _from ||
-                isApprovedFor(_from, msg.sender, _transactions[i].classId),
+                isApprovedFor(_from, msg.sender),
                 "ERC3475:caller-not-owner-or-approved"
             );
+        uint256 len = _transactions.length;
+        for (uint256 i = 0; i < len; i++) {           
             _transferFrom(_from, _to, _transactions[i]);
         }
         emit Transfer(msg.sender, _from, _to, _transactions);
@@ -188,6 +188,11 @@ contract ERC3475 is IERC3475, MathLibrary, Ownable {
             _from != address(0),
             "ERC3475: can't redeem from the zero address"
         );
+        require(
+            msg.sender == _from ||
+            isApprovedFor(_from, msg.sender),
+            "ERC3475: caller-not-owner-or-approved"
+        ); 
         uint256 len = _transactions.length;
         for (uint256 i = 0; i < len; i++) {
             (, uint256 progressRemaining) = getProgress(
@@ -209,14 +214,14 @@ contract ERC3475 is IERC3475, MathLibrary, Ownable {
             _from != address(0),
             "ERC3475: can't burn from the zero address"
         );
+         require(
+              msg.sender == _from ||
+              isApprovedFor(_from, msg.sender),
+              "ERC3475: caller-not-owner-or-approved"
+          ); 
+        
         uint256 len = _transactions.length;
         for (uint256 i = 0; i < len; i++) {
-            require(
-                msg.sender == _from ||
-                isApprovedFor(_from, msg.sender, _transactions[i].classId)||
-                _transactions[i]._amount <= allowance(_from, msg.sender, _transactions[i].classId, _transactions[i].nonceId),
-                "ERC3475: caller-not-owner-or-approved"
-            );
             _transferFrom(_from, address(0), _transactions[i]);
         }      
         emit Burn(msg.sender, _from, _transactions);
@@ -373,8 +378,7 @@ contract ERC3475 is IERC3475, MathLibrary, Ownable {
 
     function isApprovedFor(
         address owner,
-        address operator,
-        uint256 classId
+        address operator
     ) public view virtual override returns (bool) {
         //require(owner == classes[classId].) TODO: generally this is the function implemented by the bank contract for allowing the approval for the whole class.
         return classes[classId].operatorApprovals[owner][operator];
