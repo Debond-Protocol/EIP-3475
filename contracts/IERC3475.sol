@@ -6,7 +6,6 @@ pragma solidity ^0.8.0;
 
 interface IERC3475 {
 
-
     // STRUCTURE   
     /**
      * @dev structure allows the transfer of any given number of bonds from an address to another.
@@ -139,12 +138,10 @@ interface IERC3475 {
      * @notice MUST trigger when tokens are transferred, including zero value transfers.
      */
     event Transfer(address indexed _operator, address indexed _from, address indexed _to, TRANSACTION[] _transaction);
-
     /**
      * @notice MUST trigger when tokens are issued
      */
     event Issue(address indexed _operator, address indexed _to, TRANSACTION[] _transaction);
-
     /**
      * @notice MUST trigger when tokens are redeemed
      */
