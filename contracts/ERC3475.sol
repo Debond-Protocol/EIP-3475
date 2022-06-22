@@ -113,15 +113,46 @@ contract ERC3475 is IERC3475, MathLibrary, Ownable {
         address _to,
         TRANSACTION[] calldata _transactions
     ) public virtual override {
+        require(
+            _from != address(0),
+            "ERC3475: can't transfer from the zero address"
+        );
+        require(
+            _to != address(0),
+            "ERC3475: can't transfer to the zero address"
+        );
         uint256 len = _transactions.length;
         for (uint256 i = 0; i < len; i++) {
             require(
                 msg.sender == _from ||
-                isApprovedFor(_from, msg.sender, _transactions[i].classId)||
-                _transactions[i]._amount <= allowance(_from, msg.sender, _transactions[i].classId, _transactions[i].nonceId),
+                isApprovedFor(_from, msg.sender, _transactions[i].classId),
                 "ERC3475:caller-not-owner-or-approved"
             );
             _transferFrom(_from, _to, _transactions[i]);
+        }
+        emit Transfer(msg.sender, _from, _to, _transactions);
+    }
+
+    function transferAllowenceFrom(
+        address _from,
+        address _to,
+        TRANSACTION[] calldata _transactions
+    ) public virtual override {
+        require(
+            _from != address(0),
+            "ERC3475: can't transfer from the zero address"
+        );
+        require(
+            _to != address(0),
+            "ERC3475: can't transfer to the zero address"
+        );
+        uint256 len = _transactions.length;
+        for (uint256 i = 0; i < len; i++) {
+            require(
+                _transactions[i]._amount <= allowance(_from, msg.sender, _transactions[i].classId, _transactions[i].nonceId),
+                "ERC3475:caller-not-owner-or-approved"
+            );
+            _transferAllowenceFrom(_from, _to, _transactions[i]);
         }
         emit Transfer(msg.sender, _from, _to, _transactions);
     }
@@ -356,14 +387,7 @@ contract ERC3475 is IERC3475, MathLibrary, Ownable {
         address _to,
         IERC3475.TRANSACTION calldata _transaction
     ) private {
-        require(
-            _from != address(0),
-            "ERC3475: can't transfer from the zero address"
-        );
-        require(
-            _to != address(0),
-            "ERC3475: can't transfer to the zero address"
-        );
+
         require(
             classes[_transaction.classId]
                 .nonces[_transaction.nonceId]
@@ -373,9 +397,34 @@ contract ERC3475 is IERC3475, MathLibrary, Ownable {
         //transfer balance        
         classes[_transaction.classId].nonces[_transaction.nonceId].balances[_from] -=
         _transaction._amount;
-
         classes[_transaction.classId].nonces[_transaction.nonceId].balances[_to] +=
         _transaction._amount;    
+    }
+
+      function _transferAllowenceFrom(
+        address _from,
+        address _to,
+        IERC3475.TRANSACTION calldata _transaction
+    ) private {
+    
+        require(
+            classes[_transaction.classId]
+                .nonces[_transaction.nonceId]
+                .balances[_from] >= _transaction._amount,
+            "ERC3475: not allowed amount"
+        );
+
+        classes[_transactions[i].classId]
+            .nonces[_transactions[i].nonceId]
+            .allowances[msg.sender][_spender] -= _transactions[i]._amount;
+
+        //transfer balance        
+        classes[_transaction.classId].nonces[_transaction.nonceId].balances[_from] -=
+        _transaction._amount;
+        classes[_transaction.classId].nonces[_transaction.nonceId].balances[_to] +=
+        _transaction._amount;    
+
+        
     }
 
     function _issue(
