@@ -130,7 +130,7 @@ interface IERC3475 {
     * @notice Queries the approval status of an operator for a given owner.
      * Returns "True" if the operator is approved, "False" if not
      */
-    function isApprovedFor(address _owner, address _operator, uint256 classId) external view returns (bool);
+    function isApprovedFor(address _owner, address _operator) external view returns (bool);
 
 
     // EVENTS
@@ -153,6 +153,6 @@ interface IERC3475 {
     /**
      * @dev MUST emit when approval for a second party/operator address to manage all bonds from a classId given for an owner address is enabled or disabled (absence of an event assumes disabled).
      */
-    event ApprovalFor(address indexed _owner, address indexed _operator, uint256 classId, bool _approved);
+    event ApprovalFor(address indexed _owner, address indexed _operator, bool _approved);
 
 }
