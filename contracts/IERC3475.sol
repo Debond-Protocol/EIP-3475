@@ -7,6 +7,16 @@ pragma solidity ^0.8.0;
 interface IERC3475 {
 
     // STRUCTURE   
+
+    /**
+     * @dev VALUES structure of the METADATA
+     */
+    struct VALUES{        
+        string stringValues;
+        uint uintValues;
+        address addressValues;
+
+    }
     /**
      * @dev structure allows the transfer of any given number of bonds from an address to another.
      * @title": "defning the title information",
@@ -17,7 +27,6 @@ interface IERC3475 {
         string title;
         string types;
         string description;
-        string[] values;
     }
     /**
      * @dev structure allows the transfer of any given number of bonds from an address to another.
@@ -98,25 +107,25 @@ interface IERC3475 {
      */
     function balanceOf(address _account, uint256 classId, uint256 nonceId) external view returns (uint256);
     /**
-    * @dev Returns the values of given classId.
-     * the metadata SHOULD follow a set of structure explained in eip-3475.md
-     */
-    function classValues(uint256 classId) external view returns (uint256[] memory);
-    /**
-    * @dev Returns the JSON metadata of the classes.
+     * @dev Returns the JSON metadata of the classes.
      * The metadata SHOULD follow a set of structure explained later in eip-3475.md
      */
-    function classMetadata() external view returns (METADATA[] memory);
-    /**
-    * @dev Returns the values of given nonceId.
-     * The metadata SHOULD follow a set of structure explained in eip-3475.md
-     */
-    function nonceValues(uint256 classId, uint256 nonceId) external view returns (uint256[] memory);
+    function classMetadata(uint256 metadataId) external view returns (METADATA memory);
     /**
      * @dev Returns the JSON metadata of the nonces.
      * The metadata SHOULD follow a set of structure explained later in eip-3475.md
      */
-    function nonceMetadata(uint256 classId) external view returns (METADATA[] memory);
+    function nonceMetadata(uint256 classId, uint256 metadataId) external view returns (METADATA memory);
+    /**
+     * @dev Returns the values of given classId.
+     * the metadata SHOULD follow a set of structure explained in eip-3475.md
+     */
+    function classValues(uint256 classId, uint256 metadataId) external view returns (VALUES memory);
+    /**
+     * @dev Returns the values of given nonceId.
+     * The metadata SHOULD follow a set of structure explained in eip-3475.md
+     */
+    function nonceValues(uint256 classId, uint256 nonceId, uint256 metadataId) external view returns (VALUES memory);
     /**
      * @dev Returns the informations about the progress needed to redeem the bond
      * @notice Every bond contract can have their own logic concerning the progress definition.
