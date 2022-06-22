@@ -14,9 +14,9 @@ contract ERC3475 is IERC3475, Ownable {
     */
     struct NONCE {
         bool exists;
+        mapping(uint256 => IERC3475.VALUES) _values;  
 
         // stores the values corresponding to the dates (issuance and maturity date).
-        uint256[] _values; 
         mapping(address => uint256) balances;
         mapping(address => mapping(address => uint256)) allowances;
         address owner;
@@ -33,11 +33,10 @@ contract ERC3475 is IERC3475, Ownable {
      */
     struct CLASS {
         bool exists;
+        mapping(uint256 => IERC3475.VALUES) _values;    
 
-        // here for each class we have an array of 2 values: debt token address and period of the bond (6 months or 12 months for example)
-        uint256[] _values; 
-        IERC3475.METADATA[] _nonceMetadata;        
-        mapping(uint256 => NONCE) nonces;
+        mapping(uint256 => IERC3475.METADATA) _nonceMetadata;    
+        mapping(uint256 => NONCE) nonces;        
 
         // supplies of this class
         uint256 _activeSupply;
@@ -49,19 +48,14 @@ contract ERC3475 is IERC3475, Ownable {
 
     // from classId given
     mapping(uint256 => CLASS) internal classes; 
-    IERC3475.METADATA[] _classMetadata;
+    mapping(uint256 => IERC3475.METADATA) _classMetadata;
 
     /**
      * @notice Here the constructor is just to initialize a class and nonce,
      * in practice you will have a function to create new class and nonce
+     * to be deployed during the initial deployement cycle
      */
     constructor() {
-       
-    }
-
-
-    //  to be deployed during the initial deployement cycle
-    function init() public onlyOwner  {
         // create class, in other implementation, a create class function can be added
         classes[0].exists = true;
 
@@ -69,38 +63,33 @@ contract ERC3475 is IERC3475, Ownable {
         _classMetadata[0].title = "symbol";
         _classMetadata[0].types = "string";
         _classMetadata[0].description = "symbol of the class";
+        classes[0]._values[0].stringValues = "DBIT Fix 6M";
 
         // define "period of the class";
         _classMetadata[5].title = "period";
         _classMetadata[5].types = "int";
         _classMetadata[5].description = "details about issuance and redemption time";
-
-        // add metadata values to the metadata structure, this value will only for the front end
-        _classMetadata[0].values[0] = "DBIT Fix 6M";
-
-        // add values to the class structure, this value can be read by the the smart contract and the front end
-        classes[0]._values[5] = 180 days;
-
-
+        classes[0]._values[5].uintValues = 180 days;
+   
         // create nonces, in other implementation, a create nonce function can be added
         classes[0].nonces[0].exists = true;
         classes[0].nonces[1].exists = true;
         classes[0].nonces[2].exists = true;
 
         // write the time of maturity to nonce values, in other implementation, a create nonce function can be added
-        classes[0].nonces[0]._values[0] = block.timestamp + 180 days;
-        classes[0].nonces[1]._values[0] = block.timestamp + 181 days;
-        classes[0].nonces[2]._values[0] = block.timestamp + 182 days;
+        classes[0].nonces[0]._values[0].uintValues = block.timestamp + 180 days;
+        classes[0].nonces[0]._values[0].uintValues = block.timestamp + 181 days;
+        classes[0].nonces[0]._values[0].uintValues = block.timestamp + 182 days;
 
         // define "maturity of the nonce";        
         classes[0]._nonceMetadata[0].title = "maturity";
         classes[0]._nonceMetadata[0].title = "int";
         classes[0]._nonceMetadata[0].description = "maturity date";
-
+                
+        // create class, in other implementation, a create class function can be added
+        classes[0].exists = true;
 
     }
-
-
 
     // WRITABLE
     function transferFrom(
@@ -301,44 +290,39 @@ contract ERC3475 is IERC3475, Ownable {
         );
         return classes[classId].nonces[nonceId].balances[account];
     }
-
-    /**
-    @dev here the classValues are stored in the single array as being described on the 
-    
-     */
-    function classValues(uint256 classId)
-        public
-        view
-        override
-        returns (uint256[] memory)
-    {
-        return classes[classId]._values;
-    }
-
-    function nonceValues(uint256 classId, uint256 nonceId)
-        public
-        view
-        override
-        returns (uint256[] memory)
-    {
-        return classes[classId].nonces[nonceId]._values;
-    }
-
-    function classMetadata() 
+ 
+    function classMetadata(uint256 metadataId) 
     external 
     view 
     override 
-    returns (METADATA[] memory) {
-        return (_classMetadata);
+    returns (METADATA memory) {
+        return (_classMetadata[metadataId]);
     }
 
-    function nonceMetadata(uint256 classId)
+    function nonceMetadata(uint256 classId, uint256 metadataId)
         external
         view
         override
-        returns (METADATA[] memory) {
-        return (classes[classId]._nonceMetadata);
+        returns (METADATA memory) {
+        return (classes[classId]._nonceMetadata[metadataId]);
     }
+
+    function classValues(uint256 classId, uint256 metadataId) 
+    external 
+    view 
+    override 
+    returns (VALUES memory) {
+        return (classes[classId]._values[metadataId]);
+    }
+
+    function nonceValues(uint256 classId, uint256 nonceId, uint256 metadataId)
+        external
+        view
+        override
+        returns (VALUES memory) {
+        return (classes[classId].nonces[nonceId]._values[metadataId]);
+    }
+
 
     /**
      * @notice ProgressAchieved and progressRemaining is abstract, here for the example we are giving time passed and time remaining.
@@ -349,8 +333,8 @@ contract ERC3475 is IERC3475, Ownable {
         override
         returns (uint256 progressAchieved, uint256 progressRemaining)
     {
-        uint256 issuanceDate = classes[classId].nonces[nonceId]._values[0];
-        uint256 maturityDate = issuanceDate + classes[classId]._values[5];        
+        uint256 issuanceDate = classes[classId].nonces[nonceId]._values[0].uintValues;
+        uint256 maturityDate = issuanceDate + classes[classId].nonces[nonceId]._values[5].uintValues;        
         progressAchieved = block.timestamp - issuanceDate;
         progressRemaining = block.timestamp < maturityDate
             ? maturityDate - block.timestamp
@@ -473,3 +457,4 @@ contract ERC3475 is IERC3475, Ownable {
     }
 
 }
+
