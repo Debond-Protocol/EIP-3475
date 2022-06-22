@@ -73,10 +73,9 @@ interface IERC3475 {
      * @notice Enable or disable approval for a third party ("operator") to manage all of the caller's tokens.
      * @dev MUST emit the ApprovalForAll event on success.
      * @param _operator Address to add to the set of authorized operators
-     * @param classId is the classId nonce of bond.
      * @param _approved "True" if the operator is approved, "False" to revoke approval
      */
-    function setApprovalFor(address _operator, uint256 classId, bool _approved) external;
+    function setApprovalFor(address _operator, bool _approved) external;
 
     // READABLES 
     /**
