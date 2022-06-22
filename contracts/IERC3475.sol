@@ -20,7 +20,6 @@ interface IERC3475 {
         string description;
         string[] values;
     }
-
     /**
      * @dev structure allows the transfer of any given number of bonds from an address to another.
      * @classId is the class id of bond.
@@ -32,8 +31,6 @@ interface IERC3475 {
         uint256 nonceId;
         uint256 _amount;
     }
-
-    // WRITABLE
 
     // WRITABLE
     /**
@@ -86,33 +83,27 @@ interface IERC3475 {
      * @dev Returns the total supply of the bond in question.
      */
     function totalSupply(uint256 classId, uint256 nonceId) external view returns (uint256);
-
     /**
      * @dev Returns the redeemed supply of the bond in question.
      */
     function redeemedSupply(uint256 classId, uint256 nonceId) external view returns (uint256);
-
     /**
      * @dev Returns the active supply of the bond in question.
      */
     function activeSupply(uint256 classId, uint256 nonceId) external view returns (uint256);
-
     /**
      * @dev Returns the burned supply of the bond in question.
      */
     function burnedSupply(uint256 classId, uint256 nonceId) external view returns (uint256);
-
     /**
      * @dev Returns the balance of the giving bond classId and bond nonce.
      */
     function balanceOf(address _account, uint256 classId, uint256 nonceId) external view returns (uint256);
-
     /**
     * @dev Returns the values of given classId.
      * the metadata SHOULD follow a set of structure explained in eip-3475.md
      */
     function classValues(uint256 classId) external view returns (uint256[] memory);
-
     /**
     * @dev Returns the JSON metadata of the classes.
      * The metadata SHOULD follow a set of structure explained later in eip-3475.md
@@ -123,7 +114,6 @@ interface IERC3475 {
      * The metadata SHOULD follow a set of structure explained in eip-3475.md
      */
     function nonceValues(uint256 classId, uint256 nonceId) external view returns (uint256[] memory);
-
     /**
      * @dev Returns the JSON metadata of the nonces.
      * The metadata SHOULD follow a set of structure explained later in eip-3475.md
@@ -134,12 +124,10 @@ interface IERC3475 {
      * @notice Every bond contract can have their own logic concerning the progress definition.
      */
     function getProgress(uint256 classId, uint256 nonceId) external view returns (uint256 progressAchieved, uint256 progressRemaining);
-
     /**
      * @notice Returns the _amount which spender is still allowed to withdraw from _owner.
      */
     function allowance(address _owner, address _spender, uint256 classId, uint256 nonceId) external view returns (uint256);
-
     /**
     * @notice Queries the approval status of an operator for a given owner.
      * Returns "True" if the operator is approved, "False" if not
