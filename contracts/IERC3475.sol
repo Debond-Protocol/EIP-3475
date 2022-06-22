@@ -42,7 +42,13 @@ interface IERC3475 {
      * @param _to argument is the address of the recipient whose balance is about to increased.
      */
     function transferFrom(address _from, address _to, TRANSACTION[] calldata _transaction) external;
-    /**
+     /**
+     * @dev allows the transfer of allowance an address to another (either single or in batches).
+     * @param _from argument is the address of the holder whose balance about to decrease.
+     * @param _to argument is the address of the recipient whose balance is about to increased.
+     */
+    function transferAllowanceFrom(address _from, address _to, TRANSACTION[] calldata _transaction) external;
+   /**
      * @dev allows issuing of any number of bond types to an address.
      * The calling of this function needs to be restricted to bond issuer contract.
      * @param _to is the address to which the bond will be issued.
@@ -54,7 +60,6 @@ interface IERC3475 {
      * @param _from is the address _from which the bond will be redeemed.
      */
     function redeem(address _from, TRANSACTION[] calldata _transaction) external;
-
     /**
      * @dev allows the transfer of any number of bond types from an address to another.
      * The calling of this function needs to be restricted to bond issuer contract.
