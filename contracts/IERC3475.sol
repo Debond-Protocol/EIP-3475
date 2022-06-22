@@ -24,7 +24,7 @@ interface IERC3475 {
      * @dev structure allows the transfer of any given number of bonds from an address to another.
      * @classId is the class id of bond.
      * @nonceId is the nonce id of the given bond class. This param is for distinctions of the issuing conditions of the bond.
-     * @_amount is the _amount of the bond, that will be transferred from "_from" address to "_to" address.
+     * @_amount is the _amount of the bond, that will be transferred.
      */
     struct TRANSACTION {
         uint256 classId;
@@ -40,7 +40,7 @@ interface IERC3475 {
      */
     function transferFrom(address _from, address _to, TRANSACTION[] calldata _transaction) external;
      /**
-     * @dev allows the transfer of allowance an address to another (either single or in batches).
+     * @dev allows the transfer of allowance from an address to another (either single or in batches).
      * @param _from argument is the address of the holder whose balance about to decrease.
      * @param _to argument is the address of the recipient whose balance is about to increased.
      */
