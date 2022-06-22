@@ -133,7 +133,7 @@ contract ERC3475 is IERC3475, MathLibrary, Ownable {
         emit Transfer(msg.sender, _from, _to, _transactions);
     }
 
-    function transferAllowenceFrom(
+    function transferAllowanceFrom(
         address _from,
         address _to,
         TRANSACTION[] calldata _transactions
@@ -152,7 +152,7 @@ contract ERC3475 is IERC3475, MathLibrary, Ownable {
                 _transactions[i]._amount <= allowance(_from, msg.sender, _transactions[i].classId, _transactions[i].nonceId),
                 "ERC3475:caller-not-owner-or-approved"
             );
-            _transferAllowenceFrom(_from, _to, _transactions[i]);
+            _transferAllowanceFrom(_from, _to, _transactions[i]);
         }
         emit Transfer(msg.sender, _from, _to, _transactions);
     }
@@ -401,7 +401,7 @@ contract ERC3475 is IERC3475, MathLibrary, Ownable {
         _transaction._amount;    
     }
 
-      function _transferAllowenceFrom(
+      function _transferAllowanceFrom(
         address _from,
         address _to,
         IERC3475.TRANSACTION calldata _transaction
