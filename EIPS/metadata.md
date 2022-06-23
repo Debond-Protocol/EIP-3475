@@ -16,7 +16,7 @@ this documentation consist of various example  JSON schemas (examples or standar
 ]
 ```
 
-example: adding details in bonds describing the local jurisdiction of the bonds where its valid/ is issued:
+example: adding details in bonds describing the local jurisdiction of the bonds where its issued:
 
 ```json
 {
