@@ -27,9 +27,24 @@ example: adding details in bonds describing the local jurisdiction of the bonds 
 }
 ```
 
-## 2. Nonce information:
+## 2. Nonce metadata:
 
 - **Information defining the state of the bond** 
+
+```json
+[	
+	{	
+	"title": "maturity",
+	"types": "uint",
+	"description": "Lorem ipsum..."
+	"values": [0, 0, 0]
+	}
+]
+```
+
+
+## 3. Class metadata:
+
 
 ```json
 [	
@@ -75,28 +90,5 @@ example: adding details in bonds describing the local jurisdiction of the bonds 
 	"values": [0, 0, 0]
 	}
 ]
-
-- **Nonce Metadata**
-[
-	{	
-	"title": "maturity",
-	"types": "uint",
-	"description": "Lorem ipsum..."
-	"values": [0, 0, 0]
-	}
-]
-```
-
-
-## 3. Class Information:
-
-```json
-    {
-"title": "symbol",
-"types": "string",
-"description": "Lorem ipsum..."
-"values": ["Class Name 1", "Class Name 2", "DBIT Fix 6M"],
-}
-```
 ## TODO, defining example schemas for actual fintech standards : 
 - ISO-20022 standard is the recent adopted standard by banks for communicating the financial operations =. 
