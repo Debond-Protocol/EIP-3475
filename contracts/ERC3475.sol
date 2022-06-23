@@ -13,7 +13,6 @@ contract ERC3475 is IERC3475, Ownable {
     * @notice this Struct is representing the NONCE properties as an object
     */
     struct NONCE {
-        bool exists;
         mapping(uint256 => IERC3475.VALUES) _value;  
 
         // stores the values corresponding to the dates (issuance and maturity date).
@@ -31,7 +30,6 @@ contract ERC3475 is IERC3475, Ownable {
      *         and can be retrieve by the classId
      */
     struct CLASS {
-        bool exists;
         mapping(uint256 => IERC3475.VALUES) _value;    
 
         mapping(uint256 => IERC3475.METADATA) _nonceMetadata;    
