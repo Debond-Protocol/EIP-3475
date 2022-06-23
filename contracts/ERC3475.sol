@@ -19,7 +19,6 @@ contract ERC3475 is IERC3475, Ownable {
         // stores the values corresponding to the dates (issuance and maturity date).
         mapping(address => uint256) balances;
         mapping(address => mapping(address => uint256)) allowances;
-        address owner;
 
         // supplies of this nonce
         uint256 _activeSupply;
@@ -58,6 +57,7 @@ contract ERC3475 is IERC3475, Ownable {
     constructor() {
         // create class, in other implementation, a create class function can be added
         classes[0].exists = true;
+        classes[1].exists = true;
 
         // define "symbol of the class";
         _classMetadata[0].title = "symbol";
@@ -65,13 +65,19 @@ contract ERC3475 is IERC3475, Ownable {
         _classMetadata[0].description = "symbol of the class";
         classes[0]._value[0].stringValue = "DBIT Fix 6M";
 
+        _classMetadata[1].title = "symbol";
+        _classMetadata[1].types = "string";
+        _classMetadata[1].description = "symbol of the class";
+        classes[1]._value[0].stringValue = "DBIT Fix 6M";
+
+
         // define "period of the class";
         _classMetadata[5].title = "period";
         _classMetadata[5].types = "int";
         _classMetadata[5].description = "details about issuance and redemption time";
-        // define the maturity time period for the bonds in the class.
-        classes[0]._value[5].uintValue = 180 days;
-   
+        // define the maturity time period  (for the test class).
+        classes[0]._value[5].uintValue = 10;
+        classes[1]._value[5].uintValue = 1;
         // create nonces, in other implementation, a create nonce function can be added
         classes[0].nonces[0].exists = true;
         classes[0].nonces[1].exists = true;
@@ -82,6 +88,11 @@ contract ERC3475 is IERC3475, Ownable {
         classes[0].nonces[1]._value[0].uintValue = block.timestamp + 181 days;
         classes[0].nonces[2]._value[0].uintValue = block.timestamp + 182 days;
 
+        // test for review the instantaneous class
+        classes[1].nonces[0]._value[0].uintValue = block.timestamp + 1;
+        classes[1].nonces[1]._value[0].uintValue = block.timestamp + 2;
+        classes[1].nonces[2]._value[0].uintValue = block.timestamp + 3;
+
         // defining the value status 
         classes[0].nonces[0]._value[0].boolValue = true;
         classes[0].nonces[1]._value[0].boolValue = true;
@@ -91,11 +102,13 @@ contract ERC3475 is IERC3475, Ownable {
         // define "maturity of the nonce";        
         classes[0]._nonceMetadata[0].title = "maturity";
         classes[0]._nonceMetadata[0].description = "maturity date in integer";
-        
-        // create class, in other implementation, a create class function can be added
-        classes[0].exists = true;
 
-    
+        classes[1]._nonceMetadata[0].title = "maturity";
+        classes[1]._nonceMetadata[0].description = "maturity date in integer";
+
+
+       
+
 
     }
 
@@ -225,13 +238,7 @@ contract ERC3475 is IERC3475, Ownable {
         override
     {
         for (uint256 i = 0; i < _transactions.length; i++) {
-            require(
-                msg.sender ==
-                    classes[_transactions[i].classId]
-                        .nonces[_transactions[i].nonceId]
-                        .owner,
-                "only owner can approve the transfer"
-            );
+           
             classes[_transactions[i].classId]
                 .nonces[_transactions[i].nonceId]
                 .allowances[msg.sender][_spender] = _transactions[i]._amount;
@@ -341,7 +348,7 @@ contract ERC3475 is IERC3475, Ownable {
         override
         returns (uint256 progressAchieved, uint256 progressRemaining)
     {
-        require((classes[classId].nonces[nonceId]._value[5].boolValue) && (classes[classId].nonces[nonceId]._value[0].boolValue),"values-not-initialized");
+
         uint256 issuanceDate = classes[classId].nonces[nonceId]._value[0].uintValue;
         uint256 maturityDate = issuanceDate + classes[classId].nonces[nonceId]._value[5].uintValue;   
         // check whether the bond is being already initialized: 
@@ -358,10 +365,6 @@ contract ERC3475 is IERC3475, Ownable {
         uint256 classId,
         uint256 nonceId
     ) public view virtual override returns (uint256) {
-        require(
-            _owner == classes[classId].nonces[nonceId].owner,
-            "only  the owner can get allowance"
-        );
         return classes[classId].nonces[nonceId].allowances[_owner][spender];
     }
 
@@ -369,7 +372,6 @@ contract ERC3475 is IERC3475, Ownable {
         address _owner,
         address operator
     ) public view virtual override returns (bool) {
-        //require(owner == classes[classId].) TODO: generally this is the function implemented by the bank contract for allowing the approval for the whole class.
         return operatorApprovals[_owner][operator];
     }
 
