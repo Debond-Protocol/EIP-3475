@@ -22,7 +22,7 @@ example: adding details in bonds describing the local jurisdiction of the bonds 
 {
 "title": "localisation",
 "type": "string",
-"description": "jurisdiction law codes  compatiblity "
+"description": "jurisdiction law codes compatiblity "
 "value": ["fr ", "de", "ch"] // can also be ISO codes 
 }
 ```
@@ -35,44 +35,44 @@ example: adding details in bonds describing the local jurisdiction of the bonds 
 [	
 	{	
 	"title": "symbol",
-	"type": "str",
+	"types": "string",
 	"description": "Lorem ipsum..."
-	"value": ["Class symbol 1", "Class symbol 2", "Class symbol 3"],
+	"values": ["Class symbol 1", "Class symbol 2", "Class symbol 3"],
 	},
 
 	{	
 	"title": "issuer",
-	"type": "str",
+	"types": "string",
 	"description": "Lorem ipsum..."
-	"value": ["Issuer name 1", "Issuer name 2", "Issuer name 3"],
+	"values": ["Issuer name 1", "Issuer name 2", "Issuer name 3"],
 	},
 
 	{	
 	"title": "issuer_address",
-	"type": "address",
+	"types": "address",
 	"description": "Lorem ipsum..."
-	"value":["Address 1.", "Address 2", "Address 3"]
+	"values":["Address 1.", "Address 2", "Address 3"]
 	},
 
 	{	
 	"title": "class_type",
-	"type": "str",
+	"types": "string",
 	"description": "Lorem ipsum..."
-	"value": ["Class Type 1", "Class Type 2", "Class Type 3"]
+	"values": ["Class Type 1", "Class Type 2", "Class Type 3"]
 	},
 
 	{	
 	"title": "token_address",
-	"type": "address",
+	"types": "address",
 	"description": "Lorem ipsum..."
-	"value":["Address 1.", "Address 2", "Address 3"]
+	"values":["Address 1.", "Address 2", "Address 3"]
 	},
 
 	{	
 	"title": "period",
-	"type": "int",
+	"types": "uint",
 	"description": "Lorem ipsum..."
-	"value": ["", "", ""]
+	"values": [0, 0, 0]
 	}
 ]
 
@@ -80,9 +80,9 @@ example: adding details in bonds describing the local jurisdiction of the bonds 
 [
 	{	
 	"title": "maturity",
-	"type": "int",
+	"types": "uint",
 	"description": "Lorem ipsum..."
-	"value": ["", "", ""]
+	"values": [0, 0, 0]
 	}
 ]
 ```
@@ -93,10 +93,10 @@ example: adding details in bonds describing the local jurisdiction of the bonds 
 ```json
     {
 "title": "symbol",
-"type": "str",
+"types": "string",
 "description": "Lorem ipsum..."
-"value": ["Class Name 1", "Class Name 2", "DBIT Fix 6M"],
+"values": ["Class Name 1", "Class Name 2", "DBIT Fix 6M"],
 }
 ```
 ## TODO, defining example schemas for actual fintech standards : 
-- ISO-20022 standard is  the recent adopted standard by banks for communicating the financial operations =. 
+- ISO-20022 standard is the recent adopted standard by banks for communicating the financial operations =. 
