@@ -10,7 +10,7 @@ this documentation consist of various example  JSON schemas (examples or standar
 [
     {
         "title": "defining the title information",
-        "type": "explaining the type of the title information added",
+        "types": "explaining the type of the title information added",
         "description": "little description about the information stored in  the bond",
     }
 ]
@@ -21,9 +21,9 @@ example: adding details in bonds describing the local jurisdiction of the bonds 
 ```json
 {
 "title": "localisation",
-"type": "string",
+"types": "string",
 "description": "jurisdiction law codes compatiblity "
-"value": ["fr ", "de", "ch"] // can also be ISO codes 
+"values": ["fr ", "de", "ch"] // can also be ISO codes 
 }
 ```
 
