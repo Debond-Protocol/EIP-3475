@@ -23,12 +23,11 @@ contract('Bond', async (accounts: string[]) => {
     const DBITClassId: number  = 0;
     const firstNonceId:  number = 0;
   
-
+    
     bondContract = await Bond.deployed();
-    await bondContract.init({from:accounts[0]});
 
 
-    it('should issue bonds to a lender ', async () => {
+    it.only('should issue bonds to a lender', async () => {
         bondContract = await Bond.deployed();
         let _transactionIssuer : _transaction[] 
         = 
@@ -36,8 +35,6 @@ contract('Bond', async (accounts: string[]) => {
             classId:DBITClassId,
             nonceId:firstNonceId,
             _amount: 7000 }];
-
-        //const transaction {}
 
         await bondContract.issue(lender, _transactionIssuer, {from: accounts[0]})
         await bondContract.issue(lender, _transactionIssuer, {from: accounts[0]})
@@ -72,8 +69,8 @@ contract('Bond', async (accounts: string[]) => {
             _amount: 2000
 
             }];
-        await bondContract.setApprovalFor(operator, DBITClassId, true, {from: lender})
-        const isApproved = await bondContract.isApprovedFor(lender, operator, DBITClassId);
+        await bondContract.setApprovalFor(operator, true, {from: lender})
+        const isApproved = await bondContract.isApprovedFor(lender, operator);
         assert.isTrue(isApproved);
         await bondContract.transferFrom(lender, secondaryMarketBuyer2, transactionApproval, {from: operator})
         assert.equal((await bondContract.balanceOf(lender, DBITClassId, firstNonceId)).toNumber(), 9000);
@@ -162,7 +159,7 @@ contract('Bond', async (accounts: string[]) => {
     })
 
     it('should setApprovalFor operator to manage bonds from classId given from the caller address', async () => {
-        const tx = (await bondContract.setApprovalFor(operator, DBITClassId, true, {from: lender})).tx;
+        const tx = (await bondContract.setApprovalFor(operator, true, {from: lender})).tx;
         console.log(tx)
         assert.isString(tx);
     })
@@ -219,30 +216,33 @@ contract('Bond', async (accounts: string[]) => {
     })
 
     it('should return the symbol of a class of bond', async () => {
-        
-        const symbol: BN[] = (await bondContract.classValues(DBITClassId));
-        console.log(JSON.stringify(symbol[0]));
+        let metadataId = 0;
+        const symbol: {
+            stringValue: string;
+            uintValue: BN;
+            addressValue: string;
+            boolValue: boolean;
+          } = (await bondContract.classValues(DBITClassId, metadataId));
+        console.log(JSON.stringify(symbol));
         assert.isString(symbol.toString);
     })
 
     it('should return the infos of a bond class given', async () => {
-        const infos = (await bondContract.classValues(DBITClassId));
-        console.log("class infos: ", JSON.stringify(infos))
-        infos.forEach( i => {
-            console.log(i.toNumber())
-        });
+        const metadataId = 0; 
+        const infos = (await bondContract.classValues(DBITClassId,metadataId));
+        console.log("class infos: ", JSON.stringify(infos));
+        assert.isString(infos);
     })
 
     it('should return the infos of a nonce of bond class given', async () => {
-        const infos = (await bondContract.nonceValues(DBITClassId, firstNonceId));
+        const metadataId = 0; 
+        const infos = (await bondContract.nonceValues(DBITClassId, firstNonceId,metadataId ));
         console.log("nonce infos: ", JSON.stringify(infos))
-        infos.forEach(i => {
-            console.log(i.toNumber())
-        });
+        assert.isString(JSON.stringify(infos));
     })
 
     it('should return if an operator is approved on a class and nonce given for an address', async () => {
-        const isApproved = (await bondContract.isApprovedFor(lender, operator, DBITClassId));
+        const isApproved = (await bondContract.isApprovedFor(lender, operator));
         console.log("operator is Approved? : ", isApproved)
         assert.isBoolean(isApproved);
     })
@@ -260,7 +260,7 @@ contract('Bond', async (accounts: string[]) => {
     })
 
     it('should return if operator is approved for', async () => {
-        const isApproved = (await bondContract.isApprovedFor(lender, operator, DBITClassId));
+        const isApproved = (await bondContract.isApprovedFor(lender, operator));
         console.log("operator is Approved? : ", isApproved)
         assert.isBoolean(isApproved);
     })

@@ -12,10 +12,10 @@ interface IERC3475 {
      * @dev VALUES structure of the METADATA
      */
     struct VALUES{        
-        string stringValues;
-        uint uintValues;
-        address addressValues;
-
+        string stringValue;
+        uint uintValue;
+        address addressValue;
+        bool boolValue;
     }
     /**
      * @dev structure allows the transfer of any given number of bonds from an address to another.
