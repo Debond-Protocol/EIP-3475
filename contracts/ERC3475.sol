@@ -10,9 +10,9 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract ERC3475 is IERC3475, Ownable {
     /** 
-    * @notice this Struct is representing the NONCE properties as an object
+    * @notice this Struct is representing the Nonce properties as an object
     */
-    struct NONCE {
+    struct Nonce {
         mapping(uint256 => IERC3475.VALUES) _value;  
 
         // stores the values corresponding to the dates (issuance and maturity date).
@@ -26,14 +26,14 @@ contract ERC3475 is IERC3475, Ownable {
     }
 
     /**
-     * @notice this Struct is representing the CLASS properties as an object
+     * @notice this Struct is representing the Class properties as an object
      *         and can be retrieve by the classId
      */
-    struct CLASS {
+    struct Class {
         mapping(uint256 => IERC3475.VALUES) _value;    
 
         mapping(uint256 => IERC3475.METADATA) _nonceMetadata;    
-        mapping(uint256 => NONCE) nonces;        
+        mapping(uint256 => Nonce) nonces;        
 
         // supplies of this class
         uint256 _activeSupply;
@@ -44,7 +44,7 @@ contract ERC3475 is IERC3475, Ownable {
     mapping(address => mapping(address => bool)) operatorApprovals;
 
     // from classId given
-    mapping(uint256 => CLASS) internal classes; 
+    mapping(uint256 => Class) internal classes; 
     mapping(uint256 => IERC3475.METADATA) _classMetadata;
 
     /**
@@ -53,9 +53,6 @@ contract ERC3475 is IERC3475, Ownable {
      * to be deployed during the initial deployement cycle
      */
     constructor() {
-        // create class, in other implementation, a create class function can be added
-        classes[0].exists = true;
-        classes[1].exists = true;
 
         // define "symbol of the class";
         _classMetadata[0].title = "symbol";
@@ -76,10 +73,6 @@ contract ERC3475 is IERC3475, Ownable {
         // define the maturity time period  (for the test class).
         classes[0]._value[5].uintValue = 10;
         classes[1]._value[5].uintValue = 1;
-        // create nonces, in other implementation, a create nonce function can be added
-        classes[0].nonces[0].exists = true;
-        classes[0].nonces[1].exists = true;
-        classes[0].nonces[2].exists = true;
 
         // write the time of maturity to nonce values, in other implementation, a create nonce function can be added
         classes[0].nonces[0]._value[0].uintValue = block.timestamp + 180 days;
@@ -168,10 +161,6 @@ contract ERC3475 is IERC3475, Ownable {
         uint256 len = _transactions.length;
 
         for (uint256 i = 0; i < len; i++) {
-            require(
-                classes[i].exists, 
-                "ERC3475: BOND-CLASS-NOT-CREATED"
-            );
             require(
                 _to != address(0),
                 "ERC3475: can't transfer to the zero address"
