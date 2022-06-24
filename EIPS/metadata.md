@@ -22,7 +22,7 @@ example: adding details in bonds describing the local jurisdiction of the bonds 
 {
 "title": "localisation",
 "types": "string",
-"description": "jurisdiction law codes compatiblity "
+"description": "jurisdiction law codes compatibility "
 "values": ["fr ", "de", "ch"] // can also be ISO codes 
 }
 ```
@@ -91,4 +91,4 @@ example: adding details in bonds describing the local jurisdiction of the bonds 
 	}
 ]
 ## TODO, defining example schemas for actual fintech standards : 
-- ISO-20022 standard is the recent adopted standard by banks for communicating the financial operations =. 
+- ISO-20022 standard is the recent adopted standard by banks for communicating the financial operations. 
