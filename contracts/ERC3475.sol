@@ -31,7 +31,7 @@ contract ERC3475 is IERC3475, Ownable {
     struct Class {
         mapping(uint256 => IERC3475.Values) _value;    
 
-        mapping(uint256 => IERC3475.METADATA) _nonceMetadata;    
+        mapping(uint256 => IERC3475.Metadata) _nonceMetadata;    
         mapping(uint256 => Nonce) nonces;        
 
         // supplies of this class
@@ -44,7 +44,7 @@ contract ERC3475 is IERC3475, Ownable {
 
     // from classId given
     mapping(uint256 => Class) internal classes; 
-    mapping(uint256 => IERC3475.METADATA) _classMetadata;
+    mapping(uint256 => IERC3475.Metadata) _classMetadata;
 
     /**
      * @notice Here the constructor is just to initialize a class and nonce,
@@ -296,7 +296,7 @@ contract ERC3475 is IERC3475, Ownable {
     external 
     view 
     override 
-    returns (METADATA memory) {
+    returns (Metadata memory) {
         return (_classMetadata[metadataId]);
     }
 
@@ -304,7 +304,7 @@ contract ERC3475 is IERC3475, Ownable {
         external
         view
         override
-        returns (METADATA memory) {
+        returns (Metadata memory) {
         return (classes[classId]._nonceMetadata[metadataId]);
     }
 
