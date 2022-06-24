@@ -12,7 +12,7 @@ contract ERC3475 is IERC3475, Ownable {
     * @notice this Struct is representing the Nonce properties as an object
     */
     struct Nonce {
-        mapping(uint256 => IERC3475.VALUES) _value;  
+        mapping(uint256 => IERC3475.Values) _value;  
 
         // stores the values corresponding to the dates (issuance and maturity date).
         mapping(address => uint256) balances;
@@ -29,7 +29,7 @@ contract ERC3475 is IERC3475, Ownable {
      *         and can be retrieve by the classId
      */
     struct Class {
-        mapping(uint256 => IERC3475.VALUES) _value;    
+        mapping(uint256 => IERC3475.Values) _value;    
 
         mapping(uint256 => IERC3475.METADATA) _nonceMetadata;    
         mapping(uint256 => Nonce) nonces;        
@@ -106,7 +106,7 @@ contract ERC3475 is IERC3475, Ownable {
     function transferFrom(
         address _from,
         address _to,
-        TRANSACTION[] calldata _transactions
+        Transaction[] calldata _transactions
     ) public virtual override {
         require(
             _from != address(0),
@@ -131,7 +131,7 @@ contract ERC3475 is IERC3475, Ownable {
     function transferAllowanceFrom(
         address _from,
         address _to,
-        TRANSACTION[] calldata _transactions
+        Transaction[] calldata _transactions
     ) public virtual override {
         require(
             _from != address(0),
@@ -152,7 +152,7 @@ contract ERC3475 is IERC3475, Ownable {
         emit Transfer(msg.sender, _from, _to, _transactions);
     }
 
-    function issue(address _to, TRANSACTION[] calldata _transactions)
+    function issue(address _to, Transaction[] calldata _transactions)
         external
         virtual
         override
@@ -170,7 +170,7 @@ contract ERC3475 is IERC3475, Ownable {
         emit Issue(msg.sender, _to, _transactions);
     }
 
-    function redeem(address _from, TRANSACTION[] calldata _transactions)
+    function redeem(address _from, Transaction[] calldata _transactions)
         external
         virtual
         override
@@ -196,7 +196,7 @@ contract ERC3475 is IERC3475, Ownable {
         emit Redeem(msg.sender, _from, _transactions);
     }
 
-    function burn(address _from, TRANSACTION[] calldata _transactions)
+    function burn(address _from, Transaction[] calldata _transactions)
         external
         virtual
         override
@@ -218,7 +218,7 @@ contract ERC3475 is IERC3475, Ownable {
         emit Burn(msg.sender, _from, _transactions);
     }
 
-    function approve(address _spender, TRANSACTION[] calldata _transactions)
+    function approve(address _spender, Transaction[] calldata _transactions)
         external
         virtual
         override
@@ -312,7 +312,7 @@ contract ERC3475 is IERC3475, Ownable {
     external 
     view 
     override 
-    returns (VALUES memory) {
+    returns (Values memory) {
         return (classes[classId]._value[metadataId]);
     }
 
@@ -320,7 +320,7 @@ contract ERC3475 is IERC3475, Ownable {
         external
         view
         override
-        returns (VALUES memory) {
+        returns (Values memory) {
         return (classes[classId].nonces[nonceId]._value[metadataId]);
     }
 
@@ -366,7 +366,7 @@ contract ERC3475 is IERC3475, Ownable {
     function _transferFrom(
         address _from,
         address _to,
-        IERC3475.TRANSACTION calldata _transaction
+        IERC3475.Transaction calldata _transaction
     ) private {
 
         require(
@@ -386,7 +386,7 @@ contract ERC3475 is IERC3475, Ownable {
         address _operator,
         address _from,
         address _to,
-        IERC3475.TRANSACTION calldata _transaction
+        IERC3475.Transaction calldata _transaction
     ) private {
     
         require(
@@ -411,7 +411,7 @@ contract ERC3475 is IERC3475, Ownable {
 
     function _issue(
         address _to, 
-        IERC3475.TRANSACTION calldata _transaction
+        IERC3475.Transaction calldata _transaction
         ) private
     {
         classes[_transaction.classId].nonces[_transaction.nonceId].balances[_to] +=
@@ -422,7 +422,7 @@ contract ERC3475 is IERC3475, Ownable {
     }
 
 
-    function _redeem(address _from, IERC3475.TRANSACTION calldata _transaction)
+    function _redeem(address _from, IERC3475.Transaction calldata _transaction)
         private
     {
         require(
@@ -439,7 +439,7 @@ contract ERC3475 is IERC3475, Ownable {
     }
 
 
-    function _burn(address _from, IERC3475.TRANSACTION calldata _transaction)
+    function _burn(address _from, IERC3475.Transaction calldata _transaction)
         private
     {
         require(
