@@ -79,25 +79,18 @@ contract ERC3475 is IERC3475, Ownable {
         classes[1].nonces[1]._value[0].uintValue = block.timestamp + 2;
         classes[1].nonces[2]._value[0].uintValue = block.timestamp + 3;
 
-        // defining the value status 
-        classes[0].nonces[0]._value[0].boolValue = true;
-        classes[0].nonces[1]._value[0].boolValue = true;
-        classes[0].nonces[2]._value[0].boolValue = true;
-
-
         // define "maturity of the nonce";        
         classes[0]._nonceMetadata[0].title = "maturity";
         classes[0]._nonceMetadata[0].types = "int";
-        classes[0]._nonceMetadata[0].description = "maturity date in integer";
-
+        classes[0]._nonceMetadata[0].description = "maturity date in integer";        
         classes[1]._nonceMetadata[0].title = "maturity";
         classes[0]._nonceMetadata[0].types = "int";
         classes[1]._nonceMetadata[0].description = "maturity date in integer";
-
-
-       
-
-
+        
+        // defining the value status 
+        classes[0].nonces[0]._value[0].boolValue = true;
+        classes[0].nonces[1]._value[0].boolValue = true;
+        classes[0].nonces[2]._value[0].boolValue = true;    
     }
 
     // WRITABLE
