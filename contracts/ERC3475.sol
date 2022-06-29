@@ -91,9 +91,11 @@ contract ERC3475 is IERC3475, Ownable {
 
         // define "maturity of the nonce";        
         classes[0]._nonceMetadata[0].title = "maturity";
+        classes[0]._nonceMetadata[0].types = "int";
         classes[0]._nonceMetadata[0].description = "maturity date in integer";
 
         classes[1]._nonceMetadata[0].title = "maturity";
+        classes[0]._nonceMetadata[0].types = "int";
         classes[1]._nonceMetadata[0].description = "maturity date in integer";
 
 
