@@ -34,10 +34,6 @@ contract ERC3475 is IERC3475, Ownable {
         mapping(uint256 => IERC3475.Metadata) _nonceMetadata;    
         mapping(uint256 => Nonce) nonces;        
 
-        // supplies of this class
-        uint256 _activeSupply;
-        uint256 _burnedSupply;
-        uint256 _redeemedSupply;
     }
 
     mapping(address => mapping(address => bool)) operatorApprovals;
