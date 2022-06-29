@@ -3,3 +3,4 @@ build
 types
 .env
 node_modules
+types/
