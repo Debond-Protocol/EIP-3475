@@ -1,30 +1,4 @@
 import { ERC3475Instance } from "../types/truffle-contracts";
-import Web3 from "Web3";
-//import {Eth} from "web3-eth";
-
-//var eth = new Eth(Eth.givenProvider);
-var web3 = new Web3("https://127.0.0.1:8545");
-
-// const advanceBlockAtTime = async(time: any) => {
-//     return new Promise((resolve, reject) => {
-//       web3.eth.personal.sendTransaction(
-//         {
-//           jsonrpc: "2.0",
-//           method: "evm_mine",
-//           params: [time],
-//           id: new Date().getTime(),
-//         },
-//         async(err : any, _ : any) => {
-//           if (err) {
-//             return reject(err);
-//           }
-//           const newBlockHash = (await web3.eth.getBlock("latest")).hash;
-  
-//           return resolve(newBlockHash);
-//         },
-//       );
-//     });
-//   };
 
 function sleep(ms: any) {
     return new Promise((resolve) => {
