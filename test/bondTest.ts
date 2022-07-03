@@ -164,8 +164,6 @@ contract('Bond', async (accounts: string[]) => {
             }
         
         ];
-
-
         const tx = (await bondContract.issue(lender, transactionIssue)).tx;
         console.log(tx)
         assert.isString(tx);
