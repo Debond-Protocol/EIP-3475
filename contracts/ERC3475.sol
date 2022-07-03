@@ -135,7 +135,7 @@ contract ERC3475 is IERC3475, Ownable {
         uint256 len = _transactions.length;
         for (uint256 i = 0; i < len; i++) {
             require(
-                _transactions[i]._amount <= allowance(_from, msg.sender, _transactions[i].classId, _transactions[i].nonceId),
+                _transactions[i].amount <= allowance(_from, msg.sender, _transactions[i].classId, _transactions[i].nonceId),
                 "ERC3475:caller-not-owner-or-approved"
             );
             _transferAllowanceFrom(msg.sender, _from, _to, _transactions[i]);
@@ -213,7 +213,7 @@ contract ERC3475 is IERC3475, Ownable {
 
             classes[_transactions[i].classId]
             .nonces[_transactions[i].nonceId]
-            .allowances[msg.sender][_spender] = _transactions[i]._amount;
+            .allowances[msg.sender][_spender] = _transactions[i].amount;
         }
     }
 
@@ -357,12 +357,12 @@ contract ERC3475 is IERC3475, Ownable {
         Nonce storage nonce = classes[_transaction.classId].nonces[_transaction.nonceId];
 
         require(
-            nonce.balances[_from] >= _transaction._amount,
+            nonce.balances[_from] >= _transaction.amount,
             "ERC3475: not enough bond to transfer"
         );
         //transfer balance        
-        nonce.balances[_from] -= _transaction._amount;
-        nonce.balances[_to] += _transaction._amount;
+        nonce.balances[_from] -= _transaction.amount;
+        nonce.balances[_to] += _transaction.amount;
     }
 
     function _transferAllowanceFrom(
@@ -374,15 +374,15 @@ contract ERC3475 is IERC3475, Ownable {
         Nonce storage nonce = classes[_transaction.classId].nonces[_transaction.nonceId];
 
         require(
-            nonce.balances[_from] >= _transaction._amount,
+            nonce.balances[_from] >= _transaction.amount,
             "ERC3475: not allowed amount"
         );
 
-        nonce.allowances[_from][_operator] -= _transaction._amount;
+        nonce.allowances[_from][_operator] -= _transaction.amount;
 
         //transfer balance
-        nonce.balances[_from] -= _transaction._amount;
-        nonce.balances[_to] += _transaction._amount;
+        nonce.balances[_from] -= _transaction.amount;
+        nonce.balances[_to] += _transaction.amount;
 
 
     }
@@ -393,8 +393,8 @@ contract ERC3475 is IERC3475, Ownable {
     ) private {
         Nonce storage nonce = classes[_transaction.classId].nonces[_transaction.nonceId];
 
-        nonce.balances[_to] += _transaction._amount;
-        nonce._activeSupply += _transaction._amount;
+        nonce.balances[_to] += _transaction.amount;
+        nonce._activeSupply += _transaction.amount;
     }
 
 
@@ -404,11 +404,11 @@ contract ERC3475 is IERC3475, Ownable {
     ) private {
         Nonce storage nonce = classes[_transaction.classId].nonces[_transaction.nonceId];
 
-        require(nonce.balances[_from] >= _transaction._amount);
+        require(nonce.balances[_from] >= _transaction.amount);
 
-        nonce.balances[_from] -= _transaction._amount;
-        nonce._activeSupply -= _transaction._amount;
-        nonce._redeemedSupply += _transaction._amount;
+        nonce.balances[_from] -= _transaction.amount;
+        nonce._activeSupply -= _transaction.amount;
+        nonce._redeemedSupply += _transaction.amount;
     }
 
 
@@ -418,11 +418,11 @@ contract ERC3475 is IERC3475, Ownable {
     ) private {
         Nonce storage nonce = classes[_transaction.classId].nonces[_transaction.nonceId];
 
-        require(nonce.balances[_from] >= _transaction._amount);
+        require(nonce.balances[_from] >= _transaction.amount);
 
-        nonce.balances[_from] -= _transaction._amount;
-        nonce._activeSupply -= _transaction._amount;
-        nonce._burnedSupply += _transaction._amount;
+        nonce.balances[_from] -= _transaction.amount;
+        nonce._activeSupply -= _transaction.amount;
+        nonce._burnedSupply += _transaction.amount;
     }
 
 }

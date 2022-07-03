@@ -27,7 +27,7 @@ contract('Bond', async (accounts: string[]) => {
     interface _transaction {
         classId: string | number | BN;
         nonceId: string | number | BN;
-        _amount: string | number | BN;
+        amount: string | number | BN;
     }
 
     before('testing', async () => {
@@ -41,7 +41,7 @@ contract('Bond', async (accounts: string[]) => {
             [{
                 classId: DBITClassId,
                 nonceId: firstNonceId,
-                _amount: 7000
+                amount: 7000
             }];
 
         await bondContract.issue(lender, _transactionIssuer, { from: accounts[0] })
@@ -57,7 +57,7 @@ contract('Bond', async (accounts: string[]) => {
             {
                 classId: DBITClassId,
                 nonceId: firstNonceId,
-                _amount: 2000
+                amount: 2000
             }];
 
         await bondContract.transferFrom(lender, secondaryMarketBuyer, transferBonds, { from: lender })
@@ -74,7 +74,7 @@ contract('Bond', async (accounts: string[]) => {
             {
                 classId: DBITClassId,
                 nonceId: firstNonceId,
-                _amount: 2000
+                amount: 2000
             }];
 
         await bondContract.setApprovalFor(operator, true, { from: lender })
@@ -92,7 +92,7 @@ contract('Bond', async (accounts: string[]) => {
             {
                 classId:  1,
                 nonceId: 1,
-                _amount: 2000
+                amount: 2000
 
             },
         
@@ -117,7 +117,7 @@ contract('Bond', async (accounts: string[]) => {
             {
                 classId:  0,
                 nonceId: 0,
-                _amount: 2000
+                amount: 2000
 
             },
 
@@ -143,7 +143,7 @@ contract('Bond', async (accounts: string[]) => {
             {
                 classId: DBITClassId,
                 nonceId: firstNonceId,
-                _amount: 500
+                amount: 500
 
             }];
             await bondContract.issue(lender, transactionTransfer, { from: lender });
@@ -159,7 +159,7 @@ contract('Bond', async (accounts: string[]) => {
             {
                 classId: 1,
                 nonceId: firstNonceId,
-                _amount: 500
+                amount: 500
 
             }
         
@@ -176,7 +176,7 @@ contract('Bond', async (accounts: string[]) => {
             {
                 classId: 1,
                 nonceId: firstNonceId,
-                _amount: 500
+                amount: 500
 
             }];
             await bondContract.issue(lender, transactionRedeem, {from: lender});
@@ -193,7 +193,7 @@ contract('Bond', async (accounts: string[]) => {
             {
                 classId: DBITClassId,
                 nonceId: firstNonceId,
-                _amount: 500
+                amount: 500
             }];
 
             await bondContract.issue(lender, transactionRedeem, {from: lender});
@@ -208,7 +208,7 @@ contract('Bond', async (accounts: string[]) => {
             {
                 classId: DBITClassId,
                 nonceId: firstNonceId,
-                _amount: 500
+                amount: 500
             }];
             await bondContract.issue(lender, transactionApprove, {from: lender});   
         const tx = (await bondContract.approve(spender, transactionApprove)).tx;
@@ -228,9 +228,9 @@ contract('Bond', async (accounts: string[]) => {
             {
                 classId: DBITClassId,
                 nonceId: firstNonceId,
-                _amount: 500
+                amount: 500
             },
-            { classId: 1, nonceId: 0, _amount: 900 }
+            { classId: 1, nonceId: 0, amount: 900 }
 
         ];
 
@@ -296,7 +296,7 @@ contract('Bond', async (accounts: string[]) => {
         [{
             classId: DBITClassId,
             nonceId: firstNonceId,
-            _amount: 7000
+            amount: 7000
         }];
         
         await bondContract.issue(lender, _transactionIssuer, { from: accounts[0] })
@@ -328,7 +328,7 @@ contract('Bond', async (accounts: string[]) => {
         [{
             classId: 1,
             nonceId: 1,
-            _amount: 7000
+            amount: 7000
         }];
         
         await bondContract.issue(accounts[1], _transactionIssuer, { from: accounts[1] })       

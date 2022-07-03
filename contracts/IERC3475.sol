@@ -32,12 +32,12 @@ interface IERC3475 {
      * @dev structure allows the transfer of any given number of bonds from an address to another.
      * @classId is the class id of bond.
      * @nonceId is the nonce id of the given bond class. This param is for distinctions of the issuing conditions of the bond.
-     * @_amount is the _amount of the bond, that will be transferred.
+     * @_amount is the amount of the bond, that will be transferred.
      */
     struct Transaction {
         uint256 classId;
         uint256 nonceId;
-        uint256 _amount;
+        uint256 amount;
     }
 
     // WRITABLE
