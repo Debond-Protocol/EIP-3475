@@ -58,7 +58,7 @@ contract ERC3475 is IERC3475, Ownable {
         _classMetadata[1].title = "symbol";
         _classMetadata[1].types = "string";
         _classMetadata[1].description = "symbol of the class";
-        classes[1]._value[0].stringValue = "DBIT Fix 6M";
+        classes[1]._value[0].stringValue = "DBIT Fix test(instanteneous)";
 
 
         // define "period of the class";
