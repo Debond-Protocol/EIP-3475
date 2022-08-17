@@ -1,48 +1,37 @@
+// SPDX-License-Identifier: CC0-1.0
+
+
 pragma solidity ^0.8.0;
 
-// SPDX-License-Identifier: apache 2.0
-/*
-    Copyright 2022 Debond Protocol <info@debond.org>
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-    http://www.apache.org/licenses/LICENSE-2.0
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-*/
 
 interface IERC3475 {
 
-    // STRUCTURE 
-
+    // STRUCTURE
     /**
      * @dev Values structure of the Metadata
      */
-    struct Values{        
+    struct Values {
         string stringValue;
         uint uintValue;
         address addressValue;
         bool boolValue;
     }
     /**
-     * @dev structure allows the transfer of any given number of bonds from an address to another.
-     * @title": "defning the title information",
+     * @dev structure allows the transfer of any given number of bonds from one address to another.
+     * @title": "defining the title information",
      * @type": "explaining the type of the title information added",
-    * @description": "little description about the information stored in the bond",
+     * @description": "little description about the information stored in the bond",
      */
     struct Metadata {
         string title;
-        string types;
+        string _type;
         string description;
     }
     /**
-     * @dev structure allows the transfer of any given number of bonds from an address to another.
-     * @classId is the class id of bond.
+     * @dev structure allows the transfer of any given number of bonds from one address to another.
+     * @classId is the class id of the bond.
      * @nonceId is the nonce id of the given bond class. This param is for distinctions of the issuing conditions of the bond.
-     * @_amount is the amount of the bond, that will be transferred.
+     * @amount is the amount of the bond that will be transferred.
      */
     struct Transaction {
         uint256 classId;
@@ -50,43 +39,49 @@ interface IERC3475 {
         uint256 amount;
     }
 
-    // WRITABLE
+    // WRITABLES
     /**
-     * @dev allows the transfer of a bond from an address to another (either single or in batches).
-     * @param _from argument is the address of the holder whose balance about to decrease.
-     * @param _to argument is the address of the recipient whose balance is about to increased.
+     * @dev allows the transfer of a bond from one address to another (either single or in batches).
+     * @param _from  is the address of the holder whose balance is about to decrease.
+     * @param _to is the address of the recipient whose balance is about to increase.
      */
-    function transferFrom(address _from, address _to, Transaction[] calldata _transaction) external;
-     /**
-     * @dev allows the transfer of allowance from an address to another (either single or in batches).
-     * @param _from argument is the address of the holder whose balance about to decrease.
-     * @param _to argument is the address of the recipient whose balance is about to increased.
+    function transferFrom(address _from, address _to, Transaction[] calldata _transactions) external;
+
+    /**
+     * @dev allows the transfer of allowance from one address to another (either single or in batches).
+     * @param _from is the address of the holder whose balance about to decrease.
+     * @param _to is the address of the recipient whose balance is about to increased.
      */
-    function transferAllowanceFrom(address _from, address _to, Transaction[] calldata _transaction) external;
-   /**
+    function transferAllowanceFrom(address _from, address _to, Transaction[] calldata _transactions) external;
+
+    /**
      * @dev allows issuing of any number of bond types to an address.
      * The calling of this function needs to be restricted to bond issuer contract.
      * @param _to is the address to which the bond will be issued.
      */
-    function issue(address _to, Transaction[] calldata _transaction) external;
+    function issue(address _to, Transaction[] calldata _transactions) external;
+
     /**
      * @dev allows redemption of any number of bond types from an address.
      * The calling of this function needs to be restricted to bond issuer contract.
      * @param _from is the address _from which the bond will be redeemed.
      */
-    function redeem(address _from, Transaction[] calldata _transaction) external;
+    function redeem(address _from, Transaction[] calldata _transactions) external;
+
     /**
      * @dev allows the transfer of any number of bond types from an address to another.
      * The calling of this function needs to be restricted to bond issuer contract.
-     * @param _from argument is the address of the holder whose balance about to decrees.
+     * @param _from  is the address of the holder whose balance about to decrees.
      */
-    function burn(address _from, Transaction[] calldata _transaction) external;
+    function burn(address _from, Transaction[] calldata _transactions) external;
+
     /**
-     * @dev Allows _spender to withdraw from your account multiple times, up to the _amount.
-     * @notice If this function is called again it overwrites the current allowance with _amount.
+     * @dev Allows _spender to withdraw from your account multiple times, up to the amount.
+     * @notice If this function is called again, it overwrites the current allowance with amount.
      * @param _spender is the address the caller approve for his bonds
      */
-    function approve(address _spender, Transaction[] calldata _transaction) external;
+    function approve(address _spender, Transaction[] calldata _transactions) external;
+
     /**
      * @notice Enable or disable approval for a third party ("operator") to manage all of the caller's tokens.
      * @dev MUST emit the ApprovalForAll event on success.
@@ -95,83 +90,105 @@ interface IERC3475 {
      */
     function setApprovalFor(address _operator, bool _approved) external;
 
-    // READABLES 
+    // READABLES
     /**
      * @dev Returns the total supply of the bond in question.
      */
-    function totalSupply(uint256 classId, uint256 nonceId) external view returns (uint256);
+    function totalSupply(uint256 _classId, uint256 _nonceId) external view returns (uint256);
+
     /**
      * @dev Returns the redeemed supply of the bond in question.
      */
-    function redeemedSupply(uint256 classId, uint256 nonceId) external view returns (uint256);
+    function redeemedSupply(uint256 _classId, uint256 _nonceId) external view returns (uint256);
+
     /**
      * @dev Returns the active supply of the bond in question.
      */
-    function activeSupply(uint256 classId, uint256 nonceId) external view returns (uint256);
+    function activeSupply(uint256 _classId, uint256 _nonceId) external view returns (uint256);
+
     /**
      * @dev Returns the burned supply of the bond in question.
      */
-    function burnedSupply(uint256 classId, uint256 nonceId) external view returns (uint256);
+    function burnedSupply(uint256 _classId, uint256 _nonceId) external view returns (uint256);
+
     /**
-     * @dev Returns the balance of the giving bond classId and bond nonce.
+     * @dev Returns the balance of the giving bond _classId and bond nonce.
      */
-    function balanceOf(address _account, uint256 classId, uint256 nonceId) external view returns (uint256);
+    function balanceOf(address _account, uint256 _classId, uint256 _nonceId) external view returns (uint256);
+
     /**
      * @dev Returns the JSON metadata of the classes.
      * The metadata SHOULD follow a set of structure explained later in eip-3475.md
      */
-    function classMetadata(uint256 metadataId) external view returns ( Metadata memory);
+    function classMetadata(uint256 _metadataId) external view returns (Metadata memory);
+
     /**
      * @dev Returns the JSON metadata of the nonces.
      * The metadata SHOULD follow a set of structure explained later in eip-3475.md
      */
-    function nonceMetadata(uint256 classId, uint256 metadataId) external view returns ( Metadata memory);
+    function nonceMetadata(uint256 _classId, uint256 _metadataId) external view returns (Metadata memory);
+
     /**
-     * @dev Returns the values of given classId.
-     * the metadata SHOULD follow a set of structure explained in eip-3475.md
+     * @dev Returns the values of the given _classId.
+     * the metadata SHOULD follow a set of structures explained in eip-3475.md
      */
-    function classValues(uint256 classId, uint256 metadataId) external view returns ( Values memory);
+    function classValues(uint256 _classId, uint256 _metadataId) external view returns (Values memory);
+
     /**
-     * @dev Returns the values of given nonceId.
-     * The metadata SHOULD follow a set of structure explained in eip-3475.md
+     * @dev Returns the values of given _nonceId.
+     * @param _classId is the class of bonds for which you determine the nonce .
+     * @param _nonceId is the nonce for which you return the value struct info
+     * @param _metadataId The metadata SHOULD follow a set of structures explained in eip-3475.md
      */
-    function nonceValues(uint256 classId, uint256 nonceId, uint256 metadataId) external view returns ( Values memory);
+    function nonceValues(uint256 _classId, uint256 _nonceId, uint256 _metadataId) external view returns (Values memory);
+
     /**
-     * @dev Returns the informations about the progress needed to redeem the bond
-     * @notice Every bond contract can have their own logic concerning the progress definition.
+     * @dev Returns the information about the progress needed to redeem the bond
+     * @notice Every bond contract can have its own logic concerning the progress definition.
+     * @param _classId The class of  bonds.
+     * @param _nonceId is the nonce of bonds for finding the progress.
      */
-    function getProgress(uint256 classId, uint256 nonceId) external view returns (uint256 progressAchieved, uint256 progressRemaining);
+    function getProgress(uint256 _classId, uint256 _nonceId) external view returns (uint256 progressAchieved, uint256 progressRemaining);
+
     /**
-     * @notice Returns the _amount which spender is still allowed to withdraw from _owner.
+     * @notice Returns the amount which spender is still allowed to withdraw from _owner.
+     * @param _owner is the address whose owner allocates some amount to the _spender address.
+     * @param _classId is the _classId of bond .
+     * @param _nonceId is the nonce corresponding to the class for which you are approving the spending of total amount of bonds.
      */
-    function allowance(address _owner, address _spender, uint256 classId, uint256 nonceId) external view returns (uint256);
+    function allowance(address _owner, address _spender, uint256 _classId, uint256 _nonceId) external view returns (uint256);
+
     /**
-    * @notice Queries the approval status of an operator for a given owner.
-     * Returns "True" if the operator is approved, "False" if not
+     * @notice Queries the approval status of an operator for a given owner.
+     * @param _owner is the current holder of the bonds for  all classes / nonces.
+     * @param _operator is the address which is  having access to the bonds of _owner for transferring
+     * Returns "true" if the operator is approved, "false" if not
      */
     function isApprovedFor(address _owner, address _operator) external view returns (bool);
-
 
     // EVENTS
     /**
      * @notice MUST trigger when tokens are transferred, including zero value transfers.
      */
-    event Transfer(address indexed _operator, address indexed _from, address indexed _to, Transaction[] _transaction);
+    event Transfer(address indexed _operator, address indexed _from, address indexed _to, Transaction[] _transactions);
+
     /**
      * @notice MUST trigger when tokens are issued
      */
-    event Issue(address indexed _operator, address indexed _to, Transaction[] _transaction);
+    event Issue(address indexed _operator, address indexed _to, Transaction[] _transactions);
+
     /**
      * @notice MUST trigger when tokens are redeemed
      */
-    event Redeem(address indexed _operator, address indexed _from, Transaction[] _transaction);
+    event Redeem(address indexed _operator, address indexed _from, Transaction[] _transactions);
+
     /**
      * @notice MUST trigger when tokens are burned
      */
-    event Burn(address indexed _operator, address indexed _from, Transaction[] _transaction);
+    event Burn(address indexed _operator, address indexed _from, Transaction[] _transactions);
+
     /**
      * @dev MUST emit when approval for a second party/operator address to manage all bonds from a classId given for an owner address is enabled or disabled (absence of an event assumes disabled).
      */
     event ApprovalFor(address indexed _owner, address indexed _operator, bool _approved);
-
 }
