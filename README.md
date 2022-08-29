@@ -7,9 +7,29 @@ This token standard can replace current ERC20 LP token. ERC-3475 has more comple
 
 ## Getting started
 
-### Install
+### 1. Install
 
 `git clone https://github.com/DeBond-Protocol/EIP-3475`
+
+```bash
+>  cd EIP-3475/ && npm i
+> npx truffle compile
+```
+### 2. running the tests 
+```bash
+# Generating the contract types from the typechain.
+> npm run generate-types
+# Also run the truffle node parallely (either installed desktop-client or in another tab via cli as follows)
+> npx  run ganache -p 8545
+#for contract deployment (by default on the localhost) 
+> npx truffle deploy 
+# for running the tests 
+> npx run test test/bondTest.ts 
+
+# and for finding the gas-costs, [eth-gas-reporter](https://github.com/cgewecke/eth-gas-reporter) is installed. 
+# remove the comment from the mocha section from truffle-config.js and then run  the deployment
+```
+
 
 ### Usage
 
