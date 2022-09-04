@@ -11,6 +11,7 @@ This documentation consists of various JSON schemas (examples or standards) that
         "title": "defining the title information",
         "_type": "explaining the type of the title information added",
         "description": "little description about the information stored in  the bond",
+	"values": "defining the values corresponding to the defined metadata"
     }
 ]
 ```
