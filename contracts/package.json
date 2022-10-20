@@ -11,6 +11,9 @@
     "url": "https://github.com/Debond-Protocol/EIP-3475.git",
     "directory": "contracts"
   },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.5.0"
+  },
   "keywords": [
     "solidity",
     "ethereum",
