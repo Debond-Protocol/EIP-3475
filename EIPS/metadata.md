@@ -98,42 +98,6 @@ The 'values' field defined above  can also be ISO codes or other hex standard re
 For the bond issuers that are interesed to be listed on the debond-protocol, they need to define the following protocol details: 
 
 
-Manager’s code:
-Custodian Name:
-Custodian’s Code:
-Share Value:
-Total balance:
-Amounts Payable:
-Collateral:[]
-Callable:
-Zero-coupon:
-Fixed rate:
-Maturity period:
-Maturity calculation rule:
-Interest period:
-Interest calculation rule:
-Accept Asset:[]
-Interest Payment Asset:[]
-Repayment Asset:[]
-ANBID code:
-Fund Type:
-Risk level:
-Risk level rated by:
-Preferred creditor:
-Liquidation rule:
-Qualified investor requirement:
-
-Interest rate:
-The amount:
-PL of the Fund:
-Asset Value:
-Amounts Receivable:
-Amounts Payable:
-Quotas to Issue:
-Quotas to be Redeemed:
-Number of Shareholders:
-
-
 ```json
 [
 {	
@@ -169,27 +133,23 @@ Number of Shareholders:
 	"_type": "uint",
 	"description": "authorities  that regulates  the bond issuance in the jurisdiction",
 	"values": ["SEC"],
-	}
-	,
+	},
 
 	{	
 	"title": "pitch URL",
 	"_type": "string",
 	"description": "link to the pitchdeck",
 	"values": ["bit.ly/ABC_pitch.pdf"]
-	}
+	},
 
-
-		{	
+	{	
 	"title": "Industry",
 	"_type": "string",
 	"description": "the subcategory of the industry the company is associated",
 	"values": ["web3"]
-	}
+	},
 
-
-
-		{	
+	{	
 	"title": "ISIN code",
 	"_type": "uint",
 	"description": "defining the idntifier code of the security(https://www.investopedia.com/terms/i/isin.asp)",
@@ -198,9 +158,17 @@ Number of Shareholders:
 	{	
 	"title": "Manager name",
 	"_type": "string",
+	"description": "Person responsible for the management (consulting firm hadnling the bond issuance and entities )",
+	"values": ["Mr Joe"]
+	},
+	
+	{	
+	"title": "Manager code",
+	"_type": "string",
 	"description": "Person responsible for the management (founder or the majority owner of shares)",
 	"values": ["Mr Joe"]
 	},
+	
 	{	
 	"title": "Date position",
 	"_type": "string",
@@ -208,11 +176,18 @@ Number of Shareholders:
 	"values": ["2022-10-30T12:52:01+0000"]
 	},
 
-
-
-
-
-
+	{	
+	"title": "Manager code",
+	"_type": "string",
+	"description": "identifier code of the manager entity (based on the standards as defiend in (https://stockmarketmba.com/securityidentifiers.php)",
+	"values": ["2022-10-30T12:52:01+0000"]
+	},
+	{	
+	"title": "Custodian name",
+	"_type": "string",
+	"description": "name of the solution ^providing the custodian solution",
+	"values": ["fireblocks"]
+	},
 ]
 
 ```
