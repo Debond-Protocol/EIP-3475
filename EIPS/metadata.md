@@ -95,27 +95,6 @@ The 'values' field defined above  can also be ISO codes or other hex standard re
 ## Bond issuance standard for the Debond-Protocol: 
 
 For the bond issuers that are interesed to be listed on the debond-protocol, they need to define the following protocol details: 
-Accept Asset:[]
-Interest Payment Asset:[]
-Repayment Asset:[]
-ANBID code:
-Fund Type:
-Risk level:
-Risk level rated by:
-Preferred creditor:
-Liquidation rule:
-Qualified investor requirement:
-
-Interest rate:
-The amount:
-PL of the Fund:
-Asset Value:
-Amounts Receivable:
-Amounts Payable:
-Quotas to Issue:
-Quotas to be Redeemed:
-Number of Shareholders:
-
 
 
 ```json
