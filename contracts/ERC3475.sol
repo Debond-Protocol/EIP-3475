@@ -78,7 +78,7 @@ contract ERC3475 is IERC3475 {
         _classes[0]._nonceMetadatas[0]._type = "int";
         _classes[0]._nonceMetadatas[0].description = "maturity date in integer";
         _classes[1]._nonceMetadatas[0].title = "maturity";
-        _classes[0]._nonceMetadatas[0]._type = "int";
+        _classes[1]._nonceMetadatas[0]._type = "int";
         _classes[1]._nonceMetadatas[0].description = "maturity date in integer";
 
         // defining the value status
