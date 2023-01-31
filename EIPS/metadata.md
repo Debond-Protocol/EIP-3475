@@ -41,7 +41,7 @@ The 'values' field defined above  can also be ISO codes or other hex standard re
 ```
 
 
-## 3. Class metadata:
+## 3. Comment Class metadata:
 
 ```json
 
