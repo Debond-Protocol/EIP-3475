@@ -45,54 +45,130 @@ The 'values' field defined above  can also be ISO codes or other hex standard re
 
 ```json
 
-[ 
-	{
-	"metadataId": "0001",
-	"title": "symbol",
-	"_type": "string",
-	"description": "Lorem ipsum...",
-	"values": ["Class symbol 1", "Class symbol 2", "Class symbol 3"],
-	},
-
-	{	
-	"metadataId": "0002",
-	"title": "issuer",
-	"_type": "string",
-	"description": "Lorem ipsum...",
-	"values": ["Issuer name 1", "Issuer name 2", "Issuer name 3"],
-	},
-
-	{
-	"metadataId": "0003",
-	"title": "issuer_address",
-	"_type": "address",
-	"description": "Lorem ipsum...",
-	"values":["Address 1.", "Address 2", "Address 3"]
-	},
-
-	{
-	"metadataId": "0004",
-	"title": "class_type",
-	"_type": "string",
-	"description": "Lorem ipsum...",
-	"values": ["Class Type 1", "Class Type 2", "Class Type 3"]
-	},
-
-	{
-	"metadataId": "0005",
-	"title": "token_address",
-	"_type": "address",
-	"description": "Lorem ipsum...",
-	"values":["Address 1.", "Address 2", "Address 3"]
-	},
-
-	{	
-	"metadataId": "0006",
-	"title": "period",
-	"_type": "uint",
-	"description": "Lorem ipsum...",
-	"values": [0, 0, 0]
-	}
+[
+   {
+      "metadataId":"0001",
+      "title":"symbol",
+      "_type":"string",
+      "description":"Lorem ipsum...",
+      "values":"Class symbol 1"
+   },
+   {
+      "metadataId":"0002",
+      "title":"category",
+      "_type":"string",
+      "description":"The category of this financial instrument",
+      "values":"security"
+   },
+   {
+      "metadataId":"0003",
+      "title":"subcategory",
+      "_type":"string",
+      "description":"The subcategory of this financial instrument",
+      "values":"bond"
+   },
+   {
+      "metadataId":"0004",
+      "title":"childCategory",
+      "_type":"string",
+      "description":"Lorem ipsum...",
+      "values":[
+         "Class Type 1",
+         "Class Type 2",
+         "Class Type 3"
+      ]
+   },
+   {
+      "metadataId":"0100",
+      "title":"Issuer",
+      "_type":"string",
+      "description":"formal name of the token issuer",
+      "values":"ABC "
+   },
+   {
+      "metadataId":"0101",
+      "title":"IssuerType",
+      "_type":"string",
+      "description":"Organization‘s type",
+      "values":"LTD"
+   },
+   {
+      "metadataId":"0102",
+      "title":"IssuerJurisdiction",
+      "_type":"string",
+      "description":"jurisdiction",
+      "values":"US"
+   },
+   {
+      "metadataId":"0103",
+      "title":"issuerRegistrationAddress",
+      "_type":"string",
+      "description":"Address of the established office & Jurisdiction",
+      "values":"1st avenue NYK"
+   },
+   {
+      "metadataId":"0104",
+      "title":"issuerURL",
+      "_type":"string",
+      "description":"URL link of the website",
+      "values":"https://www.ABC.AI"
+   },
+   {
+      "metadataId":"0105",
+      "title":"issuerlogo",
+      "_type":"string",
+      "description":"URL of stored issuer logo/ media kit details in 64*64 pix png format",
+      "values":"https://www.ABC.AI/logo.png"
+   },
+   {
+      "metadataId":"0106",
+      "title":"registrationNumber",
+      "_type":"string",
+      "description":"The registration number of the issuer’s entity",
+      "values":"000000000000"
+   },
+   {
+      "metadataId":"0150",
+      "title":"managerName",
+      "_type":"string",
+      "description":"Person responsible for the management of this financial instrument (consulting firm handling the entities )",
+      "values":"Fireblocks LLC"
+   },
+   {
+      "metadataId":"0151",
+      "title":"ManagerCode",
+      "_type":"string",
+      "description":" Legal Entity Identifier (LEI) for defining the responsible regarding the issuance of bond/ securities.",
+      "values":"8958801496"
+   },
+   {
+      "metadataId":"0152",
+      "title":"custodianName",
+      "_type":"string",
+      "description":" Registered entity name of the entity providing the custodian services of bonds",
+      "values":"Fireblocks LLC"
+   },
+   {
+      "metadataId":"0153",
+      "title":"Custodian Code",
+      "_type":"string",
+      "description":"LEI defining the custodian services of the token",
+      "values":"8958801496"
+   },
+   {
+      "metadataId":"0154",
+      "title":"auditorName",
+      "_type":"string",
+      "description":" Registered entity name of the entity providing the auditing services of bonds",
+      "values":"Fireblocks LLC"
+   },
+   {
+      "metadataId":"0155",
+      "title":"auditorCode",
+      "_type":"string",
+      "description":"LEI defining the auditor services of the token",
+      "values":"8958801496"
+   }
 ]
 ```
 ## Examples of other standards:
