@@ -123,20 +123,25 @@ The 'values' field defined above  can also be ISO codes or other hex standard re
       "description":"The registration number of the issuer’s entity",
       "values":"000000000000"
    },
-{	
-	"metadataId": "1007",
-	"title": "pitch URL",
-	"_type": "string",
-	"description": "link to the pitch deck",
-	"values": ["https://bit.ly/ABC_pitch.pdf"]
-	},
-	{
-	"metadataId": "1008",
-	"title": "industry",
-	"_type": "string[]",
-	"description": "the registered industry the company is associated",
-	"values": ["software development","banking software development"]
-	},
+   {
+      "metadataId":"1007",
+      "title":"pitch URL",
+      "_type":"string",
+      "description":"link to the pitch deck",
+      "values":[
+         "https://bit.ly/ABC_pitch.pdf"
+      ]
+   },
+   {
+      "metadataId":"1008",
+      "title":"industry",
+      "_type":"string[]",
+      "description":"the registered industry the company is associated",
+      "values":[
+         "software development",
+         "banking software development"
+      ]
+   },
    {
       "metadataId":"0150",
       "title":"managerName",
@@ -180,7 +185,6 @@ The 'values' field defined above  can also be ISO codes or other hex standard re
       "values":"8958801496"
    }
 ]
-
 
 ```
 ## Examples of other standards:
