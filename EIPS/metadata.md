@@ -72,7 +72,7 @@ The 'values' field defined above  can also be ISO codes or other hex standard re
       "title":"childCategory",
       "_type":"string",
       "description":"The child category of this financial instrument",
-      "values":”zero-coupon callable bond”
+      "values":"zero-coupon callable bond"
    },
    {
       "metadataId":"0100",
