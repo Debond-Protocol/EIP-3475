@@ -391,13 +391,6 @@ For the bond issuers that are interesed to be listed on the debond-protocol, the
       "values":"60000"
    },
    {
-      "metadataId":"2070",
-      "title":"PL (Profit & Loss statement) of the Fund:",
-      "_type":"uint",
-      "description":"summarizes the revenues, costs, and expenses incurred during a specified period, usually a quarter or fiscal year (in PPM)",
-      "values":"1"
-   },
-   {
       "metadataId":"2071",
       "title":"quotasToIssue:",
       "_type":"string",
