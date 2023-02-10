@@ -386,7 +386,7 @@ For the bond issuers that are interesed to be listed on the debond-protocol, the
    {
       "metadataId":"2060",
       "title":"APY",
-      "_type":"int",
+      "_type":"integer",
       "description":"Fixed PPM interest rate for the bond holders (in %)",
       "values":"60000"
    },
@@ -407,14 +407,14 @@ For the bond issuers that are interesed to be listed on the debond-protocol, the
    {
       "metadataId":"2072",
       "title":"quotasToBeRedeemed",
-      "_type":"int",
+      "_type":"integer",
       "description":"Defines the securities supply that can be redeemed by the lender after redemption condition is received",
       "values":"100000"
    },
    {
       "metadataId":"2073",
       "title":"numberOfShareholders",
-      "_type":"int",
+      "_type":"integer",
       "description":"number of the entities that are participating as the potential lenders",
       "values":"200"
    }
