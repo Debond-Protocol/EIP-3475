@@ -71,12 +71,8 @@ The 'values' field defined above  can also be ISO codes or other hex standard re
       "metadataId":"0004",
       "title":"childCategory",
       "_type":"string",
-      "description":"Lorem ipsum...",
-      "values":[
-         "Class Type 1",
-         "Class Type 2",
-         "Class Type 3"
-      ]
+      "description":"The child category of this financial instrument",
+      "values":”zero-coupon callable bond”
    },
    {
       "metadataId":"0100",
@@ -170,6 +166,7 @@ The 'values' field defined above  can also be ISO codes or other hex standard re
       "values":"8958801496"
    }
 ]
+
 ```
 ## Examples of other standards:
     - ISO-20022 standard is the recently adopted standard by banks for communicating  financial operators (Banks, trading intermediaries, underwriters) that also include bond operations. 
