@@ -373,7 +373,7 @@ The 'values' field defined above  can also be ISO codes or other hex standard re
       "_type":"address",
       "description":"the public key address of the auditor",
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
-   },
+   }
 ]
 
 ```
