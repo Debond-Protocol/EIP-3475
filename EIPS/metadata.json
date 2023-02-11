@@ -4,8 +4,8 @@
       "metadataId":"0001",
       "title":"symbol",
       "_type":"string",
-      "description":"Lorem ipsum...",
-      "values":"Class symbol 1"
+      "description":"Name of the token",
+      "values":"D/BOND fix rate (6m) DBGT Bond"
    },
    {
       "metadataId":"0002",
