@@ -50,8 +50,8 @@ The 'values' field defined above  can also be ISO codes or other hex standard re
       "metadataId":"0001",
       "title":"symbol",
       "_type":"string",
-      "description":"Lorem ipsum...",
-      "values":"Class symbol 1"
+      "description":"name of the token",
+      "values":"D/BOND fix rate (6m) DBGT Bond"
    },
    {
       "metadataId":"0002",
