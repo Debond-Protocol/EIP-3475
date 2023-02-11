@@ -74,14 +74,14 @@ The 'values' field defined above  can also be ISO codes or other hex standard re
       "description":"The child category of this financial token",
       "values":"zero-coupon callable bond"
    },
-      {
-      "metadataId":"0004",
+   {
+      "metadataId":"0005",
       "title":"description",
       "_type":"string",
       "description":"The description of this token",
       "values":"zero-coupon callable bond"
    },
-      {
+   {
       "metadataId":"0100",
       "title":"issuerName",
       "_type":"string",
