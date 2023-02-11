@@ -125,11 +125,12 @@ The 'values' field defined above  can also be ISO codes or other hex standard re
    },
    {
       "metadataId":"1007",
-      "title":"issuerPitchURL",
+      "title":"issuerDocURL",
       "_type":"string",
-      "description":"link to the issuer's pitch deck",
+      "description":"link to the issuer's documents",
       "values":[
-         "https://bit.ly/ABC_pitch.pdf"
+         "https://bit.ly/ABC_pitch.pdf",
+	 "https://bit.ly/ABC_pitch.pdf"
       ]
    },
    {
@@ -200,11 +201,12 @@ The 'values' field defined above  can also be ISO codes or other hex standard re
    },
    {
       "metadataId":"1027",
-      "title":"debitorPitchURL",
+      "title":"debitorDocURL",
       "_type":"string",
-      "description":"link to the pitch deck",
+      "description":"link to the documents",
       "values":[
-         "https://bit.ly/ABC_pitch.pdf"
+         "https://bit.ly/ABC_pitch.pdf",
+	 "https://bit.ly/ABC_pitch.pdf"
       ]
    },
    {
@@ -275,11 +277,12 @@ The 'values' field defined above  can also be ISO codes or other hex standard re
    },
    {
       "metadataId":"1037",
-      "title":"custodianPitchURL",
-      "_type":"string",
-      "description":"link to the pitch deck",
+      "title":"custodianDocURL",
+      "_type":"string[]",
+      "description":"link to the documents",
       "values":[
-         "https://bit.ly/ABC_pitch.pdf"
+         "https://bit.ly/ABC_pitch.pdf",
+	 "https://bit.ly/ABC_pitch.pdf"
       ]
    },
    {
@@ -350,9 +353,9 @@ The 'values' field defined above  can also be ISO codes or other hex standard re
    },
    {
       "metadataId":"1047",
-      "title":"auditorPitchURL",
+      "title":"auditorDocURL",
       "_type":"string",
-      "description":"link to the pitch deck",
+      "description":"link to the documents",
       "values":[
          "https://bit.ly/ABC_pitch.pdf"
       ]
