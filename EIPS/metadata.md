@@ -537,7 +537,7 @@ For the bond issuers that are interesed to be listed on the debond-protocol, the
       "metadataId":"2034",
       "title":"interestPaymentAsset",
       "_type":"address[]",
-      "description":"defines the  tokens/CBDC accepted by bond issuer to pay interest(if different from Accept Asset/ underlying collateral) ",
+      "description":"defines the tokens/CBDC accepted by bond issuer to pay interest(if different from Accept Asset/ underlying collateral) ",
       "values":[
          "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
          "0x55d398326f99059ff775485246999027b3197955"
@@ -547,7 +547,7 @@ For the bond issuers that are interesed to be listed on the debond-protocol, the
       "metadataId":"2035",
       "title":"repaymentAsset",
       "_type":"address[]",
-      "description":"defines the  assets/CBDC accepted by bond issuer to repay after redemption ",
+      "description":"defines the assets/CBDC accepted by bond issuer to repay after redemption ",
       "values":[
          "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
          "0x55d398326f99059ff775485246999027b3197955"
