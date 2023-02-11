@@ -409,9 +409,7 @@ For the bond issuers that are interesed to be listed on the debond-protocol, the
       "title":"fundType",
       "_type":"string",
       "description":"defines the category of the investment vehicle associated with this bond",
-      "values":[
-         "corporate"
-      ]
+      "values":"corporate"
    },
    {
       "metadataId":"2003",
