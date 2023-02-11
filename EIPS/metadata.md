@@ -57,21 +57,28 @@ The 'values' field defined above  can also be ISO codes or other hex standard re
       "metadataId":"0002",
       "title":"category",
       "_type":"string",
-      "description":"The category of this financial instrument",
+      "description":"The category of this financial token",
       "values":"security"
    },
    {
       "metadataId":"0003",
       "title":"subcategory",
       "_type":"string",
-      "description":"The subcategory of this financial instrument",
+      "description":"The subcategory of this financial token",
       "values":"bond"
    },
    {
       "metadataId":"0004",
       "title":"childCategory",
       "_type":"string",
-      "description":"The child category of this financial instrument",
+      "description":"The child category of this financial token",
+      "values":"zero-coupon callable bond"
+   },
+      {
+      "metadataId":"0004",
+      "title":"description",
+      "_type":"string",
+      "description":"The description of this token",
       "values":"zero-coupon callable bond"
    },
       {
