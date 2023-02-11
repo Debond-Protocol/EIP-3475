@@ -27,8 +27,15 @@
       "_type":"string",
       "description":"The child category of this financial instrument",
       "values":"zero-coupon callable bond"
-   },
-      {
+   },      
+   {
+      "metadataId":"0005",
+      "title":"description",
+      "_type":"string",
+      "description":"The description of this token",
+      "values":"zero-coupon callable bond"
+   },	
+   {
       "metadataId":"0100",
       "title":"issuerName",
       "_type":"string",
