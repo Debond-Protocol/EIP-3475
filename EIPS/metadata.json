@@ -1,150 +1,333 @@
 
 [
    {
-      "metadataId":"0001",
-      "title":"symbol",
-      "_type":"string",
-      "description":"Lorem ipsum...",
-      "values":"Class symbol 1"
-   },
-   {
-      "metadataId":"0002",
-      "title":"category",
-      "_type":"string",
-      "description":"The category of this financial instrument",
-      "values":"security"
-   },
-   {
-      "metadataId":"0003",
-      "title":"subcategory",
-      "_type":"string",
-      "description":"The subcategory of this financial instrument",
-      "values":"bond"
-   },
-   {
-      "metadataId":"0004",
-      "title":"childCategory",
-      "_type":"string",
-      "description":"The child category of this financial instrument",
-      "values":"zero-coupon callable bond"
-   },
-   {
-      "metadataId":"0100",
-      "title":"Issuer",
-      "_type":"string",
-      "description":"formal name of the token issuer",
-      "values":"ABC "
-   },
-   {
-      "metadataId":"0101",
-      "title":"IssuerType",
-      "_type":"string",
-      "description":"Organization‘s type",
-      "values":"LTD"
-   },
-   {
-      "metadataId":"0102",
-      "title":"IssuerJurisdiction",
-      "_type":"string",
-      "description":"jurisdiction",
-      "values":"US"
-   },
-   {
-      "metadataId":"0103",
-      "title":"issuerRegistrationAddress",
-      "_type":"string",
-      "description":"Address of the established office & Jurisdiction",
-      "values":"1st avenue NYK"
-   },
-   {
-      "metadataId":"0104",
-      "title":"issuerURL",
-      "_type":"string",
-      "description":"URL link of the website",
-      "values":"https://www.ABC.AI"
-   },
-   {
-      "metadataId":"0105",
-      "title":"issuerlogo",
-      "_type":"string",
-      "description":"URL of stored issuer logo/ media kit details in 64*64 pix png format",
-      "values":"https://www.ABC.AI/logo.png"
-   },
-   {
-      "metadataId":"0106",
-      "title":"registrationNumber",
-      "_type":"string",
-      "description":"The registration number of the issuer’s entity",
-      "values":"000000000000"
-   },
-   {
-      "metadataId":"1007",
-      "title":"pitch URL",
-      "_type":"string",
-      "description":"link to the pitch deck",
-      "values":[
-         "https://bit.ly/ABC_pitch.pdf"
-      ]
-   },
-   {
-      "metadataId":"1008",
-      "title":"industry",
-      "_type":"string[]",
-      "description":"the registered industry the company is associated",
-      "values":[
-         "software development",
-         "banking software development"
-      ]
-   },
-   {
-      "metadataId":"0150",
-      "title":"managerName",
-      "_type":"string",
-      "description":"Person responsible for the management of this financial instrument (consulting firm handling the entities )",
-      "values":"Fireblocks LLC"
-   },
-   {
-      "metadataId":"0151",
-      "title":"ManagerCode",
-      "_type":"string",
-      "description":" Legal Entity Identifier (LEI) for defining the responsible regarding the issuance of bond/ securities.",
-      "values":"8958801496"
-   },
-   {
-      "metadataId":"0152",
-      "title":"custodianName",
-      "_type":"string",
-      "description":" Registered entity name of the entity providing the custodian services of securities",
-      "values":"Fireblocks LLC"
-   },
-   {
-      "metadataId":"0153",
-      "title":"Custodian Code",
-      "_type":"string",
-      "description":"LEI defining the custodian services of the token",
-      "values":"8958801496"
-   },
-   {
-      "metadataId":"0154",
-      "title":"auditorName",
-      "_type":"string",
-      "description":" Registered entity name of the entity providing the auditing services of securities",
-      "values":"Fireblocks LLC"
-   },
-   {
-      "metadataId":"0155",
-      "title":"auditorCode",
-      "_type":"string",
-      "description":"LEI defining the auditor services of the token",
-      "values":"8958801496"
-   },
-   {
-      "metadataId":"2000",
-      "title":"securityRegisteredAuthority",
-      "_type":"integer",
-      "description":"authorities that regulates the security issuance in the jurisdiction",
-      "values":"BIS"
-   },
+		"metadataId": "0001",
+		"title": "symbol",
+		"_type": "string",
+		"description": "Lorem ipsum...",
+		"values": "Class symbol 1"
+	},
+	{
+		"metadataId": "0002",
+		"title": "category",
+		"_type": "string",
+		"description": "The category of this financial instrument",
+		"values": "security"
+	},
+	{
+		"metadataId": "0003",
+		"title": "subcategory",
+		"_type": "string",
+		"description": "The subcategory of this financial instrument",
+		"values": "bond"
+	},
+	{
+		"metadataId": "0004",
+		"title": "childCategory",
+		"_type": "string",
+		"description": "The child category of this financial instrument",
+		"values": "zero-coupon callable bond"
+	},
+	{
+		"metadataId": "0100",
+		"title": "issuerName",
+		"_type": "string",
+		"description": "formal name of the issuer",
+		"values": "ABC "
+	},
+	{
+		"metadataId": "0101",
+		"title": "issuerType",
+		"_type": "string",
+		"description": "Organization‘s type",
+		"values": "LTD"
+	},
+	{
+		"metadataId": "0102",
+		"title": "issuerJurisdiction",
+		"_type": "string",
+		"description": "jurisdiction of the issuer",
+		"values": "US"
+	},
+	{
+		"metadataId": "0103",
+		"title": "issuerRegistrationAddress",
+		"_type": "string",
+		"description": "Registrated address of the entity",
+		"values": "1st avenue NYK"
+	},
+	{
+		"metadataId": "0104",
+		"title": "issuerURL",
+		"_type": "string",
+		"description": "URL link of the website",
+		"values": "https://www.ABC.AI"
+	},
+	{
+		"metadataId": "0105",
+		"title": "issuerLogo",
+		"_type": "string",
+		"description": "URL of stored issuer logo/ media kit details in 64*64 pix png format",
+		"values": "https://www.ABC.AI/logo.png"
+	},
+	{
+		"metadataId": "0106",
+		"title": "issuerRegistrationNumber",
+		"_type": "string",
+		"description": "The registration number of the issuer’s entity",
+		"values": "000000000000"
+	},
+	{
+		"metadataId": "1007",
+		"title": "issuerPitchURL",
+		"_type": "string",
+		"description": "link to the issuer's pitch deck",
+		"values": [
+			"https://bit.ly/ABC_pitch.pdf"
+		]
+	},
+	{
+		"metadataId": "1008",
+		"title": "issuerIndustry",
+		"_type": "string[]",
+		"description": "the registered industry the issuer is associated",
+		"values": [
+			"software development",
+			"banking software development"
+		]
+	},
+	{
+		"metadataId": "1009",
+		"title": "issuerChainAddress",
+		"_type": "address",
+		"description": "the public key address of the issuer",
+		"values": "0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+	},
+	{
+		"metadataId": "1020",
+		"title": "debitorName",
+		"_type": "string",
+		"description": "formal name of the debitor",
+		"values": "ABC "
+	},
+	{
+		"metadataId": "1021",
+		"title": "debitorType",
+		"_type": "string",
+		"description": "Organization‘s type",
+		"values": "LTD"
+	},
+	{
+		"metadataId": "1022",
+		"title": "debitorJurisdiction",
+		"_type": "string",
+		"description": "jurisdiction of the debitor",
+		"values": "US"
+	},
+	{
+		"metadataId": "1023",
+		"title": "debitorRegistrationAddress",
+		"_type": "string",
+		"description": "Address of the established office",
+		"values": "1st avenue NYK"
+	},
+	{
+		"metadataId": "1024",
+		"title": "debitorURL",
+		"_type": "string",
+		"description": "URL link of the website",
+		"values": "https://www.ABC.AI"
+	},
+	{
+		"metadataId": "1025",
+		"title": "debitorLogo",
+		"_type": "string",
+		"description": "URL of stored issuer logo/ media kit details in 64*64 pix png format",
+		"values": "https://www.ABC.AI/logo.png"
+	},
+	{
+		"metadataId": "1026",
+		"title": "debitorRegistrationNumber",
+		"_type": "string",
+		"description": "The registration number of the debitor’s entity",
+		"values": "000000000000"
+	},
+	{
+		"metadataId": "1027",
+		"title": "debitorPitchURL",
+		"_type": "string",
+		"description": "link to the pitch deck",
+		"values": [
+			"https://bit.ly/ABC_pitch.pdf"
+		]
+	},
+	{
+		"metadataId": "1028",
+		"title": "debitorIndustry",
+		"_type": "string[]",
+		"description": "the registered industry the debitor is associated",
+		"values": [
+			"software development",
+			"banking software development"
+		]
+	},
+	{
+		"metadataId": "1029",
+		"title": "debitorChainAddress",
+		"_type": "address",
+		"description": "the public key address of the debitor",
+		"values": "0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+	},
+	{
+		"metadataId": "1030",
+		"title": "custodianName",
+		"_type": "string",
+		"description": "formal name of the custodian",
+		"values": "ABC "
+	},
+	{
+		"metadataId": "1031",
+		"title": "custodianType",
+		"_type": "string",
+		"description": "Organization‘s type",
+		"values": "LTD"
+	},
+	{
+		"metadataId": "1032",
+		"title": "custodianJurisdiction",
+		"_type": "string",
+		"description": "jurisdiction of the custodian",
+		"values": "US"
+	},
+	{
+		"metadataId": "1033",
+		"title": "custodianRegistrationAddress",
+		"_type": "string",
+		"description": "Address of the established office",
+		"values": "1st avenue NYK"
+	},
+	{
+		"metadataId": "1034",
+		"title": "custodianURL",
+		"_type": "string",
+		"description": "URL link of the website",
+		"values": "https://www.ABC.AI"
+	},
+	{
+		"metadataId": "1035",
+		"title": "custodianLogo",
+		"_type": "string",
+		"description": "URL of stored custodian's logo/ media kit details in 64*64 pix png format",
+		"values": "https://www.ABC.AI/logo.png"
+	},
+	{
+		"metadataId": "1036",
+		"title": "custodianRegistrationNumber",
+		"_type": "string",
+		"description": "The registration number of the custodian’s entity",
+		"values": "000000000000"
+	},
+	{
+		"metadataId": "1037",
+		"title": "custodianPitchURL",
+		"_type": "string",
+		"description": "link to the pitch deck",
+		"values": [
+			"https://bit.ly/ABC_pitch.pdf"
+		]
+	},
+	{
+		"metadataId": "1038",
+		"title": "custodianIndustry",
+		"_type": "string[]",
+		"description": "the registered industry the custodian is associated",
+		"values": [
+			"software development",
+			"banking software development"
+		]
+	},
+	{
+		"metadataId": "1039",
+		"title": "custodianChainAddress",
+		"_type": "address",
+		"description": "the public key address of the custodian",
+		"values": "0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+	},
+	{
+		"metadataId": "1040",
+		"title": "auditorName",
+		"_type": "string",
+		"description": "formal name of the auditor",
+		"values": "ABC "
+	},
+	{
+		"metadataId": "1041",
+		"title": "auditorType",
+		"_type": "string",
+		"description": "Organization‘s type",
+		"values": "LTD"
+	},
+	{
+		"metadataId": "1042",
+		"title": "auditorJurisdiction",
+		"_type": "string",
+		"description": "jurisdiction of the auditor",
+		"values": "US"
+	},
+	{
+		"metadataId": "1043",
+		"title": "auditorRegistrationAddress",
+		"_type": "string",
+		"description": "Address of the established office",
+		"values": "1st avenue NYK"
+	},
+	{
+		"metadataId": "1044",
+		"title": "auditorURL",
+		"_type": "string",
+		"description": "URL link of the website",
+		"values": "https://www.ABC.AI"
+	},
+	{
+		"metadataId": "1045",
+		"title": "auditorLogo",
+		"_type": "string",
+		"description": "URL of stored auditor's logo/ media kit details in 64*64 pix png format",
+		"values": "https://www.ABC.AI/logo.png"
+	},
+	{
+		"metadataId": "1046",
+		"title": "auditorRegistrationNumber",
+		"_type": "string",
+		"description": "The registration number of the auditor’s entity",
+		"values": "000000000000"
+	},
+	{
+		"metadataId": "1047",
+		"title": "auditorPitchURL",
+		"_type": "string",
+		"description": "link to the pitch deck",
+		"values": [
+			"https://bit.ly/ABC_pitch.pdf"
+		]
+	},
+	{
+		"metadataId": "1048",
+		"title": "auditorIndustry",
+		"_type": "string[]",
+		"description": "the registered industry the auditor is associated",
+		"values": [
+			"software development",
+			"banking software development"
+		]
+	},
+	{
+		"metadataId": "1049",
+		"title": "auditorChainAddress",
+		"_type": "address",
+		"description": "the public key address of the auditor",
+		"values": "0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+	},
    {
       "metadataId":"2001",
       "title":"ISIN",
