@@ -334,7 +334,7 @@
    {
       "metadataId":"2001",
       "title":"ISIN",
-      "_type":"integer",
+      "_type":"string",
       "description":"defining the identifier code of the security(https://www.investopedia.com/terms/i/isin.asp)",
       "values":" US-000402625-0"
    },
