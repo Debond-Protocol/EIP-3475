@@ -406,7 +406,7 @@
    },
    {
       "metadataId":"2010",
-      "title":"Callable",
+      "title":"callable",
       "_type":"boolean",
       "description":"boolean identifying whether the bond is of type callable",
       "values":"True"
