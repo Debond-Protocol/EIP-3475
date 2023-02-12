@@ -15,6 +15,10 @@ interface IERC3475 {
         uint uintValue;
         address addressValue;
         bool boolValue;
+        string[] stringArryValue;
+        uint[] uintArryValue;
+        address[] addressArryValue;
+        bool[] boolArryValue;
     }
     /**
      * @dev structure allows the transfer of any given number of bonds from one address to another.
@@ -129,10 +133,11 @@ interface IERC3475 {
     function nonceMetadata(uint256 _classId, uint256 _metadataId) external view returns (Metadata memory);
 
     /**
-     * @dev Returns the values of the given _classId.
+     * @dev Returns the values of the given _classTitle.
      * the metadata SHOULD follow a set of structures explained in eip-3475.md
      */
-    function classValues(uint256 _classId, uint256 _metadataId) external view returns (Values memory);
+    function classValuesFromTitle(uint256 _classId, string memory _metadataTitle) external view returns (Values memory);
+
 
     /**
      * @dev Returns the values of given _nonceId.
