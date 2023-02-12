@@ -87,7 +87,7 @@
    {
       "metadataId":"1007",
       "title":"issuerDocURL",
-      "_type":"string",
+      "_type":"string[]",
       "description":"link to the issuer's documents",
       "values":[
          "https://bit.ly/ABC_pitch.pdf",
