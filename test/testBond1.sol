@@ -265,7 +265,7 @@ contract ERC3475 is IERC3475 {
             "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
             "0x55d398326f99059ff775485246999027b3197955"
         ];  
-        _classes[1]._values["Callable"].boolValue = true;  
+        _classes[1]._values["callable"].boolValue = true;  
         _classes[1]._values["maturityPeriod"].uintValue = 31104000;  
         _classes[1]._values["coupon"].boolValue = true;  
         _classes[1]._values["couponRate"].uintValue = 5000;  
@@ -300,7 +300,7 @@ contract ERC3475 is IERC3475 {
             "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
             "0x55d398326f99059ff775485246999027b3197955"
         ];  
-        _classes[2]._values["Callable"].boolValue = true;  
+        _classes[2]._values["callable"].boolValue = true;  
         _classes[2]._values["maturityPeriod"].uintValue = 31104000;  
         _classes[2]._values["coupon"].boolValue = true;  
         _classes[2]._values["couponRate"].uintValue = 20000;  
@@ -335,7 +335,7 @@ contract ERC3475 is IERC3475 {
             "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
             "0x55d398326f99059ff775485246999027b3197955"
         ];  
-        _classes[3]._values["Callable"].boolValue = true;  
+        _classes[3]._values["callable"].boolValue = true;  
         _classes[3]._values["maturityPeriod"].uintValue = 31104000;  
         _classes[3]._values["coupon"].boolValue = true;  
         _classes[3]._values["couponRate"].uintValue = 50000;  
