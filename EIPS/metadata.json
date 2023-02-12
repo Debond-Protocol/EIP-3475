@@ -370,8 +370,8 @@
       "metadataId":"2005",
       "title":"shareValue",
       "_type":"integer",
-      "description":"defines the value of bond at the time of issuance",
-      "values":"900000000"
+      "description":"defines the value of bond at the time of issuance in PPM",
+      "values":"100000000"
    },
    {
       "metadataId":"2006",
