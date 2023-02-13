@@ -239,124 +239,125 @@ contract ERC3475 is IERC3475 {
      */
     constructor() {
         // define metadata of the class 1";
-        _classes[1]._values["symbol"].stringValue = "A55 1Y BRL Liquidity Flow Bond";
-        _classes[1]._values["category"].stringValue = "security";
-        _classes[1]._values["subcategory"].stringValue = "bond";
-        _classes[1]._values["childCategory"].stringValue = "coupon callable bond";
+        _classes[1]._values[1].stringValue = "FTX BTC Claim";
+        _classes[1]._values[2].stringValue = "security";
+        _classes[1]._values[3].stringValue = "claim";
+        _classes[1]._values[4].stringValue = "crypto bankruptcy claim";
         
-        _classes[1]._values["description"].stringValue = "Pledge of future economic rights resulting from a commercial contract between the borrower and its drawee with or without escrow; ";
-        _classes[1]._values["issuerName"].stringValue = "A55";
-        _classes[1]._values["issuerType"].stringValue = "LTD";
-        _classes[1]._values["issuerJurisdiction"].stringValue = "BR";
-        _classes[1]._values["issuerRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
-        _classes[1]._values["issuerURL"].stringValue = "https://www.a55.tech/";
-        _classes[1]._values["issuerLogo"].stringValue = "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/8e36abff206b20109afb8e9f1c2e7572.png";
-        _classes[1]._values["issuerRegistrationNumber"].stringValue = "BR-000000000000";
-        _classes[1]._values["issuerDocURL"].stringArryValue = [
-            "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/a55.pptx.pdf"
+        _classes[1]._values[5].stringValue = "holder of this token owns the claim for the crypto asset in FTX exchange. Their claim may be redeemed aftre the liquidation process";
+        _classes[1]._values[6].stringValue = "FTX";
+        _classes[1]._values[7].stringValue = "LTD";
+        _classes[1]._values[8].stringValue = "US";
+        _classes[1]._values[9].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
+        _classes[1]._values[10].stringValue = "https://ftx.com/";
+        _classes[1]._values[11].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
+        _classes[1]._values[12].stringValue = "US-000000000000";
+        _classes[1]._values[13].stringArryValue = [
+            "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
         ];  
-        _classes[1]._values["ISIN"].stringValue = "BR-000402625-0";  
-        _classes[1]._values["fundType"].stringValue = "corporate";  
-        _classes[1]._values["riskLevel"].stringValue = "AAA";  
-        _classes[1]._values["intendedDate"].stringValue = "1676038570";  
-        _classes[1]._values["shareValue"].uintValue = 100000000;  
-        _classes[1]._values["currency"].stringValue = "BRL";  
-        _classes[1]._values["collateralAllowed"].stringArryValue = [
-            "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
-            "0x55d398326f99059ff775485246999027b3197955"
+        _classes[1]._values[14].stringValue = "FTX";
+        _classes[1]._values[15].stringValue = "LTD";
+        _classes[1]._values[16].stringValue = "US";
+        _classes[1]._values[17].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
+        _classes[1]._values[18].stringValue = "https://ftx.com/";
+        _classes[1]._values[19].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
+        _classes[1]._values[20].stringValue = "US-000000000000";
+        _classes[1]._values[21].stringArryValue = [
+            "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
         ];  
-        _classes[1]._values["callable"].boolValue = true;  
-        _classes[1]._values["maturityPeriod"].uintValue = 31104000;  
-        _classes[1]._values["coupon"].boolValue = true;  
-        _classes[1]._values["couponRate"].uintValue = 5000;  
-        _classes[1]._values["couponPeriod"].uintValue = 2592000;  
-        _classes[1]._values["fixed-rate"].boolValue = true;  
-        _classes[1]._values["APY"].uintValue = 60000;  
 
-      // define metadata of the class 2";
-        _classes[2]._values["symbol"].stringValue = "A55 1Y BRL Credit Card Bond";
+        _classes[1]._values[22].stringValue = "bankrupcy claim";  
+        _classes[1]._values[23].stringValue = "C";  
+        _classes[1]._values[24].stringValue = "1676038570";  
+        _classes[1]._values[25].uintValue = 160000;  
+        _classes[1]._values[26].stringValue = "BTC";  
+
+        _classes[1]._values[27].boolValue = true;   
+        _classes[1]._values[28].stringValue = "Redeemable after the legal liquidation process with the liquidator";   
+        _classes[1]._values[29].stringArryValue = [
+            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
+        ];  //wbtc
+
+        // define metadata of the class 2";
+        _classes[2]._values["symbol"].stringValue = "FTX ETH Claim";
         _classes[2]._values["category"].stringValue = "security";
-        _classes[2]._values["subcategory"].stringValue = "bond";
-        _classes[2]._values["childCategory"].stringValue = "coupon callable bond";
+        _classes[2]._values["subcategory"].stringValue = "claim";
+        _classes[2]._values["childCategory"].stringValue = "crypto bankruptcy claim";
         
-        _classes[2]._values["description"].stringValue = "Pledge of future economic rights resulting from a commercial contract between the borrower and its drawee with or without escrow; ";
-        _classes[2]._values["issuerName"].stringValue = "A55";
+        _classes[2]._values["description"].stringValue = "holder of this token owns the claim for the crypto asset in FTX exchange. Their claim may be redeemed aftre the liquidation process";
+        _classes[2]._values["issuerName"].stringValue = "FTX";
         _classes[2]._values["issuerType"].stringValue = "LTD";
-        _classes[2]._values["issuerJurisdiction"].stringValue = "BR";
+        _classes[2]._values["issuerJurisdiction"].stringValue = "US";
         _classes[2]._values["issuerRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
-        _classes[2]._values["issuerURL"].stringValue = "https://www.a55.tech/";
-        _classes[2]._values["issuerLogo"].stringValue = "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/8e36abff206b20109afb8e9f1c2e7572.png";
-        _classes[2]._values["issuerRegistrationNumber"].stringValue = "BR-000000000000";
+        _classes[2]._values["issuerURL"].stringValue = "https://ftx.com/";
+        _classes[2]._values["issuerLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
+        _classes[2]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
         _classes[2]._values["issuerDocURL"].stringArryValue = [
-            "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/a55.pptx.pdf"
+            "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
         ];  
-        _classes[2]._values["ISIN"].stringValue = "BR-000402625-0";  
-        _classes[2]._values["fundType"].stringValue = "corporate";  
-        _classes[2]._values["riskLevel"].stringValue = "B";  
+        _classes[2]._values["liquidatorName"].stringValue = "FTX";
+        _classes[2]._values["liquidatorType"].stringValue = "LTD";
+        _classes[2]._values["liquidatorJurisdiction"].stringValue = "US";
+        _classes[2]._values["liquidatorRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
+        _classes[2]._values["liquidatorURL"].stringValue = "https://ftx.com/";
+        _classes[2]._values["liquidatorLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
+        _classes[2]._values["liquidatorRegistrationNumber"].stringValue = "US-000000000000";
+        _classes[2]._values["liquidatorDocURL"].stringArryValue = [
+            "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
+        ];  
+
+        _classes[2]._values["fundType"].stringValue = "bankrupcy claim";  
+        _classes[2]._values["riskLevel"].stringValue = "C";  
         _classes[2]._values["intendedDate"].stringValue = "1676038570";  
-        _classes[2]._values["shareValue"].uintValue = 100000000;  
-        _classes[2]._values["currency"].stringValue = "BRL";  
-        _classes[2]._values["collateralAllowed"].stringArryValue = [
-            "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
-            "0x55d398326f99059ff775485246999027b3197955"
-        ];  
-        _classes[2]._values["callable"].boolValue = true;  
-        _classes[2]._values["maturityPeriod"].uintValue = 31104000;  
-        _classes[2]._values["coupon"].boolValue = true;  
-        _classes[2]._values["couponRate"].uintValue = 20000;  
-        _classes[2]._values["couponPeriod"].uintValue = 2592000;  
-        _classes[2]._values["fixed-rate"].boolValue = true;  
-        _classes[2]._values["APY"].uintValue = 240000;  
+        _classes[2]._values["shareValue"].uintValue = 140000;  
+        _classes[2]._values["currency"].stringValue = "ETH";  
+
+        _classes[2]._values["callable"].boolValue = true;   
+        _classes[2]._values["specialMaturityRule"].stringValue = "Redeemable after the legal liquidation process with the liquidator";   
+        _classes[2]._values["repaymentAsset"].stringArryValue = [
+            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+        ];  //weth
 
         // define metadata of the class 3";
-        _classes[3]._values["symbol"].stringValue = "A55 1Y Crypto Bond";
+        _classes[3]._values["symbol"].stringValue = "FTX USDC Claim";
         _classes[3]._values["category"].stringValue = "security";
-        _classes[3]._values["subcategory"].stringValue = "bond";
-        _classes[3]._values["childCategory"].stringValue = "coupon callable bond";
+        _classes[3]._values["subcategory"].stringValue = "claim";
+        _classes[3]._values["childCategory"].stringValue = "crypto bankruptcy claim";
         
-        _classes[3]._values["description"].stringValue = "Pledge of future economic rights resulting from a commercial contract between the borrower and its drawee with or without escrow; ";
-        _classes[3]._values["issuerName"].stringValue = "A55";
+        _classes[3]._values["description"].stringValue = "holder of this token owns the claim for the crypto asset in FTX exchange. Their claim may be redeemed aftre the liquidation process";
+        _classes[3]._values["issuerName"].stringValue = "FTX";
         _classes[3]._values["issuerType"].stringValue = "LTD";
-        _classes[3]._values["issuerJurisdiction"].stringValue = "BR";
+        _classes[3]._values["issuerJurisdiction"].stringValue = "US";
         _classes[3]._values["issuerRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
-        _classes[3]._values["issuerURL"].stringValue = "https://www.a55.tech/";
-        _classes[3]._values["issuerLogo"].stringValue = "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/8e36abff206b20109afb8e9f1c2e7572.png";
-        _classes[3]._values["issuerRegistrationNumber"].stringValue = "BR-000000000000";
+        _classes[3]._values["issuerURL"].stringValue = "https://ftx.com/";
+        _classes[3]._values["issuerLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
+        _classes[3]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
         _classes[3]._values["issuerDocURL"].stringArryValue = [
-            "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/a55.pptx.pdf"
+            "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
         ];  
-        _classes[3]._values["ISIN"].stringValue = "BR-000402625-0";  
-        _classes[3]._values["fundType"].stringValue = "corporate";  
-        _classes[3]._values["riskLevel"].stringValue = "CC";  
+        _classes[3]._values["liquidatorName"].stringValue = "FTX";
+        _classes[3]._values["liquidatorType"].stringValue = "LTD";
+        _classes[3]._values["liquidatorJurisdiction"].stringValue = "US";
+        _classes[3]._values["liquidatorRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
+        _classes[3]._values["liquidatorURL"].stringValue = "https://ftx.com/";
+        _classes[3]._values["liquidatorLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
+        _classes[3]._values["liquidatorRegistrationNumber"].stringValue = "US-000000000000";
+        _classes[3]._values["liquidatorDocURL"].stringArryValue = [
+            "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
+        ];  
+
+        _classes[3]._values["fundType"].stringValue = "bankrupcy claim";  
+        _classes[3]._values["riskLevel"].stringValue = "C";  
         _classes[3]._values["intendedDate"].stringValue = "1676038570";  
-        _classes[3]._values["shareValue"].uintValue = 100000000;  
-        _classes[3]._values["currency"].stringValue = "BRL";  
-        _classes[3]._values["collateralAllowed"].stringArryValue = [
-            "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
-            "0x55d398326f99059ff775485246999027b3197955"
+        _classes[3]._values["shareValue"].uintValue = 220000;  
+        _classes[3]._values["currency"].stringValue = "USDC";  
+
+        _classes[3]._values["callable"].boolValue = true;   
+        _classes[3]._values["specialMaturityRule"].stringValue = "Redeemable after the legal liquidation process with the liquidator";   
+        _classes[3]._values["repaymentAsset"].stringArryValue = [
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ];  
-        _classes[3]._values["callable"].boolValue = true;  
-        _classes[3]._values["maturityPeriod"].uintValue = 31104000;  
-        _classes[3]._values["coupon"].boolValue = true;  
-        _classes[3]._values["couponRate"].uintValue = 50000;  
-        _classes[3]._values["couponPeriod"].uintValue = 2592000;  
-        _classes[3]._values["fixed-rate"].boolValue = true;  
-        _classes[3]._values["APY"].uintValue = 600000;  
-      
-
-        _classes[1]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
-        _classes[1]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
-        _classes[1]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 31104000;
-
-        _classes[2]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
-        _classes[2]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
-        _classes[2]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 31104000;
-        
-        _classes[3]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
-        _classes[3]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
-        _classes[3]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 31104000;
-        }
-
+    }
     // WRITABLES
     function transferFrom(
         address _from,
@@ -581,8 +582,14 @@ contract ERC3475 is IERC3475 {
     view
     override
     returns (uint256 progressAchieved, uint256 progressRemaining){
-        progressAchieved = 0;
-        progressRemaining = 100;
+        uint256 issuanceDate = _classes[classId]._nonces[nonceId]._values["issuranceTime"].uintValue;
+        uint256 maturityDate = issuanceDate + _classes[classId]._values["maturityPeriod"].uintValue;
+
+        // check whether the bond is being already initialized:
+        progressAchieved = block.timestamp - issuanceDate;
+        progressRemaining = block.timestamp < maturityDate
+        ? maturityDate - block.timestamp
+        : 0;
     }
     /**
     gets the allowance of the bonds identified by (classId,nonceId) held by _owner to be spend by spender.
