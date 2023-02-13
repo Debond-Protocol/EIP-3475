@@ -111,6 +111,82 @@
       "description":"the public key address of the issuer",
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
    },
+	  {
+      "metadataId":"0110",
+      "title":"liquidatorName",
+      "_type":"string",
+      "description":"formal name of the liquidator",
+      "values":"ABC "
+   },
+   {
+      "metadataId":"0111",
+      "title":"liquidatorType",
+      "_type":"string",
+      "description":"Organization‘s type",
+      "values":"LTD"
+   },
+   {
+      "metadataId":"0112",
+      "title":"liquidatorJurisdiction",
+      "_type":"string",
+      "description":"jurisdiction of the liquidator",
+      "values":"US"
+   },
+   {
+      "metadataId":"0113",
+      "title":"liquidatorRegistrationAddress",
+      "_type":"string",
+      "description":"Registrated address of the entity",
+      "values":"1st avenue NYK"
+   },
+   {
+      "metadataId":"0114",
+      "title":"liquidatorURL",
+      "_type":"string",
+      "description":"URL link of the website",
+      "values":"https://www.ABC.AI"
+   },
+   {
+      "metadataId":"0115",
+      "title":"liquidatorLogo",
+      "_type":"string",
+      "description":"URL of stored liquidator logo/ media kit details in 64*64 pix png format",
+      "values":"https://www.ABC.AI/logo.png"
+   },
+   {
+      "metadataId":"0116",
+      "title":"liquidatorRegistrationNumber",
+      "_type":"string",
+      "description":"The registration number of the liquidator’s entity",
+      "values":"000000000000"
+   },
+   {
+      "metadataId":"0117",
+      "title":"liquidatorDocURL",
+      "_type":"string[]",
+      "description":"link to the liquidator's documents",
+      "values":[
+         "https://bit.ly/ABC_pitch.pdf",
+	 "https://bit.ly/ABC_pitch.pdf"
+      ]
+   },
+   {
+      "metadataId":"0118",
+      "title":"liquidatorIndustry",
+      "_type":"string[]",
+      "description":"the registered industry the liquidator is associated",
+      "values":[
+         "software development",
+         "banking software development"
+      ]
+   },
+   {
+      "metadataId":"0119",
+      "title":"liquidatorChainAddress",
+      "_type":"address",
+      "description":"the public key address of the liquidator",
+      "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+   },
    {
       "metadataId":"0120",
       "title":"debitorName",
