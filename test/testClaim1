@@ -239,42 +239,42 @@ contract ERC3475 is IERC3475 {
      */
     constructor() {
         // define metadata of the class 1";
-        _classes[1]._values[1].stringValue = "FTX BTC Claim";
-        _classes[1]._values[2].stringValue = "security";
-        _classes[1]._values[3].stringValue = "claim";
-        _classes[1]._values[4].stringValue = "crypto bankruptcy claim";
+        _classes[1]._values["symbol"].stringValue = "FTX BTC Claim";
+        _classes[1]._values["category"].stringValue = "security";
+        _classes[1]._values["subcategory"].stringValue = "claim";
+        _classes[1]._values["childCategory"].stringValue = "crypto bankruptcy claim";
         
-        _classes[1]._values[5].stringValue = "holder of this token owns the claim for the crypto asset in FTX exchange. Their claim may be redeemed aftre the liquidation process";
-        _classes[1]._values[6].stringValue = "FTX";
-        _classes[1]._values[7].stringValue = "LTD";
-        _classes[1]._values[8].stringValue = "US";
-        _classes[1]._values[9].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
-        _classes[1]._values[10].stringValue = "https://ftx.com/";
-        _classes[1]._values[11].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
-        _classes[1]._values[12].stringValue = "US-000000000000";
-        _classes[1]._values[13].stringArryValue = [
+        _classes[1]._values["description"].stringValue = "holder of this token owns the claim for the crypto asset in FTX exchange. Their claim may be redeemed aftre the liquidation process";
+        _classes[1]._values["issuerName"].stringValue = "FTX";
+        _classes[1]._values["issuerType"].stringValue = "LTD";
+        _classes[1]._values["issuerJurisdiction"].stringValue = "US";
+        _classes[1]._values["issuerRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
+        _classes[1]._values["issuerURL"].stringValue = "https://ftx.com/";
+        _classes[1]._values["issuerLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
+        _classes[1]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
+        _classes[1]._values["issuerDocURL"].stringArryValue = [
             "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
         ];  
-        _classes[1]._values[14].stringValue = "FTX";
-        _classes[1]._values[15].stringValue = "LTD";
-        _classes[1]._values[16].stringValue = "US";
-        _classes[1]._values[17].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
-        _classes[1]._values[18].stringValue = "https://ftx.com/";
-        _classes[1]._values[19].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
-        _classes[1]._values[20].stringValue = "US-000000000000";
-        _classes[1]._values[21].stringArryValue = [
+        _classes[1]._values["liquidatorName"].stringValue = "FTX";
+        _classes[1]._values["liquidatorType"].stringValue = "LTD";
+        _classes[1]._values["liquidatorJurisdiction"].stringValue = "US";
+        _classes[1]._values["liquidatorRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
+        _classes[1]._values["liquidatorURL"].stringValue = "https://ftx.com/";
+        _classes[1]._values["liquidatorLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
+        _classes[1]._values["liquidatorRegistrationNumber"].stringValue = "US-000000000000";
+        _classes[1]._values["liquidatorDocURL"].stringArryValue = [
             "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
         ];  
 
-        _classes[1]._values[22].stringValue = "bankrupcy claim";  
-        _classes[1]._values[23].stringValue = "C";  
-        _classes[1]._values[24].stringValue = "1676038570";  
-        _classes[1]._values[25].uintValue = 160000;  
-        _classes[1]._values[26].stringValue = "BTC";  
+        _classes[1]._values["fundType"].stringValue = "bankrupcy claim";  
+        _classes[1]._values["riskLevel"].stringValue = "C";  
+        _classes[1]._values["intendedDate"].stringValue = "1676038570";  
+        _classes[1]._values["shareValue"].uintValue = 160000;  
+        _classes[1]._values["currency"].stringValue = "BTC";  
 
-        _classes[1]._values[27].boolValue = true;   
-        _classes[1]._values[28].stringValue = "Redeemable after the legal liquidation process with the liquidator";   
-        _classes[1]._values[29].stringArryValue = [
+        _classes[1]._values["callable"].boolValue = true;   
+        _classes[1]._values["specialMaturityRule"].stringValue = "Redeemable after the legal liquidation process with the liquidator";   
+        _classes[1]._values["repaymentAsset"].stringArryValue = [
             "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
         ];  //wbtc
 
