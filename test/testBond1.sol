@@ -143,9 +143,9 @@ interface IERC3475 {
      * @dev Returns the values of given _nonceId.
      * @param _classId is the class of bonds for which you determine the nonce .
      * @param _nonceId is the nonce for which you return the value struct info
-     * @param _metadataId The metadata SHOULD follow a set of structures explained in eip-3475.md
+     * @param _metadataTitle The metadata SHOULD follow a set of structures explained in eip-3475.md
      */
-    function nonceValues(uint256 _classId, uint256 _nonceId, uint256 _metadataId) external view returns (Values memory);
+    function nonceValuesFromTitle(uint256 _classId, uint256 _nonceId, string memory _metadataTitle) external view returns (Values memory);
 
     /**
      * @dev Returns the information about the progress needed to redeem the bond
@@ -204,7 +204,7 @@ contract ERC3475 is IERC3475 {
      * @notice this Struct is representing the Nonce properties as an object
      */
     struct Nonce {
-        mapping(uint256 => IERC3475.Values) _values;
+        mapping(string => IERC3475.Values) _values;
 
         // stores the values corresponding to the dates (issuance and maturity date).
         mapping(address => uint256) _balances;
@@ -343,6 +343,18 @@ contract ERC3475 is IERC3475 {
         _classes[3]._values["fixed-rate"].boolValue = true;  
         _classes[3]._values["APY"].uintValue = 600000;  
       
+
+        _classes[1]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
+        _classes[1]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
+        _classes[1]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 31104000;
+
+        _classes[2]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
+        _classes[2]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
+        _classes[2]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 31104000;
+        
+        _classes[3]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
+        _classes[3]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
+        _classes[3]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 31104000;
         }
 
     // WRITABLES
@@ -552,12 +564,12 @@ contract ERC3475 is IERC3475 {
         return (_classes[classId]._values[metadataTitle]);
     }  
 
-    function nonceValues(uint256 classId, uint256 nonceId, uint256 metadataId)
+    function nonceValuesFromTitle(uint256 classId, uint256 nonceId, string memory metadataTitle)
     external
     view
     override
     returns (Values memory) {
-        return (_classes[classId]._nonces[nonceId]._values[metadataId]);
+        return (_classes[classId]._nonces[nonceId]._values[metadataTitle]);
     }
 
     /** determines the progress till the  redemption of the bonds is valid  (based on the type of bonds class).
@@ -569,8 +581,8 @@ contract ERC3475 is IERC3475 {
     view
     override
     returns (uint256 progressAchieved, uint256 progressRemaining){
-        uint256 issuanceDate = _classes[classId]._nonces[nonceId]._values[0].uintValue;
-        uint256 maturityDate = issuanceDate + _classes[classId]._nonces[nonceId]._values[5].uintValue;
+        uint256 issuanceDate = _classes[classId]._nonces[nonceId]._values["issuranceTime"].uintValue;
+        uint256 maturityDate = issuanceDate + _classes[classId]._values["maturityPeriod"].uintValue;
 
         // check whether the bond is being already initialized:
         progressAchieved = block.timestamp - issuanceDate;
