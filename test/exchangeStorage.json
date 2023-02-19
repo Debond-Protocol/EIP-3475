@@ -90,7 +90,7 @@
 			},
 			{
 				"internalType": "address",
-				"name": "erc20CurrencyAddress",
+				"name": "erc20Currency",
 				"type": "address"
 			},
 			{
@@ -108,103 +108,6 @@
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_exchangeAddress",
-				"type": "address"
-			}
-		],
-		"name": "setExchangeAddress",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_maxAuctionDuration",
-				"type": "uint256"
-			}
-		],
-		"name": "setMaxAuctionDuration",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_minAuctionDuration",
-				"type": "uint256"
-			}
-		],
-		"name": "setMinAuctionDuration",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_auctionId",
-				"type": "uint256"
-			},
-			{
-				"components": [
-					{
-						"internalType": "address",
-						"name": "ERC3475Address",
-						"type": "address"
-					},
-					{
-						"components": [
-							{
-								"internalType": "uint256",
-								"name": "classId",
-								"type": "uint256"
-							},
-							{
-								"internalType": "uint256",
-								"name": "nonceId",
-								"type": "uint256"
-							},
-							{
-								"internalType": "uint256",
-								"name": "amount",
-								"type": "uint256"
-							}
-						],
-						"internalType": "struct IERC3475.Transaction[]",
-						"name": "transactions",
-						"type": "tuple[]"
-					}
-				],
-				"internalType": "struct IExchangeStorage.ERC3475Product",
-				"name": "_product",
-				"type": "tuple"
-			}
-		],
-		"name": "setProduct",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_executableAddress",
-				"type": "address"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
 	},
 	{
 		"inputs": [
@@ -360,6 +263,92 @@
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "exchangeAddress",
+				"type": "address"
+			}
+		],
+		"name": "setExchangeAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "maxAuctionDuration",
+				"type": "uint256"
+			}
+		],
+		"name": "setMaxAuctionDuration",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "minAuctionDuration",
+				"type": "uint256"
+			}
+		],
+		"name": "setMinAuctionDuration",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "auctionId",
+				"type": "uint256"
+			},
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "ERC3475Address",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "classId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "nonceId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct IERC3475.Transaction[]",
+						"name": "transactions",
+						"type": "tuple[]"
+					}
+				],
+				"internalType": "struct IExchangeStorage.ERC3475Product",
+				"name": "product",
+				"type": "tuple"
+			}
+		],
+		"name": "setProduct",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]
