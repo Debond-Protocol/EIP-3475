@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.0;
 
-import "./IERC3475.sol";
+import "./interfaces/IERC3475.sol";
 
 contract ERC3475 is IERC3475 {
     /**
@@ -42,112 +42,7 @@ contract ERC3475 is IERC3475 {
      * in practice, you will have a function to create a new class and nonce
      * to be deployed during the initial deployment cycle
      */
-    constructor() {
-        // define metadata of the class 1";
-        _classes[1]._values["symbol"].stringValue = "A55 1Y BRL Liquidity Flow Bond";
-        _classes[1]._values["category"].stringValue = "security";
-        _classes[1]._values["subcategory"].stringValue = "bond";
-        _classes[1]._values["childCategory"].stringValue = "coupon callable bond";
-        
-        _classes[1]._values["description"].stringValue = "Pledge of future economic rights resulting from a commercial contract between the borrower and its drawee with or without escrow; ";
-        _classes[1]._values["issuerName"].stringValue = "A55";
-        _classes[1]._values["issuerType"].stringValue = "LTD";
-        _classes[1]._values["issuerJurisdiction"].stringValue = "BR";
-        _classes[1]._values["issuerRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
-        _classes[1]._values["issuerURL"].stringValue = "https://www.a55.tech/";
-        _classes[1]._values["issuerLogo"].stringValue = "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/8e36abff206b20109afb8e9f1c2e7572.png";
-        _classes[1]._values["issuerRegistrationNumber"].stringValue = "BR-000000000000";
-        _classes[1]._values["issuerDocURL"].stringArryValue = [
-            "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/a55.pptx.pdf"
-        ];  
-        _classes[1]._values["ISIN"].stringValue = "BR-000402625-0";  
-        _classes[1]._values["fundType"].stringValue = "corporate";  
-        _classes[1]._values["riskLevel"].stringValue = "AAA";  
-        _classes[1]._values["intendedDate"].stringValue = "1676038570";  
-        _classes[1]._values["shareValue"].uintValue = 100000000;  
-        _classes[1]._values["currency"].stringValue = "BRL";  
-        _classes[1]._values["collateralAllowed"].stringArryValue = [
-            "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
-            "0x55d398326f99059ff775485246999027b3197955"
-        ];  
-        _classes[1]._values["callable"].boolValue = true;  
-        _classes[1]._values["maturityPeriod"].uintValue = 31104000;  
-        _classes[1]._values["coupon"].boolValue = true;  
-        _classes[1]._values["couponRate"].uintValue = 5000;  
-        _classes[1]._values["couponPeriod"].uintValue = 2592000;  
-        _classes[1]._values["fixed-rate"].boolValue = true;  
-        _classes[1]._values["APY"].uintValue = 60000;  
-
-      // define metadata of the class 2";
-        _classes[2]._values["symbol"].stringValue = "A55 1Y BRL Credit Card Bond";
-        _classes[2]._values["category"].stringValue = "security";
-        _classes[2]._values["subcategory"].stringValue = "bond";
-        _classes[2]._values["childCategory"].stringValue = "coupon callable bond";
-        
-        _classes[2]._values["description"].stringValue = "Pledge of future economic rights resulting from a commercial contract between the borrower and its drawee with or without escrow; ";
-        _classes[2]._values["issuerName"].stringValue = "A55";
-        _classes[2]._values["issuerType"].stringValue = "LTD";
-        _classes[2]._values["issuerJurisdiction"].stringValue = "BR";
-        _classes[2]._values["issuerRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
-        _classes[2]._values["issuerURL"].stringValue = "https://www.a55.tech/";
-        _classes[2]._values["issuerLogo"].stringValue = "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/8e36abff206b20109afb8e9f1c2e7572.png";
-        _classes[2]._values["issuerRegistrationNumber"].stringValue = "BR-000000000000";
-        _classes[2]._values["issuerDocURL"].stringArryValue = [
-            "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/a55.pptx.pdf"
-        ];  
-        _classes[2]._values["ISIN"].stringValue = "BR-000402625-0";  
-        _classes[2]._values["fundType"].stringValue = "corporate";  
-        _classes[2]._values["riskLevel"].stringValue = "B";  
-        _classes[2]._values["intendedDate"].stringValue = "1676038570";  
-        _classes[2]._values["shareValue"].uintValue = 100000000;  
-        _classes[2]._values["currency"].stringValue = "BRL";  
-        _classes[2]._values["collateralAllowed"].stringArryValue = [
-            "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
-            "0x55d398326f99059ff775485246999027b3197955"
-        ];  
-        _classes[2]._values["callable"].boolValue = true;  
-        _classes[2]._values["maturityPeriod"].uintValue = 31104000;  
-        _classes[2]._values["coupon"].boolValue = true;  
-        _classes[2]._values["couponRate"].uintValue = 20000;  
-        _classes[2]._values["couponPeriod"].uintValue = 2592000;  
-        _classes[2]._values["fixed-rate"].boolValue = true;  
-        _classes[2]._values["APY"].uintValue = 240000;  
-
-        // define metadata of the class 3";
-        _classes[3]._values["symbol"].stringValue = "A55 1Y Crypto Bond";
-        _classes[3]._values["category"].stringValue = "security";
-        _classes[3]._values["subcategory"].stringValue = "bond";
-        _classes[3]._values["childCategory"].stringValue = "coupon callable bond";
-        
-        _classes[3]._values["description"].stringValue = "Pledge of future economic rights resulting from a commercial contract between the borrower and its drawee with or without escrow; ";
-        _classes[3]._values["issuerName"].stringValue = "A55";
-        _classes[3]._values["issuerType"].stringValue = "LTD";
-        _classes[3]._values["issuerJurisdiction"].stringValue = "BR";
-        _classes[3]._values["issuerRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
-        _classes[3]._values["issuerURL"].stringValue = "https://www.a55.tech/";
-        _classes[3]._values["issuerLogo"].stringValue = "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/8e36abff206b20109afb8e9f1c2e7572.png";
-        _classes[3]._values["issuerRegistrationNumber"].stringValue = "BR-000000000000";
-        _classes[3]._values["issuerDocURL"].stringArryValue = [
-            "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/a55.pptx.pdf"
-        ];  
-        _classes[3]._values["ISIN"].stringValue = "BR-000402625-0";  
-        _classes[3]._values["fundType"].stringValue = "corporate";  
-        _classes[3]._values["riskLevel"].stringValue = "CC";  
-        _classes[3]._values["intendedDate"].stringValue = "1676038570";  
-        _classes[3]._values["shareValue"].uintValue = 100000000;  
-        _classes[3]._values["currency"].stringValue = "BRL";  
-        _classes[3]._values["collateralAllowed"].stringArryValue = [
-            "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
-            "0x55d398326f99059ff775485246999027b3197955"
-        ];  
-        _classes[3]._values["callable"].boolValue = true;  
-        _classes[3]._values["maturityPeriod"].uintValue = 31104000;  
-        _classes[3]._values["coupon"].boolValue = true;  
-        _classes[3]._values["couponRate"].uintValue = 50000;  
-        _classes[3]._values["couponPeriod"].uintValue = 2592000;  
-        _classes[3]._values["fixed-rate"].boolValue = true;  
-        _classes[3]._values["APY"].uintValue = 600000;  
-      
+    constructor() {     
         }
 
     // WRITABLES
