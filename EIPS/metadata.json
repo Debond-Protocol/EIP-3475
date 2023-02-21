@@ -339,7 +339,7 @@
       "description":"the public key address of the custodian",
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
    },
-    {
+   {
       "metadataId":"0140",
       "title":"auditorName",
       "_type":"string",
@@ -411,9 +411,287 @@
       "metadataId":"0149",
       "title":"auditorChainAddress",
       "_type":"address",
-      "description":"the public key address of the auditor",
+      "description":"The public key address of the auditor",
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
    },
+   {
+      "metadataId":"0150",
+      "title":"authorName",
+      "_type":"string",
+      "description":"formal name of the auditor",
+      "values":"ABC "
+   },
+   {
+      "metadataId":"0141",
+      "title":"authorType",
+      "_type":"string",
+      "description":"Organization‘s type",
+      "values":"LTD"
+   },
+   {
+      "metadataId":"0142",
+      "title":"auditorJurisdiction",
+      "_type":"string",
+      "description":"jurisdiction of the auditor",
+      "values":"US"
+   },
+   {
+      "metadataId":"0143",
+      "title":"auditorRegistrationAddress",
+      "_type":"string",
+      "description":"Address of the established office",
+      "values":"1st avenue NYK"
+   },
+   {
+      "metadataId":"0144",
+      "title":"auditorURL",
+      "_type":"string",
+      "description":"URL link of the website",
+      "values":"https://www.ABC.AI"
+   },
+   {
+      "metadataId":"0145",
+      "title":"auditorLogo",
+      "_type":"string",
+      "description":"URL of stored auditor's logo/ media kit details in 64*64 pix png format",
+      "values":"https://www.ABC.AI/logo.png"
+   },
+   {
+      "metadataId":"0146",
+      "title":"auditorRegistrationNumber",
+      "_type":"string",
+      "description":"The registration number of the auditor’s entity",
+      "values":"000000000000"
+   },
+   {
+      "metadataId":"0147",
+      "title":"auditorDocURL",
+      "_type":"string",
+      "description":"link to the documents",
+      "values":[
+         "https://bit.ly/ABC_pitch.pdf"
+      ]
+   },
+   {
+      "metadataId":"0148",
+      "title":"auditorIndustry",
+      "_type":"string[]",
+      "description":"the registered industry the auditor is associated",
+      "values":[
+         "software development",
+         "banking software development"
+      ]
+   },
+   {
+      "metadataId":"0149",
+      "title":"auditorChainAddress",
+      "_type":"address",
+      "description":"The public key address of the auditor",
+      "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+   },	
+   {
+      "metadataId":"0150",
+      "title":"authorName",
+      "_type":"string[]",
+      "description":"formal name of the author",
+      "values":"John.Snow@oxford.edu"
+   },
+   {
+      "metadataId":"0151",
+      "title":"authorType",
+      "_type":"string[]",
+      "description":"Organization‘s type",
+      "values":"affiliatedPerson"
+   },
+   {
+      "metadataId":"0152",
+      "title":"authorJurisdiction",
+      "_type":"string[]",
+      "description":"jurisdiction of the author",
+      "values":"US"
+   },
+   {
+      "metadataId":"0153",
+      "title":"authorRegistrationAddress",
+      "_type":"string[]",
+      "description":"Address of the established office",
+      "values":"1st avenue NYK"
+   },
+   {
+      "metadataId":"0154",
+      "title":"authorURL",
+      "_type":"string[]",
+      "description":"URL link of the website",
+      "values":"https://www.ABC.AI"
+   },
+   {
+      "metadataId":"0155",
+      "title":"authorLogo",
+      "_type":"string[]",
+      "description":"URL of stored author's logo/ media kit details in 64*64 pix png format",
+      "values":"https://www.ABC.AI/logo.png"
+   },
+   {
+      "metadataId":"0156",
+      "title":"authorRegistrationNumber",
+      "_type":"string[]",
+      "description":"The registration number of the author’s entity",
+      "values":"000000000000"
+   },
+   {
+      "metadataId":"0157",
+      "title":"authorDocURL",
+      "_type":"string[]",
+      "description":"link to the documents",
+      "values":[
+         "https://bit.ly/ABC_pitch.pdf"
+      ]
+   },
+   {
+      "metadataId":"0158",
+      "title":"authorIndustry",
+      "_type":"string[]",
+      "description":"the registered industry the author is associated",
+      "values":[
+         "software development",
+         "banking software development"
+      ]
+   },
+   {
+      "metadataId":"0159",
+      "title":"authorChainAddress",
+      "_type":"address[]",
+      "description":"The public key address of the author",
+      "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+   },	
+   {
+      "metadataId":"0160",
+      "title":"sponsorName",
+      "_type":"string[]",
+      "description":"formal name of the sponsor",
+      "values":"ABC "
+   },
+   {
+      "metadataId":"0161",
+      "title":"sponsorType",
+      "_type":"string[]",
+      "description":"Organization‘s type",
+      "values":"LTD"
+   },
+   {
+      "metadataId":"0162",
+      "title":"sponsorJurisdiction",
+      "_type":"string[]",
+      "description":"jurisdiction of the sponsor",
+      "values":"US"
+   },
+   {
+      "metadataId":"0163",
+      "title":"sponsorRegistrationAddress",
+      "_type":"string[]",
+      "description":"Address of the established office",
+      "values":"1st avenue NYK"
+   },
+   {
+      "metadataId":"0164",
+      "title":"sponsorURL",
+      "_type":"string[]",
+      "description":"URL link of the website",
+      "values":"https://www.ABC.AI"
+   },
+   {
+      "metadataId":"0165",
+      "title":"sponsorLogo",
+      "_type":"string[]",
+      "description":"URL of stored sponsor's logo/ media kit details in 64*64 pix png format",
+      "values":"https://www.ABC.AI/logo.png"
+   },
+   {
+      "metadataId":"0166",
+      "title":"sponsorRegistrationNumber",
+      "_type":"string[]",
+      "description":"The registration number of the sponsor’s entity",
+      "values":"000000000000"
+   },
+   {
+      "metadataId":"0167",
+      "title":"sponsorDocURL",
+      "_type":"string[]",
+      "description":"link to the documents",
+      "values":[
+         "https://bit.ly/ABC_pitch.pdf"
+      ]
+   },
+   {
+      "metadataId":"0168",
+      "title":"sponsorIndustry",
+      "_type":"string[]",
+      "description":"the registered industry the sponsor is associated",
+      "values":[
+         "software development",
+         "banking software development"
+      ]
+   },
+   {
+      "metadataId":"0169",
+      "title":"sponsorChainAddress",
+      "_type":"address[]",
+      "description":"The public key address of the sponsor",
+      "values":"0x9f91Cb042e4C6F4F9661d214Fd5741621027eFB4"
+   },	
+
+	
+   {
+      "metadataId":"1100",
+      "title":"DOI",
+      "_type":"string",
+      "description":"Serie number of the publication",
+      "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+   },	
+		
+   {
+      "metadataId":"1200",
+      "title":"copyPrice",
+      "_type":"integer",
+      "description":"Sell prcie of the publication in PPM",
+      "values":"100000000"
+   },		
+   {
+      "metadataId":"1201",
+      "title":"dataPrice",
+      "_type":"integer",
+      "description":"Sell price of data in PPM",
+      "values":"100000000"
+   },		
+   {
+      "metadataId":"1202",
+      "title":"algorithmPrice",
+      "_type":"integer",
+      "description":"Sell price of algorithm in PPM",
+      "values":"100000000"
+   },	
+		
+   {
+      "metadataId":"1100",
+      "title":"DOI",
+      "_type":"string",
+      "description":"Serie number of the publication",
+      "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+   },		
+
+		
+   {
+      "metadataId":"1100",
+      "title":"DOI",
+      "_type":"string",
+      "description":"Serie number of the publication",
+      "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+   },		
+
+
+	
+	
+	
    {
       "metadataId":"2001",
       "title":"ISIN",
