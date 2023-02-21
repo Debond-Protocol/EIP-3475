@@ -15,10 +15,10 @@ interface IERC3475 {
         uint uintValue;
         address addressValue;
         bool boolValue;
-        string[] stringArryValue;
-        uint[] uintArryValue;
-        address[] addressArryValue;
-        bool[] boolArryValue;
+        string[] stringArrayValue;
+        uint[] uintArrayValue;
+        address[] addressArrayValue;
+        bool[] boolArrayValue;
     }
     /**
      * @dev structure allows the transfer of any given number of bonds from one address to another.
@@ -252,7 +252,7 @@ contract ERC3475 is IERC3475 {
         _classes[1]._values["issuerURL"].stringValue = "https://ftx.com/";
         _classes[1]._values["issuerLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
         _classes[1]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[1]._values["issuerDocURL"].stringArryValue = [
+        _classes[1]._values["issuerDocURL"].stringArrayValue = [
             "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
         ];  
         _classes[1]._values["liquidatorName"].stringValue = "FTX";
@@ -262,7 +262,7 @@ contract ERC3475 is IERC3475 {
         _classes[1]._values["liquidatorURL"].stringValue = "https://ftx.com/";
         _classes[1]._values["liquidatorLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
         _classes[1]._values["liquidatorRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[1]._values["liquidatorDocURL"].stringArryValue = [
+        _classes[1]._values["liquidatorDocURL"].stringArrayValue = [
             "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
         ];  
 
@@ -274,7 +274,7 @@ contract ERC3475 is IERC3475 {
 
         _classes[1]._values["callable"].boolValue = true;   
         _classes[1]._values["specialMaturityRule"].stringValue = "Redeemable after the legal liquidation process with the liquidator";   
-        _classes[1]._values["repaymentAsset"].stringArryValue = [
+        _classes[1]._values["repaymentAsset"].stringArrayValue = [
             "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
         ];  //wbtc
 
@@ -292,7 +292,7 @@ contract ERC3475 is IERC3475 {
         _classes[2]._values["issuerURL"].stringValue = "https://ftx.com/";
         _classes[2]._values["issuerLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
         _classes[2]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[2]._values["issuerDocURL"].stringArryValue = [
+        _classes[2]._values["issuerDocURL"].stringArrayValue = [
             "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
         ];  
         _classes[2]._values["liquidatorName"].stringValue = "FTX";
@@ -302,7 +302,7 @@ contract ERC3475 is IERC3475 {
         _classes[2]._values["liquidatorURL"].stringValue = "https://ftx.com/";
         _classes[2]._values["liquidatorLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
         _classes[2]._values["liquidatorRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[2]._values["liquidatorDocURL"].stringArryValue = [
+        _classes[2]._values["liquidatorDocURL"].stringArrayValue = [
             "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
         ];  
 
@@ -314,7 +314,7 @@ contract ERC3475 is IERC3475 {
 
         _classes[2]._values["callable"].boolValue = true;   
         _classes[2]._values["specialMaturityRule"].stringValue = "Redeemable after the legal liquidation process with the liquidator";   
-        _classes[2]._values["repaymentAsset"].stringArryValue = [
+        _classes[2]._values["repaymentAsset"].stringArrayValue = [
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
         ];  //weth
 
@@ -332,7 +332,7 @@ contract ERC3475 is IERC3475 {
         _classes[3]._values["issuerURL"].stringValue = "https://ftx.com/";
         _classes[3]._values["issuerLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
         _classes[3]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[3]._values["issuerDocURL"].stringArryValue = [
+        _classes[3]._values["issuerDocURL"].stringArrayValue = [
             "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
         ];  
         _classes[3]._values["liquidatorName"].stringValue = "FTX";
@@ -342,7 +342,7 @@ contract ERC3475 is IERC3475 {
         _classes[3]._values["liquidatorURL"].stringValue = "https://ftx.com/";
         _classes[3]._values["liquidatorLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
         _classes[3]._values["liquidatorRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[3]._values["liquidatorDocURL"].stringArryValue = [
+        _classes[3]._values["liquidatorDocURL"].stringArrayValue = [
             "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
         ];  
 
@@ -354,7 +354,7 @@ contract ERC3475 is IERC3475 {
 
         _classes[3]._values["callable"].boolValue = true;   
         _classes[3]._values["specialMaturityRule"].stringValue = "Redeemable after the legal liquidation process with the liquidator";   
-        _classes[3]._values["repaymentAsset"].stringArryValue = [
+        _classes[3]._values["repaymentAsset"].stringArrayValue = [
             "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
         ];  
     }
