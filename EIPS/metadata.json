@@ -773,9 +773,9 @@
 },
 {
    "metadataId":"1142",
-   "title":"refrence",
+   "title":"references",
    "_type":"string[]",
-   "description":"reference of the paper",
+   "description":"references of the publication",
    "values":[
       "123239922"
    ]
