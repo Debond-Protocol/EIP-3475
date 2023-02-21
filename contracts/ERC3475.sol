@@ -154,7 +154,7 @@ contract ERC3475 is IERC3475 {
     function transferFrom(
         address _from,
         address _to,
-        Transaction[] calldata _transactions
+        Transaction[] memory _transactions
     ) public virtual override {
         require(
             _from != address(0),
@@ -179,7 +179,7 @@ contract ERC3475 is IERC3475 {
     function transferAllowanceFrom(
         address _from,
         address _to,
-        Transaction[] calldata _transactions
+        Transaction[] memory _transactions
     ) public virtual override {
         require(
             _from != address(0),
@@ -200,7 +200,7 @@ contract ERC3475 is IERC3475 {
         emit Transfer(msg.sender, _from, _to, _transactions);
     }
 
-    function issue(address _to, Transaction[] calldata _transactions)
+    function issue(address _to, Transaction[] memory _transactions)
     external
     virtual
     override
@@ -216,7 +216,7 @@ contract ERC3475 is IERC3475 {
         emit Issue(msg.sender, _to, _transactions);
     }
 
-    function redeem(address _from, Transaction[] calldata _transactions)
+    function redeem(address _from, Transaction[] memory _transactions)
     external
     virtual
     override
@@ -240,7 +240,7 @@ contract ERC3475 is IERC3475 {
         emit Redeem(msg.sender, _from, _transactions);
     }
 
-    function burn(address _from, Transaction[] calldata _transactions)
+    function burn(address _from, Transaction[] memory _transactions)
     external
     virtual
     override
@@ -261,7 +261,7 @@ contract ERC3475 is IERC3475 {
         emit Burn(msg.sender, _from, _transactions);
     }
 
-    function approve(address _spender, Transaction[] calldata _transactions)
+    function approve(address _spender, Transaction[] memory _transactions)
     external
     virtual
     override
@@ -409,7 +409,7 @@ contract ERC3475 is IERC3475 {
     function _transferFrom(
         address _from,
         address _to,
-        IERC3475.Transaction calldata _transaction
+        IERC3475.Transaction memory _transaction
     ) private {
         Nonce storage nonce = _classes[_transaction.classId]._nonces[_transaction.nonceId];
         require(
@@ -426,7 +426,7 @@ contract ERC3475 is IERC3475 {
         address _operator,
         address _from,
         address _to,
-        IERC3475.Transaction calldata _transaction
+        IERC3475.Transaction memory _transaction
     ) private {
         Nonce storage nonce = _classes[_transaction.classId]._nonces[_transaction.nonceId];
         require(
@@ -443,7 +443,7 @@ contract ERC3475 is IERC3475 {
 
     function _issue(
         address _to,
-        IERC3475.Transaction calldata _transaction
+        IERC3475.Transaction memory _transaction
     ) private {
         Nonce storage nonce = _classes[_transaction.classId]._nonces[_transaction.nonceId];
 
@@ -455,7 +455,7 @@ contract ERC3475 is IERC3475 {
 
     function _redeem(
         address _from,
-        IERC3475.Transaction calldata _transaction
+        IERC3475.Transaction memory _transaction
     ) private {
         Nonce storage nonce = _classes[_transaction.classId]._nonces[_transaction.nonceId];
         // verify whether _amount of bonds to be redeemed  are sufficient available  for the given nonce of the bonds
@@ -474,7 +474,7 @@ contract ERC3475 is IERC3475 {
 
     function _burn(
         address _from,
-        IERC3475.Transaction calldata _transaction
+        IERC3475.Transaction memory _transaction
     ) private {
         Nonce storage nonce = _classes[_transaction.classId]._nonces[_transaction.nonceId];
         // verify whether _amount of bonds to be burned are sfficient available for the given nonce of the bonds
