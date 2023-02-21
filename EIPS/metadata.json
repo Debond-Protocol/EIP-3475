@@ -777,7 +777,7 @@
    "metadataId":"1143",
    "title":"version",
    "_type":"string[]",
-   "description":"version of the paper",
+   "description":"version of the publication",
    "values":[
       "123239922"
    ]
