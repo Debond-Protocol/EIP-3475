@@ -15,10 +15,10 @@ interface IERC3475 {
         uint uintValue;
         address addressValue;
         bool boolValue;
-        string[] stringArryValue;
-        uint[] uintArryValue;
-        address[] addressArryValue;
-        bool[] boolArryValue;
+        string[] stringArrayValue;
+        uint[] uintArrayValue;
+        address[] addressArrayValue;
+        bool[] boolAraryValue;
     }
     /**
      * @dev structure allows the transfer of any given number of bonds from one address to another.
