@@ -256,6 +256,7 @@ contract ERC3475 is IERC3475 {
             "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/a55.pptx.pdf"
         ];  
         _classes[1]._values["ISIN"].stringValue = "BR-000402625-0";  
+        _classes[1]._values["Regulation"].stringValue = "144A";  
         _classes[1]._values["fundType"].stringValue = "corporate";  
         _classes[1]._values["riskLevel"].stringValue = "AAA";  
         _classes[1]._values["intendedDate"].stringValue = "1676038570";  
@@ -292,6 +293,7 @@ contract ERC3475 is IERC3475 {
             "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/a55.pptx.pdf"
         ];  
         _classes[2]._values["ISIN"].stringValue = "BR-000402625-0";  
+        _classes[1]._values["Regulation"].stringValue = "144A";  
         _classes[2]._values["fundType"].stringValue = "corporate";  
         _classes[2]._values["riskLevel"].stringValue = "B";  
         _classes[2]._values["intendedDate"].stringValue = "1676038570";  
@@ -328,6 +330,7 @@ contract ERC3475 is IERC3475 {
             "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/a55.pptx.pdf"
         ];  
         _classes[3]._values["ISIN"].stringValue = "BR-000402625-0";  
+        _classes[1]._values["Regulation"].stringValue = "144A";  
         _classes[3]._values["fundType"].stringValue = "corporate";  
         _classes[3]._values["riskLevel"].stringValue = "CC";  
         _classes[3]._values["intendedDate"].stringValue = "1676038570";  
