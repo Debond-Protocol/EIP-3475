@@ -250,7 +250,7 @@ contract ERC3475 is IERC3475 {
         _classes[1]._values["issuerJurisdiction"].stringValue = "US";
         _classes[1]._values["issuerRegistrationAddress"].stringValue = "201 Montgomery Street Second Floor, Suite 263, Jersey City, New Jersey, 07302";
         _classes[1]._values["issuerURL"].stringValue = "https://blockfi.com/";
-        _classes[1]._values["issuerLogo"].stringValue = "https://1000logos.net/wp-content/uploads/2022/05/BlockFi-Logo-500x281.jpg";
+        _classes[1]._values["issuerLogo"].stringValue = "https://crypto-central.io/library/uploads/BlockFi-logo.png";
         _classes[1]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
         _classes[1]._values["issuerDocURL"].stringArrayValue = [
             "https://www.fa-mag.com/userfiles/ads_2021/BlockFi_LG_Feb_2021/Crypto-101-v4.pdf"
@@ -260,7 +260,7 @@ contract ERC3475 is IERC3475 {
         _classes[1]._values["liquidatorJurisdiction"].stringValue = "US";
         _classes[1]._values["liquidatorRegistrationAddress"].stringValue = "201 Montgomery Street Second Floor, Suite 263, Jersey City, New Jersey, 07302";
         _classes[1]._values["liquidatorURL"].stringValue = "https://blockfi.com/";
-        _classes[1]._values["liquidatorLogo"].stringValue = "https://1000logos.net/wp-content/uploads/2022/05/BlockFi-Logo-500x281.jpg";
+        _classes[1]._values["liquidatorLogo"].stringValue = "https://crypto-central.io/library/uploads/BlockFi-logo.png";
         _classes[1]._values["liquidatorRegistrationNumber"].stringValue = "US-000000000000";
         _classes[1]._values["liquidatorDocURL"].stringArrayValue = [
             "https://www.fa-mag.com/userfiles/ads_2021/BlockFi_LG_Feb_2021/Crypto-101-v4.pdf"
@@ -290,7 +290,7 @@ contract ERC3475 is IERC3475 {
         _classes[2]._values["issuerJurisdiction"].stringValue = "US";
         _classes[2]._values["issuerRegistrationAddress"].stringValue = "201 Montgomery Street Second Floor, Suite 263, Jersey City, New Jersey, 07302";
         _classes[2]._values["issuerURL"].stringValue = "https://blockfi.com/";
-        _classes[2]._values["issuerLogo"].stringValue = "https://1000logos.net/wp-content/uploads/2022/05/BlockFi-Logo-500x281.jpg";
+        _classes[2]._values["issuerLogo"].stringValue = "https://crypto-central.io/library/uploads/BlockFi-logo.png";
         _classes[2]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
         _classes[2]._values["issuerDocURL"].stringArrayValue = [
             "https://www.fa-mag.com/userfiles/ads_2021/BlockFi_LG_Feb_2021/Crypto-101-v4.pdf"
@@ -300,7 +300,7 @@ contract ERC3475 is IERC3475 {
         _classes[2]._values["liquidatorJurisdiction"].stringValue = "US";
         _classes[2]._values["liquidatorRegistrationAddress"].stringValue = "201 Montgomery Street Second Floor, Suite 263, Jersey City, New Jersey, 07302";
         _classes[2]._values["liquidatorURL"].stringValue = "https://blockfi.com/";
-        _classes[2]._values["liquidatorLogo"].stringValue = "https://1000logos.net/wp-content/uploads/2022/05/BlockFi-Logo-500x281.jpg";
+        _classes[2]._values["liquidatorLogo"].stringValue = "https://crypto-central.io/library/uploads/BlockFi-logo.png";
         _classes[2]._values["liquidatorRegistrationNumber"].stringValue = "US-000000000000";
         _classes[2]._values["liquidatorDocURL"].stringArrayValue = [
             "https://www.fa-mag.com/userfiles/ads_2021/BlockFi_LG_Feb_2021/Crypto-101-v4.pdf"
@@ -330,7 +330,7 @@ contract ERC3475 is IERC3475 {
         _classes[3]._values["issuerJurisdiction"].stringValue = "US";
         _classes[3]._values["issuerRegistrationAddress"].stringValue = "201 Montgomery Street Second Floor, Suite 263, Jersey City, New Jersey, 07302";
         _classes[3]._values["issuerURL"].stringValue = "https://blockfi.com/";
-        _classes[3]._values["issuerLogo"].stringValue = "https://1000logos.net/wp-content/uploads/2022/05/BlockFi-Logo-500x281.jpg";
+        _classes[3]._values["issuerLogo"].stringValue = "https://crypto-central.io/library/uploads/BlockFi-logo.png";
         _classes[3]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
         _classes[3]._values["issuerDocURL"].stringArrayValue = [
             "https://www.fa-mag.com/userfiles/ads_2021/BlockFi_LG_Feb_2021/Crypto-101-v4.pdf"
@@ -340,7 +340,7 @@ contract ERC3475 is IERC3475 {
         _classes[3]._values["liquidatorJurisdiction"].stringValue = "US";
         _classes[3]._values["liquidatorRegistrationAddress"].stringValue = "201 Montgomery Street Second Floor, Suite 263, Jersey City, New Jersey, 07302";
         _classes[3]._values["liquidatorURL"].stringValue = "https://blockfi.com/";
-        _classes[3]._values["liquidatorLogo"].stringValue = "https://1000logos.net/wp-content/uploads/2022/05/BlockFi-Logo-500x281.jpg";
+        _classes[3]._values["liquidatorLogo"].stringValue = "https://crypto-central.io/library/uploads/BlockFi-logo.png";
         _classes[3]._values["liquidatorRegistrationNumber"].stringValue = "US-000000000000";
         _classes[3]._values["liquidatorDocURL"].stringArrayValue = [
             "https://www.fa-mag.com/userfiles/ads_2021/BlockFi_LG_Feb_2021/Crypto-101-v4.pdf"
