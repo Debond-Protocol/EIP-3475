@@ -1056,5 +1056,12 @@
    "_type":"integer",
    "description":"number of the entities that are participating as the potential lenders",
    "values":"200"
+},
+{
+   "metadataId":"2200",
+   "title":"GreenFinanceRegistrationNumber",
+   "_type":"string",
+   "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
+   "values":"CC6749 (144A / Reg S)"
 }
 ]
