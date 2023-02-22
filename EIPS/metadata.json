@@ -854,6 +854,13 @@
 },
 {
    "metadataId":"2001",
+   "title":"Regulation",
+   "_type":"string",
+   "description":"ISIN rugulation Id",
+   "values":"144A"
+},      
+{
+   "metadataId":"2001",
    "title":"ISIN",
    "_type":"string",
    "description":"defining the identifier code of the security(https://www.investopedia.com/terms/i/isin.asp)",
