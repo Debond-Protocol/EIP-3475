@@ -1,0 +1,870 @@
+[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_operator",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "_approved",
+				"type": "bool"
+			}
+		],
+		"name": "ApprovalFor",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_spender",
+				"type": "address"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "classId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonceId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct IERC3475.Transaction[]",
+				"name": "_transactions",
+				"type": "tuple[]"
+			}
+		],
+		"name": "approve",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "classId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonceId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct IERC3475.Transaction[]",
+				"name": "_transactions",
+				"type": "tuple[]"
+			}
+		],
+		"name": "burn",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_operator",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "classId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonceId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct IERC3475.Transaction[]",
+				"name": "_transactions",
+				"type": "tuple[]"
+			}
+		],
+		"name": "Burn",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "classId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonceId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct IERC3475.Transaction[]",
+				"name": "_transactions",
+				"type": "tuple[]"
+			}
+		],
+		"name": "issue",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_operator",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "classId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonceId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct IERC3475.Transaction[]",
+				"name": "_transactions",
+				"type": "tuple[]"
+			}
+		],
+		"name": "Issue",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "classId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonceId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct IERC3475.Transaction[]",
+				"name": "_transactions",
+				"type": "tuple[]"
+			}
+		],
+		"name": "redeem",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_operator",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "classId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonceId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct IERC3475.Transaction[]",
+				"name": "_transactions",
+				"type": "tuple[]"
+			}
+		],
+		"name": "Redeem",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "approved",
+				"type": "bool"
+			}
+		],
+		"name": "setApprovalFor",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_operator",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "classId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonceId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct IERC3475.Transaction[]",
+				"name": "_transactions",
+				"type": "tuple[]"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "classId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonceId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct IERC3475.Transaction[]",
+				"name": "_transactions",
+				"type": "tuple[]"
+			}
+		],
+		"name": "transferAllowanceFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "classId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonceId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct IERC3475.Transaction[]",
+				"name": "_transactions",
+				"type": "tuple[]"
+			}
+		],
+		"name": "transferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "classId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "nonceId",
+				"type": "uint256"
+			}
+		],
+		"name": "activeSupply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "classId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "nonceId",
+				"type": "uint256"
+			}
+		],
+		"name": "allowance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "classId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "nonceId",
+				"type": "uint256"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "classId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "nonceId",
+				"type": "uint256"
+			}
+		],
+		"name": "burnedSupply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "metadataId",
+				"type": "uint256"
+			}
+		],
+		"name": "classMetadata",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_type",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"internalType": "struct IERC3475.Metadata",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "classId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "metadataTitle",
+				"type": "string"
+			}
+		],
+		"name": "classValuesFromTitle",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "stringValue",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "uintValue",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "addressValue",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "boolValue",
+						"type": "bool"
+					},
+					{
+						"internalType": "string[]",
+						"name": "stringArrayValue",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "uintArrayValue",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "addressArrayValue",
+						"type": "address[]"
+					},
+					{
+						"internalType": "bool[]",
+						"name": "boolArrayValue",
+						"type": "bool[]"
+					}
+				],
+				"internalType": "struct IERC3475.Values",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "classId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "nonceId",
+				"type": "uint256"
+			}
+		],
+		"name": "getProgress",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "progressAchieved",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "progressRemaining",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			}
+		],
+		"name": "isApprovedFor",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "classId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "metadataId",
+				"type": "uint256"
+			}
+		],
+		"name": "nonceMetadata",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_type",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"internalType": "struct IERC3475.Metadata",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "classId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "nonceId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "metadataTitle",
+				"type": "string"
+			}
+		],
+		"name": "nonceValuesFromTitle",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "stringValue",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "uintValue",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "addressValue",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "boolValue",
+						"type": "bool"
+					},
+					{
+						"internalType": "string[]",
+						"name": "stringArrayValue",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "uintArrayValue",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "addressArrayValue",
+						"type": "address[]"
+					},
+					{
+						"internalType": "bool[]",
+						"name": "boolArrayValue",
+						"type": "bool[]"
+					}
+				],
+				"internalType": "struct IERC3475.Values",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "classId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "nonceId",
+				"type": "uint256"
+			}
+		],
+		"name": "redeemedSupply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "classId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "nonceId",
+				"type": "uint256"
+			}
+		],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
