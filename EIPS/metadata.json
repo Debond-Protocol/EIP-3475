@@ -1066,9 +1066,23 @@
 },
 {
    "metadataId":"2200",
-   "title":"GreenFinanceRegistrationNumber",
+   "title":"greenFinanceRegistrationNumber",
    "_type":"string",
    "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
    "values":"CC6749 (144A / Reg S)"
+},
+{
+   "metadataId":"3000",
+   "title":"listedStockMarket",
+   "_type":"string",
+   "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
+   "values":"HKEX"
+},
+{
+   "metadataId":"3001",
+   "title":"listedNumber",
+   "_type":"string",
+   "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
+   "values":"424220"
 }
 ]
