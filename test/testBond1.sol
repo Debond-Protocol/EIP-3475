@@ -250,7 +250,7 @@ contract ERC3475 is IERC3475 {
         _classes[1]._values["issuerJurisdiction"].stringValue = "BR";
         _classes[1]._values["issuerRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
         _classes[1]._values["issuerURL"].stringValue = "https://www.a55.tech/";
-        _classes[1]._values["issuerLogo"].stringValue = "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/8e36abff206b20109afb8e9f1c2e7572.png";
+        _classes[1]._values["issuerLogo"].stringValue = "https://raw.githubusercontent.com/Debond-Protocol/EIP-3475/main/test/media/8e36abff206b20109afb8e9f1c2e7572.png";
         _classes[1]._values["issuerRegistrationNumber"].stringValue = "BR-000000000000";
         _classes[1]._values["issuerDocURL"].stringArrayValue = [
             "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/a55.pptx.pdf"
@@ -285,7 +285,7 @@ contract ERC3475 is IERC3475 {
         _classes[2]._values["issuerJurisdiction"].stringValue = "BR";
         _classes[2]._values["issuerRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
         _classes[2]._values["issuerURL"].stringValue = "https://www.a55.tech/";
-        _classes[2]._values["issuerLogo"].stringValue = "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/8e36abff206b20109afb8e9f1c2e7572.png";
+        _classes[2]._values["issuerLogo"].stringValue = "https://raw.githubusercontent.com/Debond-Protocol/EIP-3475/main/test/media/8e36abff206b20109afb8e9f1c2e7572.png";
         _classes[2]._values["issuerRegistrationNumber"].stringValue = "BR-000000000000";
         _classes[2]._values["issuerDocURL"].stringArrayValue = [
             "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/a55.pptx.pdf"
@@ -320,7 +320,7 @@ contract ERC3475 is IERC3475 {
         _classes[3]._values["issuerJurisdiction"].stringValue = "BR";
         _classes[3]._values["issuerRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
         _classes[3]._values["issuerURL"].stringValue = "https://www.a55.tech/";
-        _classes[3]._values["issuerLogo"].stringValue = "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/8e36abff206b20109afb8e9f1c2e7572.png";
+        _classes[3]._values["issuerLogo"].stringValue = "https://raw.githubusercontent.com/Debond-Protocol/EIP-3475/main/test/media/8e36abff206b20109afb8e9f1c2e7572.png";
         _classes[3]._values["issuerRegistrationNumber"].stringValue = "BR-000000000000";
         _classes[3]._values["issuerDocURL"].stringArrayValue = [
             "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/a55.pptx.pdf"
