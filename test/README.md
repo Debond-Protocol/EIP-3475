@@ -6,7 +6,7 @@ test claim1
 [0xf226749ab927598b609d9cea6737eb639a24a7d6](https://goerli.etherscan.io/address/0xf226749ab927598b609d9cea6737eb639a24a7d6)
 
 test claim2
-[0xb79D81a96d4C9FF61CD7e121016DB651740369F0](https://goerli.etherscan.io/address/0xb79d81a96d4c9ff61cd7e121016db651740369f0)
+[0xC31F343781D838f9d8deF5568108Fa9FbeA1C351](https://goerli.etherscan.io/address/0xc31f343781d838f9d8def5568108fa9fbea1c351)
 
 
  Exchange [0x9e3037515b2F18F5dBaE2065E9a4C513E178b976](https://goerli.etherscan.io/address/0x9e3037515b2F18F5dBaE2065E9a4C513E178b976)
