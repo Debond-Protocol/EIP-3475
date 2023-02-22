@@ -500,589 +500,590 @@
       "title":"authorName",
       "_type":"string[]",
       "description":"formal name of the author",
-      "values":["John.Snow@oxford.edu"
-   ]
-},
-{
-   "metadataId":"0151",
-   "title":"authorType",
-   "_type":"string[]",
-   "description":"Organization‘s type",
-   "values":[
-      "affiliatedPerson"
-   ]
-},
-{
-   "metadataId":"0152",
-   "title":"authorJurisdiction",
-   "_type":"string[]",
-   "description":"jurisdiction of the author",
-   "values":[
-      "US"
-   ]
-},
-{
-   "metadataId":"0153",
-   "title":"authorRegistrationAddress",
-   "_type":"string[]",
-   "description":"Address of the established office",
-   "values":[
-      "1st avenue NYK"
-   ]
-},
-{
-   "metadataId":"0154",
-   "title":"authorURL",
-   "_type":"string[]",
-   "description":"URL link of the website",
-   "values":[
-      "https://www.ABC.AI"
-   ]
-},
-{
-   "metadataId":"0155",
-   "title":"authorLogo",
-   "_type":"string[]",
-   "description":"URL of stored author's logo/ media kit details in 64*64 pix png format",
-   "values":[
-      "https://www.ABC.AI/logo.png"
-   ]
-},
-{
-   "metadataId":"0156",
-   "title":"authorRegistrationNumber",
-   "_type":"string[]",
-   "description":"The registration number of the author’s entity",
-   "values":[
-      "000000000000"
-   ]
-},
-{
-   "metadataId":"0157",
-   "title":"authorDocURL",
-   "_type":"string[]",
-   "description":"link to the documents",
-   "values":[
-      "https://bit.ly/ABC_pitch.pdf"
-   ]
-},
-{
-   "metadataId":"0158",
-   "title":"authorIndustry",
-   "_type":"string[]",
-   "description":"the registered industry the author is associated",
-   "values":[
-      "software development",
-      "banking software development"
-   ]
-},
-{
-   "metadataId":"0159",
-   "title":"authorChainAddress",
-   "_type":"address[]",
-   "description":"The public key address of the author",
-   "values":[
-      "0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
-   ]
-},
-{
-   "metadataId":"0160",
-   "title":"sponsorName",
-   "_type":"string[]",
-   "description":"formal name of the sponsor",
-   "values":[
-      "ABC"
-   ]
-},
-{
-   "metadataId":"0161",
-   "title":"sponsorType",
-   "_type":"string[]",
-   "description":"Organization‘s type",
-   "values":[
-      "LTD"
-   ]
-},
-{
-   "metadataId":"0162",
-   "title":"sponsorJurisdiction",
-   "_type":"string[]",
-   "description":"jurisdiction of the sponsor",
-   "values":[
-      "US"
-   ]
-},
-{
-   "metadataId":"0163",
-   "title":"sponsorRegistrationAddress",
-   "_type":"string[]",
-   "description":"Address of the established office",
-   "values":[
-      "1st avenue NYK"
-   ]
-},
-{
-   "metadataId":"0164",
-   "title":"sponsorURL",
-   "_type":"string[]",
-   "description":"URL link of the website",
-   "values":[
-      "https://www.ABC.AI"
-   ]
-},
-{
-   "metadataId":"0165",
-   "title":"sponsorLogo",
-   "_type":"string[]",
-   "description":"URL of stored sponsor's logo/ media kit details in 64*64 pix png format",
-   "values":[
-      "https://www.ABC.AI/logo.png"
-   ]
-},
-{
-   "metadataId":"0166",
-   "title":"sponsorRegistrationNumber",
-   "_type":"string[]",
-   "description":"The registration number of the sponsor’s entity",
-   "values":[
-      "000000000000"
-   ]
-},
-{
-   "metadataId":"0167",
-   "title":"sponsorDocURL",
-   "_type":"string[]",
-   "description":"link to the documents",
-   "values":[
-      "https://bit.ly/ABC_pitch.pdf"
-   ]
-},
-{
-   "metadataId":"0168",
-   "title":"sponsorIndustry",
-   "_type":"string[]",
-   "description":"the registered industry the sponsor is associated",
-   "values":[
-      "software development",
-      "banking software development"
-   ]
-},
-{
-   "metadataId":"0169",
-   "title":"sponsorChainAddress",
-   "_type":"address[]",
-   "description":"The public key address of the sponsor",
-   "values":[
-      "0x9f91Cb042e4C6F4F9661d214Fd5741621027eFB4"
-   ]
-},
-{
-   "metadataId":"1100",
-   "title":"DOI",
-   "_type":"string",
-   "description":"Serie number of the publication",
-   "values":[
-      "0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
-   ]
-},
-{
-   "metadataId":"1200",
-   "title":"copyPrice",
-   "_type":"integer",
-   "description":"Sell prcie of the publication in PPM",
-   "values":[
-      "100000000"
-   ]
-},
-{
-   "metadataId":"1201",
-   "title":"dataPrice",
-   "_type":"integer",
-   "description":"Sell price of data in PPM",
-   "values":[
-      "100000000"
-   ]
-},
-{
-   "metadataId":"1202",
-   "title":"algorithmPrice",
-   "_type":"integer",
-   "description":"Sell price of algorithm in PPM",
-   "values":[
-      "100000000"
-   ]
-},
-{
-   "metadataId":"1100",
-   "title":"DOI",
-   "_type":"string",
-   "description":"Serie number of the publication",
-   "values":"24420000"
-},
-{
-   "metadataId":"1101",
-   "title":"ISBN",
-   "_type":"string",
-   "description":"ISBN number of the publication",
-   "values":"24420000"
-},
-{
-   "metadataId":"1120",
-   "title":"domain",
-   "_type":"string",
-   "description":"domain of the publication",
-   "values":"physic"
-},
-{
-   "metadataId":"1121",
-   "title":"subdomain",
-   "_type":"string",
-   "description":"domain of the publication",
-   "values":"quant"
-},
-{
-   "metadataId":"1130",
-   "title":"onChainDate",
-   "_type":"integer",
-   "description":"ISO-8601 representation of intended date of creation of the token",
-   "values":"1676038570"
-},
-{
-   "metadataId":"1140",
-   "title":"introduction",
-   "_type":"string",
-   "description":"Introduction of the publication",
-   "values":"Good paper"
-},
-{
-   "metadataId":"1141",
-   "title":"keyWords",
-   "_type":"string[]",
-   "description":"Introduction of the publication",
-   "values":[
-      "physic",
-      "cow"
-   ]
-},
-{
-   "metadataId":"1142",
-   "title":"license",
-   "_type":"string",
-   "description":"Licnese of the publication",
-   "values":"MIT"
-},
-{
-   "metadataId":"1142",
-   "title":"references",
-   "_type":"string[]",
-   "description":"references of the publication",
-   "values":[
-      "123239922"
-   ]
-},
-{
-   "metadataId":"1143",
-   "title":"version",
-   "_type":"string[]",
-   "description":"version of the publication",
-   "values":[
-      "123239922"
-   ]
-},
-{
-   "metadataId":"1144",
-   "title":"cover[]",
-   "_type":"string",
-   "description":"Url link of the cover",
-   "values":[
-      "https://upload.wikimedia.org/wikipedia/en/0/05/Littleprince.JPG"
-   ]
-},
-{
-   "metadataId":"1200",
-   "title":"copyFileName",
-   "_type":"string",
-   "description":"File name of the copy, with suffix (.pdf for example)",
-   "values":[
-      "Littleprince.pdf"
-   ]
-},
-{
-   "metadataId":"1201",
-   "title":"copyHash",
-   "_type":"string[]",
-   "description":"Hash of the file of the diffrent version",
-   "values":[
-      "8470D01CE5F066B0C2C4A8DE49EE38166D66C7A8A78910D804635DC0BAD1AE0D"
-   ]
-},
-{
-   "metadataId":"1210",
-   "title":"dataFileName",
-   "_type":"string",
-   "description":"File name of the data, with suffix (.pdf for example)",
-   "values":[
-      "Littleprince.zip"
-   ]
-},
-{
-   "metadataId":"1211",
-   "title":"dataHash",
-   "_type":"string[]",
-   "description":"Hash of the file of the diffrent version",
-   "values":[
-      "8470D01CE5F066B0C2C4A8DE49EE38166D66C7A8A78910D804635DC0BAD1AE0D"
-   ]
-},
-{
-   "metadataId":"1220",
-   "title":"algorithmFileName",
-   "_type":"string",
-   "description":"File name of the data, with suffix (.pdf for example)",
-   "values":[
-      "Littleprince.zip"
-   ]
-},
-{
-   "metadataId":"1221",
-   "title":"algorithmHash",
-   "_type":"string[]",
-   "description":"Hash of the file of the diffrent version",
-   "values":[
-      "8470D01CE5F066B0C2C4A8DE49EE38166D66C7A8A78910D804635DC0BAD1AE0D"
-   ]
-},
-{
-   "metadataId":"2001",
-   "title":"Regulation",
-   "_type":"string",
-   "description":"ISIN rugulation Id",
-   "values":"144A"
-},      
-{
-   "metadataId":"2001",
-   "title":"ISIN",
-   "_type":"string",
-   "description":"defining the identifier code of the security(https://www.investopedia.com/terms/i/isin.asp)",
-   "values":" US-000402625-0"
-},
-{
-   "metadataId":"2002",
-   "title":"fundType",
-   "_type":"string",
-   "description":"defines the category of the investment vehicle associated with this bond",
-   "values":"corporate"
-},
-{
-   "metadataId":"2003",
-   "title":"riskLevel",
-   "_type":"string",
-   "description":"defines the risk category assigned by the auditor",
-   "values":"AA"
-},
-{
-   "metadataId":"2004",
-   "title":"intendedDate",
-   "_type":"integer",
-   "description":"ISO-8601 representation of intended date of issuance of the security",
-   "values":"1676038570"
-},
-{
-   "metadataId":"2005",
-   "title":"shareValue",
-   "_type":"integer",
-   "description":"defines the value of bond at the time of issuance in PPM",
-   "values":"100000000"
-},
-{
-   "metadataId":"2006",
-   "title":"totalBalance",
-   "_type":"integer",
-   "description":"defines the total number of securities being instantiated since the start . this supply constitutes available supply + redeemed supply + burned supply",
-   "values":"100000"
-},
-{
-   "metadataId":"2007",
-   "title":"amountsPayable",
-   "_type":"integer",
-   "description":"this is the amount of securities that are issued till date",
-   "values":"10000000"
-},
-{
-   "metadataId":"2008",
-   "title":"currency",
-   "_type":"string",
-   "description":"code for the asset in which the amount is denominated",
-   "values":"USD"
-},
-{
-   "metadataId":"2009",
-   "title":"collateralAllowed",
-   "_type":"address[]",
-   "description":"code for the various asset class (crypto/CBDC) in which the amount is denominated",
-   "values":[
-      "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
-      "0x55d398326f99059ff775485246999027b3197955"
-   ]
-},
-{
-   "metadataId":"2010",
-   "title":"callable",
-   "_type":"boolean",
-   "description":"boolean identifying whether the bond is of type callable",
-   "values":"True"
-},
-{
-   "metadataId":"2011",
-   "title":"maturityPeriod",
-   "_type":"integer",
-   "description":"ISO 8601 seconds of the coupon period for the securities to be able to redeemed(unless not a callable bond)",
-   "values":"31104000"
-},
-{
-   "metadataId":"2012",
-   "title":"specialMaturityRule",
-   "_type":"string",
-   "description":"defines the specified rules, which defines if the security is matured",
-   "values":"when USD/EURO rate is lower than 0.8 for 5 business days"
-},
-{
-   "metadataId":"2020",
-   "title":"coupon",
-   "_type":"boolean",
-   "description":"If the bond is with coupons",
-   "values":"True"
-},
-{
-   "metadataId":"2021",
-   "title":"couponRate",
-   "_type":"integer",
-   "description":"PPM coupon rate",
-   "values":"50000"
-},
-{
-   "metadataId":"2022",
-   "title":"couponPeriod",
-   "_type":"integer",
-   "description":"ISO 8601 seconds of the coupon period",
-   "values":"2592000"
-},
-{
-   "metadataId":"2030",
-   "title":"fixed-rate",
-   "_type":"boolean",
-   "description":"boolean identifying whether the bond is of type Fixed rate",
-   "values":"True"
-},
-{
-   "metadataId":"2031",
-   "title":"interestPeriod",
-   "_type":"integer",
-   "description":"ISO 8601 seconds from the issuance during which holder will be accruing interest (till redemption time)",
-   "values":"2592000"
-},
-{
-   "metadataId":"2032",
-   "title":"interestRate",
-   "_type":"integer",
-   "description":"PPM interest rate of the security",
-   "values":"50000"
-},
-{
-   "metadataId":"2033",
-   "title":"interestCalculation",
-   "_type":"string",
-   "description":"formula (in string) being used in order to calculate the coupon rate interest (ref: ) ",
-   "values":"interstCalcRate = AnnualCoupon/(parValueOfBond)"
-},
-{
-   "metadataId":"2034",
-   "title":"interestPaymentAsset",
-   "_type":"address[]",
-   "description":"defines the  tokens/CBDC accepted by bond issuer to pay interest(if different from Accept Asset/ underlying collateral) ",
-   "values":[
-      "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
-      "0x55d398326f99059ff775485246999027b3197955"
-   ]
-},
-{
-   "metadataId":"2035",
-   "title":"repaymentAsset",
-   "_type":"address[]",
-   "description":"defines the  assets/CBDC accepted by bond issuer to repay after redemption ",
-   "values":[
-      "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
-      "0x55d398326f99059ff775485246999027b3197955"
-   ]
-},
-{
-   "metadataId":"2040",
-   "title":"liquidationRule",
-   "_type":"string",
-   "description":"Defines the condition (metrics on debt or the collateral risk in string) under which the liquidation of securities takes place",
-   "values":"Price-depeg >= 10%, collateral-ratio-of-fund <= 110%"
-},
-{
-   "metadataId":"2041",
-   "title":"preferredCreditor",
-   "_type":"string",
-   "description":"Defines the priorities of the repayment after the debtor declares bankruptcy.",
-   "values":"Class 1 will always receive 100% of the repayment Class 2 the remainings"
-},
-{
-   "metadataId":"2050",
-   "title":"qualifiedInvestorRequirement",
-   "_type":"string",
-   "description":"Defines the conditions (metrics on net holdings, lender minimum ticket etc) that lender needs to have in order to participate in buying securities ",
-   "values":"Earning more than 100000 USD per year"
-},
-{
-   "metadataId":"2060",
-   "title":"APY",
-   "_type":"integer",
-   "description":"Fixed PPM interest rate for the bond holders (in %)",
-   "values":"60000"
-},
-{
-   "metadataId":"2071",
-   "title":"quotasToIssue:",
-   "_type":"string",
-   "description":"Defines the securities supply (out of total supply in ppm) that are available for issuers  on the marketplace",
-   "values":"600000"
-},
-{
-   "metadataId":"2072",
-   "title":"quotasToBeRedeemed",
-   "_type":"integer",
-   "description":"Defines the securities supply that can be redeemed by the lender after redemption condition is received",
-   "values":"100000"
-},
-{
-   "metadataId":"2073",
-   "title":"numberOfShareholders",
-   "_type":"integer",
-   "description":"number of the entities that are participating as the potential lenders",
-   "values":"200"
-},
-{
-   "metadataId":"2200",
-   "title":"greenFinanceRegistrationNumber",
-   "_type":"string",
-   "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
-   "values":"CC6749 (144A / Reg S)"
-},
-{
-   "metadataId":"3000",
-   "title":"listedStockMarket",
-   "_type":"string",
-   "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
-   "values":"HKEX"
-},
-{
-   "metadataId":"3001",
-   "title":"listedNumber",
-   "_type":"string",
-   "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
-   "values":"424220"
-}
+      "values":[
+         "John.Snow@oxford.edu"
+      ]
+   },
+   {
+      "metadataId":"0151",
+      "title":"authorType",
+      "_type":"string[]",
+      "description":"Organization‘s type",
+      "values":[
+         "affiliatedPerson"
+      ]
+   },
+   {
+      "metadataId":"0152",
+      "title":"authorJurisdiction",
+      "_type":"string[]",
+      "description":"jurisdiction of the author",
+      "values":[
+         "US"
+      ]
+   },
+   {
+      "metadataId":"0153",
+      "title":"authorRegistrationAddress",
+      "_type":"string[]",
+      "description":"Address of the established office",
+      "values":[
+         "1st avenue NYK"
+      ]
+   },
+   {
+      "metadataId":"0154",
+      "title":"authorURL",
+      "_type":"string[]",
+      "description":"URL link of the website",
+      "values":[
+         "https://www.ABC.AI"
+      ]
+   },
+   {
+      "metadataId":"0155",
+      "title":"authorLogo",
+      "_type":"string[]",
+      "description":"URL of stored author's logo/ media kit details in 64*64 pix png format",
+      "values":[
+         "https://www.ABC.AI/logo.png"
+      ]
+   },
+   {
+      "metadataId":"0156",
+      "title":"authorRegistrationNumber",
+      "_type":"string[]",
+      "description":"The registration number of the author’s entity",
+      "values":[
+         "000000000000"
+      ]
+   },
+   {
+      "metadataId":"0157",
+      "title":"authorDocURL",
+      "_type":"string[]",
+      "description":"link to the documents",
+      "values":[
+         "https://bit.ly/ABC_pitch.pdf"
+      ]
+   },
+   {
+      "metadataId":"0158",
+      "title":"authorIndustry",
+      "_type":"string[]",
+      "description":"the registered industry the author is associated",
+      "values":[
+         "software development",
+         "banking software development"
+      ]
+   },
+   {
+      "metadataId":"0159",
+      "title":"authorChainAddress",
+      "_type":"address[]",
+      "description":"The public key address of the author",
+      "values":[
+         "0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+      ]
+   },
+   {
+      "metadataId":"0160",
+      "title":"sponsorName",
+      "_type":"string[]",
+      "description":"formal name of the sponsor",
+      "values":[
+         "ABC"
+      ]
+   },
+   {
+      "metadataId":"0161",
+      "title":"sponsorType",
+      "_type":"string[]",
+      "description":"Organization‘s type",
+      "values":[
+         "LTD"
+      ]
+   },
+   {
+      "metadataId":"0162",
+      "title":"sponsorJurisdiction",
+      "_type":"string[]",
+      "description":"jurisdiction of the sponsor",
+      "values":[
+         "US"
+      ]
+   },
+   {
+      "metadataId":"0163",
+      "title":"sponsorRegistrationAddress",
+      "_type":"string[]",
+      "description":"Address of the established office",
+      "values":[
+         "1st avenue NYK"
+      ]
+   },
+   {
+      "metadataId":"0164",
+      "title":"sponsorURL",
+      "_type":"string[]",
+      "description":"URL link of the website",
+      "values":[
+         "https://www.ABC.AI"
+      ]
+   },
+   {
+      "metadataId":"0165",
+      "title":"sponsorLogo",
+      "_type":"string[]",
+      "description":"URL of stored sponsor's logo/ media kit details in 64*64 pix png format",
+      "values":[
+         "https://www.ABC.AI/logo.png"
+      ]
+   },
+   {
+      "metadataId":"0166",
+      "title":"sponsorRegistrationNumber",
+      "_type":"string[]",
+      "description":"The registration number of the sponsor’s entity",
+      "values":[
+         "000000000000"
+      ]
+   },
+   {
+      "metadataId":"0167",
+      "title":"sponsorDocURL",
+      "_type":"string[]",
+      "description":"link to the documents",
+      "values":[
+         "https://bit.ly/ABC_pitch.pdf"
+      ]
+   },
+   {
+      "metadataId":"0168",
+      "title":"sponsorIndustry",
+      "_type":"string[]",
+      "description":"the registered industry the sponsor is associated",
+      "values":[
+         "software development",
+         "banking software development"
+      ]
+   },
+   {
+      "metadataId":"0169",
+      "title":"sponsorChainAddress",
+      "_type":"address[]",
+      "description":"The public key address of the sponsor",
+      "values":[
+         "0x9f91Cb042e4C6F4F9661d214Fd5741621027eFB4"
+      ]
+   },
+   {
+      "metadataId":"1100",
+      "title":"DOI",
+      "_type":"string",
+      "description":"Serie number of the publication",
+      "values":[
+         "0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+      ]
+   },
+   {
+      "metadataId":"1200",
+      "title":"copyPrice",
+      "_type":"integer",
+      "description":"Sell prcie of the publication in PPM",
+      "values":[
+         "100000000"
+      ]
+   },
+   {
+      "metadataId":"1201",
+      "title":"dataPrice",
+      "_type":"integer",
+      "description":"Sell price of data in PPM",
+      "values":[
+         "100000000"
+      ]
+   },
+   {
+      "metadataId":"1202",
+      "title":"algorithmPrice",
+      "_type":"integer",
+      "description":"Sell price of algorithm in PPM",
+      "values":[
+         "100000000"
+      ]
+   },
+   {
+      "metadataId":"1100",
+      "title":"DOI",
+      "_type":"string",
+      "description":"Serie number of the publication",
+      "values":"24420000"
+   },
+   {
+      "metadataId":"1101",
+      "title":"ISBN",
+      "_type":"string",
+      "description":"ISBN number of the publication",
+      "values":"24420000"
+   },
+   {
+      "metadataId":"1120",
+      "title":"domain",
+      "_type":"string",
+      "description":"domain of the publication",
+      "values":"physic"
+   },
+   {
+      "metadataId":"1121",
+      "title":"subdomain",
+      "_type":"string",
+      "description":"domain of the publication",
+      "values":"quant"
+   },
+   {
+      "metadataId":"1130",
+      "title":"onChainDate",
+      "_type":"integer",
+      "description":"ISO-8601 representation of intended date of creation of the token",
+      "values":"1676038570"
+   },
+   {
+      "metadataId":"1140",
+      "title":"introduction",
+      "_type":"string",
+      "description":"Introduction of the publication",
+      "values":"Good paper"
+   },
+   {
+      "metadataId":"1141",
+      "title":"keyWords",
+      "_type":"string[]",
+      "description":"Introduction of the publication",
+      "values":[
+         "physic",
+         "cow"
+      ]
+   },
+   {
+      "metadataId":"1142",
+      "title":"license",
+      "_type":"string",
+      "description":"Licnese of the publication",
+      "values":"MIT"
+   },
+   {
+      "metadataId":"1142",
+      "title":"references",
+      "_type":"string[]",
+      "description":"references of the publication",
+      "values":[
+         "123239922"
+      ]
+   },
+   {
+      "metadataId":"1143",
+      "title":"version",
+      "_type":"string[]",
+      "description":"version of the publication",
+      "values":[
+         "123239922"
+      ]
+   },
+   {
+      "metadataId":"1144",
+      "title":"cover[]",
+      "_type":"string",
+      "description":"Url link of the cover",
+      "values":[
+         "https://upload.wikimedia.org/wikipedia/en/0/05/Littleprince.JPG"
+      ]
+   },
+   {
+      "metadataId":"1200",
+      "title":"copyFileName",
+      "_type":"string",
+      "description":"File name of the copy, with suffix (.pdf for example)",
+      "values":[
+         "Littleprince.pdf"
+      ]
+   },
+   {
+      "metadataId":"1201",
+      "title":"copyHash",
+      "_type":"string[]",
+      "description":"Hash of the file of the diffrent version",
+      "values":[
+         "8470D01CE5F066B0C2C4A8DE49EE38166D66C7A8A78910D804635DC0BAD1AE0D"
+      ]
+   },
+   {
+      "metadataId":"1210",
+      "title":"dataFileName",
+      "_type":"string",
+      "description":"File name of the data, with suffix (.pdf for example)",
+      "values":[
+         "Littleprince.zip"
+      ]
+   },
+   {
+      "metadataId":"1211",
+      "title":"dataHash",
+      "_type":"string[]",
+      "description":"Hash of the file of the diffrent version",
+      "values":[
+         "8470D01CE5F066B0C2C4A8DE49EE38166D66C7A8A78910D804635DC0BAD1AE0D"
+      ]
+   },
+   {
+      "metadataId":"1220",
+      "title":"algorithmFileName",
+      "_type":"string",
+      "description":"File name of the data, with suffix (.pdf for example)",
+      "values":[
+         "Littleprince.zip"
+      ]
+   },
+   {
+      "metadataId":"1221",
+      "title":"algorithmHash",
+      "_type":"string[]",
+      "description":"Hash of the file of the diffrent version",
+      "values":[
+         "8470D01CE5F066B0C2C4A8DE49EE38166D66C7A8A78910D804635DC0BAD1AE0D"
+      ]
+   },
+   {
+      "metadataId":"2001",
+      "title":"Regulation",
+      "_type":"string",
+      "description":"ISIN rugulation Id",
+      "values":"144A"
+   },
+   {
+      "metadataId":"2001",
+      "title":"ISIN",
+      "_type":"string",
+      "description":"defining the identifier code of the security(https://www.investopedia.com/terms/i/isin.asp)",
+      "values":" US-000402625-0"
+   },
+   {
+      "metadataId":"2002",
+      "title":"fundType",
+      "_type":"string",
+      "description":"defines the category of the investment vehicle associated with this bond",
+      "values":"corporate"
+   },
+   {
+      "metadataId":"2003",
+      "title":"riskLevel",
+      "_type":"string",
+      "description":"defines the risk category assigned by the auditor",
+      "values":"AA"
+   },
+   {
+      "metadataId":"2004",
+      "title":"intendedDate",
+      "_type":"integer",
+      "description":"ISO-8601 representation of intended date of issuance of the security",
+      "values":"1676038570"
+   },
+   {
+      "metadataId":"2005",
+      "title":"shareValue",
+      "_type":"integer",
+      "description":"defines the value of bond at the time of issuance in PPM",
+      "values":"100000000"
+   },
+   {
+      "metadataId":"2006",
+      "title":"totalBalance",
+      "_type":"integer",
+      "description":"defines the total number of securities being instantiated since the start . this supply constitutes available supply + redeemed supply + burned supply",
+      "values":"100000"
+   },
+   {
+      "metadataId":"2007",
+      "title":"amountsPayable",
+      "_type":"integer",
+      "description":"this is the amount of securities that are issued till date",
+      "values":"10000000"
+   },
+   {
+      "metadataId":"2008",
+      "title":"currency",
+      "_type":"string",
+      "description":"code for the asset in which the amount is denominated",
+      "values":"USD"
+   },
+   {
+      "metadataId":"2009",
+      "title":"collateralAllowed",
+      "_type":"address[]",
+      "description":"code for the various asset class (crypto/CBDC) in which the amount is denominated",
+      "values":[
+         "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+         "0x55d398326f99059ff775485246999027b3197955"
+      ]
+   },
+   {
+      "metadataId":"2010",
+      "title":"callable",
+      "_type":"boolean",
+      "description":"boolean identifying whether the bond is of type callable",
+      "values":"True"
+   },
+   {
+      "metadataId":"2011",
+      "title":"maturityPeriod",
+      "_type":"integer",
+      "description":"ISO 8601 seconds of the coupon period for the securities to be able to redeemed(unless not a callable bond)",
+      "values":"31104000"
+   },
+   {
+      "metadataId":"2012",
+      "title":"specialMaturityRule",
+      "_type":"string",
+      "description":"defines the specified rules, which defines if the security is matured",
+      "values":"when USD/EURO rate is lower than 0.8 for 5 business days"
+   },
+   {
+      "metadataId":"2020",
+      "title":"coupon",
+      "_type":"boolean",
+      "description":"If the bond is with coupons",
+      "values":"True"
+   },
+   {
+      "metadataId":"2021",
+      "title":"couponRate",
+      "_type":"integer",
+      "description":"PPM coupon rate",
+      "values":"50000"
+   },
+   {
+      "metadataId":"2022",
+      "title":"couponPeriod",
+      "_type":"integer",
+      "description":"ISO 8601 seconds of the coupon period",
+      "values":"2592000"
+   },
+   {
+      "metadataId":"2030",
+      "title":"fixed-rate",
+      "_type":"boolean",
+      "description":"boolean identifying whether the bond is of type Fixed rate",
+      "values":"True"
+   },
+   {
+      "metadataId":"2031",
+      "title":"interestPeriod",
+      "_type":"integer",
+      "description":"ISO 8601 seconds from the issuance during which holder will be accruing interest (till redemption time)",
+      "values":"2592000"
+   },
+   {
+      "metadataId":"2032",
+      "title":"interestRate",
+      "_type":"integer",
+      "description":"PPM interest rate of the security",
+      "values":"50000"
+   },
+   {
+      "metadataId":"2033",
+      "title":"interestCalculation",
+      "_type":"string",
+      "description":"formula (in string) being used in order to calculate the coupon rate interest (ref: ) ",
+      "values":"interstCalcRate = AnnualCoupon/(parValueOfBond)"
+   },
+   {
+      "metadataId":"2034",
+      "title":"interestPaymentAsset",
+      "_type":"address[]",
+      "description":"defines the  tokens/CBDC accepted by bond issuer to pay interest(if different from Accept Asset/ underlying collateral) ",
+      "values":[
+         "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+         "0x55d398326f99059ff775485246999027b3197955"
+      ]
+   },
+   {
+      "metadataId":"2035",
+      "title":"repaymentAsset",
+      "_type":"address[]",
+      "description":"defines the  assets/CBDC accepted by bond issuer to repay after redemption ",
+      "values":[
+         "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+         "0x55d398326f99059ff775485246999027b3197955"
+      ]
+   },
+   {
+      "metadataId":"2040",
+      "title":"liquidationRule",
+      "_type":"string",
+      "description":"Defines the condition (metrics on debt or the collateral risk in string) under which the liquidation of securities takes place",
+      "values":"Price-depeg >= 10%, collateral-ratio-of-fund <= 110%"
+   },
+   {
+      "metadataId":"2041",
+      "title":"preferredCreditor",
+      "_type":"string",
+      "description":"Defines the priorities of the repayment after the debtor declares bankruptcy.",
+      "values":"Class 1 will always receive 100% of the repayment Class 2 the remainings"
+   },
+   {
+      "metadataId":"2050",
+      "title":"qualifiedInvestorRequirement",
+      "_type":"string",
+      "description":"Defines the conditions (metrics on net holdings, lender minimum ticket etc) that lender needs to have in order to participate in buying securities ",
+      "values":"Earning more than 100000 USD per year"
+   },
+   {
+      "metadataId":"2060",
+      "title":"APY",
+      "_type":"integer",
+      "description":"Fixed PPM interest rate for the bond holders (in %)",
+      "values":"60000"
+   },
+   {
+      "metadataId":"2071",
+      "title":"quotasToIssue:",
+      "_type":"string",
+      "description":"Defines the securities supply (out of total supply in ppm) that are available for issuers  on the marketplace",
+      "values":"600000"
+   },
+   {
+      "metadataId":"2072",
+      "title":"quotasToBeRedeemed",
+      "_type":"integer",
+      "description":"Defines the securities supply that can be redeemed by the lender after redemption condition is received",
+      "values":"100000"
+   },
+   {
+      "metadataId":"2073",
+      "title":"numberOfShareholders",
+      "_type":"integer",
+      "description":"number of the entities that are participating as the potential lenders",
+      "values":"200"
+   },
+   {
+      "metadataId":"2200",
+      "title":"greenFinanceRegistrationNumber",
+      "_type":"string",
+      "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
+      "values":"CC6749 (144A / Reg S)"
+   },
+   {
+      "metadataId":"3000",
+      "title":"listedStockMarket",
+      "_type":"string",
+      "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
+      "values":"HKEX"
+   },
+   {
+      "metadataId":"3001",
+      "title":"listedNumber",
+      "_type":"string",
+      "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
+      "values":"424220"
+   }
 ]
