@@ -274,9 +274,9 @@ contract ERC3475 is IERC3475 {
         _classes[1]._values["maturityPeriod"].uintValue = 31104000;  
         _classes[1]._values["fixed-rate"].boolValue = true;  
         _classes[1]._values["APY"].uintValue = 60000;  
-        _classes[3]._values["greenFinanceRegistrationNumber"].stringValue = "CC6149"; 
-        _classes[3]._values["listedStockMarket"].stringValue = "HKEX"; 
-        _classes[3]._values["listedNumber"].stringValue = "424230";
+        _classes[1]._values["greenFinanceRegistrationNumber"].stringValue = "CC6149"; 
+        _classes[1]._values["listedStockMarket"].stringValue = "HKEX"; 
+        _classes[1]._values["listedNumber"].stringValue = "424230";
 
       // define metadata of the class 2";
         _classes[2]._values["symbol"].stringValue = "HONG KONG SPECIAL ADMINISTRATIVE R MTN RegS";
@@ -314,9 +314,9 @@ contract ERC3475 is IERC3475 {
         _classes[2]._values["maturityPeriod"].uintValue = 31104000;  
         _classes[2]._values["fixed-rate"].boolValue = true;  
         _classes[2]._values["APY"].uintValue = 240000;  
-        _classes[3]._values["greenFinanceRegistrationNumber"].stringValue = "CC6769"; 
-        _classes[3]._values["listedStockMarket"].stringValue = "HKEX"; 
-        _classes[3]._values["listedNumber"].stringValue = "424321";
+        _classes[2]._values["greenFinanceRegistrationNumber"].stringValue = "CC6769"; 
+        _classes[2]._values["listedStockMarket"].stringValue = "HKEX"; 
+        _classes[2]._values["listedNumber"].stringValue = "424321";
 
         // define metadata of the class 3";
         _classes[3]._values["symbol"].stringValue = "HONG KONG SPECIAL ADMINISTRATIVE R MTN 144A";
