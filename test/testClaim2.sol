@@ -255,7 +255,7 @@ contract ERC3475 is IERC3475 {
         _classes[1]._values["issuerDocURL"].stringArrayValue = [
             "https://www.fa-mag.com/userfiles/ads_2021/BlockFi_LG_Feb_2021/Crypto-101-v4.pdf"
         ];  
-        _classes[1]._values["liquidatorName"].stringValue = "FTX";
+        _classes[1]._values["liquidatorName"].stringValue = "BlockFi";
         _classes[1]._values["liquidatorType"].stringValue = "LTD";
         _classes[1]._values["liquidatorJurisdiction"].stringValue = "US";
         _classes[1]._values["liquidatorRegistrationAddress"].stringValue = "201 Montgomery Street Second Floor, Suite 263, Jersey City, New Jersey, 07302";
@@ -266,7 +266,7 @@ contract ERC3475 is IERC3475 {
             "https://www.fa-mag.com/userfiles/ads_2021/BlockFi_LG_Feb_2021/Crypto-101-v4.pdf"
         ];  
 
-        _classes[1]._values["fundType"].stringValue = "bankrupcy claim";  
+        _classes[1]._values["fundType"].stringValue = "bankrupcy claim";
         _classes[1]._values["riskLevel"].stringValue = "C";  
         _classes[1]._values["intendedDate"].stringValue = "1680238800";  
         _classes[1]._values["shareValue"].uintValue = 160000;
