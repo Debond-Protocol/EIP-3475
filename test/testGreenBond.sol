@@ -239,125 +239,139 @@ contract ERC3475 is IERC3475 {
      */
     constructor() {
         // define metadata of the class 1";
-        _classes[1]._values["symbol"].stringValue = "BlockFi BTC Claim";
+        _classes[1]._values["symbol"].stringValue = "HONG KONG SPECIAL ADMINISTRATIVE R 144A";
         _classes[1]._values["category"].stringValue = "security";
-        _classes[1]._values["subcategory"].stringValue = "claim";
-        _classes[1]._values["childCategory"].stringValue = "crypto bankruptcy claim";
+        _classes[1]._values["subcategory"].stringValue = "bond";
+        _classes[1]._values["childCategory"].stringValue = "zero-coupon callable bond";
         
-        _classes[1]._values["description"].stringValue = "holder of this token owns the claim for the crypto asset in BlockFi financial services company. Their claim may be redeemed aftre the liquidation process";
-        _classes[1]._values["issuerName"].stringValue = "BlockFi";
-        _classes[1]._values["issuerType"].stringValue = "LTD";
-        _classes[1]._values["issuerJurisdiction"].stringValue = "US";
-        _classes[1]._values["issuerRegistrationAddress"].stringValue = "201 Montgomery Street Second Floor, Suite 263, Jersey City, New Jersey, 07302";
-        _classes[1]._values["issuerURL"].stringValue = "https://blockfi.com/";
-        _classes[1]._values["issuerLogo"].stringValue = "https://crypto-central.io/library/uploads/BlockFi-logo.png";
-        _classes[1]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
+        _classes[1]._values["greenFinanceRegistrationNumber"].stringValue = "CC6749"; 
+        _classes[1]._values["listedStockMarket"].stringValue = "HKEX"; 
+        _classes[1]._values["listedNumber"].stringValue = "424220";
+        _classes[1]._values["governmentLaw"].stringValue = "Hongkong law";
+        
+        _classes[1]._values["description"].stringValue = "Pledge of future economic rights resulting from a commercial contract between the borrower and its drawee with or without escrow; ";
+        _classes[1]._values["issuerName"].stringValue = "HKSAR Government";
+        _classes[1]._values["issuerType"].stringValue = "Government Related";
+        _classes[1]._values["issuerJurisdiction"].stringValue = "HK";
+        _classes[1]._values["issuerRegistrationAddress"].stringValue = "Central Government Offices, 2 Tim Mei Avenue, Tamar, Hong Kong.";
+        _classes[1]._values["issuerURL"].stringValue = "https://www.hkgb.gov.hk/en/";
+        _classes[1]._values["issuerLogo"].stringValue = "https://www.hkgb.gov.hk/en/images/logo.gif";
+        _classes[1]._values["issuerRegistrationNumber"].stringValue = "HK-000000000000";
         _classes[1]._values["issuerDocURL"].stringArrayValue = [
-            "https://www.fa-mag.com/userfiles/ads_2021/BlockFi_LG_Feb_2021/Crypto-101-v4.pdf"
+            "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2023/02/20230216-3/"
         ];  
-        _classes[1]._values["liquidatorName"].stringValue = "BlockFi";
-        _classes[1]._values["liquidatorType"].stringValue = "LTD";
-        _classes[1]._values["liquidatorJurisdiction"].stringValue = "US";
-        _classes[1]._values["liquidatorRegistrationAddress"].stringValue = "201 Montgomery Street Second Floor, Suite 263, Jersey City, New Jersey, 07302";
-        _classes[1]._values["liquidatorURL"].stringValue = "https://blockfi.com/";
-        _classes[1]._values["liquidatorLogo"].stringValue = "https://crypto-central.io/library/uploads/BlockFi-logo.png";
-        _classes[1]._values["liquidatorRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[1]._values["liquidatorDocURL"].stringArrayValue = [
-            "https://www.fa-mag.com/userfiles/ads_2021/BlockFi_LG_Feb_2021/Crypto-101-v4.pdf"
+        _classes[1]._values["ISIN"].stringValue = "US43858AAB61";  
+        _classes[1]._values["fundType"].stringValue = "Government Related";  
+        _classes[1]._values["riskLevel"].stringValue = "AAA";  
+        _classes[1]._values["intendedDate"].stringValue = "1676038570";  
+        _classes[1]._values["shareValue"].uintValue = 100000000;  
+        _classes[1]._values["currency"].stringValue = "USD";  
+        _classes[1]._values["collateralAllowed"].stringArrayValue = [
+            "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+            "0x55d398326f99059ff775485246999027b3197955"
         ];  
+        _classes[1]._values["callable"].boolValue = true;  
+        _classes[1]._values["maturityPeriod"].uintValue = 31104000;  
+        _classes[1]._values["fixed-rate"].boolValue = true;  
+        _classes[1]._values["APY"].uintValue = 60000;  
+        _classes[3]._values["greenFinanceRegistrationNumber"].stringValue = "CC6149"; 
+        _classes[3]._values["listedStockMarket"].stringValue = "HKEX"; 
+        _classes[3]._values["listedNumber"].stringValue = "424230";
 
-        _classes[1]._values["fundType"].stringValue = "bankrupcy claim";
-        _classes[1]._values["riskLevel"].stringValue = "C";  
-        _classes[1]._values["intendedDate"].stringValue = "1680238800";  
-        _classes[1]._values["shareValue"].uintValue = 160000;
-        _classes[1]._values["currency"].stringValue = "BTC";  
-
-        _classes[1]._values["callable"].boolValue = true;   
-        _classes[1]._values["specialMaturityRule"].stringValue = "Redeemable after the legal liquidation process with the liquidator";   
-        _classes[1]._values["repaymentAsset"].stringArrayValue = [
-            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
-        ];  //wbtc
-
-        // define metadata of the class 2";
-        _classes[2]._values["symbol"].stringValue = "BlockFi ETH Claim";
+      // define metadata of the class 2";
+        _classes[2]._values["symbol"].stringValue = "HONG KONG SPECIAL ADMINISTRATIVE R MTN RegS";
         _classes[2]._values["category"].stringValue = "security";
-        _classes[2]._values["subcategory"].stringValue = "claim";
-        _classes[2]._values["childCategory"].stringValue = "crypto bankruptcy claim";
+        _classes[2]._values["subcategory"].stringValue = "bond";
+        _classes[2]._values["childCategory"].stringValue = "zero-coupon callable bond";
         
-        _classes[2]._values["description"].stringValue = "holder of this token owns the claim for the crypto asset in BlockFi financial services company. Their claim may be redeemed aftre the liquidation process";
-        _classes[2]._values["issuerName"].stringValue = "BlockFi";
-        _classes[2]._values["issuerType"].stringValue = "LTD";
-        _classes[2]._values["issuerJurisdiction"].stringValue = "US";
-        _classes[2]._values["issuerRegistrationAddress"].stringValue = "201 Montgomery Street Second Floor, Suite 263, Jersey City, New Jersey, 07302";
-        _classes[2]._values["issuerURL"].stringValue = "https://blockfi.com/";
-        _classes[2]._values["issuerLogo"].stringValue = "https://crypto-central.io/library/uploads/BlockFi-logo.png";
-        _classes[2]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
+        _classes[2]._values["greenFinanceRegistrationNumber"].stringValue = "CC6749"; 
+        _classes[2]._values["listedStockMarket"].stringValue = "HKEX"; 
+        _classes[2]._values["listedNumber"].stringValue = "424220";
+        _classes[2]._values["governmentLaw"].stringValue = "Hongkong law";
+        
+        _classes[2]._values["description"].stringValue = "Pledge of future economic rights resulting from a commercial contract between the borrower and its drawee with or without escrow; ";
+        _classes[2]._values["issuerName"].stringValue = "HKSAR Government";
+        _classes[2]._values["issuerType"].stringValue = "Government Related";
+        _classes[2]._values["issuerJurisdiction"].stringValue = "HK";
+        _classes[2]._values["issuerRegistrationAddress"].stringValue = "Central Government Offices, 2 Tim Mei Avenue, Tamar, Hong Kong.";
+        _classes[2]._values["issuerURL"].stringValue = "https://www.hkgb.gov.hk/en/";
+        _classes[2]._values["issuerLogo"].stringValue = "https://www.hkgb.gov.hk/en/images/logo.gif";
+        _classes[2]._values["issuerRegistrationNumber"].stringValue = "HK-000000000000";
         _classes[2]._values["issuerDocURL"].stringArrayValue = [
-            "https://www.fa-mag.com/userfiles/ads_2021/BlockFi_LG_Feb_2021/Crypto-101-v4.pdf"
+            "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2023/02/20230216-3/"
         ];  
-        _classes[2]._values["liquidatorName"].stringValue = "BlockFi";
-        _classes[2]._values["liquidatorType"].stringValue = "LTD";
-        _classes[2]._values["liquidatorJurisdiction"].stringValue = "US";
-        _classes[2]._values["liquidatorRegistrationAddress"].stringValue = "201 Montgomery Street Second Floor, Suite 263, Jersey City, New Jersey, 07302";
-        _classes[2]._values["liquidatorURL"].stringValue = "https://blockfi.com/";
-        _classes[2]._values["liquidatorLogo"].stringValue = "https://crypto-central.io/library/uploads/BlockFi-logo.png";
-        _classes[2]._values["liquidatorRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[2]._values["liquidatorDocURL"].stringArrayValue = [
-            "https://www.fa-mag.com/userfiles/ads_2021/BlockFi_LG_Feb_2021/Crypto-101-v4.pdf"
+        _classes[2]._values["ISIN"].stringValue = "HK0000789823";  
+        _classes[2]._values["fundType"].stringValue = "Government Related";  
+        _classes[2]._values["riskLevel"].stringValue = "C+";  
+        _classes[2]._values["intendedDate"].stringValue = "1676038570";  
+        _classes[2]._values["shareValue"].uintValue = 100000000;  
+        _classes[2]._values["currency"].stringValue = "USD";  
+        _classes[2]._values["collateralAllowed"].stringArrayValue = [
+            "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+            "0x55d398326f99059ff775485246999027b3197955"
         ];  
-
-        _classes[2]._values["fundType"].stringValue = "bankrupcy claim";  
-        _classes[2]._values["riskLevel"].stringValue = "C";  
-        _classes[2]._values["intendedDate"].stringValue = "1680238800";  
-        _classes[2]._values["shareValue"].uintValue = 140000;  
-        _classes[2]._values["currency"].stringValue = "ETH";  
-
-        _classes[2]._values["callable"].boolValue = true;   
-        _classes[2]._values["specialMaturityRule"].stringValue = "Redeemable after the legal liquidation process with the liquidator";   
-        _classes[2]._values["repaymentAsset"].stringArrayValue = [
-            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
-        ];  //weth
+        _classes[2]._values["callable"].boolValue = true;  
+        _classes[2]._values["maturityPeriod"].uintValue = 31104000;  
+        _classes[2]._values["fixed-rate"].boolValue = true;  
+        _classes[2]._values["APY"].uintValue = 240000;  
+        _classes[3]._values["greenFinanceRegistrationNumber"].stringValue = "CC6769"; 
+        _classes[3]._values["listedStockMarket"].stringValue = "HKEX"; 
+        _classes[3]._values["listedNumber"].stringValue = "424321";
 
         // define metadata of the class 3";
-        _classes[3]._values["symbol"].stringValue = "BlockFi USDC Claim";
+        _classes[3]._values["symbol"].stringValue = "HONG KONG SPECIAL ADMINISTRATIVE R MTN 144A";
         _classes[3]._values["category"].stringValue = "security";
-        _classes[3]._values["subcategory"].stringValue = "claim";
-        _classes[3]._values["childCategory"].stringValue = "crypto bankruptcy claim";
+        _classes[3]._values["subcategory"].stringValue = "bond";
+        _classes[3]._values["childCategory"].stringValue = "zero-coupon callable bond";
         
-        _classes[3]._values["description"].stringValue = "holder of this token owns the claim for the crypto asset in BlockFi financial services company. Their claim may be redeemed aftre the liquidation process";
-        _classes[3]._values["issuerName"].stringValue = "BlockFi";
-        _classes[3]._values["issuerType"].stringValue = "LTD";
+        _classes[3]._values["greenFinanceRegistrationNumber"].stringValue = "CC6749"; 
+        _classes[3]._values["listedStockMarket"].stringValue = "HKEX"; 
+        _classes[3]._values["listedNumber"].stringValue = "424220";
+        _classes[3]._values["governmentLaw"].stringValue = "Hongkong law";
+        
+        _classes[3]._values["description"].stringValue = "Pledge of future economic rights resulting from a commercial contract between the borrower and its drawee with or without escrow; ";
+        _classes[3]._values["issuerName"].stringValue = "HKSAR Government";
+        _classes[3]._values["issuerType"].stringValue = "GovernmentRelated";
         _classes[3]._values["issuerJurisdiction"].stringValue = "US";
-        _classes[3]._values["issuerRegistrationAddress"].stringValue = "201 Montgomery Street Second Floor, Suite 263, Jersey City, New Jersey, 07302";
-        _classes[3]._values["issuerURL"].stringValue = "https://blockfi.com/";
-        _classes[3]._values["issuerLogo"].stringValue = "https://crypto-central.io/library/uploads/BlockFi-logo.png";
-        _classes[3]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
+        _classes[3]._values["issuerRegistrationAddress"].stringValue = "Central Government Offices, 2 Tim Mei Avenue, Tamar, Hong Kong";
+        _classes[3]._values["issuerURL"].stringValue = "https://www.hkgb.gov.hk/en/";
+        _classes[3]._values["issuerLogo"].stringValue = "https://www.hkgb.gov.hk/en/images/logo.gif";
+        _classes[3]._values["issuerRegistrationNumber"].stringValue = "HK-000000000000";
         _classes[3]._values["issuerDocURL"].stringArrayValue = [
-            "https://www.fa-mag.com/userfiles/ads_2021/BlockFi_LG_Feb_2021/Crypto-101-v4.pdf"
+            "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2023/02/20230216-3/"
         ];  
-        _classes[3]._values["liquidatorName"].stringValue = "BlockFi";
-        _classes[3]._values["liquidatorType"].stringValue = "LTD";
-        _classes[3]._values["liquidatorJurisdiction"].stringValue = "US";
-        _classes[3]._values["liquidatorRegistrationAddress"].stringValue = "201 Montgomery Street Second Floor, Suite 263, Jersey City, New Jersey, 07302";
-        _classes[3]._values["liquidatorURL"].stringValue = "https://blockfi.com/";
-        _classes[3]._values["liquidatorLogo"].stringValue = "https://crypto-central.io/library/uploads/BlockFi-logo.png";
-        _classes[3]._values["liquidatorRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[3]._values["liquidatorDocURL"].stringArrayValue = [
-            "https://www.fa-mag.com/userfiles/ads_2021/BlockFi_LG_Feb_2021/Crypto-101-v4.pdf"
+        _classes[3]._values["ISIN"].stringValue = "US-000402625-0";  
+        _classes[3]._values["fundType"].stringValue = "corporate";  
+        _classes[3]._values["riskLevel"].stringValue = "CC";  
+        _classes[3]._values["intendedDate"].stringValue = "1676038570";  
+        _classes[3]._values["shareValue"].uintValue = 100000000;  
+        _classes[3]._values["currency"].stringValue = "USD";  
+        _classes[3]._values["collateralAllowed"].stringArrayValue = [
+            "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+            "0x55d398326f99059ff775485246999027b3197955"
         ];  
+        _classes[3]._values["callable"].boolValue = true;  
+        _classes[3]._values["maturityPeriod"].uintValue = 31104000;  
+        _classes[3]._values["fixed-rate"].boolValue = true;  
+        _classes[3]._values["APY"].uintValue = 600000;  
+        _classes[3]._values["greenFinanceRegistrationNumber"].stringValue = "CC6749"; 
+        _classes[3]._values["listedStockMarket"].stringValue = "HKEX"; 
+        _classes[3]._values["listedNumber"].stringValue = "424220";
+      
 
-        _classes[3]._values["fundType"].stringValue = "bankrupcy claim";  
-        _classes[3]._values["riskLevel"].stringValue = "C";  
-        _classes[3]._values["intendedDate"].stringValue = "1680238800";  
-        _classes[3]._values["shareValue"].uintValue = 220000;  
-        _classes[3]._values["currency"].stringValue = "USDC";  
+        _classes[1]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
+        _classes[1]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
+        _classes[1]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 31104000;
 
-        _classes[3]._values["callable"].boolValue = true;   
-        _classes[3]._values["specialMaturityRule"].stringValue = "Redeemable after the legal liquidation process with the liquidator";   
-        _classes[3]._values["repaymentAsset"].stringArrayValue = [
-            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
-        ];  
-    }
+        _classes[2]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
+        _classes[2]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
+        _classes[2]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 31104000;
+        
+        _classes[3]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
+        _classes[3]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
+        _classes[3]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 31104000;
+        }
+
     // WRITABLES
     function transferFrom(
         address _from,
