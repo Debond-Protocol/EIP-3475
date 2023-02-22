@@ -244,6 +244,11 @@ contract ERC3475 is IERC3475 {
         _classes[1]._values["subcategory"].stringValue = "bond";
         _classes[1]._values["childCategory"].stringValue = "zero-coupon callable bond";
         
+        _classes[3]._values["greenFinanceRegistrationNumber"].stringValue = "CC6749"; 
+        _classes[3]._values["listedStockMarket"].stringValue = "HKEX"; 
+        _classes[3]._values["listedNumber"].stringValue = "424220";
+        _classes[3]._values["governmentLaw"].stringValue = "Hongkong law";
+        
         _classes[1]._values["description"].stringValue = "Pledge of future economic rights resulting from a commercial contract between the borrower and its drawee with or without escrow; ";
         _classes[1]._values["issuerName"].stringValue = "HKSAR Government";
         _classes[1]._values["issuerType"].stringValue = "Government Related";
@@ -253,7 +258,7 @@ contract ERC3475 is IERC3475 {
         _classes[1]._values["issuerLogo"].stringValue = "https://www.hkgb.gov.hk/en/images/logo.gif";
         _classes[1]._values["issuerRegistrationNumber"].stringValue = "HK-000000000000";
         _classes[1]._values["issuerDocURL"].stringArrayValue = [
-            "https://www.bis.org/publ/othp58.pdf"
+            "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2023/02/20230216-3/"
         ];  
         _classes[1]._values["ISIN"].stringValue = "US43858AAB61";  
         _classes[1]._values["fundType"].stringValue = "Government Related";  
@@ -276,16 +281,21 @@ contract ERC3475 is IERC3475 {
         _classes[2]._values["subcategory"].stringValue = "bond";
         _classes[2]._values["childCategory"].stringValue = "zero-coupon callable bond";
         
+        _classes[3]._values["greenFinanceRegistrationNumber"].stringValue = "CC6749"; 
+        _classes[3]._values["listedStockMarket"].stringValue = "HKEX"; 
+        _classes[3]._values["listedNumber"].stringValue = "424220";
+        _classes[3]._values["governmentLaw"].stringValue = "Hongkong law";
+        
         _classes[2]._values["description"].stringValue = "Pledge of future economic rights resulting from a commercial contract between the borrower and its drawee with or without escrow; ";
         _classes[2]._values["issuerName"].stringValue = "HKSAR Government";
-        _classes[2]._values["issuerType"].stringValue = "GovernmentRelated";
+        _classes[2]._values["issuerType"].stringValue = "Government Related";
         _classes[2]._values["issuerJurisdiction"].stringValue = "HK";
         _classes[2]._values["issuerRegistrationAddress"].stringValue = "Central Government Offices, 2 Tim Mei Avenue, Tamar, Hong Kong.";
-        _classes[2]._values["issuerURL"].stringValue = "https://www.coinbase.com/about";
-        _classes[2]._values["issuerLogo"].stringValue = "https://pbs.twimg.com/profile_images/1543784881876090880/BjMTZn0y_400x400.jpg";
-        _classes[2]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[2]._values["issuerDocURL"].stringArrayValue = [
-            "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/Coinbase.pptx.pdf"
+        _classes[1]._values["issuerURL"].stringValue = "https://www.hkgb.gov.hk/en/";
+        _classes[1]._values["issuerLogo"].stringValue = "https://www.hkgb.gov.hk/en/images/logo.gif";
+        _classes[1]._values["issuerRegistrationNumber"].stringValue = "HK-000000000000";
+        _classes[1]._values["issuerDocURL"].stringArrayValue = [
+            "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2023/02/20230216-3/"
         ];  
         _classes[2]._values["ISIN"].stringValue = "HK0000789823";  
         _classes[2]._values["fundType"].stringValue = "Government Related";  
@@ -303,21 +313,26 @@ contract ERC3475 is IERC3475 {
         _classes[2]._values["APY"].uintValue = 240000;  
 
         // define metadata of the class 3";
-        _classes[3]._values["symbol"].stringValue = "Coinbase 1Y Crypto Bond";
+        _classes[3]._values["symbol"].stringValue = "HONG KONG SPECIAL ADMINISTRATIVE R MTN 144A";
         _classes[3]._values["category"].stringValue = "security";
         _classes[3]._values["subcategory"].stringValue = "bond";
         _classes[3]._values["childCategory"].stringValue = "zero-coupon callable bond";
         
+        _classes[3]._values["greenFinanceRegistrationNumber"].stringValue = "CC6749"; 
+        _classes[3]._values["listedStockMarket"].stringValue = "HKEX"; 
+        _classes[3]._values["listedNumber"].stringValue = "424220";
+        _classes[3]._values["governmentLaw"].stringValue = "Hongkong law";
+        
         _classes[3]._values["description"].stringValue = "Pledge of future economic rights resulting from a commercial contract between the borrower and its drawee with or without escrow; ";
-        _classes[3]._values["issuerName"].stringValue = "Coinbase";
-        _classes[3]._values["issuerType"].stringValue = "LTD";
+        _classes[3]._values["issuerName"].stringValue = "HKSAR Government";
+        _classes[3]._values["issuerType"].stringValue = "GovernmentRelated";
         _classes[3]._values["issuerJurisdiction"].stringValue = "US";
-        _classes[3]._values["issuerRegistrationAddress"].stringValue = "548 Market Street, San Francisco - USA";
-        _classes[3]._values["issuerURL"].stringValue = "https://www.coinbase.com/about";
-        _classes[3]._values["issuerLogo"].stringValue = "https://pbs.twimg.com/profile_images/1543784881876090880/BjMTZn0y_400x400.jpg";
-        _classes[3]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[3]._values["issuerDocURL"].stringArrayValue = [
-            "https://github.com/Debond-Protocol/EIP-3475/blob/main/test/media/Coinbase.pptx.pdf"
+        _classes[3]._values["issuerRegistrationAddress"].stringValue = "Central Government Offices, 2 Tim Mei Avenue, Tamar, Hong Kong";
+        _classes[1]._values["issuerURL"].stringValue = "https://www.hkgb.gov.hk/en/";
+        _classes[1]._values["issuerLogo"].stringValue = "https://www.hkgb.gov.hk/en/images/logo.gif";
+        _classes[1]._values["issuerRegistrationNumber"].stringValue = "HK-000000000000";
+        _classes[1]._values["issuerDocURL"].stringArrayValue = [
+            "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2023/02/20230216-3/"
         ];  
         _classes[3]._values["ISIN"].stringValue = "US-000402625-0";  
         _classes[3]._values["fundType"].stringValue = "corporate";  
