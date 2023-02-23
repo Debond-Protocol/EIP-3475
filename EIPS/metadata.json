@@ -420,81 +420,7 @@
       "description":"The public key address of the auditor",
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
    },
-   {
-      "metadataId":"0150",
-      "title":"authorName",
-      "_type":"string",
-      "description":"formal name of the auditor",
-      "values":"ABC "
-   },
-   {
-      "metadataId":"0141",
-      "title":"auditorType",
-      "_type":"string",
-      "description":"Organization‘s type",
-      "values":"LTD"
-   },
-   {
-      "metadataId":"0142",
-      "title":"auditorJurisdiction",
-      "_type":"string",
-      "description":"jurisdiction of the auditor",
-      "values":"US"
-   },
-   {
-      "metadataId":"0143",
-      "title":"auditorRegistrationAddress",
-      "_type":"string",
-      "description":"Address of the established office",
-      "values":"1st avenue NYK"
-   },
-   {
-      "metadataId":"0144",
-      "title":"auditorURL",
-      "_type":"string",
-      "description":"URL link of the website",
-      "values":"https://www.ABC.AI"
-   },
-   {
-      "metadataId":"0145",
-      "title":"auditorLogo",
-      "_type":"string",
-      "description":"URL of stored auditor's logo/ media kit details in 64*64 pix png format",
-      "values":"https://www.ABC.AI/logo.png"
-   },
-   {
-      "metadataId":"0146",
-      "title":"auditorRegistrationNumber",
-      "_type":"string",
-      "description":"The registration number of the auditor’s entity",
-      "values":"000000000000"
-   },
-   {
-      "metadataId":"0147",
-      "title":"auditorDocURL",
-      "_type":"string",
-      "description":"link to the documents",
-      "values":[
-         "https://bit.ly/ABC_pitch.pdf"
-      ]
-   },
-   {
-      "metadataId":"0148",
-      "title":"auditorIndustry",
-      "_type":"string[]",
-      "description":"the registered industry the auditor is associated",
-      "values":[
-         "software development",
-         "banking software development"
-      ]
-   },
-   {
-      "metadataId":"0149",
-      "title":"auditorChainAddress",
-      "_type":"address",
-      "description":"The public key address of the auditor",
-      "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
-   },
+
    {
       "metadataId":"0150",
       "title":"authorName",
@@ -676,7 +602,84 @@
       "values":[
          "0x9f91Cb042e4C6F4F9661d214Fd5741621027eFB4"
       ]
+   },   
+    {
+      "metadataId":"0170",
+      "title":"projectDeveloperName",
+      "_type":"string",
+      "description":"formal name of the project developer",
+      "values":"ABC "
    },
+   {
+      "metadataId":"0131",
+      "title":"custodianType",
+      "_type":"string",
+      "description":"Organization‘s type",
+      "values":"LTD"
+   },
+   {
+      "metadataId":"0132",
+      "title":"custodianJurisdiction",
+      "_type":"string",
+      "description":"jurisdiction of the custodian",
+      "values":"US"
+   },
+   {
+      "metadataId":"0133",
+      "title":"custodianRegistrationAddress",
+      "_type":"string",
+      "description":"Address of the established office",
+      "values":"1st avenue NYK"
+   },
+   {
+      "metadataId":"0134",
+      "title":"custodianURL",
+      "_type":"string",
+      "description":"URL link of the website",
+      "values":"https://www.ABC.AI"
+   },
+   {
+      "metadataId":"0135",
+      "title":"custodianLogo",
+      "_type":"string",
+      "description":"URL of stored custodian's logo/ media kit details in 64*64 pix png format",
+      "values":"https://www.ABC.AI/logo.png"
+   },
+   {
+      "metadataId":"0136",
+      "title":"custodianRegistrationNumber",
+      "_type":"string",
+      "description":"The registration number of the custodian’s entity",
+      "values":"000000000000"
+   },
+   {
+      "metadataId":"0137",
+      "title":"custodianDocURL",
+      "_type":"string[]",
+      "description":"link to the documents",
+      "values":[
+         "https://bit.ly/ABC_pitch.pdf",
+         "https://bit.ly/ABC_pitch.pdf"
+      ]
+   },
+   {
+      "metadataId":"0138",
+      "title":"custodianIndustry",
+      "_type":"string[]",
+      "description":"the registered industry the custodian is associated",
+      "values":[
+         "software development",
+         "banking software development"
+      ]
+   },
+   {
+      "metadataId":"0139",
+      "title":"custodianChainAddress",
+      "_type":"address",
+      "description":"the public key address of the custodian",
+      "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+   },
+   
    {
       "metadataId":"1100",
       "title":"DOI",
