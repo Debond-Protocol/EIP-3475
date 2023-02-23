@@ -1077,31 +1077,10 @@
    },
    {
       "metadataId":"3000",
-      "title":"listedStockMarket",
-      "_type":"string",
-      "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
-      "values":"HKEX"
-   },
-   {
-      "metadataId":"3001",
-      "title":"listedNumber",
-      "_type":"string",
-      "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
-      "values":"424220"
-   },
-   {
-      "metadataId":"3002",
       "title":"projectName",
       "_type":"string",
       "description":"The name of the project",
       "values":"Green Washing"
-   },
-   {
-      "metadataId":"3003",
-      "title":"projectDeveloper",
-      "_type":"string",
-      "description":"The company in charge of the project development",
-      "values":"Green Tech Inc."
    },
    {
       "metadataId":"3004",
@@ -1130,20 +1109,6 @@
       "_type":"boolean",
       "description":"Yes if the project is CORSIA qualified, No otherwise",
       "values":"True"
-   },
-   {
-      "metadataId":"3008",
-      "title":"totalCreditIssued",
-      "_type":"integer",
-      "description":"the total amount of carbon credit issued to the project developer",
-      "values":"1,000"
-   },
-   {
-      "metadataId":"3009",
-      "title":"creditIssuedForTheProject",
-      "_type":"integer",
-      "description":"the total amount of credit issued for this project",
-      "values":"5,000"
    },
    {
       "metadataId":"3010",
@@ -1194,5 +1159,19 @@
          "https://greenwashing/doc/p2.pdf",
          "https://greenwashing/doc/p3.pdf"
       ]
+   },
+   {
+      "metadataId":"4000",
+      "title":"listedStockMarket",
+      "_type":"string",
+      "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
+      "values":"HKEX"
+   },
+   {
+      "metadataId":"4001",
+      "title":"listedNumber",
+      "_type":"string",
+      "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
+      "values":"424220"
    }
 ]
