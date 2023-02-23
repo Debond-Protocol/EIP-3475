@@ -1111,6 +1111,13 @@
       "values":"True"
    },
    {
+      "metadataId":"3008",
+      "title":"arbEligible",
+      "_type":"boolean",
+      "description":"if the is arb eligible",
+      "values": "True"
+   },      
+   {
       "metadataId":"3010",
       "title":"projectSiteLocation",
       "_type":"string",
@@ -1123,13 +1130,6 @@
       "_type":"string",
       "description":"URL link of the website",
       "values":"https://www.greenwashing.com/"
-   },
-   {
-      "metadataId":"3012",
-      "title":"projectSiteState",
-      "_type":"string",
-      "description":"the asate where the project is located",
-      "values":"NORTH CAROLINA"
    },
    {
       "metadataId":"3013",
@@ -1150,17 +1150,6 @@
       ]
    },   
    {
-      "metadataId":"3015",
-      "title":"projectDocuments",
-      "_type":"string[]",
-      "description":"URL link of the ducuments",
-      "values": [
-         "https://greenwashing/doc/p1.pdf",
-         "https://greenwashing/doc/p2.pdf",
-         "https://greenwashing/doc/p3.pdf"
-      ]
-   },
-   {
       "metadataId":"4000",
       "title":"listedStockMarket",
       "_type":"string",
@@ -1173,19 +1162,5 @@
       "_type":"string",
       "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
       "values":"424220"
-   },
-   {
-      "metadataId":"4002",
-      "title":"issueDate",
-      "_type":"interger",
-      "description":"ISO-8601 representation of intended date of creation of the carbon credits",
-      "values": "1676038570"
-   },
-   {
-      "metadataId":"4003",
-      "title":"arbEligible",
-      "_type":"boolean",
-      "description":"if the is arb eligible",
-      "values": "True"
    }
 ]
