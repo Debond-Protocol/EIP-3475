@@ -420,7 +420,6 @@
       "description":"The public key address of the auditor",
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
    },
-
    {
       "metadataId":"0150",
       "title":"authorName",
@@ -602,8 +601,8 @@
       "values":[
          "0x9f91Cb042e4C6F4F9661d214Fd5741621027eFB4"
       ]
-   },   
-    {
+   },
+   {
       "metadataId":"0170",
       "title":"projectDeveloperName",
       "_type":"string",
@@ -679,7 +678,6 @@
       "description":"the public key address of the project developer",
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
    },
-   
    {
       "metadataId":"1100",
       "title":"DOI",
@@ -1115,8 +1113,8 @@
       "title":"arbEligible",
       "_type":"boolean",
       "description":"if the is arb eligible",
-      "values": "True"
-   },      
+      "values":"True"
+   },
    {
       "metadataId":"3010",
       "title":"projectSiteLocation",
@@ -1143,12 +1141,12 @@
       "title":"sustainableDevelopmentGoals",
       "_type":"string[]",
       "description":"descriptions of goals to be achieved by the project",
-      "values": [
+      "values":[
          "Clean Water and Sanitation",
          "Climate Action",
          "Life on Land"
       ]
-   },   
+   },
    {
       "metadataId":"4000",
       "title":"listedStockMarket",
