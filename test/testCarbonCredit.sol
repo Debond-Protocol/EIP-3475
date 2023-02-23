@@ -249,7 +249,7 @@ contract ERC3475 is IERC3475 {
         _classes[1]._values["projectDeveloperName"].stringValue = "Blue Source";             
         _classes[1]._values["projectDeveloperType"].stringValue = "LLC";
         _classes[1]._values["projectType"].stringValue = "Forest Carbon";
-        _classes[1]._values["projectMethoddology"].stringValue = "ARB Compliance Offset Protocol: Mine Methane Capture Projects";
+        _classes[1]._values["projectProtocol"].stringValue = "ARB Compliance Offset Protocol: Mine Methane Capture Projects";
         _classes[1]._values["projectWebSite"].stringValue = "https://www.greenwashing.com/";
         
         _classes[1]._values["ProjectSiteLocation"].stringValue = "Northern Maine";
@@ -308,7 +308,7 @@ contract ERC3475 is IERC3475 {
         _classes[2]._values["projectDeveloperName"].stringValue = "Keyrock Energy LLC";             
         _classes[2]._values["projectDeveloperType"].stringValue = "LLC";
         _classes[2]._values["projectType"].stringValue = "Coal Mine Methane";
-        _classes[2]._values["projectMethoddology"].stringValue = "Improved Forest Management (IFM) on Non-Federal U.S. Forestlands";
+        _classes[2]._values["projectProtocol"].stringValue = "Improved Forest Management (IFM) on Non-Federal U.S. Forestlands";
         _classes[2]._values["ProjectSiteLocation"].stringValue = "Northern Maine";
         _classes[2]._values["Project Site State"].stringValue = "Maine";
 
