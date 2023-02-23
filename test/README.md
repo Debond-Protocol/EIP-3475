@@ -25,7 +25,7 @@ test claim3
 
 
 test Carbon token
-[0x4bE4E1d650Fc26472FbD3923fF8c3255c3C82e74](https://sepolia.etherscan.io/address/0x4bE4E1d650Fc26472FbD3923fF8c3255c3C82e74)
+[0x8BDEE9FfCC892E32e72E0e530eAF86B8ca33aFF9](https://sepolia.etherscan.io/address/0x8BDEE9FfCC892E32e72E0e530eAF86B8ca33aFF9)
 
 
  Exchange [0x3038580E55C042061Eac724FBa8DA2306ab9353e](https://sepolia.etherscan.io/address/0x3038580E55C042061Eac724FBa8DA2306ab9353e)
