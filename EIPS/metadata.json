@@ -1109,14 +1109,14 @@
    },
    {
       "metadataId":"3005",
-      "title":"projectProtocole",
+      "title":"projectProtocol",
       "_type":"string",
-      "description":"The protocole used in the project",
+      "description":"The protocol used in the project",
       "values":"Improved Forest Management (IFM) on Non-Federal U.S. Forestlands"
    },
    {
       "metadataId":"3006",
-      "title":"verifiedRelmoval",
+      "title":"verifiedRemoval",
       "_type":"boolean",
       "description":"Yes if the removal of GHG by the project has been verified, No otherwise",
       "values":"Yes"
