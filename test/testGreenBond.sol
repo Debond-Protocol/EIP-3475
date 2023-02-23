@@ -245,9 +245,6 @@ contract ERC3475 is IERC3475 {
         _classes[1]._values["childCategory"].stringValue = "zero-coupon callable bond";
         
         _classes[1]._values["greenFinanceRegistrationNumber"].stringValue = "CC6749"; 
-        _classes[1]._values["listedStockMarket"].stringValue = "HKEX"; 
-        _classes[1]._values["listedNumber"].stringValue = "424220";
-        _classes[1]._values["governmentLaw"].stringValue = "Hongkong law";
         
         _classes[1]._values["description"].stringValue = "Pledge of future economic rights resulting from a commercial contract between the borrower and its drawee with or without escrow; ";
         _classes[1]._values["issuerName"].stringValue = "HKSAR Government";
@@ -285,9 +282,6 @@ contract ERC3475 is IERC3475 {
         _classes[2]._values["childCategory"].stringValue = "zero-coupon callable bond";
         
         _classes[2]._values["greenFinanceRegistrationNumber"].stringValue = "CC6749"; 
-        _classes[2]._values["listedStockMarket"].stringValue = "HKEX"; 
-        _classes[2]._values["listedNumber"].stringValue = "424220";
-        _classes[2]._values["governmentLaw"].stringValue = "Hongkong law";
         
         _classes[2]._values["description"].stringValue = "Pledge of future economic rights resulting from a commercial contract between the borrower and its drawee with or without escrow; ";
         _classes[2]._values["issuerName"].stringValue = "HKSAR Government";
@@ -325,9 +319,6 @@ contract ERC3475 is IERC3475 {
         _classes[3]._values["childCategory"].stringValue = "zero-coupon callable bond";
         
         _classes[3]._values["greenFinanceRegistrationNumber"].stringValue = "CC6749"; 
-        _classes[3]._values["listedStockMarket"].stringValue = "HKEX"; 
-        _classes[3]._values["listedNumber"].stringValue = "424220";
-        _classes[3]._values["governmentLaw"].stringValue = "Hongkong law";
         
         _classes[3]._values["description"].stringValue = "Pledge of future economic rights resulting from a commercial contract between the borrower and its drawee with or without escrow; ";
         _classes[3]._values["issuerName"].stringValue = "HKSAR Government";
