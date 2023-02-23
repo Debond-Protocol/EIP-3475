@@ -24,10 +24,10 @@ test Carbon token
 [0x4bE4E1d650Fc26472FbD3923fF8c3255c3C82e74](https://sepolia.etherscan.io/address/0x4bE4E1d650Fc26472FbD3923fF8c3255c3C82e74)
 
 
- Exchange [0x30e36031D705A697de776F72eF3b175C780e9D2F](https://sepolia.etherscan.io/address/0x30e36031D705A697de776F72eF3b175C780e9D2F)
+ Exchange [0x3038580E55C042061Eac724FBa8DA2306ab9353e](https://sepolia.etherscan.io/address/0x3038580E55C042061Eac724FBa8DA2306ab9353e)
  
  
- ExchangeStorage [0x872fCd2975132D1A1b7b3441A6c38eda6299BF1C](https://sepolia.etherscan.io/address/0x872fCd2975132D1A1b7b3441A6c38eda6299BF1C)
+ ExchangeStorage [0x9DFC5bc4663Dfb2540A5d2ef4d862837F8778229](https://sepolia.etherscan.io/address/0x9DFC5bc4663Dfb2540A5d2ef4d862837F8778229)
 
 
  USDC Test token [0x9BF943e51ee24786077e4305bA5033f6701eb555](https://sepolia.etherscan.io/address/0x9BF943e51ee24786077e4305bA5033f6701eb555)
