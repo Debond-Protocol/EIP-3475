@@ -611,50 +611,50 @@
       "values":"ABC "
    },
    {
-      "metadataId":"0131",
-      "title":"custodianType",
+      "metadataId":"0171",
+      "title":"projectDeveloperType",
       "_type":"string",
       "description":"Organization‘s type",
       "values":"LTD"
    },
    {
-      "metadataId":"0132",
-      "title":"custodianJurisdiction",
+      "metadataId":"0172",
+      "title":"projectDeveloperJurisdiction",
       "_type":"string",
-      "description":"jurisdiction of the custodian",
+      "description":"jurisdiction of the project developer",
       "values":"US"
    },
    {
-      "metadataId":"0133",
-      "title":"custodianRegistrationAddress",
+      "metadataId":"0173",
+      "title":"projectDeveloperRegistrationAddress",
       "_type":"string",
       "description":"Address of the established office",
       "values":"1st avenue NYK"
    },
    {
-      "metadataId":"0134",
-      "title":"custodianURL",
+      "metadataId":"0174",
+      "title":"projectDeveloperURL",
       "_type":"string",
       "description":"URL link of the website",
       "values":"https://www.ABC.AI"
    },
    {
-      "metadataId":"0135",
-      "title":"custodianLogo",
+      "metadataId":"0175",
+      "title":"projectDeveloperLogo",
       "_type":"string",
-      "description":"URL of stored custodian's logo/ media kit details in 64*64 pix png format",
+      "description":"URL of stored project developer's logo/ media kit details in 64*64 pix png format",
       "values":"https://www.ABC.AI/logo.png"
    },
    {
-      "metadataId":"0136",
-      "title":"custodianRegistrationNumber",
+      "metadataId":"0176",
+      "title":"projectDeveloperRegistrationNumber",
       "_type":"string",
-      "description":"The registration number of the custodian’s entity",
+      "description":"The registration number of the project developer’s entity",
       "values":"000000000000"
    },
    {
-      "metadataId":"0137",
-      "title":"custodianDocURL",
+      "metadataId":"0177",
+      "title":"projectDeveloperDocURL",
       "_type":"string[]",
       "description":"link to the documents",
       "values":[
@@ -663,20 +663,20 @@
       ]
    },
    {
-      "metadataId":"0138",
-      "title":"custodianIndustry",
+      "metadataId":"0178",
+      "title":"projectDeveloperIndustry",
       "_type":"string[]",
-      "description":"the registered industry the custodian is associated",
+      "description":"the registered industry the project developer is associated",
       "values":[
          "software development",
          "banking software development"
       ]
    },
    {
-      "metadataId":"0139",
-      "title":"custodianChainAddress",
+      "metadataId":"0179",
+      "title":"projectDeveloperChainAddress",
       "_type":"address",
-      "description":"the public key address of the custodian",
+      "description":"the public key address of the project developer",
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
    },
    
