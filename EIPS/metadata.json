@@ -40,6 +40,55 @@
       "_type":"string",
       "description":"The description of this token",
       "values":"zero-coupon callable bond"
+   },   
+   {
+      "metadataId":"0050",
+      "title":"totalSupply",
+      "_type":"integer",
+      "description":"defines the total number of token being instantiated since the start . this supply active available supply + redeemed supply + burned supply",
+      "values":"100000"
+   },
+   {
+      "metadataId":"0051",
+      "title":"redeemedSupply",
+      "_type":"integer",
+      "description":"this is the valid amount of the token in circulation",
+      "values":"10000000"
+   },
+   {
+      "metadataId":"0052",
+      "title":"activeSupply",
+      "_type":"integer",
+      "description":"amount of the supply which is ivalid",
+      "values":"10000000"
+   },
+   {
+      "metadataId":"0053",
+      "title":"burnedSupply",
+      "_type":"integer",
+      "description":"amount of the supply which is burned/ivalid",
+      "values":"10000000"
+   }, 
+   {
+      "metadataId":"2054",
+      "title":"quotasToIssue:",
+      "_type":"string",
+      "description":"Defines the token supply (out of total supply) that are available to be issued",
+      "values":"600000"
+   },
+   {
+      "metadataId":"0055",
+      "title":"maxiumSupply",
+      "_type":"integer",
+      "description":"maximum amount of the token",
+      "values":"10000000"
+   },    
+   {
+      "metadataId":"0060",
+      "title":"numberOfHolders",
+      "_type":"integer",
+      "description":"number of the token holders",
+      "values":"200"
    },
    {
       "metadataId":"0100",
@@ -897,20 +946,6 @@
       "values":"100000000"
    },
    {
-      "metadataId":"2006",
-      "title":"totalBalance",
-      "_type":"integer",
-      "description":"defines the total number of securities being instantiated since the start . this supply constitutes available supply + redeemed supply + burned supply",
-      "values":"100000"
-   },
-   {
-      "metadataId":"2007",
-      "title":"amountsPayable",
-      "_type":"integer",
-      "description":"this is the amount of securities that are issued till date",
-      "values":"10000000"
-   },
-   {
       "metadataId":"2008",
       "title":"currency",
       "_type":"string",
@@ -1044,27 +1079,6 @@
       "_type":"integer",
       "description":"Fixed PPM interest rate for the bond holders (in %)",
       "values":"60000"
-   },
-   {
-      "metadataId":"2071",
-      "title":"quotasToIssue:",
-      "_type":"string",
-      "description":"Defines the securities supply (out of total supply in ppm) that are available for issuers  on the marketplace",
-      "values":"600000"
-   },
-   {
-      "metadataId":"2072",
-      "title":"quotasToBeRedeemed",
-      "_type":"integer",
-      "description":"Defines the securities supply that can be redeemed by the lender after redemption condition is received",
-      "values":"100000"
-   },
-   {
-      "metadataId":"2073",
-      "title":"numberOfShareholders",
-      "_type":"integer",
-      "description":"number of the entities that are participating as the potential lenders",
-      "values":"200"
    },
    {
       "metadataId":"2200",
