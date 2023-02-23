@@ -20,6 +20,10 @@ test claim1
 test claim2
 [0x22F51e12F3efa418FEd5752e7089f199c5162BD8](https://sepolia.etherscan.io/address/0x22F51e12F3efa418FEd5752e7089f199c5162BD8)
 
+test clai3
+[0x45ed7A52f14f67cCAe75693c6c4B44fb5F418557](https://sepolia.etherscan.io/address/0x45ed7A52f14f67cCAe75693c6c4B44fb5F418557)
+
+
 test Carbon token
 [0x4bE4E1d650Fc26472FbD3923fF8c3255c3C82e74](https://sepolia.etherscan.io/address/0x4bE4E1d650Fc26472FbD3923fF8c3255c3C82e74)
 
