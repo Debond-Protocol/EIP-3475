@@ -1085,5 +1085,111 @@
       "_type":"string",
       "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
       "values":"424220"
+   },
+   {
+      "metadataId":"3002",
+      "title":"projectName",
+      "_type":"string",
+      "description":"The name of the project",
+      "values":"Green Washing"
+   },
+   {
+      "metadataId":"3003",
+      "title":"projectDeveloper",
+      "_type":"string",
+      "description":"The company in charge of the project development",
+      "values":"Green Tech Inc."
+   },
+   {
+      "metadataId":"3004",
+      "title":"projectType",
+      "_type":"string",
+      "description":"The type of project",
+      "values":"Forest Carbon"
+   },
+   {
+      "metadataId":"3005",
+      "title":"projectProtocole",
+      "_type":"string",
+      "description":"The protocole used in the project",
+      "values":"Improved Forest Management (IFM) on Non-Federal U.S. Forestlands"
+   },
+   {
+      "metadataId":"3006",
+      "title":"verifiedRelmoval",
+      "_type":"boolean",
+      "description":"Yes if the removal of GHG by the project has been verified, No otherwise",
+      "values":"Yes"
+   },
+   {
+      "metadataId":"3007",
+      "title":"isCORSIA",
+      "_type":"boolean",
+      "description":"Yes if the project is CORSIA qualified, No otherwise",
+      "values":"Yes"
+   },
+   {
+      "metadataId":"3008",
+      "title":"totalCreditIssued",
+      "_type":"integer",
+      "description":"the total amount of carbon credit issued to the project developer",
+      "values":"1,000"
+   },
+   {
+      "metadataId":"3009",
+      "title":"creditIssuedForTheProject",
+      "_type":"integer",
+      "description":"the total amount of credit issued for this project",
+      "values":"5,000"
+   },
+   {
+      "metadataId":"3010",
+      "title":"projectSiteLocation",
+      "_type":"string",
+      "description":"the address where the project is located ",
+      "values":"142 36th Mt Dar Sir, Hickory, NC 61013, USA"
+   },
+   {
+      "metadataId":"3011",
+      "title":"projectWebSite",
+      "_type":"string",
+      "description":"URL link of the website",
+      "values":"https://www.greenwashing.com/"
+   },
+   {
+      "metadataId":"3012",
+      "title":"projectSiteState",
+      "_type":"string",
+      "description":"the asate where the project is located",
+      "values":"NORTH CAROLINA"
+   },
+   {
+      "metadataId":"3013",
+      "title":"projectSiteCountry",
+      "_type":"string",
+      "description":"the country where the project is located",
+      "values":"US"
+   },
+   {
+      "metadataId":"3014",
+      "title":"sustainableDevelopmentGoals",
+      "_type":"string[]",
+      "description":"descriptions of goals to be achieved by the project",
+      "values": [
+         "Clean Water and Sanitation",
+         "Climate Action",
+         "Life on Land"
+      ]
+   },
+   {
+      "metadataId":"3015",
+      "title":"projectDocuments",
+      "_type":"string[]",
+      "description":"URL link of the ducuments",
+      "values": [
+         "https://greenwashing/doc/p1.pdf",
+         "https://greenwashing/doc/p2.pdf",
+         "https://greenwashing/doc/p3.pdf"
+      ]
    }
 ]
