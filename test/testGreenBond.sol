@@ -255,7 +255,7 @@ contract ERC3475 is IERC3475 {
         _classes[1]._values["issuerJurisdiction"].stringValue = "HK";
         _classes[1]._values["issuerRegistrationAddress"].stringValue = "Central Government Offices, 2 Tim Mei Avenue, Tamar, Hong Kong.";
         _classes[1]._values["issuerURL"].stringValue = "https://www.hkgb.gov.hk/en/";
-        _classes[1]._values["issuerLogo"].stringValue = "https://www.hkgb.gov.hk/en/images/logo.gif";
+        _classes[1]._values["issuerLogo"].stringValue = "https://en.wikipedia.org/wiki/Government_of_Hong_Kong#/media/File:Regional_Emblem_of_Hong_Kong.svg";
         _classes[1]._values["issuerRegistrationNumber"].stringValue = "HK-000000000000";
         _classes[1]._values["issuerDocURL"].stringArrayValue = [
             "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2023/02/20230216-3/"
@@ -295,7 +295,7 @@ contract ERC3475 is IERC3475 {
         _classes[2]._values["issuerJurisdiction"].stringValue = "HK";
         _classes[2]._values["issuerRegistrationAddress"].stringValue = "Central Government Offices, 2 Tim Mei Avenue, Tamar, Hong Kong.";
         _classes[2]._values["issuerURL"].stringValue = "https://www.hkgb.gov.hk/en/";
-        _classes[2]._values["issuerLogo"].stringValue = "https://www.hkgb.gov.hk/en/images/logo.gif";
+        _classes[2]._values["issuerLogo"].stringValue = "https://en.wikipedia.org/wiki/Government_of_Hong_Kong#/media/File:Regional_Emblem_of_Hong_Kong.svg";
         _classes[2]._values["issuerRegistrationNumber"].stringValue = "HK-000000000000";
         _classes[2]._values["issuerDocURL"].stringArrayValue = [
             "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2023/02/20230216-3/"
@@ -335,7 +335,7 @@ contract ERC3475 is IERC3475 {
         _classes[3]._values["issuerJurisdiction"].stringValue = "US";
         _classes[3]._values["issuerRegistrationAddress"].stringValue = "Central Government Offices, 2 Tim Mei Avenue, Tamar, Hong Kong";
         _classes[3]._values["issuerURL"].stringValue = "https://www.hkgb.gov.hk/en/";
-        _classes[3]._values["issuerLogo"].stringValue = "https://www.hkgb.gov.hk/en/images/logo.gif";
+        _classes[3]._values["issuerLogo"].stringValue = "https://en.wikipedia.org/wiki/Government_of_Hong_Kong#/media/File:Regional_Emblem_of_Hong_Kong.svg";
         _classes[3]._values["issuerRegistrationNumber"].stringValue = "HK-000000000000";
         _classes[3]._values["issuerDocURL"].stringArrayValue = [
             "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2023/02/20230216-3/"
