@@ -1119,14 +1119,14 @@
       "title":"verifiedRemoval",
       "_type":"boolean",
       "description":"Yes if the removal of GHG by the project has been verified, No otherwise",
-      "values":"Yes"
+      "values":"True"
    },
    {
       "metadataId":"3007",
       "title":"isCORSIA",
       "_type":"boolean",
       "description":"Yes if the project is CORSIA qualified, No otherwise",
-      "values":"Yes"
+      "values":"True"
    },
    {
       "metadataId":"3008",
