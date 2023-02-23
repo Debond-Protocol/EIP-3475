@@ -243,157 +243,70 @@ contract ERC3475 is IERC3475 {
         _classes[1]._values["category"].stringValue = "Certificate";
         _classes[1]._values["subcategory"].stringValue = "Credit";
         _classes[1]._values["childCategory"].stringValue = "ESG action carbon credits";
-        //apply the same changes in the rest of the metadata
+        _classes[1]._values["description"].stringValue = "Purchase and retire carbon offsets from the industry's most established portfolio, source renewable fuels and energy, purchase RECs or create an emission reductions plan.";
+     
         _classes[1]._values["projectID"].stringValue = "ACR566";   
         _classes[1]._values["projectName"].stringValue = "Bluesource - 100 Mile Wilderness Improved Forest Management Project";  
-        _classes[1]._values["projectDeveloperName"].stringValue = "Blue Source";             
-        _classes[1]._values["projectDeveloperType"].stringValue = "LLC";
+
         _classes[1]._values["projectType"].stringValue = "Forest Carbon";
         _classes[1]._values["projectProtocol"].stringValue = "ARB Compliance Offset Protocol: Mine Methane Capture Projects";
         _classes[1]._values["projectWebSite"].stringValue = "https://www.greenwashing.com/";
-        
-        _classes[1]._values["ProjectSiteLocation"].stringValue = "Northern Maine";
-        _classes[1]._values["projectSiteState"].stringValue = "Maine";
-        _classes[1]._values["projectSiteCountry"].stringValue = "US";
+        _classes[2]._values["ProjectSiteLocation"].stringValue = "Northern Maine";
+       
 
-        _classes[2]._values["sustainableDevelopmentGoals"].stringValue = "06: Clean Water and Sanitation;13: Climate Action;15: Life on Land"; 
-        _classes[2]._values["verifiedRemoval"].boolValue = "Yes"; 
-        _classes[2]._values["arbEligible"].boolValue = "No";
-        _classes[2]._values["isCORSIA"].boolValue = "No";
-               
-        _classes[1]._values["Total Credits Issued"].stringValue = "11,942";
-        _classes[1]._values["Total Credits Issued Qualified"].stringValue = "11,492";
-        _classes[1]._values["Vintage"].stringValue = "2022";
-
-        _classes[1]._values["issueDate"].stringValue = "1676038570";
-        _classes[1]._values["issuerJurisdiction"].stringValue = "US";
-        _classes[1]._values["issuerRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
-        _classes[1]._values["issuerURL"].stringValue = "https://ftx.com/";
-        _classes[1]._values["issuerLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
-        _classes[1]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[1]._values["issuerDocURL"].stringArrayValue = [
-            "https://acr2.apx.com/mymodule/reg/TabDocuments.asp?r=112&ad=Prpt&act=update&type=PRO&aProj=ipub&tablename=doc&id1=566"
-        ];  
-        _classes[1]._values["liquidatorName"].stringValue = "FTX";
-        _classes[1]._values["liquidatorType"].stringValue = "LTD";
-        _classes[1]._values["liquidatorJurisdiction"].stringValue = "US";
-        _classes[1]._values["liquidatorRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
-        _classes[1]._values["liquidatorURL"].stringValue = "https://ftx.com/";
-        _classes[1]._values["liquidatorLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
-        _classes[1]._values["liquidatorRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[1]._values["liquidatorDocURL"].stringArrayValue = [
-            "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
+        _classes[1]._values["projectDeveloperName"].stringValue = "Blue Source";
+        _classes[1]._values["projectDeveloperType"].stringValue = "LLC";
+        _classes[1]._values["projectDeveloperJurisdiction"].stringValue = "US";
+        _classes[1]._values["projectDeveloperRegistrationAddress"].stringValue = "50 Harrison Street, Suite 209F Hoboken, NJ 07030";
+        _classes[1]._values["projectDeveloperURL"].stringValue = "https://www.bluesource.com/";
+        _classes[1]._values["projectDeveloperLogo"].stringValue = "https://seeklogo.com/images/C/celsius-cel-logo-AFE74F461C-seeklogo.com.png";
+        _classes[1]._values["projectDeveloperRegistrationNumber"].stringValue = "US-000000000000";
+        _classes[1]._values["projectDeveloperDocURL"].stringArrayValue = [
+            "https://pacer-documents.s3.amazonaws.com/115/312902/126122257414.pdf"
         ];  
 
-        _classes[1]._values["fundType"].stringValue = "bankrupcy claim";  
-        _classes[1]._values["riskLevel"].stringValue = "C";  
-        _classes[1]._values["intendedDate"].stringValue = "1676038570";  
-        _classes[1]._values["shareValue"].uintValue = 160000;  
-        _classes[1]._values["currency"].stringValue = "BTC";  
 
-        _classes[1]._values["callable"].boolValue = true;   
-        _classes[1]._values["specialMaturityRule"].stringValue = "Redeemable after the legal liquidation process with the liquidator";   
-        _classes[1]._values["repaymentAsset"].stringArrayValue = [
-            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
-        ];  //wbtc
+        _classes[1]._values["sustainableDevelopmentGoals"].stringArrayValue = ["06: Clean Water and Sanitation","13: Climate Action"]; 
+        _classes[1]._values["verifiedRemoval"].boolValue = true; 
+        _classes[1]._values["arbEligible"].boolValue = false;
+        _classes[1]._values["isCORSIA"].boolValue = false;
 
-        // define metadata of the class 2";
+    
+
+
         _classes[2]._values["symbol"].stringValue = "Beckley Pocahontas Mine Methane Incineration Project";
-        _classes[2]._values["category"].stringValue = "certificate";
+        _classes[2]._values["category"].stringValue = "Certificate";
         _classes[2]._values["subcategory"].stringValue = "Credit";
         _classes[2]._values["childCategory"].stringValue = "ESG action carbon credits";
-
+        _classes[2]._values["description"].stringValue = "Purchase and retire carbon offsets from the industry's most established portfolio, source renewable fuels and energy, purchase RECs or create an emission reductions plan.";
+     
+     
         _classes[2]._values["projectID"].stringValue = "ACR746";   
         _classes[2]._values["projectName"].stringValue = "Beckley Pocahontas Mine Methane Incineration Project";  
-        _classes[2]._values["projectDeveloperName"].stringValue = "Keyrock Energy LLC";             
-        _classes[2]._values["projectDeveloperType"].stringValue = "LLC";
         _classes[2]._values["projectType"].stringValue = "Coal Mine Methane";
         _classes[2]._values["projectProtocol"].stringValue = "Improved Forest Management (IFM) on Non-Federal U.S. Forestlands";
         _classes[2]._values["ProjectSiteLocation"].stringValue = "Northern Maine";
-        _classes[2]._values["Project Site State"].stringValue = "Maine";
+       
 
-        _classes[2]._values["sustainableDevelopmentGoals"].stringValue = "06: Clean Water and Sanitation;13: Climate Action;15: Life on Land"; 
-        _classes[2]._values["verifiedRemoval"].boolValue = "Yes"; 
-        _classes[2]._values["arbEligible"].boolValue = "No";
-        _classes[2]._values["isCORSIA"].boolValue = "No";
-               
-        _classes[2]._values["Total Credits Issued"].stringValue = "11,942";
-        _classes[2]._values["Total Credits Issued Qualified"].stringValue = "11,492";
-        _classes[2]._values["Vintage"].stringValue = "2022";
-        
-        _classes[2]._values["description"].stringValue = "holder of this token owns the claim for the crypto asset in FTX exchange. Their claim may be redeemed aftre the liquidation process";
-        _classes[2]._values["issuerName"].stringValue = "FTX";
-        _classes[2]._values["issuerType"].stringValue = "LTD";
-        _classes[2]._values["issuerJurisdiction"].stringValue = "US";
-        _classes[2]._values["issuerRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
-        _classes[2]._values["issuerURL"].stringValue = "https://ftx.com/";
-        _classes[2]._values["issuerLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
-        _classes[2]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[2]._values["issuerDocURL"].stringArrayValue = [
-            "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
-        ];  
-        _classes[2]._values["liquidatorName"].stringValue = "FTX";
-        _classes[2]._values["liquidatorType"].stringValue = "LTD";
-        _classes[2]._values["liquidatorJurisdiction"].stringValue = "US";
-        _classes[2]._values["liquidatorRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
-        _classes[2]._values["liquidatorURL"].stringValue = "https://ftx.com/";
-        _classes[2]._values["liquidatorLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
-        _classes[2]._values["liquidatorRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[2]._values["liquidatorDocURL"].stringArrayValue = [
-            "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
+        _classes[2]._values["projectDeveloperName"].stringValue = "Keyrock Energy";
+        _classes[2]._values["projectDeveloperType"].stringValue = "LLC";
+        _classes[2]._values["projectDeveloperJurisdiction"].stringValue = "US";
+        _classes[2]._values["projectDeveloperRegistrationAddress"].stringValue = "50 Harrison Street, Suite 209F Hoboken, NJ 07030";
+        _classes[2]._values["projectDeveloperURL"].stringValue = "https://www.linkedin.com/company/keyrock-energy-inc";
+        _classes[2]._values["projectDeveloperLogo"].stringValue = "https://assets.stickpng.com/images/5954bb45deaf2c03413be353.png";
+        _classes[2]._values["projectDeveloperRegistrationNumber"].stringValue = "US-000000000000";
+        _classes[2]._values["projectDeveloperDocURL"].stringArrayValue = [
+            "https://pacer-documents.s3.amazonaws.com/115/312902/126122257414.pdf"
         ];  
 
-        _classes[2]._values["fundType"].stringValue = "bankrupcy claim";  
-        _classes[2]._values["riskLevel"].stringValue = "C";  
-        _classes[2]._values["intendedDate"].stringValue = "1676038570";  
-        _classes[2]._values["shareValue"].uintValue = 140000;  
-        _classes[2]._values["currency"].stringValue = "ETH";  
 
-        _classes[2]._values["callable"].boolValue = true;   
-        _classes[2]._values["specialMaturityRule"].stringValue = "Redeemable after the legal liquidation process with the liquidator";   
-        _classes[2]._values["repaymentAsset"].stringArrayValue = [
-            "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
-        ];  //weth
+ 
+        _classes[2]._values["sustainableDevelopmentGoals"].stringArrayValue =  ["06: Clean Water and Sanitation","13: Climate Action", "15: Life on Land"]; 
+        _classes[2]._values["verifiedRemoval"].boolValue = true; 
+        _classes[2]._values["arbEligible"].boolValue = false;
+        _classes[2]._values["isCORSIA"].boolValue = false;          
 
-        // define metadata of the class 3";
-        _classes[3]._values["symbol"].stringValue = "FTX USDC Claim";
-        _classes[3]._values["category"].stringValue = "security";
-        _classes[3]._values["subcategory"].stringValue = "claim";
-        _classes[3]._values["childCategory"].stringValue = "crypto bankruptcy claim";
-        
-        _classes[3]._values["description"].stringValue = "holder of this token owns the claim for the crypto asset in FTX exchange. Their claim may be redeemed aftre the liquidation process";
-        _classes[3]._values["issuerName"].stringValue = "FTX";
-        _classes[3]._values["issuerType"].stringValue = "LTD";
-        _classes[3]._values["issuerJurisdiction"].stringValue = "US";
-        _classes[3]._values["issuerRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
-        _classes[3]._values["issuerURL"].stringValue = "https://ftx.com/";
-        _classes[3]._values["issuerLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
-        _classes[3]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[3]._values["issuerDocURL"].stringArrayValue = [
-            "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
-        ];  
-        _classes[3]._values["liquidatorName"].stringValue = "FTX";
-        _classes[3]._values["liquidatorType"].stringValue = "LTD";
-        _classes[3]._values["liquidatorJurisdiction"].stringValue = "US";
-        _classes[3]._values["liquidatorRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
-        _classes[3]._values["liquidatorURL"].stringValue = "https://ftx.com/";
-        _classes[3]._values["liquidatorLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
-        _classes[3]._values["liquidatorRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[3]._values["liquidatorDocURL"].stringArrayValue = [
-            "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
-        ];  
-
-        _classes[3]._values["fundType"].stringValue = "bankrupcy claim";  
-        _classes[3]._values["riskLevel"].stringValue = "C";  
-        _classes[3]._values["intendedDate"].stringValue = "1676038570";  
-        _classes[3]._values["shareValue"].uintValue = 220000;  
-        _classes[3]._values["currency"].stringValue = "USDC";  
-
-        _classes[3]._values["callable"].boolValue = true;   
-        _classes[3]._values["specialMaturityRule"].stringValue = "Redeemable after the legal liquidation process with the liquidator";   
-        _classes[3]._values["repaymentAsset"].stringArrayValue = [
-            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
-        ];  
+          
     }
     // WRITABLES
     function transferFrom(
