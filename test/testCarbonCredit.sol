@@ -239,24 +239,40 @@ contract ERC3475 is IERC3475 {
      */
     constructor() {
         // define metadata of the class 1";
-        _classes[1]._values["symbol"].stringValue = "Affinity Mine Methane Incineration Project";
-        _classes[1]._values["category"].stringValue = "security";
-        _classes[1]._values["subcategory"].stringValue = "claim";
-        _classes[1]._values["childCategory"].stringValue = "crypto bankruptcy claim";
-        _classes[1]._values["description"].stringValue = "holder of this token owns the claim for the crypto asset in FTX exchange. Their claim may be redeemed aftre the liquidation process";
-      
+        _classes[1]._values["symbol"].stringValue = "Bluesource - 100 Mile Wilderness Improved Forest Management Project";
+        _classes[1]._values["category"].stringValue = "Certificate";
+        _classes[1]._values["subcategory"].stringValue = "Credit";
+        _classes[1]._values["childCategory"].stringValue = "ESG action carbon credits";
         //apply the same changes in the rest of the metadata
-        _classes[1]._values["projectDeveloperName"].stringValue = "Keyrock Energy ";             
+        _classes[1]._values["projectID"].stringValue = "ACR566";   
+        _classes[1]._values["projectName"].stringValue = "Bluesource - 100 Mile Wilderness Improved Forest Management Project";  
+        _classes[1]._values["projectDeveloperName"].stringValue = "Blue Source";             
         _classes[1]._values["projectDeveloperType"].stringValue = "LLC";
+        _classes[1]._values["projectType"].stringValue = "Forest Carbon";
+        _classes[1]._values["projectMethoddology"].stringValue = "ARB Compliance Offset Protocol: Mine Methane Capture Projects";
+        _classes[1]._values["projectWebSite"].stringValue = "https://www.greenwashing.com/";
         
-        
+        _classes[1]._values["ProjectSiteLocation"].stringValue = "Northern Maine";
+        _classes[1]._values["projectSiteState"].stringValue = "Maine";
+        _classes[1]._values["projectSiteCountry"].stringValue = "US";
+
+        _classes[2]._values["sustainableDevelopmentGoals"].stringValue = "06: Clean Water and Sanitation;13: Climate Action;15: Life on Land"; 
+        _classes[2]._values["verifiedRemoval"].boolValue = "Yes"; 
+        _classes[2]._values["arbEligible"].boolValue = "No";
+        _classes[2]._values["isCORSIA"].boolValue = "No";
+               
+        _classes[1]._values["Total Credits Issued"].stringValue = "11,942";
+        _classes[1]._values["Total Credits Issued Qualified"].stringValue = "11,492";
+        _classes[1]._values["Vintage"].stringValue = "2022";
+
+        _classes[1]._values["issueDate"].stringValue = "1676038570";
         _classes[1]._values["issuerJurisdiction"].stringValue = "US";
         _classes[1]._values["issuerRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
         _classes[1]._values["issuerURL"].stringValue = "https://ftx.com/";
         _classes[1]._values["issuerLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
         _classes[1]._values["issuerRegistrationNumber"].stringValue = "US-000000000000";
         _classes[1]._values["issuerDocURL"].stringArrayValue = [
-            "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
+            "https://acr2.apx.com/mymodule/reg/TabDocuments.asp?r=112&ad=Prpt&act=update&type=PRO&aProj=ipub&tablename=doc&id1=566"
         ];  
         _classes[1]._values["liquidatorName"].stringValue = "FTX";
         _classes[1]._values["liquidatorType"].stringValue = "LTD";
@@ -282,10 +298,28 @@ contract ERC3475 is IERC3475 {
         ];  //wbtc
 
         // define metadata of the class 2";
-        _classes[2]._values["symbol"].stringValue = "FTX ETH Claim";
-        _classes[2]._values["category"].stringValue = "security";
-        _classes[2]._values["subcategory"].stringValue = "claim";
-        _classes[2]._values["childCategory"].stringValue = "crypto bankruptcy claim";
+        _classes[2]._values["symbol"].stringValue = "Beckley Pocahontas Mine Methane Incineration Project";
+        _classes[2]._values["category"].stringValue = "certificate";
+        _classes[2]._values["subcategory"].stringValue = "Credit";
+        _classes[2]._values["childCategory"].stringValue = "ESG action carbon credits";
+
+        _classes[2]._values["projectID"].stringValue = "ACR746";   
+        _classes[2]._values["projectName"].stringValue = "Beckley Pocahontas Mine Methane Incineration Project";  
+        _classes[2]._values["projectDeveloperName"].stringValue = "Keyrock Energy LLC";             
+        _classes[2]._values["projectDeveloperType"].stringValue = "LLC";
+        _classes[2]._values["projectType"].stringValue = "Coal Mine Methane";
+        _classes[2]._values["projectMethoddology"].stringValue = "Improved Forest Management (IFM) on Non-Federal U.S. Forestlands";
+        _classes[2]._values["ProjectSiteLocation"].stringValue = "Northern Maine";
+        _classes[2]._values["Project Site State"].stringValue = "Maine";
+
+        _classes[2]._values["sustainableDevelopmentGoals"].stringValue = "06: Clean Water and Sanitation;13: Climate Action;15: Life on Land"; 
+        _classes[2]._values["verifiedRemoval"].boolValue = "Yes"; 
+        _classes[2]._values["arbEligible"].boolValue = "No";
+        _classes[2]._values["isCORSIA"].boolValue = "No";
+               
+        _classes[2]._values["Total Credits Issued"].stringValue = "11,942";
+        _classes[2]._values["Total Credits Issued Qualified"].stringValue = "11,492";
+        _classes[2]._values["Vintage"].stringValue = "2022";
         
         _classes[2]._values["description"].stringValue = "holder of this token owns the claim for the crypto asset in FTX exchange. Their claim may be redeemed aftre the liquidation process";
         _classes[2]._values["issuerName"].stringValue = "FTX";
