@@ -239,74 +239,59 @@ contract ERC3475 is IERC3475 {
      */
     constructor() {
         // define metadata of the class 1";
-        _classes[1]._values["symbol"].stringValue = "Bluesource - 100 Mile Wilderness Improved Forest Management Project";
+        _classes[1]._values["symbol"].stringValue = "ACR742";
+        _classes[1]._values["projectID"].stringValue = "ACR742"; 
         _classes[1]._values["category"].stringValue = "Certificate";
         _classes[1]._values["subcategory"].stringValue = "Credit";
         _classes[1]._values["childCategory"].stringValue = "ESG action carbon credits";
-        _classes[1]._values["description"].stringValue = "Purchase and retire carbon offsets from the industry's most established portfolio, source renewable fuels and energy, purchase RECs or create an emission reductions plan.";
-     
-        _classes[1]._values["projectID"].stringValue = "ACR566";   
-        _classes[1]._values["projectName"].stringValue = "Bluesource - 100 Mile Wilderness Improved Forest Management Project";  
-
-        _classes[1]._values["projectType"].stringValue = "Forest Carbon";
-        _classes[1]._values["projectProtocol"].stringValue = "ARB Compliance Offset Protocol: Mine Methane Capture Projects";
-        _classes[1]._values["projectWebSite"].stringValue = "https://www.greenwashing.com/";
-        _classes[2]._values["ProjectSiteLocation"].stringValue = "Northern Maine";
-       
-
-        _classes[1]._values["projectDeveloperName"].stringValue = "Blue Source";
-        _classes[1]._values["projectDeveloperType"].stringValue = "LLC";
+        _classes[1]._values["description"].stringValue = "Reduce carbon emission by using a new refrigeration process";  
+        _classes[1]._values["projectName"].stringValue = "Advanced Refrigeration";  
+        _classes[1]._values["projectType"].stringValue = "Industrial Process Emission";
+        _classes[1]._values["projectProtocol"].stringValue = "Advanced Refrigeration Systems";
+        _classes[1]._values["projectWebSite"].stringValue = "https://www.therm.cool/";
+        _classes[1]._values["ProjectSiteLocation"].stringValue = "18 Winslow Gate Road, Poughkeepsie";
         _classes[1]._values["projectDeveloperJurisdiction"].stringValue = "US";
-        _classes[1]._values["projectDeveloperRegistrationAddress"].stringValue = "50 Harrison Street, Suite 209F Hoboken, NJ 07030";
-        _classes[1]._values["projectDeveloperURL"].stringValue = "https://www.bluesource.com/";
-        _classes[1]._values["projectDeveloperLogo"].stringValue = "https://seeklogo.com/images/C/celsius-cel-logo-AFE74F461C-seeklogo.com.png";
+        _classes[1]._values["projectDeveloperLogo"].stringValue = "https://static.wixstatic.com/media/ea6afa_ec4ee91d01164928928b6e90945e7018~mv2.png/v1/fill/w_250,h_47,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ea6afa_ec4ee91d01164928928b6e90945e7018~mv2.png";
         _classes[1]._values["projectDeveloperRegistrationNumber"].stringValue = "US-000000000000";
         _classes[1]._values["projectDeveloperDocURL"].stringArrayValue = [
-            "https://pacer-documents.s3.amazonaws.com/115/312902/126122257414.pdf"
+            "https://acr2.apx.com/mymodule/reg/TabDocuments.asp?r=112&ad=Prpt&act=update&type=PRO&aProj=ipub&tablename=doc&id1=742"
         ];  
-
-
-        _classes[1]._values["sustainableDevelopmentGoals"].stringArrayValue = ["06: Clean Water and Sanitation","13: Climate Action"]; 
+        _classes[1]._values["sustainableDevelopmentGoals"].stringArrayValue = [
+            "Industry, Innovation and Infrastructure",
+            "Sustainable Cities and Communities",
+            "Responsible Consumption and Production",
+            "Climate Action"
+        ];
         _classes[1]._values["verifiedRemoval"].boolValue = true; 
         _classes[1]._values["arbEligible"].boolValue = false;
         _classes[1]._values["isCORSIA"].boolValue = false;
 
-    
-
-
-        _classes[2]._values["symbol"].stringValue = "Beckley Pocahontas Mine Methane Incineration Project";
+        _classes[2]._values["symbol"].stringValue = "ACR742";
+        _classes[2]._values["projectID"].stringValue = "ACR742"; 
         _classes[2]._values["category"].stringValue = "Certificate";
         _classes[2]._values["subcategory"].stringValue = "Credit";
         _classes[2]._values["childCategory"].stringValue = "ESG action carbon credits";
-        _classes[2]._values["description"].stringValue = "Purchase and retire carbon offsets from the industry's most established portfolio, source renewable fuels and energy, purchase RECs or create an emission reductions plan.";
-     
-     
-        _classes[2]._values["projectID"].stringValue = "ACR746";   
-        _classes[2]._values["projectName"].stringValue = "Beckley Pocahontas Mine Methane Incineration Project";  
-        _classes[2]._values["projectType"].stringValue = "Coal Mine Methane";
-        _classes[2]._values["projectProtocol"].stringValue = "Improved Forest Management (IFM) on Non-Federal U.S. Forestlands";
-        _classes[2]._values["ProjectSiteLocation"].stringValue = "Northern Maine";
-       
-
-        _classes[2]._values["projectDeveloperName"].stringValue = "Keyrock Energy";
-        _classes[2]._values["projectDeveloperType"].stringValue = "LLC";
+        _classes[2]._values["description"].stringValue = "Reduce carbon emission by using a new refrigeration process";
+        _classes[2]._values["projectName"].stringValue = "Advanced Refrigeration";
+        _classes[2]._values["projectType"].stringValue = "Industrial Process Emission";
+        _classes[2]._values["projectProtocol"].stringValue = "Advanced Refrigeration Systems";
+        _classes[2]._values["projectWebSite"].stringValue = "https://www.therm.cool/";
+        _classes[2]._values["ProjectSiteLocation"].stringValue = "18 Winslow Gate Road, Poughkeepsie";
         _classes[2]._values["projectDeveloperJurisdiction"].stringValue = "US";
-        _classes[2]._values["projectDeveloperRegistrationAddress"].stringValue = "50 Harrison Street, Suite 209F Hoboken, NJ 07030";
-        _classes[2]._values["projectDeveloperURL"].stringValue = "https://www.linkedin.com/company/keyrock-energy-inc";
-        _classes[2]._values["projectDeveloperLogo"].stringValue = "https://assets.stickpng.com/images/5954bb45deaf2c03413be353.png";
+        _classes[2]._values["projectDeveloperLogo"].stringValue = "https://static.wixstatic.com/media/ea6afa_ec4ee91d01164928928b6e90945e7018~mv2.png/v1/fill/w_250,h_47,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ea6afa_ec4ee91d01164928928b6e90945e7018~mv2.png";
         _classes[2]._values["projectDeveloperRegistrationNumber"].stringValue = "US-000000000000";
         _classes[2]._values["projectDeveloperDocURL"].stringArrayValue = [
-            "https://pacer-documents.s3.amazonaws.com/115/312902/126122257414.pdf"
-        ];  
-
-
- 
-        _classes[2]._values["sustainableDevelopmentGoals"].stringArrayValue =  ["06: Clean Water and Sanitation","13: Climate Action", "15: Life on Land"]; 
+            "https://acr2.apx.com/mymodule/reg/TabDocuments.asp?r=112&ad=Prpt&act=update&type=PRO&aProj=ipub&tablename=doc&id1=742"
+        ];
+        _classes[2]._values["sustainableDevelopmentGoals"].stringArrayValue = [
+            "Industry, Innovation and Infrastructure",
+            "Sustainable Cities and Communities",
+            "Responsible Consumption and Production",
+            "Climate Action"
+        ];
         _classes[2]._values["verifiedRemoval"].boolValue = true; 
         _classes[2]._values["arbEligible"].boolValue = false;
-        _classes[2]._values["isCORSIA"].boolValue = false;          
-
-          
+        _classes[2]._values["isCORSIA"].boolValue = false;
     }
     // WRITABLES
     function transferFrom(
