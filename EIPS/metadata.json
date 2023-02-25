@@ -41,6 +41,13 @@
       "description":"The description of this token",
       "values":"zero-coupon callable bond"
    },   
+      {
+      "metadataId":"0030",
+      "title":"onChainDate",
+      "_type":"integer",
+      "description":"ISO-8601 representation of intended date of creation of the token",
+      "values":"1676038570"
+   },
    {
       "metadataId":"0050",
       "title":"totalSupply",
@@ -790,13 +797,6 @@
       "_type":"string",
       "description":"domain of the publication",
       "values":"quant"
-   },
-   {
-      "metadataId":"1130",
-      "title":"onChainDate",
-      "_type":"integer",
-      "description":"ISO-8601 representation of intended date of creation of the token",
-      "values":"1676038570"
    },
    {
       "metadataId":"1140",
