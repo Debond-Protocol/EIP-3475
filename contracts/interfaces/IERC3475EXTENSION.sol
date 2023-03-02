@@ -3,9 +3,9 @@
 
 pragma solidity ^0.8.0;
 
+import "./IERC3475.sol";
 
 interface IERC3475EXTENSION {
-    use IERC3475EXTENSION for IERC3475
     // STRUCTURE
     /**
      * @dev Values structure of the Metadata
