@@ -107,7 +107,7 @@ contract('Bond', async (accounts: string[]) => {
         
         await bondContract.redeem(accounts[2], redemptionTransaction, {from:accounts[2]});
         
-        assert.equal((await bondContract.balanceOf(accounts[2], DBITClassId, firstNonceId)).toNumber(), 0);
+        assert.equal((await bondContract.balanceOf(accounts[2], 1, 1)).toNumber(), 0);
     })
 
 
