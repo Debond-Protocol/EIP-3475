@@ -46,9 +46,11 @@ contract ERC3475 is IERC3475{
      * in practice, you will have a function to create a new class and nonce
      * to be deployed during the initial deployment cycle
      */
-    constructor() {     
+    constructor() { 
+        _classes[1]._valuesId[1] = "symbol";    
+        _classes[1]._values["symbol"].stringValue = "desmo labs token";    
         }
-
+        
     // WRITABLES
     function transferFrom(
         address _from,
