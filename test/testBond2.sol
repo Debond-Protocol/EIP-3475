@@ -335,17 +335,17 @@ contract ERC3475 is IERC3475 {
         _classes[3]._values["APY"].uintValue = 600000;  
       
 
-        _classes[1]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
-        _classes[1]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
-        _classes[1]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 31104000;
+        _classes[1]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 0;
+        _classes[1]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
+        _classes[1]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
 
-        _classes[2]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
-        _classes[2]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
-        _classes[2]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 31104000;
+        _classes[2]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 0;
+        _classes[2]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
+        _classes[2]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
         
-        _classes[3]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
-        _classes[3]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
-        _classes[3]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 31104000;
+        _classes[3]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 0;
+        _classes[3]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
+        _classes[3]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
         }
 
     // WRITABLES
