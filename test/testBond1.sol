@@ -344,17 +344,17 @@ contract ERC3475 is IERC3475 {
         _classes[3]._values["APY"].uintValue = 600000;  
       
 
-        _classes[1]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
-        _classes[1]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
-        _classes[1]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 31104000;
+        _classes[1]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 0;
+        _classes[1]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
+        _classes[1]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
 
-        _classes[2]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
-        _classes[2]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
-        _classes[2]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 31104000;
+        _classes[2]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 0;
+        _classes[2]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
+        _classes[2]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 231104000;
         
-        _classes[3]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
-        _classes[3]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
-        _classes[3]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 31104000;
+        _classes[3]._nonces[1]._values["issuranceTime"].uintValue = block.timestamp + 0;
+        _classes[3]._nonces[2]._values["issuranceTime"].uintValue = block.timestamp + 11104000;
+        _classes[3]._nonces[3]._values["issuranceTime"].uintValue = block.timestamp + 21104000;
         }
 
     // WRITABLES
@@ -582,12 +582,13 @@ contract ERC3475 is IERC3475 {
     override
     returns (uint256 progressAchieved, uint256 progressRemaining){
         uint256 issuanceDate = _classes[classId]._nonces[nonceId]._values["issuranceTime"].uintValue;
-        uint256 maturityDate = issuanceDate + _classes[classId]._values["maturityPeriod"].uintValue;
+        uint256 maturityPeriod = _classes[classId]._values["maturityPeriod"].uintValue;
 
         // check whether the bond is being already initialized:
-        progressAchieved = block.timestamp - issuanceDate;
-        progressRemaining = block.timestamp < maturityDate
-        ? maturityDate - block.timestamp
+        progressAchieved = block.timestamp > issuanceDate?        
+        block.timestamp - issuanceDate : 0;
+        progressRemaining = progressAchieved < maturityPeriod
+        ? maturityPeriod - progressAchieved
         : 0;
     }
     /**
