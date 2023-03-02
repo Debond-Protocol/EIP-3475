@@ -250,7 +250,6 @@ contract ERC3475 is IERC3475{
         return (_classes[classId]._nonceMetadatas[metadataId]);
     }
 
-
     function classValues(uint256 classId, uint256 metadataId)
     external
     view
@@ -264,22 +263,7 @@ contract ERC3475 is IERC3475{
         result.stringValue = _classes[classId]._values[title].stringValue;
         return (result);
     }
-
-    function classValuesFromTitle(uint256 classId, string memory metadataTitle)
-    external
-    view
-    returns (IERC3475EXTENSION.Values memory) {
-        return (_classes[classId]._values[metadataTitle]);
-    }  
-
-    function nonceValuesFromTitle(uint256 classId, uint256 nonceId, string memory metadataTitle)
-    external
-    view
-
-    returns (IERC3475EXTENSION.Values memory) {
-        return (_classes[classId]._nonces[nonceId]._values[metadataTitle]);
-    }  
-
+     
     function nonceValues(uint256 classId, uint256 nonceId, uint256 metadataId)
     external
     view
@@ -293,6 +277,20 @@ contract ERC3475 is IERC3475{
         result.stringValue = _classes[classId]._nonces[nonceId]._values[title].stringValue;
         return (result);
     }
+    
+    function nonceValuesFromTitle(uint256 classId, uint256 nonceId, string memory metadataTitle)
+    external
+    view
+    returns (IERC3475EXTENSION.Values memory) {
+        return (_classes[classId]._nonces[nonceId]._values[metadataTitle]);
+    }  
+
+    function classValuesFromTitle(uint256 classId, string memory metadataTitle)
+    external
+    view
+    returns (IERC3475EXTENSION.Values memory) {
+        return (_classes[classId]._values[metadataTitle]);
+    }  
 
     /** determines the progress till the  redemption of the bonds is valid  (based on the type of bonds class).
      * @notice ProgressAchieved and `progressRemaining` is abstract.
