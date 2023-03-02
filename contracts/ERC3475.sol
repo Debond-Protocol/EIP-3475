@@ -3,8 +3,10 @@
 pragma solidity ^0.8.0;
 
 import "./interfaces/IERC3475.sol";
+import "./interfaces/IERC3475EXTENSION.sol";
 
-contract ERC3475 is IERC3475 {
+contract ERC3475 is IERC3475, IERC3475EXTENSION{
+    //using IERC3475EXTENSION for IERC3475;
     /**
      * @notice this Struct is representing the Nonce properties as an object
      */
@@ -243,6 +245,23 @@ contract ERC3475 is IERC3475 {
     returns (Metadata memory) {
         return (_classes[classId]._nonceMetadatas[metadataId]);
     }
+
+
+    function classValues(uint256 classId, uint256 metadataId)
+    external
+    view
+    override
+    returns (Values memory) {
+        return (_classes[classId]._values[metadataId]);
+    }
+
+    function classValuesFromTitle(uint256 classId, string memory metadataTitle)
+    external
+    view
+    override
+    returns (Values memory) {
+        return (_classes[classId]._values[metadataTitle]);
+    }  
 
     function classValuesFromTitle(uint256 classId, string memory metadataTitle)
     external
