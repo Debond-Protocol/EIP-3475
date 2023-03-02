@@ -5,13 +5,14 @@ pragma solidity ^0.8.0;
 import "./interfaces/IERC3475.sol";
 import "./interfaces/IERC3475EXTENSION.sol";
 
-contract ERC3475 is IERC3475, IERC3475EXTENSION{
+contract ERC3475 is IERC3475{
     //using IERC3475EXTENSION for IERC3475;
     /**
      * @notice this Struct is representing the Nonce properties as an object
      */
     struct Nonce {
-        mapping(uint256 => IERC3475.Values) _values;
+        mapping(uint256 => string) _valuesId;
+        mapping(string => IERC3475EXTENSION.Values) _values;
 
         // stores the values corresponding to the dates (issuance and maturity date).
         mapping(address => uint256) _balances;
@@ -28,7 +29,8 @@ contract ERC3475 is IERC3475, IERC3475EXTENSION{
      *         and can be retrieved by the classId
      */
     struct Class {
-        mapping(string => IERC3475.Values) _values;
+        mapping(uint256 => string) _valuesId;
+        mapping(string => IERC3475EXTENSION.Values) _values;
         mapping(uint256 => IERC3475.Metadata) _nonceMetadatas;
         mapping(uint256 => Nonce) _nonces;
     }
@@ -89,7 +91,7 @@ contract ERC3475 is IERC3475, IERC3475EXTENSION{
         uint256 len = _transactions.length;
         for (uint256 i = 0; i < len; i++) {
             require(
-                _transactions[i].amount <= allowance(_from, msg.sender, _transactions[i].classId, _transactions[i].nonceId),
+                _transactions[i]._amount <= allowance(_from, msg.sender, _transactions[i].classId, _transactions[i].nonceId),
                 "ERC3475:caller-not-owner-or-approved"
             );
             _transferAllowanceFrom(msg.sender, _from, _to, _transactions[i]);
@@ -166,7 +168,7 @@ contract ERC3475 is IERC3475, IERC3475EXTENSION{
         for (uint256 i = 0; i < _transactions.length; i++) {
             _classes[_transactions[i].classId]
             ._nonces[_transactions[i].nonceId]
-            ._allowances[msg.sender][_spender] = _transactions[i].amount;
+            ._allowances[msg.sender][_spender] = _transactions[i]._amount;
         }
     }
 
@@ -252,23 +254,28 @@ contract ERC3475 is IERC3475, IERC3475EXTENSION{
     view
     override
     returns (Values memory) {
-        return (_classes[classId]._values[metadataId]);
+        string memory title = _classes[classId]._valuesId[metadataId];
+        Values memory result;
+        result.stringValue = _classes[classId]._values[title].stringValue;
+        result.uintValue = _classes[classId]._values[title].uintValue;
+        result.addressValue = _classes[classId]._values[title].addressValue;
+        result.stringValue = _classes[classId]._values[title].stringValue;
+        return (result);
     }
 
     function classValuesFromTitle(uint256 classId, string memory metadataTitle)
     external
     view
-    override
-    returns (Values memory) {
+    returns (IERC3475EXTENSION.Values memory) {
         return (_classes[classId]._values[metadataTitle]);
     }  
 
-    function classValuesFromTitle(uint256 classId, string memory metadataTitle)
+    function nonceValuesFromTitle(uint256 classId, uint256 nonceId, string memory metadataTitle)
     external
     view
-    override
-    returns (Values memory) {
-        return (_classes[classId]._values[metadataTitle]);
+
+    returns (IERC3475EXTENSION.Values memory) {
+        return (_classes[classId]._nonces[nonceId]._values[metadataTitle]);
     }  
 
     function nonceValues(uint256 classId, uint256 nonceId, uint256 metadataId)
@@ -276,7 +283,13 @@ contract ERC3475 is IERC3475, IERC3475EXTENSION{
     view
     override
     returns (Values memory) {
-        return (_classes[classId]._nonces[nonceId]._values[metadataId]);
+        string memory title = _classes[classId]._nonces[nonceId]._valuesId[metadataId];
+        Values memory result;
+        result.stringValue = _classes[classId]._nonces[nonceId]._values[title].stringValue;
+        result.uintValue = _classes[classId]._nonces[nonceId]._values[title].uintValue;
+        result.addressValue = _classes[classId]._nonces[nonceId]._values[title].addressValue;
+        result.stringValue = _classes[classId]._nonces[nonceId]._values[title].stringValue;
+        return (result);
     }
 
     /** determines the progress till the  redemption of the bonds is valid  (based on the type of bonds class).
@@ -288,13 +301,14 @@ contract ERC3475 is IERC3475, IERC3475EXTENSION{
     view
     override
     returns (uint256 progressAchieved, uint256 progressRemaining){
-        uint256 issuanceDate = _classes[classId]._nonces[nonceId]._values[0].uintValue;
-        uint256 maturityDate = issuanceDate + _classes[classId]._nonces[nonceId]._values[5].uintValue;
+        uint256 issuanceDate = _classes[classId]._nonces[nonceId]._values["issuranceTime"].uintValue;
+        uint256 maturityPeriod = _classes[classId]._values["maturityPeriod"].uintValue;
 
         // check whether the bond is being already initialized:
-        progressAchieved = block.timestamp - issuanceDate;
-        progressRemaining = block.timestamp < maturityDate
-        ? maturityDate - block.timestamp
+        progressAchieved = block.timestamp > issuanceDate?        
+        block.timestamp - issuanceDate : 0;
+        progressRemaining = progressAchieved < maturityPeriod
+        ? maturityPeriod - progressAchieved
         : 0;
     }
     /**
@@ -327,13 +341,13 @@ contract ERC3475 is IERC3475, IERC3475EXTENSION{
     ) private {
         Nonce storage nonce = _classes[_transaction.classId]._nonces[_transaction.nonceId];
         require(
-            nonce._balances[_from] >= _transaction.amount,
+            nonce._balances[_from] >= _transaction._amount,
             "ERC3475: not enough bond to transfer"
         );
 
         //transfer balance
-        nonce._balances[_from] -= _transaction.amount;
-        nonce._balances[_to] += _transaction.amount;
+        nonce._balances[_from] -= _transaction._amount;
+        nonce._balances[_to] += _transaction._amount;
     }
 
     function _transferAllowanceFrom(
@@ -344,15 +358,15 @@ contract ERC3475 is IERC3475, IERC3475EXTENSION{
     ) private {
         Nonce storage nonce = _classes[_transaction.classId]._nonces[_transaction.nonceId];
         require(
-            nonce._balances[_from] >= _transaction.amount,
-            "ERC3475: not allowed amount"
+            nonce._balances[_from] >= _transaction._amount,
+            "ERC3475: not allowed _amount"
         );
         // reducing the allowance and decreasing accordingly.
-        nonce._allowances[_from][_operator] -= _transaction.amount;
+        nonce._allowances[_from][_operator] -= _transaction._amount;
 
         //transfer balance
-        nonce._balances[_from] -= _transaction.amount;
-        nonce._balances[_to] += _transaction.amount;
+        nonce._balances[_from] -= _transaction._amount;
+        nonce._balances[_to] += _transaction._amount;
     }
 
     function _issue(
@@ -362,8 +376,8 @@ contract ERC3475 is IERC3475, IERC3475EXTENSION{
         Nonce storage nonce = _classes[_transaction.classId]._nonces[_transaction.nonceId];
 
         //transfer balance
-        nonce._balances[_to] += _transaction.amount;
-        nonce._activeSupply += _transaction.amount;
+        nonce._balances[_to] += _transaction._amount;
+        nonce._activeSupply += _transaction._amount;
     }
 
 
@@ -375,14 +389,14 @@ contract ERC3475 is IERC3475, IERC3475EXTENSION{
         // verify whether _amount of bonds to be redeemed  are sufficient available  for the given nonce of the bonds
 
         require(
-            nonce._balances[_from] >= _transaction.amount,
+            nonce._balances[_from] >= _transaction._amount,
             "ERC3475: not enough bond to transfer"
         );
 
         //transfer balance
-        nonce._balances[_from] -= _transaction.amount;
-        nonce._activeSupply -= _transaction.amount;
-        nonce._redeemedSupply += _transaction.amount;
+        nonce._balances[_from] -= _transaction._amount;
+        nonce._activeSupply -= _transaction._amount;
+        nonce._redeemedSupply += _transaction._amount;
     }
 
 
@@ -393,14 +407,14 @@ contract ERC3475 is IERC3475, IERC3475EXTENSION{
         Nonce storage nonce = _classes[_transaction.classId]._nonces[_transaction.nonceId];
         // verify whether _amount of bonds to be burned are sfficient available for the given nonce of the bonds
         require(
-            nonce._balances[_from] >= _transaction.amount,
+            nonce._balances[_from] >= _transaction._amount,
             "ERC3475: not enough bond to transfer"
         );
 
         //transfer balance
-        nonce._balances[_from] -= _transaction.amount;
-        nonce._activeSupply -= _transaction.amount;
-        nonce._burnedSupply += _transaction.amount;
+        nonce._balances[_from] -= _transaction._amount;
+        nonce._activeSupply -= _transaction._amount;
+        nonce._burnedSupply += _transaction._amount;
     }
 
 }
