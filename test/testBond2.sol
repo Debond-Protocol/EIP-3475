@@ -573,12 +573,13 @@ contract ERC3475 is IERC3475 {
     override
     returns (uint256 progressAchieved, uint256 progressRemaining){
         uint256 issuanceDate = _classes[classId]._nonces[nonceId]._values["issuranceTime"].uintValue;
-        uint256 maturityDate = issuanceDate + _classes[classId]._values["maturityPeriod"].uintValue;
+        uint256 maturityPeriod = _classes[classId]._values["maturityPeriod"].uintValue;
 
         // check whether the bond is being already initialized:
-        progressAchieved = block.timestamp - issuanceDate;
-        progressRemaining = block.timestamp < maturityDate
-        ? maturityDate - block.timestamp
+        progressAchieved = block.timestamp > issuanceDate?        
+        block.timestamp - issuanceDate : 0;
+        progressRemaining = progressAchieved < maturityPeriod
+        ? maturityPeriod - progressAchieved
         : 0;
     }
     /**
