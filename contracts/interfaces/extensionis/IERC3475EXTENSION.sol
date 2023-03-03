@@ -30,7 +30,7 @@ interface IERC3475EXTENSION {
      * @param _classId is the class of bonds for which you determine the nonce .
      * @param _nonceId is the nonce for which you return the value struct info
      */
-    function nonceValues(uint256 _classId, uint256 _nonceId, string memory _metadataTitle) external view returns (ValuesExtension memory);    
+    function nonceValuesFromTitle(uint256 _classId, uint256 _nonceId, string memory _metadataTitle) external view returns (ValuesExtension memory);    
     
       /**
      * @notice MUST trigger when token class is created
