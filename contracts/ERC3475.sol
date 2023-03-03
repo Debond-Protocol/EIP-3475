@@ -3,16 +3,16 @@
 pragma solidity ^0.8.0;
 
 import "./interfaces/IERC3475.sol";
-import "./interfaces/IERC3475EXTENSION.sol";
+import "./interfaces/extensions/IERC3475EXTENSION.sol";
 
-contract ERC3475 is IERC3475{
-    //using IERC3475EXTENSION for IERC3475;
+contract ERC3475 is IERC3475, IERC3475EXTENSION {
+
     /**
      * @notice this Struct is representing the Nonce properties as an object
      */
     struct Nonce {
         mapping(uint256 => string) _valuesId;
-        mapping(string => IERC3475EXTENSION.Values) _values;
+        mapping(string => ValuesExtension) _values;
 
         // stores the values corresponding to the dates (issuance and maturity date).
         mapping(address => uint256) _balances;
@@ -30,7 +30,7 @@ contract ERC3475 is IERC3475{
      */
     struct Class {
         mapping(uint256 => string) _valuesId;
-        mapping(string => IERC3475EXTENSION.Values) _values;
+        mapping(string => ValuesExtension) _values;
         mapping(uint256 => IERC3475.Metadata) _nonceMetadatas;
         mapping(uint256 => Nonce) _nonces;
     }
@@ -281,14 +281,14 @@ contract ERC3475 is IERC3475{
     function nonceValuesFromTitle(uint256 classId, uint256 nonceId, string memory metadataTitle)
     external
     view
-    returns (IERC3475EXTENSION.Values memory) {
+    returns (ValuesExtension memory) {
         return (_classes[classId]._nonces[nonceId]._values[metadataTitle]);
     }  
 
     function classValuesFromTitle(uint256 classId, string memory metadataTitle)
     external
     view
-    returns (IERC3475EXTENSION.Values memory) {
+    returns (ValuesExtension memory) {
         return (_classes[classId]._values[metadataTitle]);
     }  
 
