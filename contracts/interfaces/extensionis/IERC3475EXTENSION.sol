@@ -3,14 +3,12 @@
 
 pragma solidity ^0.8.0;
 
-import "./IERC3475.sol";
-
 interface IERC3475EXTENSION {
     // STRUCTURE
     /**
      * @dev Values structure of the Metadata
      */
-    struct Values {
+    struct ValuesExtension {
         string stringValue;
         uint uintValue;
         address addressValue;
