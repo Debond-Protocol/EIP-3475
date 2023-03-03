@@ -23,14 +23,14 @@ interface IERC3475EXTENSION {
      * @dev Returns the values of the given _metadataTitle.
      * the metadata SHOULD follow a set of structures explained in eip-3475.md
      */
-    function classValuesFromTitle(uint256 _classId, string memory _metadataTitle) external view returns (Values memory);
+    function classValuesFromTitle(uint256 _classId, string memory _metadataTitle) external view returns (ValuesExtension memory);
 
     /**
      * @dev Returns the values of given _metadataTitle.
      * @param _classId is the class of bonds for which you determine the nonce .
      * @param _nonceId is the nonce for which you return the value struct info
      */
-    function nonceValues(uint256 _classId, uint256 _nonceId, string memory _metadataTitle) external view returns (Values memory);    
+    function nonceValues(uint256 _classId, uint256 _nonceId, string memory _metadataTitle) external view returns (ValuesExtension memory);    
     
       /**
      * @notice MUST trigger when token class is created
