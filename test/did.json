@@ -3,7 +3,7 @@
    "metadata":[
       {
          "title":"documentType",
-         "value":"PO",
+         "value":"passport_PO",
          "signature":"8c0a3551c84f50614cf6548c73ed27fbb9b90f9f909be3c898a1192fdcb6128b"
       },
       {
@@ -34,6 +34,11 @@
    ],
    "claim":[
       {
+         "title":"nationality",
+         "value":"CHN",
+         "signature":"8c0a3551c84f50614cf6548c73ed27fbb9b90f9f909be3c898a1192fdcb6128b"
+      },
+      {
          "title":"firstName",
          "value":"YUNAN",
          "signature":"8c0a3551c84f50614cf6548c73ed27fbb9b90f9f909be3c898a1192fdcb6128b"
@@ -56,41 +61,6 @@
       {
          "title":"gender",
          "value":"M",
-         "signature":"8c0a3551c84f50614cf6548c73ed27fbb9b90f9f909be3c898a1192fdcb6128b"
-      },
-      {
-         "title":"nationality",
-         "value":"CHN",
-         "signature":"8c0a3551c84f50614cf6548c73ed27fbb9b90f9f909be3c898a1192fdcb6128b"
-      },
-      {
-         "title":"passportType",
-         "value":"PO",
-         "signature":"8c0a3551c84f50614cf6548c73ed27fbb9b90f9f909be3c898a1192fdcb6128b"
-      },
-      {
-         "title":"expirationDate",
-         "value":"09 08 2028",
-         "signature":"8c0a3551c84f50614cf6548c73ed27fbb9b90f9f909be3c898a1192fdcb6128b"
-      },
-      {
-         "title":"issuingCountry",
-         "value":"CHN",
-         "signature":"8c0a3551c84f50614cf6548c73ed27fbb9b90f9f909be3c898a1192fdcb6128b"
-      },
-      {
-         "title":"documentNumber",
-         "value":"EC1034891",
-         "signature":"8c0a3551c84f50614cf6548c73ed27fbb9b90f9f909be3c898a1192fdcb6128b"
-      },
-      {
-         "title":"placeOfExpedition",
-         "value":"CHN",
-         "signature":"8c0a3551c84f50614cf6548c73ed27fbb9b90f9f909be3c898a1192fdcb6128b"
-      },
-      {
-         "title":"dateOfExpedition",
-         "value":"09082018",
          "signature":"8c0a3551c84f50614cf6548c73ed27fbb9b90f9f909be3c898a1192fdcb6128b"
       }
    ]
