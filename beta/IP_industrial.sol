@@ -296,8 +296,6 @@ contract ERC3475 is IERC3475, IERC3475EXTENSION {
      * to be deployed during the initial deployment cycle
      */
     constructor() { 
-        _classes[1]._valuesId[1] = "symbol";    
-        _classes[1]._values["symbol"].stringValue = "desmo labs token";    
         }
         
     // WRITABLES
@@ -694,7 +692,10 @@ contract Token is ERC3475 {
 
     constructor() {
         publisher = msg.sender;
-        _classes[0]._values["nonceProprity"].stringValue = "{0: ownership, 1: manuscript access, 2: data access, 3: algorithm access}";
+        _classes[0]._values["nonceProprity"].stringValue = "{'0':'ownership'}";
+        _classes[0]._values["category"].stringValue = "Proprity";
+        _classes[0]._values["subcategory"].stringValue = "intellectualProprity";
+        _classes[0]._values["childCategory"].stringValue = "patent";
     }
 
     function _issueToken(
