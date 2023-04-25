@@ -296,8 +296,6 @@ contract ERC3475 is IERC3475, IERC3475EXTENSION {
      * to be deployed during the initial deployment cycle
      */
     constructor() { 
-        _classes[1]._valuesId[1] = "symbol";    
-        _classes[1]._values["symbol"].stringValue = "desmo labs token";    
         }
         
     // WRITABLES
@@ -698,6 +696,16 @@ contract Token is ERC3475 {
         _classes[0]._values["category"].stringValue = "proprity";
         _classes[0]._values["subcategory"].stringValue = "object";
         _classes[0]._values["childCategory"].stringValue = "artifact";
+        
+        _classes[0]._values["warrantorName"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorType"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorJurisdiction"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorRegistrationAddress"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorURL"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorLogo"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorDocURL"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorIndustry"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorChainAddress"].stringValue = "ShangHai";
        }
 
     function _issueToken(
