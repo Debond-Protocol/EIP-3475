@@ -984,20 +984,27 @@
    },
    {
       "metadataId":"1213",
+      "title":"dataIndexLength",
+      "_type":"integer",
+      "description":"the length of the index",
+      "values":"430000"
+   },
+   {
+      "metadataId":"1214",
       "title":"dataUpdatable",
       "_type":"boolean",
       "description":"if the Data is updated",
       "values":"True"
    },
    {
-      "metadataId":"1214",
+      "metadataId":"1215",
       "title":"dataUpdateInterval",
       "_type":"integer",
       "description":"ISO-8601 representation of the interval of the data update",
       "values":"1676038570"
    },
    {
-      "metadataId":"1215",
+      "metadataId":"1216",
       "title":"dataWithAPI",
       "_type":"boolean",
       "description":"if the Data has an API acess",
