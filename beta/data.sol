@@ -684,6 +684,7 @@ contract Token is ERC3475 {
         string[] keyWords;
         string license;
         uint256 dataDimension;
+        uint256 dataIndexLength;
         string dataFileName;
         bool dataUpdatable;
         uint256 dataUpdateInterval;
@@ -701,12 +702,7 @@ contract Token is ERC3475 {
     constructor() {
         publisher = msg.sender;
         _classes[0]._values["nonceProprity"].stringValue = "{0: ownership, 1: manuscript access, 2: data access, 3: algorithm access}";
-        _classes[0]._values["category"].stringValue = "Proprity";
-        _classes[0]._values["subcategory"].stringValue = "data";
-        _classes[0]._values["childCategory"].stringValue = "userBehaviorData";
-        
-        _classes[0]._values["nonceProprity"].stringValue = "{0: ownership, 1: manuscript access, 2: data access, 3: algorithm access}";
-        _classes[0]._values["category"].stringValue = "Proprity";
+        _classes[0]._values["category"].stringValue = "proprity";
         _classes[0]._values["subcategory"].stringValue = "data";
         _classes[0]._values["childCategory"].stringValue = "userBehaviorData";
         
@@ -744,6 +740,8 @@ contract Token is ERC3475 {
         result.keyWords= _classes[classeId]._values["keyWords"].stringArrayValue ;
         result.license= _classes[classeId]._values["license"].stringValue ;
         result.dataDimension= _classes[classeId]._values["dataDimension"].uintValue;
+        result.dataIndexLength= _classes[classeId]._values["dataIndexLength"].uintValue;
+
         result.dataFileName =  _classes[classeId]._values["dataFileName"].stringValue;
         result.dataUpdatable= _classes[classeId]._values["dataUpdatable"].boolValue;
         result.dataUpdateInterval= _classes[classeId]._values["dataUpdateInterval"].uintValue;
@@ -772,6 +770,9 @@ contract Token is ERC3475 {
         _classes[newClassId]._values["introduction"].stringValue = _inputValues.introduction;
         _classes[newClassId]._values["keyWords"].stringArrayValue = _inputValues.keyWords;
         _classes[newClassId]._values["license"].stringValue = _inputValues.license;
+        _classes[newClassId]._values["dataDimension"].uintValue = _inputValues.dataDimension;        
+        _classes[newClassId]._values["dataIndexLength"].uintValue = _inputValues.dataIndexLength;
+
         _classes[newClassId]._values["dataFileName"].stringValue = _inputValues.dataFileName;
 
         _classes[newClassId]._values["dataUpdatable"].boolValue = _inputValues.dataUpdatable;
