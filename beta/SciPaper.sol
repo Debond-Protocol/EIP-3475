@@ -296,6 +296,8 @@ contract ERC3475 is IERC3475, IERC3475EXTENSION {
      * to be deployed during the initial deployment cycle
      */
     constructor() { 
+        _classes[1]._valuesId[1] = "symbol";    
+        _classes[1]._values["symbol"].stringValue = "desmo labs token";    
         }
         
     // WRITABLES
@@ -673,26 +675,16 @@ contract Token is ERC3475 {
 
     struct Data {
         uint256 onChainDate;
-        string DOI;
+        string identificationNumber;
+        string warrantNumber;
         string[] authorName;
         address[] authorChainAddress;
-        uint256 copyPrice;
-        uint256 dataPrice;
-        uint256 algorithmPrice;
         string[] sponsorName;
         string domain;
         string subdomain; 
         string introduction;
         string[] keyWords;
         string license;
-        string copyFileName;
-        string[] copyHash;
-        string dataFileName;
-        string[] dataHash;
-        string algorithmFileName;
-        string[] algorithmHash;
-        string[] references;
-        string[] version;
         string[] cover;
     }
 
@@ -702,11 +694,11 @@ contract Token is ERC3475 {
 
     constructor() {
         publisher = msg.sender;
-        _classes[0]._values["nonceProprity"].stringValue = "{0: ownership, 1: manuscript access, 2: data access, 3: algorithm access}";
+        _classes[0]._values["nonceProprity"].stringValue = "{'0':'ownership'}";
         _classes[0]._values["category"].stringValue = "Proprity";
         _classes[0]._values["subcategory"].stringValue = "intellectualProprity";
-        _classes[0]._values["childCategory"].stringValue = "scientificResearch";
-    }
+        _classes[0]._values["childCategory"].stringValue = "patent";
+       }
 
     function _issueToken(
         address _to,
@@ -720,41 +712,29 @@ contract Token is ERC3475 {
     }
     function getPaper( uint256 classeId) public view  returns( Data memory result){
         result.onChainDate = _classes[classeId]._values["onChainDate"].uintValue;
-        result.DOI = _classes[classeId]._values["DOI"].stringValue;
+        result.identificationNumber = _classes[classeId]._values["identificationNumber"].stringValue;
+        result.warrantNumber = _classes[classeId]._values["warrantNumber"].stringValue;
         result.authorName =_classes[classeId]._values["authorName"].stringArrayValue;
         result.authorChainAddress =_classes[classeId]._values["authorChainAddress"].addressArrayValue;
-        result.copyPrice=_classes[classeId]._values["copyPrice"].uintValue;
-        result.dataPrice=_classes[classeId]._values["dataPrice"].uintValue;
-        result.algorithmPrice= _classes[classeId]._values["algorithmPrice"].uintValue;
         result.sponsorName= _classes[classeId]._values["sponsorName"].stringArrayValue;
         result.domain =_classes[classeId]._values["domain"].stringValue;
         result.subdomain = _classes[classeId]._values["subdomain"].stringValue;
         result.introduction= _classes[classeId]._values["introduction"].stringValue;
         result.keyWords= _classes[classeId]._values["keyWords"].stringArrayValue ;
         result.license= _classes[classeId]._values["license"].stringValue ;
-        result.copyFileName= _classes[classeId]._values["copyFileName"].stringValue ;
-        result.copyHash = _classes[classeId]._values["copyHash"].stringArrayValue ;
-        result.dataFileName =  _classes[classeId]._values["dataFileName"].stringValue;
-        result.dataHash =  _classes[classeId]._values["dataHash"].stringArrayValue;
-        result.algorithmFileName =  _classes[classeId]._values["algorithmFileName"].stringValue;
-        result.algorithmHash =  _classes[classeId]._values["algorithmHash"].stringArrayValue ;
-        result.references = _classes[classeId]._values["references"].stringArrayValue ;
-        result.version = _classes[classeId]._values["version"].stringArrayValue ;
-        result.cover = _classes[classeId]._values["cover"].stringArrayValue;
-       
+        result.cover = _classes[classeId]._values["cover"].stringArrayValue;       
    }
-    function publishPaper(
+
+    function publishProprity(
         uint256[] memory _amount,
         Data memory _inputValues
     ) public onlyPublisher {
         lastAvailableClass++;
         uint256 newClassId = lastAvailableClass;   
-        _classes[newClassId]._values["DOI"].stringValue = _inputValues.DOI;
+        _classes[newClassId]._values["identificationNumber"].stringValue = _inputValues.identificationNumber;
+        _classes[newClassId]._values["warrantNumber"].stringValue = _inputValues.warrantNumber;
         _classes[newClassId]._values["authorName"].stringArrayValue = _inputValues.authorName;
         _classes[newClassId]._values["authorChainAddress"].addressArrayValue = _inputValues.authorChainAddress;
-        _classes[newClassId]._values["copyPrice"].uintValue = _inputValues.copyPrice;
-        _classes[newClassId]._values["dataPrice"].uintValue = _inputValues.dataPrice;
-        _classes[newClassId]._values["algorithmPrice"].uintValue = _inputValues.algorithmPrice;
         _classes[newClassId]._values["sponsorName"].stringArrayValue = _inputValues.sponsorName;
         _classes[newClassId]._values["domain"].stringValue = _inputValues.domain;
         _classes[newClassId]._values["subdomain"].stringValue = _inputValues.subdomain;
@@ -762,29 +742,9 @@ contract Token is ERC3475 {
         _classes[newClassId]._values["introduction"].stringValue = _inputValues.introduction;
         _classes[newClassId]._values["keyWords"].stringArrayValue = _inputValues.keyWords;
         _classes[newClassId]._values["license"].stringValue = _inputValues.license;
-        _classes[newClassId]._values["copyFileName"].stringValue = _inputValues.copyFileName;
-        _classes[newClassId]._values["copyHash"].stringArrayValue = _inputValues.copyHash;
-        _classes[newClassId]._values["dataFileName"].stringValue = _inputValues.dataFileName;
-        _classes[newClassId]._values["dataHash"].stringArrayValue = _inputValues.dataHash;
-        _classes[newClassId]._values["algorithmFileName"].stringValue = _inputValues.algorithmFileName;
-        _classes[newClassId]._values["algorithmHash"].stringArrayValue = _inputValues.algorithmHash;
-        _classes[newClassId]._values["references"].stringArrayValue = _inputValues.references;
-        _classes[newClassId]._values["version"].stringArrayValue = _inputValues.version;
         _classes[newClassId]._values["cover"].stringArrayValue = _inputValues.cover;
 
         _mintOwnershipTokens(newClassId, _amount, _inputValues);   
-    }
-
-    function issueAccessToken(address[] memory _to, Transaction[] memory _transactions) public onlyPublisher {
-
-        require(_to.length == _transactions.length , "ERC3475Minter: input length issue");
-        
-
-        for(uint256 i = 0; i < _transactions.length; i++) {
-            _issueToken(_to[i], _transactions[i]);
-
-        }
-
     }
 
     function _mintOwnershipTokens(
@@ -807,11 +767,4 @@ contract Token is ERC3475 {
         }
     }
 
-    function checkAccess(address _viewer, uint256 _classeID) public view returns(bool[3] memory _access){
-        if(balanceOf(_viewer, _classeID, 1) != 0 || _classes[_classeID]._values["copyPrice"].uintValue == 0) _access[0] = true;
-
-        if(balanceOf(_viewer, _classeID, 2) != 0 || _classes[_classeID]._values["dataPrice"].uintValue == 0) _access[1] = true;
-
-        if(balanceOf(_viewer, _classeID, 3) != 0 || _classes[_classeID]._values["algorithmPrice"].uintValue == 0) _access[2] = true;     
-    }
 }
