@@ -35,5 +35,7 @@ interface IERC3475EXTENSION {
      * @notice MUST trigger when token class is created
      */     
     event classCreated(address indexed _operator, uint256 _classId);  
+    event updateClassMetadata(address indexed _operator, uint256 _classId, ValuesExtension[] oldMetedata, ValuesExtension[] newMetedata);  
+    event updateNonceMetadata(address indexed _operator, uint256 _classId, uint256 _nonceId, ValuesExtension[] oldMetedata, ValuesExtension[] newMetedata);  
   
 }
