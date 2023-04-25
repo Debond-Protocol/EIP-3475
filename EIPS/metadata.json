@@ -785,31 +785,45 @@
       "values":"24420000"
    },
    {
+      "metadataId":"1102",
+      "title":"itemIdentificationNumber",
+      "_type":"string",
+      "description":"identification Number of the intellectual property",
+      "values":"ZL20230417001"
+   },   
+   {
+      "metadataId":"1103",
+      "title":"itemIdentificationNumber",
+      "_type":"string",
+      "description":"warrant number of the intellectual property",
+      "values":"ZL201410820905.3"
+   },
+   {
       "metadataId":"1120",
       "title":"domain",
       "_type":"string",
-      "description":"domain of the publication",
+      "description":"domain of the intellectual property or publication",
       "values":"physic"
    },
    {
       "metadataId":"1121",
       "title":"subdomain",
       "_type":"string",
-      "description":"domain of the publication",
+      "description":"domain of the intellectual property or publication",
       "values":"quant"
    },
    {
       "metadataId":"1140",
       "title":"introduction",
       "_type":"string",
-      "description":"Introduction of the publication",
+      "description":"Introduction of the intellectual property or publication",
       "values":"Good paper"
    },
    {
       "metadataId":"1141",
       "title":"keyWords",
       "_type":"string[]",
-      "description":"Introduction of the publication",
+      "description":"Introduction of the intellectual property or publication",
       "values":[
          "physic",
          "cow"
@@ -819,14 +833,14 @@
       "metadataId":"1142",
       "title":"license",
       "_type":"string",
-      "description":"Licnese of the publication",
+      "description":"Licnese of the intellectual property or publication",
       "values":"MIT"
    },
    {
       "metadataId":"1142",
       "title":"references",
       "_type":"string[]",
-      "description":"references of the publication",
+      "description":"references of the intellectual property or publication",
       "values":[
          "123239922"
       ]
@@ -835,7 +849,7 @@
       "metadataId":"1143",
       "title":"version",
       "_type":"string[]",
-      "description":"version of the publication",
+      "description":"version of the intellectual property or publication",
       "values":[
          "123239922"
       ]
