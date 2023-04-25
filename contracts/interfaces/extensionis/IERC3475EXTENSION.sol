@@ -18,7 +18,7 @@ interface IERC3475EXTENSION {
         bool[] boolAraryValue;
     }
     
-       /**
+    /**
      * @dev Returns the values of the given _metadataTitle.
      * the metadata SHOULD follow a set of structures explained in eip-3475.md
      */
@@ -31,10 +31,14 @@ interface IERC3475EXTENSION {
      */
     function nonceValuesFromTitle(uint256 _classId, uint256 _nonceId, string memory _metadataTitle) external view returns (ValuesExtension memory);    
     
-      /**
+    /**
      * @notice MUST trigger when token class is created
      */     
-    event classCreated(address indexed _operator, uint256 _classId);  
+    event classCreated(address indexed _operator, uint256 _classId); 
+            
+    /**
+     * @notice MUST trigger when class metadata is updated
+     */ 
     event updateClassMetadata(address indexed _operator, uint256 _classId, ValuesExtension[] oldMetedata, ValuesExtension[] newMetedata);  
   
 }
