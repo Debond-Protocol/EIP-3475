@@ -692,10 +692,21 @@ contract Token is ERC3475 {
 
     constructor() {
         publisher = msg.sender;
-        _classes[0]._values["nonceProprity"].stringValue = "{'0':'ownership'}";
+       
+        _classes[0]._values["nonceProprity"].stringValue = "{0: ownership, 1: manuscript access, 2: data access, 3: algorithm access}";
         _classes[0]._values["category"].stringValue = "Proprity";
-        _classes[0]._values["subcategory"].stringValue = "intellectualProprity";
-        _classes[0]._values["childCategory"].stringValue = "patent";
+        _classes[0]._values["subcategory"].stringValue = "data";
+        _classes[0]._values["childCategory"].stringValue = "userBehaviorData";
+        
+        _classes[0]._values["warrantorName"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorType"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorJurisdiction"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorRegistrationAddress"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorURL"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorLogo"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorDocURL"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorIndustry"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorChainAddress"].stringValue = "ShangHai";
     }
 
     function _issueToken(
