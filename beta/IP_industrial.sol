@@ -694,7 +694,7 @@ contract Token is ERC3475 {
         publisher = msg.sender;
        
         _classes[0]._values["nonceProprity"].stringValue = "{0: ownership, 1: manuscript access, 2: data access, 3: algorithm access}";
-        _classes[0]._values["category"].stringValue = "Proprity";
+        _classes[0]._values["category"].stringValue = "proprity";
         _classes[0]._values["subcategory"].stringValue = "data";
         _classes[0]._values["childCategory"].stringValue = "userBehaviorData";
         
