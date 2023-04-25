@@ -720,7 +720,7 @@ contract Token is ERC3475 {
     }
     function getPaper( uint256 classeId) public view  returns( Data memory result){
         result.onChainDate = _classes[classeId]._values["onChainDate"].uintValue;
-        result.DOI = _classes[classeId]._values["itemIdentificationNumber"].stringValue;
+        result.DOI = _classes[classeId]._values["DOI"].stringValue;
         result.authorName =_classes[classeId]._values["authorName"].stringArrayValue;
         result.authorChainAddress =_classes[classeId]._values["authorChainAddress"].addressArrayValue;
         result.copyPrice=_classes[classeId]._values["copyPrice"].uintValue;
