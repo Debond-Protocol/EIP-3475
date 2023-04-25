@@ -698,6 +698,16 @@ contract Token is ERC3475 {
         _classes[0]._values["category"].stringValue = "proprity";
         _classes[0]._values["subcategory"].stringValue = "intellectualProprity";
         _classes[0]._values["childCategory"].stringValue = "trademark";
+        
+        _classes[0]._values["warrantorName"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorType"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorJurisdiction"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorRegistrationAddress"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorURL"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorLogo"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorDocURL"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorIndustry"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorChainAddress"].stringValue = "ShangHai";
        }
 
     function _issueToken(
