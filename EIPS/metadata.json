@@ -735,6 +735,82 @@
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
    },
    {
+      "metadataId":"0180",
+      "title":"warrantorName",
+      "_type":"string",
+      "description":"formal name of the warrantor",
+      "values":"ABC "
+   },
+   {
+      "metadataId":"0181",
+      "title":"warrantorType",
+      "_type":"string",
+      "description":"Organization‘s type",
+      "values":"LTD"
+   },
+   {
+      "metadataId":"0182",
+      "title":"warrantorJurisdiction",
+      "_type":"string",
+      "description":"jurisdiction of the warrantor",
+      "values":"US"
+   },
+   {
+      "metadataId":"0183",
+      "title":"warrantorRegistrationAddress",
+      "_type":"string",
+      "description":"Address of the established office",
+      "values":"1st avenue NYK"
+   },
+   {
+      "metadataId":"0184",
+      "title":"warrantorURL",
+      "_type":"string",
+      "description":"URL link of the website",
+      "values":"https://www.ABC.AI"
+   },
+   {
+      "metadataId":"0185",
+      "title":"warrantorLogo",
+      "_type":"string",
+      "description":"URL of stored project developer's logo/ media kit details in 64*64 pix png format",
+      "values":"https://www.ABC.AI/logo.png"
+   },
+   {
+      "metadataId":"0186",
+      "title":"warrantorRegistrationNumber",
+      "_type":"string",
+      "description":"The registration number of the warrantor’s entity",
+      "values":"000000000000"
+   },
+   {
+      "metadataId":"0187",
+      "title":"warrantorDocURL",
+      "_type":"string[]",
+      "description":"link to the documents",
+      "values":[
+         "https://bit.ly/ABC_pitch.pdf",
+         "https://bit.ly/ABC_pitch.pdf"
+      ]
+   },
+   {
+      "metadataId":"0188",
+      "title":"warrantorIndustry",
+      "_type":"string[]",
+      "description":"the registered industry the warrantor is associated",
+      "values":[
+         "software development",
+         "banking software development"
+      ]
+   },
+   {
+      "metadataId":"0189",
+      "title":"warrantorChainAddress",
+      "_type":"address",
+      "description":"the public key address of the warrantor",
+      "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+   },    
+   {
       "metadataId":"1100",
       "title":"DOI",
       "_type":"string",
@@ -900,6 +976,34 @@
       ]
    },
    {
+      "metadataId":"1212",
+      "title":"dataDimension",
+      "_type":"integer",
+      "description":"the dimension of the Data",
+      "values":"43"
+   },
+   {
+      "metadataId":"1213",
+      "title":"dataUpdatable",
+      "_type":"boolean",
+      "description":"if the Data is updated",
+      "values":"True"
+   },
+   {
+      "metadataId":"1214",
+      "title":"dataUpdateInterval",
+      "_type":"integer",
+      "description":"ISO-8601 representation of the interval of the data update",
+      "values":"1676038570"
+   },
+   {
+      "metadataId":"1215",
+      "title":"dataWithAPI",
+      "_type":"boolean",
+      "description":"if the Data has an API acess",
+      "values":"True"
+   },
+   {
       "metadataId":"1220",
       "title":"algorithmFileName",
       "_type":"string",
@@ -929,7 +1033,7 @@
       "title":"ISIN",
       "_type":"string",
       "description":"defining the identifier code of the security(https://www.investopedia.com/terms/i/isin.asp)",
-      "values":" US-000402625-0"
+      "values":"US-000402625-0"
    },
    {
       "metadataId":"2002",
