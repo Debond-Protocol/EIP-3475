@@ -786,44 +786,44 @@
    },
    {
       "metadataId":"1102",
-      "title":"itemIdentificationNumber",
+      "title":"identificationNumber",
       "_type":"string",
-      "description":"identification Number of the intellectual property",
+      "description":"identification Number of the property",
       "values":"ZL20230417001"
    },   
    {
       "metadataId":"1103",
-      "title":"itemIdentificationNumber",
+      "title":"warrantNumber",
       "_type":"string",
-      "description":"warrant number of the intellectual property",
+      "description":"warrant number of the property",
       "values":"ZL201410820905.3"
    },
    {
       "metadataId":"1120",
       "title":"domain",
       "_type":"string",
-      "description":"domain of the intellectual property or publication",
+      "description":"domain of the property or publication",
       "values":"physic"
    },
    {
       "metadataId":"1121",
       "title":"subdomain",
       "_type":"string",
-      "description":"domain of the intellectual property or publication",
+      "description":"domain of the property or publication",
       "values":"quant"
    },
    {
       "metadataId":"1140",
       "title":"introduction",
       "_type":"string",
-      "description":"Introduction of the intellectual property or publication",
+      "description":"Introduction of the property or publication",
       "values":"Good paper"
    },
    {
       "metadataId":"1141",
       "title":"keyWords",
       "_type":"string[]",
-      "description":"Introduction of the intellectual property or publication",
+      "description":"Introduction of the property or publication",
       "values":[
          "physic",
          "cow"
