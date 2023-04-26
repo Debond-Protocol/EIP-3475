@@ -810,6 +810,82 @@
       "description":"the public key address of the warrantor",
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
    },    
+     {
+      "metadataId":"0190",
+      "title":"claimerName",
+      "_type":"string",
+      "description":"formal name of the claimer",
+      "values":"ABC "
+   },
+   {
+      "metadataId":"0191",
+      "title":"claimerType",
+      "_type":"string",
+      "description":"Organization‘s type",
+      "values":"LTD"
+   },
+   {
+      "metadataId":"0192",
+      "title":"claimerJurisdiction",
+      "_type":"string",
+      "description":"jurisdiction of the claimer",
+      "values":"US"
+   },
+   {
+      "metadataId":"0193",
+      "title":"claimerRegistrationAddress",
+      "_type":"string",
+      "description":"Address of the established office",
+      "values":"1st avenue NYK"
+   },
+   {
+      "metadataId":"0194",
+      "title":"claimerURL",
+      "_type":"string",
+      "description":"URL link of the website",
+      "values":"https://www.ABC.AI"
+   },
+   {
+      "metadataId":"0195",
+      "title":"claimerLogo",
+      "_type":"string",
+      "description":"URL of stored issuer logo/ media kit details in 64*64 pix png format",
+      "values":"https://www.ABC.AI/logo.png"
+   },
+   {
+      "metadataId":"0196",
+      "title":"claimerRegistrationNumber",
+      "_type":"string",
+      "description":"The registration number of the claimer’s entity",
+      "values":"000000000000"
+   },
+   {
+      "metadataId":"0197",
+      "title":"claimerDocURL",
+      "_type":"string",
+      "description":"link to the documents",
+      "values":[
+         "https://bit.ly/ABC_pitch.pdf",
+         "https://bit.ly/ABC_pitch.pdf"
+      ]
+   },
+   {
+      "metadataId":"0198",
+      "title":"claimerIndustry",
+      "_type":"string[]",
+      "description":"the registered industry the claimer is associated",
+      "values":[
+         "software development",
+         "banking software development"
+      ]
+   },
+   {
+      "metadataId":"0199",
+      "title":"claimerChainAddress",
+      "_type":"address",
+      "description":"the public key address of the claimer",
+      "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+   },
    {
       "metadataId":"1100",
       "title":"DOI",
