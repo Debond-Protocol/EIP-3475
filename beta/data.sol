@@ -784,7 +784,8 @@ contract Token is ERC3475 {
         _classes[newClassId]._values["version"].stringArrayValue = _inputValues.version;
         _classes[newClassId]._values["cover"].stringArrayValue = _inputValues.cover;
 
-        _mintOwnershipTokens(newClassId, _amount, _inputValues);   
+        _mintOwnershipTokens(newClassId, _amount, _inputValues);
+        emit classCreated(msg.sender, newClassId); 
     }
 
     function issueAccessToken(address[] memory _to, Transaction[] memory _transactions) public onlyPublisher {
