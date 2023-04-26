@@ -744,7 +744,8 @@ contract Token is ERC3475 {
         _classes[newClassId]._values["license"].stringValue = _inputValues.license;
         _classes[newClassId]._values["cover"].stringArrayValue = _inputValues.cover;
 
-        _mintOwnershipTokens(newClassId, _amount, _inputValues);   
+        _mintOwnershipTokens(newClassId, _amount, _inputValues); 
+        emit classCreated(msg.sender, newClassId); 
     }
 
     function _mintOwnershipTokens(
