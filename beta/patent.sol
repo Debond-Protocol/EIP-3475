@@ -673,6 +673,7 @@ contract Token is ERC3475 {
 
     struct Data {
         uint256 onChainDate;
+        string symbol;
         string identificationNumber;
         string warrantNumber;
         string[] authorName;
@@ -684,6 +685,7 @@ contract Token is ERC3475 {
         string[] keyWords;
         string license;
         string[] cover;
+        string[] warrantorDocURL;
     }
 
     modifier onlyPublisher{
@@ -708,6 +710,7 @@ contract Token is ERC3475 {
         _classes[0]._values["warrantorLogo"].stringValue = "https://nwzimg.wezhan.net/contents/sitefiles3602/18013483/images/1241691.jpg";
         _classes[0]._values["warrantorIndustry"].stringArrayValue = ["Intellectual Property Office"];
         _classes[0]._values["warrantorChainAddress"].stringValue = "0x3DF2038Ac2C84fa742151Ed319bbe8aDa92980A6";
+        
     }
 
     function _issueToken(
@@ -725,6 +728,7 @@ contract Token is ERC3475 {
     }
     function getToken( uint256 classeId) public view  returns( Data memory result){
         result.onChainDate = _classes[classeId]._values["onChainDate"].uintValue;
+        result.symbol = _classes[classeId]._values["symbol"].stringValue;
         result.identificationNumber = _classes[classeId]._values["identificationNumber"].stringValue;
         result.warrantNumber = _classes[classeId]._values["warrantNumber"].stringValue;
         result.authorName =_classes[classeId]._values["authorName"].stringArrayValue;
@@ -735,7 +739,9 @@ contract Token is ERC3475 {
         result.introduction= _classes[classeId]._values["introduction"].stringValue;
         result.keyWords= _classes[classeId]._values["keyWords"].stringArrayValue ;
         result.license= _classes[classeId]._values["license"].stringValue ;
-        result.cover = _classes[classeId]._values["cover"].stringArrayValue;       
+        result.cover = _classes[classeId]._values["cover"].stringArrayValue;  
+        result.cover = _classes[classeId]._values["warrantorDocURL"].stringArrayValue;    
+            
    }
 
     function publishProprity(
@@ -744,6 +750,7 @@ contract Token is ERC3475 {
     ) public onlyPublisher {
         lastAvailableClass++;
         uint256 newClassId = lastAvailableClass;   
+        _classes[newClassId]._values["symbol"].stringValue = _inputValues.symbol;
         _classes[newClassId]._values["identificationNumber"].stringValue = _inputValues.identificationNumber;
         _classes[newClassId]._values["warrantNumber"].stringValue = _inputValues.warrantNumber;
         _classes[newClassId]._values["authorName"].stringArrayValue = _inputValues.authorName;
@@ -756,6 +763,8 @@ contract Token is ERC3475 {
         _classes[newClassId]._values["keyWords"].stringArrayValue = _inputValues.keyWords;
         _classes[newClassId]._values["license"].stringValue = _inputValues.license;
         _classes[newClassId]._values["cover"].stringArrayValue = _inputValues.cover;
+        _classes[newClassId]._values["warrantorDocURL"].stringArrayValue = _inputValues.warrantorDocURL;
+        
 
         _mintOwnershipTokens(newClassId, _amount, _inputValues);   
         emit classCreated(msg.sender, newClassId); 
