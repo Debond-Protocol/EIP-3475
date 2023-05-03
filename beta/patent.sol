@@ -693,20 +693,21 @@ contract Token is ERC3475 {
     constructor() {
         publisher = msg.sender;
        
-        _classes[0]._values["nonceProprity"].stringValue = "{0: ownership, 1: manuscript access, 2: data access, 3: algorithm access}";
+        _classes[0]._values["nonceProprity"].stringValue = "{0: ownership}";
         _classes[0]._values["category"].stringValue = "proprity";
-        _classes[0]._values["subcategory"].stringValue = "data";
-        _classes[0]._values["childCategory"].stringValue = "userBehaviorData";
+        _classes[0]._values["subcategory"].stringValue = "intellectualProperty";
+        _classes[0]._values["childCategory"].stringValue = "patent";
         
-        _classes[0]._values["warrantorName"].stringValue = "ShangHai";
-        _classes[0]._values["warrantorType"].stringValue = "ShangHai";
-        _classes[0]._values["warrantorJurisdiction"].stringValue = "ShangHai";
-        _classes[0]._values["warrantorRegistrationAddress"].stringValue = "ShangHai";
-        _classes[0]._values["warrantorURL"].stringValue = "ShangHai";
-        _classes[0]._values["warrantorLogo"].stringValue = "ShangHai";
-        _classes[0]._values["warrantorDocURL"].stringValue = "ShangHai";
-        _classes[0]._values["warrantorIndustry"].stringValue = "ShangHai";
-        _classes[0]._values["warrantorChainAddress"].stringValue = "ShangHai";
+        _classes[0]._values["warrantorName"].stringValue = "Shanghai Intellectual Property Administration";
+        _classes[0]._values["warrantorType"].stringValue = "Government Organization";
+        _classes[0]._values["warrantorRegistrationNumber"].stringValue = unicode"沪ICP备2021016245";
+
+        _classes[0]._values["warrantorJurisdiction"].stringValue = "PRC";
+        _classes[0]._values["warrantorRegistrationAddress"].stringValue = unicode"常熟路55号, Jing'An, Shanghai, 200031 China,";
+        _classes[0]._values["warrantorURL"].stringValue = "https://sipa.sh.gov.cn/";
+        _classes[0]._values["warrantorLogo"].stringValue = "https://nwzimg.wezhan.net/contents/sitefiles3602/18013483/images/1241691.jpg";
+        _classes[0]._values["warrantorIndustry"].stringArrayValue = ["Intellectual Property Office"];
+        _classes[0]._values["warrantorChainAddress"].stringValue = "0x3DF2038Ac2C84fa742151Ed319bbe8aDa92980A6";
     }
 
     function _issueToken(
@@ -719,7 +720,7 @@ contract Token is ERC3475 {
         nonce._balances[_to] += _transaction._amount;
         nonce._activeSupply += _transaction._amount;
     }
-    function getPaper( uint256 classeId) public view  returns( Data memory result){
+    function getToken( uint256 classeId) public view  returns( Data memory result){
         result.onChainDate = _classes[classeId]._values["onChainDate"].uintValue;
         result.identificationNumber = _classes[classeId]._values["identificationNumber"].stringValue;
         result.warrantNumber = _classes[classeId]._values["warrantNumber"].stringValue;
