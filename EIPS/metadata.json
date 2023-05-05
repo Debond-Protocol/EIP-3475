@@ -1008,8 +1008,8 @@
    },
    {
       "metadataId":"1144",
-      "title":"cover[]",
-      "_type":"string",
+      "title":"cover",
+      "_type":"string[]",
       "description":"Url link of the cover",
       "values":[
          "https://upload.wikimedia.org/wikipedia/en/0/05/Littleprince.JPG"
