@@ -1,0 +1,27 @@
+[
+  {
+        onChainDate  : "0",
+        symbol: "一种臭氧纳米气泡漱口液及制备方法",
+        identificationNumber: "ZL20230425002",
+        warrantNumber: "ZL202010409539.8",
+        authorName: ["钱新玲","陆荣生","区大锴"],
+        authorChainAddress: ["0x3DF2038Ac2C84fa742151Ed319bbe8aDa92980A6","0x3DF2038Ac2C84fa742151Ed319bbe8aDa92980A6","0x3DF2038Ac2C84fa742151Ed319bbe8aDa92980A6"],
+        issuerName: "深圳市德方纳米科技股份有限公司",
+        issuerType: "ltd",
+        issuerJurisdiction: "PRC",
+        issuerRegistrationAddress: "上海市保定路527号",
+        issuerURL: "https://www.dynanonic.com/",
+        issuerLogo: "https://www.dynanonic.com/images/logo2.png",
+        issuerIndustry: ["化妆用品及饰品,日用化学制品原辅材料,包装容器,香料香精"],
+        issuerRegistrationNumber: "310000000040592",
+        domain: "chemistry",
+        subdomain: "biomedicine",
+        introduction: "\n" +
+            "\n" +
+            "臭氧纳米气泡水是一种能在常温下存储流通的新型长效臭氧水（保存期超过半年)。 本发明攻克了臭氧气体及臭氧水不能保存这一世界难题。臭氧长期常温保存这项技术是一项重大 的技术创新和技术突破，也是全球首创的发明。 本发明的特点：臭氧纳米气泡水具有双重功能，臭氧高效杀菌功能和纳米气泡的渗透功能，即渗 透组织杀菌功能。也就是臭氧纳米气泡能渗透到皮下、黏膜内、细胞内杀灭致病微生物，对口腔溃疡、牙龈肿痛、脚气、微生物感染性皮肤病、妇科疾病、泌尿感染、鼻炎等有治愈快、效果好的功效。 市场前景：日常用品以及大健康领域，市场极大。可作为日常口腔护理、预防口腔疾病漱口液,个人皮肤护理清洗剂，宠物清洗剂，保鲜剂等。 还可用于机械加工零件的清洗 、硅晶片和芯片的清洗（能极大减少水的用量）。",
+        keyWords: ["臭氧高效杀菌功","长效臭氧水","硅晶片和芯片的清洗"],
+        license: "TM",
+        cover: ["https://www.mdpi.com/materials/materials-06-03676/article_deploy/html/images/materials-06-03676-g001.png"],
+        warrantorDocURL: ["https://github.com/Debond-Protocol/EIP-3475/raw/main/beta/%E6%BC%B1%E5%8F%A3%E6%B6%B2%E7%94%9F%E4%BA%A7%E5%B7%A5%E8%89%BA%E5%8F%8A%E5%88%B6%E4%BD%9C%E9%85%8D%E6%96%B9%E6%8A%80%E6%9C%AF.pdf"]
+  }
+]
