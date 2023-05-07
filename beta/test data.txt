@@ -36,7 +36,7 @@
         issuerJurisdiction: "PRC",
         issuerRegistrationAddress: "北京市海淀区学院路37号",
         issuerURL: "https://www.buaa.edu.cn/",
-        issuerLogo: "https://www.buaa.edu.cn/_resources/images/logo_buaa.png",
+        issuerLogo: "https://mms.businesswire.com/media/20191127005226/zh-CN/759068/5/JBM_Logo_for_PR.jpg",
         issuerIndustry: ["航空航天工程"],
         issuerRegistrationNumber: "110000000067281",
         domain: "engineering",
@@ -46,7 +46,7 @@
             "本发明公开了一种无损检测飞机燃油管路裂纹的方法。通过利用飞机燃油管路的振动信号，在信号频域内找到裂纹特征的谐波信号，以此检测燃油管路裂纹，具有无需破坏性、快速、准确等优点。该方法可应用于飞机燃油管路的无损检测，可提高飞机飞行安全性，避免事故的发生。 ",
         keyWords: ["燃油管路裂纹","无损检测","飞机安全"],
         license: "patent",
-        cover: ["https://cdn.pixabay.com/photo/2016/10/20/14/05/aircraft-1751455_960_720.jpg"],
+        cover: ["https://cgwoss.oss-cn-shenzhen.aliyuncs.com/2212211122561545150928.jpeg"],
         warrantorDocURL: ["https://patentimages.storage.googleapis.com/2c/4a/6f/6056d9b6ad4b91/CN111082338A.pdf"]
   }，
   {
@@ -61,7 +61,7 @@
         "issuerJurisdiction": "PRC",
         "issuerRegistrationAddress": "北京市海淀区西三旗",
         "issuerURL": "http://www.jin-xin-rui.com/",
-        "issuerLogo": "http://www.jin-xin-rui.com/img/logo.png",
+        "issuerLogo": "https://mms.businesswire.com/media/20191127005226/zh-CN/759068/5/JBM_Logo_for_PR.jpg",
         "issuerIndustry": ["生物科技", "环保"],
         "issuerRegistrationNumber": "11010888888888",
         "domain": "chemistry",
@@ -71,7 +71,7 @@
             "本发明提供了一种生物降解可食用咖啡豆包装袋及制作方法。所述咖啡豆包装袋由纤维素和多糖物质组成，通过可食用的薄膜层覆盖制成，该薄膜层可根据所需耐温度、防水性、保鲜性等特点进行调整。该咖啡豆包装袋符合环保要求，可生物降解，同时包装袋自身不会影响咖啡豆的味道和品质。本发明提供的咖啡豆包装袋及制作方法能有效地替代传统的塑料包装袋，具有广泛的市场应用前景。",
         "keyWords": ["生物降解", "可食用", "咖啡豆包装袋"],
         "license": "patent",
-        "cover": ["https://www.nature.com/articles/s41598-019-41660-6/figures/2"],
+        "cover": ["https://cgwoss.oss-cn-shenzhen.aliyuncs.com/2212211122561545150928.jpeg"],
         "warrantorDocURL": ["https://www.wipo.int/patentscope/search/zh/detail.jsf?docId=CN354678&tab=PCTDOCUMENTS&maxRec=1000"]
   },
   {
@@ -86,7 +86,7 @@
         "issuerJurisdiction": "PRC",
         "issuerRegistrationAddress": "广州市天河区华南理工大学内",
         "issuerURL": "http://www.scut.edu.cn/",
-        "issuerLogo": "http://www.scut.edu.cn/_upload/tpl/00/c7/1345/template1345/images/logo.png",
+        "issuerLogo": "https://mms.businesswire.com/media/20191127005226/zh-CN/759068/5/JBM_Logo_for_PR.jpg",
         "issuerIndustry": ["化工材料", "航空航天", "汽车", "机械制造"],
         "issuerRegistrationNumber": "4401000021345",
         "domain": "chemistry",
@@ -96,8 +96,61 @@
             "本发明提供了一种纳米碳管增强环氧树脂的制备方法，包括以下步骤：将纳米碳管经过处理后与表面活性剂混合得到纳米碳管分散液；将纳米碳管分散液加入环氧树脂前驱物中，并在一定条件下反应，得到纳米碳管增强环氧树脂。该方法制备的纳米碳管增强环氧树脂具有良好的力学性能、导电性和导热性，广泛应用于航空航天、汽车和机械制造等领域。",
         "keyWords": ["纳米碳管", "环氧树脂", "力学性能", "导电性", "导热性"],
         "license": "Patent",
+        "cover": ["https://cgwoss.oss-cn-shenzhen.aliyuncs.com/2212211122561545150928.jpeg"],
+        "warrantorDocURL": ["https://www.sciencedirect.com/science/article/abs/pii/S1359836821006803"]
+  }，
+  {
+        "onChainDate": "0",
+        "symbol": "电影《生死守望》项目公司60%股权",
+        "identificationNumber": "G1000017",
+        "warrantNumber": "ZL202110426777.2",
+        "authorName": ["张正龙"],
+        "authorChainAddress": ["0x4b77aD79Cc7F0d1b155261F9f8e51f17715BDe11", "0x4b77aD79Cc7F0d1b155261F9f8e51f17715BDe11", "0x4b77aD79Cc7F0d1b155261F9f8e51f17715BDe11"],
+        "issuerName": "电影《生死守望》项目公司",
+        "issuerType": "工业",
+        "issuerJurisdiction": "中华人民共和国",
+        "issuerRegistrationAddress": "中华人民共和国[156]新疆维吾尔自治区[650000]",
+        "issuerURL": "http://www.scut.edu.cn/",
+        "issuerLogo": "https://www.logosc.cn/oss/icons/2021/11/08/tmy9opqfrRFKGkH.png",
+        "issuerIndustry": ["电影和音像", "广播", "电视", "音乐"],
+        "issuerRegistrationNumber": "4401000021345",
+        "domain": "文化产权",
+        "subdomain": "影视作品股权",
+        "introduction": "\n" +
+            "\n" +
+            "一、公司与项目简介 电影《生死守望》是当今国内第一部反映本土传统文化，返璞归真，回归六十年代初，农村中少男少女那种人性原始的、本质的传奇爱情。 二、资金使用计划及盈利预测 投资较低。该片中，简单朴素的生活场面，古朴优美的大自然及田园山水风光，独具魅力的独特题材内容，给当今浮躁的节奏紧张的生活注入了一股恬静而优美的田园牧歌清风，永葆人性光辉的艺术魅力。盈利预测过亿。",
+        "keyWords": ["电影", "艺术", "影视版权"],
+        "license": "股权",
         "cover": ["https://www.researchgate.net/profile/Lei_Li118/publication/350413505/figure/fig1/AS:1048578701842960@1612448886996/Figure-1-Schematic-diagram-of-the-structure-and-manufacturing-process-of-NCG-reinforced.png"],
         "warrantorDocURL": ["https://www.sciencedirect.com/science/article/abs/pii/S1359836821006803"]
+  },
+    {
+        "onChainDate": "0",
+        "symbol": "JK图形商标品牌（许可欧盟、俄罗斯投资机构）",
+        "identificationNumber": "PP20230504004",
+        "warrantNumber": "1676822",
+        "authorName": ["林玲"],
+        "authorChainAddress": ["0x4b77aD79Cc7F0d1b155261F9f8e51f17715BDe11", "0x4b77aD79Cc7F0d1b155261F9f8e51f17715BDe11", "0x4b77aD79Cc7F0d1b155261F9f8e51f17715BDe11"],
+        "issuerName": "乳山银滩大拇指科技信息咨询中心",
+        "issuerType": "工业",
+        "issuerJurisdiction": "中华人民共和国",
+        "issuerRegistrationAddress": "山东省/威海市/乳山市",
+        "issuerURL": "http://www.scut.edu.cn/",
+        "issuerLogo": "https://www.shsipe.com/property-upload/2023-05-04/2023050417235529295.jpg",
+        "issuerIndustry": ["信息科技", "广告"],
+        "issuerRegistrationNumber": "4401000021345",
+        "domain": "文化产权",
+        "subdomain": "影视作品股权",
+        "introduction": "\n" +
+            "\n" +
+            "知识产权的英文为“intellectual property"，翻译为智力成果权、智慧财产权或智力财产权。 智力财产权权益人：乳山银滩大拇指科技信息咨询中心 许可欧盟、俄罗斯投资机构 商标许可附赠使用域名：jk杰克.com",
+        "keyWords": ["电影", "艺术", "影视版权"],
+        "license": "股权",
+        "cover": ["https://www.shsipe.com/property-upload/2023-05-04/2023050417235529295.jpg"],
+        "warrantorDocURL": ["https://www.sciencedirect.com/science/article/abs/pii/S1359836821006803"]
   }
+
+
+
 
 ]
