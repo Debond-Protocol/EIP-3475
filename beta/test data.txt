@@ -148,7 +148,59 @@
         "license": "股权",
         "cover": ["https://www.shsipe.com/property-upload/2023-05-04/2023050417235529295.jpg"],
         "warrantorDocURL": ["https://www.sciencedirect.com/science/article/abs/pii/S1359836821006803"]
+  },
+  {
+        "onChainDate": "0",
+        "symbol": "版权：元Meta JK　NFT）",
+        "identificationNumber": "BQ20230504005",
+        "warrantNumber": "国作登字-2022-F-10140370",
+        "authorName": ["林玲"],
+        "authorChainAddress": ["0x4b77aD79Cc7F0d1b155261F9f8e51f17715BDe11", "0x4b77aD79Cc7F0d1b155261F9f8e51f17715BDe11", "0x4b77aD79Cc7F0d1b155261F9f8e51f17715BDe11"],
+        "issuerName": "朱倩倩",
+        "issuerType": "工业",
+        "issuerJurisdiction": "中华人民共和国",
+        "issuerRegistrationAddress": "浙江省/温州市/鹿城区",
+        "issuerURL": "http://www.scut.edu.cn/",
+        "issuerLogo": "https://www.shsipe.com/property-upload/2023-05-04/2023050417235529295.jpg",
+        "issuerIndustry": ["信息科技", "广告"],
+        "issuerRegistrationNumber": "4401000021345",
+        "domain": "信息技术",
+        "subdomain": "数字艺术",
+        "introduction": "\n" +
+            "\n" +
+            "按照版权伯尔尼公约许可使用目前179个国家。 版权权益人：林玲（女士）许可元Meta JK　NFT元宇宙投资。",
+        "keyWords": ["电影", "艺术", "影视版权"],
+        "license": "股权",
+        "cover": ["https://www.shsipe.com/property-upload/2023-05-05/2023050510344092395.jpg"],
+        "warrantorDocURL": ["https://www.sciencedirect.com/science/article/abs/pii/S1359836821006803"]
+  },
+    {
+        "onChainDate": "0",
+        "symbol": "数据服务：航班资源宝",
+        "identificationNumber": "5000923601",
+        "warrantNumber": "ZHEⅡ99ZW",
+        "authorName": ["中国东方航空股份有限公司"],
+        "authorChainAddress": ["0x4b77aD79Cc7F0d1b155261F9f8e51f17715BDe11", "0x4b77aD79Cc7F0d1b155261F9f8e51f17715BDe11", "0x4b77aD79Cc7F0d1b155261F9f8e51f17715BDe11"],
+        "issuerName": "中国东方航空股份有限公司",
+        "issuerType": "工业",
+        "issuerJurisdiction": "中华人民共和国",
+        "issuerRegistrationAddress": "浙江省/温州市/鹿城区",
+        "issuerURL": "http://www.scut.edu.cn/",
+        "issuerLogo": "https://pic.mksucai.com/00/18/61/4807e4ab887f1cbb.webp",
+        "issuerIndustry": ["信息科技", "广告"],
+        "issuerRegistrationNumber": "4401000021345",
+        "domain": "信息技术",
+        "subdomain": "数据服务",
+        "introduction": "\n" +
+            "\n" +
+            "实时推送包含东上航（仅商业正班）航班计划、航班动态、航班保障节点、航班资源等信息.航班资源宝已向国内30多家机场开放，比如北京大兴机场已使用东航实时发送的数据进行现场保障与数据分析报表等。",
+        "keyWords": ["航班信息","航班资源","保障节点"],
+        "license": "股权",
+        "cover": ["https://nidts.chinadep.com/fs/daping/group1/darp_admin/d5881a460904481db6eb0d51045b7e83.png"],
+        "warrantorDocURL": ["https://www.sciencedirect.com/science/article/abs/pii/S1359836821006803"]
   }
+
+
 
 
 
