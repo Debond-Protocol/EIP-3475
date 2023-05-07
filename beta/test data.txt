@@ -23,5 +23,81 @@
         license: "TM",
         cover: ["https://www.mdpi.com/materials/materials-06-03676/article_deploy/html/images/materials-06-03676-g001.png"],
         warrantorDocURL: ["https://github.com/Debond-Protocol/EIP-3475/raw/main/beta/%E6%BC%B1%E5%8F%A3%E6%B6%B2%E7%94%9F%E4%BA%A7%E5%B7%A5%E8%89%BA%E5%8F%8A%E5%88%B6%E4%BD%9C%E9%85%8D%E6%96%B9%E6%8A%80%E6%9C%AF.pdf"]
+  }，
+  {
+        onChainDate  : "0",
+        symbol: "一种无损检测飞机燃油管路裂纹的方法",
+        identificationNumber: "ZL202305070011",
+        warrantNumber: "ZL202010409537.8",
+        authorName: ["张三","李四","王五"],
+        authorChainAddress: ["0xabc123","0xdef456","0xghi789"],
+        issuerName: "北京航空航天大学",
+        issuerType: "university",
+        issuerJurisdiction: "PRC",
+        issuerRegistrationAddress: "北京市海淀区学院路37号",
+        issuerURL: "https://www.buaa.edu.cn/",
+        issuerLogo: "https://www.buaa.edu.cn/_resources/images/logo_buaa.png",
+        issuerIndustry: ["航空航天工程"],
+        issuerRegistrationNumber: "110000000067281",
+        domain: "engineering",
+        subdomain: "aerospace",
+        introduction: "\n" +
+            "\n" +
+            "本发明公开了一种无损检测飞机燃油管路裂纹的方法。通过利用飞机燃油管路的振动信号，在信号频域内找到裂纹特征的谐波信号，以此检测燃油管路裂纹，具有无需破坏性、快速、准确等优点。该方法可应用于飞机燃油管路的无损检测，可提高飞机飞行安全性，避免事故的发生。 ",
+        keyWords: ["燃油管路裂纹","无损检测","飞机安全"],
+        license: "patent",
+        cover: ["https://cdn.pixabay.com/photo/2016/10/20/14/05/aircraft-1751455_960_720.jpg"],
+        warrantorDocURL: ["https://patentimages.storage.googleapis.com/2c/4a/6f/6056d9b6ad4b91/CN111082338A.pdf"]
+  }，
+  {
+        "onChainDate": "0",
+        "symbol": "一种生物降解可食用咖啡豆包装袋及制作方法",
+        "identificationNumber": "ZL20230506001",
+        "warrantNumber": "ZL202110354678.9",
+        "authorName": ["李冬梅", "王志刚", "刘春晖"],
+        "authorChainAddress": ["0xBf045AD8a7d0Df18e88d5D52438c8A6f05F422f0", "0x5A8A7eC64A06c1257cAc6376a8c2d92a6aaf542F", "0x8978c7F5415B5fA2E3Fc3A8A6564C4F4dC7f43d1"],
+        "issuerName": "北京金信瑞生物科技有限公司",
+        "issuerType": "ltd",
+        "issuerJurisdiction": "PRC",
+        "issuerRegistrationAddress": "北京市海淀区西三旗",
+        "issuerURL": "http://www.jin-xin-rui.com/",
+        "issuerLogo": "http://www.jin-xin-rui.com/img/logo.png",
+        "issuerIndustry": ["生物科技", "环保"],
+        "issuerRegistrationNumber": "11010888888888",
+        "domain": "chemistry",
+        "subdomain": "materials science",
+        "introduction": "\n" +
+            "\n" +
+            "本发明提供了一种生物降解可食用咖啡豆包装袋及制作方法。所述咖啡豆包装袋由纤维素和多糖物质组成，通过可食用的薄膜层覆盖制成，该薄膜层可根据所需耐温度、防水性、保鲜性等特点进行调整。该咖啡豆包装袋符合环保要求，可生物降解，同时包装袋自身不会影响咖啡豆的味道和品质。本发明提供的咖啡豆包装袋及制作方法能有效地替代传统的塑料包装袋，具有广泛的市场应用前景。",
+        "keyWords": ["生物降解", "可食用", "咖啡豆包装袋"],
+        "license": "patent",
+        "cover": ["https://www.nature.com/articles/s41598-019-41660-6/figures/2"],
+        "warrantorDocURL": ["https://www.wipo.int/patentscope/search/zh/detail.jsf?docId=CN354678&tab=PCTDOCUMENTS&maxRec=1000"]
+  },
+  {
+        "onChainDate": "0",
+        "symbol": "一种纳米碳管增强环氧树脂的制备方法",
+        "identificationNumber": "ZL20230615001",
+        "warrantNumber": "ZL202110426777.2",
+        "authorName": ["王天宇", "陈云浩", "张林"],
+        "authorChainAddress": ["0x4b77aD79Cc7F0d1b155261F9f8e51f17715BDe11", "0x4b77aD79Cc7F0d1b155261F9f8e51f17715BDe11", "0x4b77aD79Cc7F0d1b155261F9f8e51f17715BDe11"],
+        "issuerName": "华南理工大学",
+        "issuerType": "university",
+        "issuerJurisdiction": "PRC",
+        "issuerRegistrationAddress": "广州市天河区华南理工大学内",
+        "issuerURL": "http://www.scut.edu.cn/",
+        "issuerLogo": "http://www.scut.edu.cn/_upload/tpl/00/c7/1345/template1345/images/logo.png",
+        "issuerIndustry": ["化工材料", "航空航天", "汽车", "机械制造"],
+        "issuerRegistrationNumber": "4401000021345",
+        "domain": "chemistry",
+        "subdomain": "materials science",
+        "introduction": "\n" +
+            "\n" +
+            "本发明提供了一种纳米碳管增强环氧树脂的制备方法，包括以下步骤：将纳米碳管经过处理后与表面活性剂混合得到纳米碳管分散液；将纳米碳管分散液加入环氧树脂前驱物中，并在一定条件下反应，得到纳米碳管增强环氧树脂。该方法制备的纳米碳管增强环氧树脂具有良好的力学性能、导电性和导热性，广泛应用于航空航天、汽车和机械制造等领域。",
+        "keyWords": ["纳米碳管", "环氧树脂", "力学性能", "导电性", "导热性"],
+        "license": "Patent",
+        "cover": ["https://www.researchgate.net/profile/Lei_Li118/publication/350413505/figure/fig1/AS:1048578701842960@1612448886996/Figure-1-Schematic-diagram-of-the-structure-and-manufacturing-process-of-NCG-reinforced.png"],
+        "warrantorDocURL": ["https://www.sciencedirect.com/science/article/abs/pii/S1359836821006803"]
   }
+
 ]
