@@ -1375,5 +1375,12 @@
       "_type":"string",
       "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
       "values":"424220"
+   },
+      {
+      "metadataId":"9999",
+      "title":"subscribeLink",
+      "_type":"string",
+      "description":"Thes ubscribe Link of the indexed token",
+      "values":"https://app.debond.org/bonds/0x0a4f1f695f10de42311335119b3dfb41a7a39ff6?classid=3"
    }
 ]
