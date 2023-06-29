@@ -85,7 +85,7 @@
    },
    {
       "metadataId":"0055",
-      "title":"maxiumSupply",
+      "title":"maximumSupply",
       "_type":"integer",
       "description":"maximum amount of the token",
       "values":"10000000"
