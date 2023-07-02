@@ -254,6 +254,17 @@ interface IERC3475EXTENSION {
   
 }
 
+interface IAuction{
+ 
+    function createAuction(
+        address creator,
+        address erc3475Address,
+        IERC3475.Transaction[] memory _transactions,
+        uint256 minDBITAmount,
+        uint256 maxDBITAmount,
+        uint256 auctionDuration
+    ) external;
+}
 contract ERC3475 is IERC3475, IERC3475EXTENSION {
 
     /**
@@ -585,7 +596,7 @@ contract ERC3475 is IERC3475, IERC3475EXTENSION {
         address _from,
         address _to,
         IERC3475.Transaction memory _transaction
-    ) private {
+    ) internal {
         Nonce storage nonce = _classes[_transaction.classId]._nonces[_transaction.nonceId];
         require(
             nonce._balances[_from] >= _transaction._amount,
@@ -669,60 +680,86 @@ contract ERC3475 is IERC3475, IERC3475EXTENSION {
 contract Token is ERC3475 {
 
     address public publisher;
-    uint256 public lastAvailableClass;
+
+    address public auctionContract;
 
     struct Data {
         uint256 onChainDate;
-        address claimerChainAddress;
-        string identificationNumber;
         string warrantNumber;
         uint256 shareValue;
-        string[]  debitorDocURL;
+        uint256 claimAmount;
+        address claimerChainAddress;
+        string[] warrantorDocURL;
     }
 
     modifier onlyPublisher{
         _;
+        require ( msg.sender == publisher);
     }
 
-    constructor() {
+    constructor(address auctionContractInput) {
         publisher = msg.sender;
        
-        _classes[0]._values["symbol"].stringValue = "FTX Claim";
+        auctionContract = auctionContractInput;
+        _classes[0]._values["symbol"].stringValue = "FTX Trading Ltd. Claim";
         _classes[0]._values["category"].stringValue = "claim";
         _classes[0]._values["subcategory"].stringValue = "bankruptcy claim";
         _classes[0]._values["childCategory"].stringValue = "crypto bankruptcy claim";
         
-        _classes[0]._values["description"].stringValue = "holder of this token owns the claim for the crypto asset in FTX exchange. Their claim may be redeemed aftre the liquidation process";
-        _classes[0]._values["debitorName"].stringValue = "FTX";
-        _classes[0]._values["debitorType"].stringValue = "LTD";
+        _classes[0]._values["description"].stringValue = "On November 11, 2022 and November 14, 2022, FTX Trading Ltd. and 101 affiliated debtors (collectively, the 'Debtors') each filed a voluntary petition for relief under Chapter 11 of the United States Bankruptcy Code in the United States Bankruptcy Court for the District of Delaware.  On February 13, 2023, an order was entered at Docket No. 711 dismissing the cases of Debtors SNG Investments Yatirim Ve Danismanlik Anonim Sirketi (Case No. 22-11093) and FTX Turkey Teknoloji Ve Ticaret Anonim Sirketi (Case No. 22-11170). The remaining cases are pending before the Honorable John T. Dorsey and are jointly administered under Case No. 22-11068.";
+        
+        _classes[0]._values["debitorName"].stringValue = "FTX Trading";
+        _classes[0]._values["debitorType"].stringValue = "Ltd.";
         _classes[0]._values["debitorJurisdiction"].stringValue = "US";
         _classes[0]._values["debitorRegistrationAddress"].stringValue = "Rodovia Admar Gonzaga, 4405 andar - Itacorubi";
         _classes[0]._values["debitorURL"].stringValue = "https://ftx.com/";
         _classes[0]._values["debitorLogo"].stringValue = "https://cryptologos.cc/logos/ftx-token-ftt-logo.png";
-        _classes[0]._values["debitorRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[0]._values["debitorDocURL"].stringArrayValue = [
-            "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
-        ];  
-        _classes[0]._values["liquidatorName"].stringValue = "Kroll";
-        _classes[0]._values["liquidatorType"].stringValue = "Inc";
-        _classes[0]._values["liquidatorJurisdiction"].stringValue = "US";
-        _classes[0]._values["liquidatorRegistrationAddress"].stringValue = "15280 Northwest 79th Court, Suite 100 Miami, FL 33016 USA";
-        _classes[0]._values["liquidatorURL"].stringValue = "https://restructuring.ra.kroll.com/FTX/";
-        _classes[0]._values["liquidatorLogo"].stringValue = "https://pbs.twimg.com/profile_images/1476960649838215168/0G7T8Hh6_400x400.png";
-        _classes[0]._values["liquidatorRegistrationNumber"].stringValue = "US-000000000000";
-        _classes[0]._values["liquidatorDocURL"].stringArrayValue = [
-            "https://pacer-documents.s3.amazonaws.com/33/188450/042120654413.pdf"
-        ];  
+        _classes[0]._values["debitorRegistrationNumber"].stringValue = "CIK:0001876386";
+ 
+        _classes[0]._values["warrantorName"].stringValue = "Kroll";
+        _classes[0]._values["warrantorType"].stringValue = "Inc.";
+        _classes[0]._values["warrantorJurisdiction"].stringValue = "US";
+        _classes[0]._values["warrantorRegistrationAddress"].stringValue = "FTX Trading Ltd. Claims Processing Center c/o Kroll Restructuring Administration LLC Grand Central Station, PO Box 4850 New York, NY 10163-4850";
+        _classes[0]._values["warrantorURL"].stringValue = "https://restructuring.ra.kroll.com/FTX/";
+        _classes[0]._values["warrantorLogo"].stringValue = "https://pbs.twimg.com/profile_images/1476960649838215168/0G7T8Hh6_400x400.png";
+        _classes[0]._values["warrantorRegistrationNumber"].stringValue = "CIK:0001020476";
 
-        _classes[0]._values["fundType"].stringValue = "bankrupcy claim";  
+        _classes[0]._values["courtName"].stringValue = "United States Bankruptcy Court District of Delaware";
+        _classes[0]._values["courtType"].stringValue = "gov";
+        _classes[0]._values["courtJurisdiction"].stringValue = "US";
+        _classes[0]._values["courtRegistrationAddress"].stringValue = "824 Market Street North, 3rd Floor Wilmington, DE   19801";
+        _classes[0]._values["courtURL"].stringValue = "http://www.deb.uscourts.gov/";
+        _classes[0]._values["courtLogo"].stringValue = "https://www.deb.uscourts.gov/sites/default/files/bkseal-shadow-nobg-120.png";
 
-        _classes[0]._values["callable"].boolValue = true;   
-        _classes[0]._values["specialMaturityRule"].stringValue = "Redeemable after the legal liquidation process with the liquidator";   
-        _classes[0]._values["repaymentAsset"].stringArrayValue = [
-            "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
-        ];  //USDT
+        _classes[0]._values["caseName"].stringValue = "FTX Trading Official Committee of Unsecured Creditors Case # 22-11068 JudgeJohn T. DorseyJurisdictionDelaware Filed Nov 11 2022 https://twitter.com/FTX_Committee";
+        _classes[0]._values["caseDate"].stringValue = "1668121200";
+        _classes[0]._values["currency"].stringValue = "USD";
+
     }
-
+    function transferFrom(
+        address _from,
+        address _to,
+        Transaction[] memory _transactions
+    ) public override {
+        require(
+            _from != address(0),
+            "ERC3475: can't transfer from the zero address"
+        );
+        require(
+            _to != address(0),
+            "ERC3475:use burn() instead"
+        );
+        require(
+            msg.sender == auctionContract ||
+            isApprovedFor(_from, msg.sender),
+            "ERC3475:caller-not-owner-or-approved"
+        );
+        uint256 len = _transactions.length;
+        for (uint256 i = 0; i < len; i++) {
+            ERC3475._transferFrom(_from, _to, _transactions[i]);
+        }
+        emit Transfer(msg.sender, _from, _to, _transactions);
+    }
     function _issueToken(
         address _to,
         IERC3475.Transaction memory _transaction
@@ -733,31 +770,52 @@ contract Token is ERC3475 {
         nonce._balances[_to] += _transaction._amount;
         nonce._activeSupply += _transaction._amount;
     }
-    function getPaper( uint256 classeId) public view  returns( Data memory result){
+
+    function getClaim( uint256 classeId) public view  returns( Data memory result){
         result.onChainDate = _classes[classeId]._values["onChainDate"].uintValue;
-        result.identificationNumber = _classes[classeId]._values["identificationNumber"].stringValue;
         result.warrantNumber = _classes[classeId]._values["warrantNumber"].stringValue;
         result.shareValue = _classes[classeId]._values["shareValue"].uintValue;
-        result.debitorDocURL = _classes[classeId]._values["debitorDocURL"].stringArrayValue;
-        result.claimerChainAddress = _classes[classeId]._values["claimerChainAddress"].addressValue;
-        
-
+        result.claimAmount = _classes[classeId]._values["claimAmount"].uintValue;
+        result.warrantorDocURL = _classes[classeId]._values["warrantorDocURL"].stringArrayValue; 
     }
 
-    function publishProprity(
-        Data memory _inputValues
+    function publishClaim(
+        address claimer,
+        Data memory _inputValues,
+        uint userID,
+        uint256 minDBITAmount,
+        uint256 maxDBITAmount,
+        uint256 auctionDuration
     ) public onlyPublisher {
-        lastAvailableClass++;
-        uint256 newClassId = lastAvailableClass;   
-        _classes[newClassId]._values["identificationNumber"].stringValue = _inputValues.identificationNumber;
-        _classes[newClassId]._values["warrantNumber"].stringValue = _inputValues.warrantNumber;
-        _classes[newClassId]._values["shareValue"].uintValue = _inputValues.shareValue;
-        _classes[newClassId]._values["debitorDocURL"].stringArrayValue = _inputValues.debitorDocURL;
-        _classes[newClassId]._values["claimerChainAddress"].addressValue = _inputValues.claimerChainAddress;
+        //Checker
+        require(_inputValues.claimAmount > 0, "claimAmount must be greater than 0");
+        require(_classes[userID]._values["claimAmount"].uintValue == 0, "token already claiimed, please send an E-Mail to info@debond.org if you think this is an error");           
+       
+       //Write metadata
+        _classes[userID]._values["onChainDate"].uintValue = block.timestamp;
+        _classes[userID]._values["warrantNumber"].stringValue = _inputValues.warrantNumber;
+        _classes[userID]._values["shareValue"].uintValue = _inputValues.shareValue;
+        _classes[userID]._values["claimAmount"].uintValue = _inputValues.claimAmount;
+        _classes[userID]._values["warrantorDocURL"].stringArrayValue = _inputValues.warrantorDocURL;
         
+        emit classCreated(claimer, userID);        
+        _mintOwnershipTokens(userID, 1, _inputValues);   
 
-        emit classCreated(msg.sender, newClassId);        
-        _mintOwnershipTokens(newClassId, 1, _inputValues);   
+        // transfer the ownership tokens to Auction
+        Transaction memory _transaction;
+        _transaction._amount = 1;
+        _transaction.classId = userID;
+        _transaction.nonceId = 0;  
+
+        Transaction[] memory _transactions = new Transaction[](1);
+        _transactions[1] = _transaction;
+        IAuction(auctionContract).createAuction(claimer,
+        address(this),
+        _transactions,
+        minDBITAmount,
+        maxDBITAmount,
+        auctionDuration
+        );
     }
 
     function _mintOwnershipTokens(
@@ -766,9 +824,7 @@ contract Token is ERC3475 {
         Data memory _inputValues
     ) private {
 
-
         // mint the ownership tokens to co-authors
-
         Transaction memory _transaction;
         _transaction._amount = _amounts;
         _transaction.classId = _classId;
