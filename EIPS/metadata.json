@@ -175,58 +175,58 @@
    },
    {
       "metadataId":"0110",
-      "title":"liquidatorName",
+      "title":"courtName",
       "_type":"string",
-      "description":"formal name of the liquidator",
-      "values":"ABC "
+      "description":"name of the court",
+      "values":"United States Bankruptcy Court for the District of Delaware"
    },
    {
       "metadataId":"0111",
-      "title":"liquidatorType",
+      "title":"courtType",
       "_type":"string",
       "description":"Organization‘s type",
-      "values":"LTD"
+      "values":"gov"
    },
    {
       "metadataId":"0112",
-      "title":"liquidatorJurisdiction",
+      "title":"courtJurisdiction",
       "_type":"string",
-      "description":"jurisdiction of the liquidator",
+      "description":"jurisdiction of the court",
       "values":"US"
    },
    {
       "metadataId":"0113",
-      "title":"liquidatorRegistrationAddress",
+      "title":"courtRegistrationAddress",
       "_type":"string",
-      "description":"Registrated address of the entity",
+      "description":"Registrated address of the court",
       "values":"1st avenue NYK"
    },
    {
       "metadataId":"0114",
-      "title":"liquidatorURL",
+      "title":"courtURL",
       "_type":"string",
       "description":"URL link of the website",
       "values":"https://www.ABC.AI"
    },
    {
       "metadataId":"0115",
-      "title":"liquidatorLogo",
+      "title":"courtLogo",
       "_type":"string",
-      "description":"URL of stored liquidator logo/ media kit details in 64*64 pix png format",
+      "description":"URL of stored court logo/ media kit details in 64*64 pix png format",
       "values":"https://www.ABC.AI/logo.png"
    },
    {
       "metadataId":"0116",
-      "title":"liquidatorRegistrationNumber",
+      "title":"courtRegistrationNumber",
       "_type":"string",
-      "description":"The registration number of the liquidator’s entity",
+      "description":"The registration number of the court",
       "values":"000000000000"
    },
    {
       "metadataId":"0117",
-      "title":"liquidatorDocURL",
+      "title":"courtDocURL",
       "_type":"string[]",
-      "description":"link to the liquidator's documents",
+      "description":"link to the court's documents",
       "values":[
          "https://bit.ly/ABC_pitch.pdf",
          "https://bit.ly/ABC_pitch.pdf"
@@ -234,9 +234,9 @@
    },
    {
       "metadataId":"0118",
-      "title":"liquidatorIndustry",
+      "title":"courtIndustry",
       "_type":"string[]",
-      "description":"the registered industry the liquidator is associated",
+      "description":"the registered category the court is associated",
       "values":[
          "software development",
          "banking software development"
@@ -244,9 +244,9 @@
    },
    {
       "metadataId":"0119",
-      "title":"liquidatorChainAddress",
+      "title":"courtChainAddress",
       "_type":"address",
-      "description":"the public key address of the liquidator",
+      "description":"the public key address of the court",
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
    },
    {
