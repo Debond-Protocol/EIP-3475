@@ -1181,6 +1181,55 @@
       ]
    },
    {
+      "metadataId":"1800",
+      "title":"propertyLocation",
+      "_type":"string",
+      "description":"Address of the property",
+      "values":"Villa Marina 514, Playa Venao, Los Santos, Panama"
+   },
+   {
+      "metadataId":"1801",
+      "title":"propertyLocationCoordinate",
+      "_type":"string",
+      "description":"Coordinate of the property",
+      "values":"7.425963,-80.185448"
+   },
+   {
+      "metadataId":"1802",
+      "title":"propertyDate",
+      "_type":"integer",
+      "description":"ISO-8601 representation of when the property is created/constructed",
+      "values":"1480464000"
+   },
+   {
+      "metadataId":"1820",
+      "title":"propertyBedroom",
+      "_type":"integer",
+      "description":"The number of bedrooms in the property",
+      "values":"2"
+   },
+   {
+      "metadataId":"1821",
+      "title":"propertyBathroom",
+      "_type":"integer",
+      "description":"The number of bedrooms in the property",
+      "values":"2"
+   },
+   {
+      "metadataId":"1822",
+      "title":"propertyRooms",
+      "_type":"integer",
+      "description":"The number of rooms in the property",
+      "values":"4"
+   },
+   {
+      "metadataId":"1823",
+      "title":"propertySurface",
+      "_type":"integer",
+      "description":"The Surface in m^2 of the property",
+      "values":"133"
+   },
+   {
       "metadataId":"2001",
       "title":"Regulation",
       "_type":"string",
