@@ -40,7 +40,7 @@
       "_type":"string",
       "description":"The description of this token",
       "values":"zero-coupon callable bond"
-   },   
+   }, 
       {
       "metadataId":"0030",
       "title":"onChainDate",
@@ -809,8 +809,8 @@
       "_type":"address",
       "description":"the public key address of the warrantor",
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
-   },    
-     {
+   },
+   {
       "metadataId":"0190",
       "title":"claimerName",
       "_type":"string",
@@ -884,6 +884,82 @@
       "title":"claimerChainAddress",
       "_type":"address",
       "description":"the public key address of the claimer",
+      "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+   },
+    {
+      "metadataId":"0201",
+      "title":"managerName",
+      "_type":"string",
+      "description":"formal name of the manager",
+      "values":"ABC "
+   },
+   {
+      "metadataId":"0202",
+      "title":"managerType",
+      "_type":"string",
+      "description":"Organization‘s type",
+      "values":"LTD"
+   },
+   {
+      "metadataId":"0202",
+      "title":"managerJurisdiction",
+      "_type":"string",
+      "description":"jurisdiction of the manager",
+      "values":"US"
+   },
+   {
+      "metadataId":"0203",
+      "title":"managerRegistrationAddress",
+      "_type":"string",
+      "description":"Address of the established office",
+      "values":"1st avenue NYK"
+   },
+   {
+      "metadataId":"0204",
+      "title":"managerURL",
+      "_type":"string",
+      "description":"URL link of the website",
+      "values":"https://www.ABC.AI"
+   },
+   {
+      "metadataId":"0205",
+      "title":"managerLogo",
+      "_type":"string",
+      "description":"URL of stored issuer logo/ media kit details in 64*64 pix png format",
+      "values":"https://www.ABC.AI/logo.png"
+   },
+   {
+      "metadataId":"0206",
+      "title":"managerRegistrationNumber",
+      "_type":"string",
+      "description":"The registration number of the manager’s entity",
+      "values":"000000000000"
+   },
+   {
+      "metadataId":"0207",
+      "title":"managerDocURL",
+      "_type":"string",
+      "description":"link to the documents",
+      "values":[
+         "https://bit.ly/ABC_pitch.pdf",
+         "https://bit.ly/ABC_pitch.pdf"
+      ]
+   },
+   {
+      "metadataId":"0208",
+      "title":"managerIndustry",
+      "_type":"string[]",
+      "description":"the registered industry the manager is associated",
+      "values":[
+         "software development",
+         "banking software development"
+      ]
+   },
+   {
+      "metadataId":"0209",
+      "title":"managerChainAddress",
+      "_type":"address",
+      "description":"the public key address of the manager",
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
    },
    {
@@ -1237,7 +1313,7 @@
       "metadataId":"2034",
       "title":"interestPaymentAsset",
       "_type":"address[]",
-      "description":"defines the  tokens/CBDC accepted by bond issuer to pay interest(if different from Accept Asset/ underlying collateral) ",
+      "description":"defines the tokens/CBDC accepted by bond issuer to pay interest(if different from Accept Asset/ underlying collateral) ",
       "values":[
          "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
          "0x55d398326f99059ff775485246999027b3197955"
@@ -1247,7 +1323,7 @@
       "metadataId":"2035",
       "title":"repaymentAsset",
       "_type":"address[]",
-      "description":"defines the  assets/CBDC accepted by bond issuer to repay after redemption ",
+      "description":"defines the assets/CBDC accepted by bond issuer to repay after redemption ",
       "values":[
          "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
          "0x55d398326f99059ff775485246999027b3197955"
