@@ -1278,7 +1278,21 @@
       "metadataId":"2060",
       "title":"APY",
       "_type":"integer",
-      "description":"Fixed PPM interest rate for the bond holders (in %)",
+      "description":"Annual percentage yield (in PMM)",
+      "values":"60000"
+   },
+   {
+      "metadataId":"2061",
+      "title":"APR",
+      "_type":"integer",
+      "description":"Annual percentage rate (in PMM)",
+      "values":"60000"
+   },
+   {
+      "metadataId":"2062",
+      "title":"managmentFee",
+      "_type":"integer",
+      "description":"Fixed PPM interest rate for the holders (in PMM)",
       "values":"60000"
    },
    {
