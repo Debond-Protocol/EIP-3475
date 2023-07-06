@@ -404,56 +404,56 @@
    {
       "metadataId":"0140",
       "title":"auditorName",
-      "_type":"string",
+      "_type":"string[]",
       "description":"formal name of the auditor",
-      "values":"ABC "
+      "values":["ABC "]
    },
    {
       "metadataId":"0141",
       "title":"auditorType",
-      "_type":"string",
+      "_type":"string[]",
       "description":"Organization‘s type",
-      "values":"LTD"
+      "values":["LTD"]
    },
    {
       "metadataId":"0142",
       "title":"auditorJurisdiction",
-      "_type":"string",
+      "_type":"string[]",
       "description":"jurisdiction of the auditor",
-      "values":"US"
+      "values":["US"]
    },
    {
       "metadataId":"0143",
       "title":"auditorRegistrationAddress",
-      "_type":"string",
+      "_type":"string[]",
       "description":"Address of the established office",
-      "values":"1st avenue NYK"
+      "values":["1st avenue NYK"]
    },
    {
       "metadataId":"0144",
       "title":"auditorURL",
-      "_type":"string",
+      "_type":"string[]",
       "description":"URL link of the website",
-      "values":"https://www.ABC.AI"
+      "values":["https://www.ABC.AI"]
    },
    {
       "metadataId":"0145",
       "title":"auditorLogo",
-      "_type":"string",
+      "_type":"string[]",
       "description":"URL of stored auditor's logo/ media kit details in 64*64 pix png format",
-      "values":"https://www.ABC.AI/logo.png"
+      "values":["https://www.ABC.AI/logo.png"]
    },
    {
       "metadataId":"0146",
       "title":"auditorRegistrationNumber",
-      "_type":"string",
+      "_type":"string[]",
       "description":"The registration number of the auditor’s entity",
-      "values":"000000000000"
+      "values":["000000000000"]
    },
    {
       "metadataId":"0147",
       "title":"auditorDocURL",
-      "_type":"string",
+      "_type":"string[]",
       "description":"link to the documents",
       "values":[
          "https://bit.ly/ABC_pitch.pdf"
@@ -472,9 +472,9 @@
    {
       "metadataId":"0149",
       "title":"auditorChainAddress",
-      "_type":"address",
+      "_type":"address[]",
       "description":"The public key address of the auditor",
-      "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+      "values":["0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"]
    },
    {
       "metadataId":"0150",
@@ -887,14 +887,14 @@
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
    },
     {
-      "metadataId":"0201",
+      "metadataId":"0200",
       "title":"managerName",
       "_type":"string",
       "description":"formal name of the manager",
       "values":"ABC "
    },
    {
-      "metadataId":"0202",
+      "metadataId":"0201",
       "title":"managerType",
       "_type":"string",
       "description":"Organization‘s type",
@@ -1308,6 +1308,13 @@
       "_type":"string",
       "description":"defines the specified rules, which defines if the security is matured",
       "values":"when USD/EURO rate is lower than 0.8 for 5 business days"
+   },
+   {
+      "metadataId":"2012",
+      "title":"fixedMaturity",
+      "_type":"boolean",
+      "description":"defines if the moturity of this offering is fixed or not",
+      "values":"True"
    },
    {
       "metadataId":"2020",
