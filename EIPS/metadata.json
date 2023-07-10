@@ -974,7 +974,7 @@
    {
       "metadataId":"1200",
       "title":"copyPrice",
-      "_type":"integer",
+      "_type":"float",
       "description":"Sell prcie of the publication in PPM",
       "values":[
          "100000000"
@@ -983,7 +983,7 @@
    {
       "metadataId":"1201",
       "title":"dataPrice",
-      "_type":"integer",
+      "_type":"float",
       "description":"Sell price of data in PPM",
       "values":[
          "100000000"
@@ -992,7 +992,7 @@
    {
       "metadataId":"1202",
       "title":"algorithmPrice",
-      "_type":"integer",
+      "_type":"float",
       "description":"Sell price of algorithm in PPM",
       "values":[
          "100000000"
@@ -1267,8 +1267,8 @@
    {
       "metadataId":"2005",
       "title":"shareValue",
-      "_type":"integer",
-      "description":"defines the value of bond at the time of issuance in PPM",
+      "_type":"float",
+      "description":"defines the value of the asset at the time of issuance in PPM",
       "values":"100000000"
    },
    {
@@ -1326,7 +1326,7 @@
    {
       "metadataId":"2021",
       "title":"couponRate",
-      "_type":"integer",
+      "_type":"percentage",
       "description":"PPM coupon rate",
       "values":"50000"
    },
@@ -1354,7 +1354,7 @@
    {
       "metadataId":"2032",
       "title":"interestRate",
-      "_type":"integer",
+      "_type":"percentage",
       "description":"PPM interest rate of the security",
       "values":"50000"
    },
@@ -1423,7 +1423,7 @@
    {
       "metadataId":"2062",
       "title":"managmentFee",
-      "_type":"integer",
+      "_type":"percentage",
       "description":"Fixed PPM interest rate for the holders (in PMM)",
       "values":"60000"
    },
