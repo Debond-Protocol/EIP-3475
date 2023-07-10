@@ -1344,9 +1344,23 @@
       "metadataId":"2005",
       "title":"shareValue",
       "_type":"float",
+      "description":"defines the market value of the instrument inPPM",
+      "values":"100000000"
+   },
+   {
+      "metadataId":"2006",
+      "title":"issuePrice",
+      "_type":"float",
       "description":"defines the value of the asset at the time of issuance in PPM",
       "values":"100000000"
    },
+   {
+      "metadataId":"2006",
+      "title":"valueAPI",
+      "_type":"float",
+      "description":"The Api that give the current value of the instrument in float",
+      "values":"https://gateway.saxobank.com/sim/openapi/trade/v1/infoprices/list?AccountKey={AIPKey}==&Uics={brokerId}&AssetType=bond&Amount=100000&FieldGroups=DisplayAndFormat,Quote"
+   },   
    {
       "metadataId":"2008",
       "title":"currency",
