@@ -45,7 +45,7 @@
       "metadataId":"0030",
       "title":"onChainDate",
       "_type":"timestamp",
-      "description":"ISO-8601 representation of intended date of creation of the token",
+      "description":"ISO-8601 representation of date of creation of the token",
       "values":"1676038570"
    },
    {
@@ -1323,7 +1323,7 @@
       "metadataId":"2002",
       "title":"fundType",
       "_type":"string",
-      "description":"defines the category of the investment vehicle associated with this bond",
+      "description":"defines the category of the investment vehicle associated with this instrument",
       "values":"corporate"
    },
    {
@@ -1335,9 +1335,9 @@
    },
    {
       "metadataId":"2004",
-      "title":"intendedDate",
+      "title":"issueDate",
       "_type":"timestamp",
-      "description":"ISO-8601 representation of intended date of issuance of the security",
+      "description":"ISO-8601 representation of date of issuance of the instrument",
       "values":"1676038570"
    },
    {
