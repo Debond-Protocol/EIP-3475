@@ -886,7 +886,7 @@
       "description":"the public key address of the claimer",
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
    },
-    {
+   {
       "metadataId":"0200",
       "title":"managerName",
       "_type":"string",
@@ -958,6 +958,82 @@
    {
       "metadataId":"0209",
       "title":"managerChainAddress",
+      "_type":"address",
+      "description":"the public key address of the manager",
+      "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+   },
+   {
+      "metadataId":"0210",
+      "title":"brokerName",
+      "_type":"string",
+      "description":"formal name of the broker",
+      "values":"ABC "
+   },
+   {
+      "metadataId":"0211",
+      "title":"brokerType",
+      "_type":"string",
+      "description":"Organization‘s type",
+      "values":"LTD"
+   },
+   {
+      "metadataId":"0212",
+      "title":"brokerJurisdiction",
+      "_type":"string",
+      "description":"jurisdiction of the broker",
+      "values":"US"
+   },
+   {
+      "metadataId":"0213",
+      "title":"brokerRegistrationAddress",
+      "_type":"string",
+      "description":"Address of the established office",
+      "values":"1st avenue NYK"
+   },
+   {
+      "metadataId":"0214",
+      "title":"brokerURL",
+      "_type":"string",
+      "description":"URL link of the website",
+      "values":"https://www.ABC.AI"
+   },
+   {
+      "metadataId":"0215",
+      "title":"brokerLogo",
+      "_type":"string",
+      "description":"URL of stored issuer logo/ media kit details in 64*64 pix png format",
+      "values":"https://www.ABC.AI/logo.png"
+   },
+   {
+      "metadataId":"0216",
+      "title":"brokerRegistrationNumber",
+      "_type":"string",
+      "description":"The registration number of the broker’s entity",
+      "values":"000000000000"
+   },
+   {
+      "metadataId":"0217",
+      "title":"brokerDocURL",
+      "_type":"string",
+      "description":"link to the documents",
+      "values":[
+         "https://bit.ly/ABC_pitch.pdf",
+         "https://bit.ly/ABC_pitch.pdf"
+      ]
+   },
+   {
+      "metadataId":"0218",
+      "title":"brokerIndustry",
+      "_type":"string[]",
+      "description":"the registered industry the manager is associated",
+      "values":[
+         "software development",
+         "banking software development"
+      ]
+   },
+   {
+      "metadataId":"0219",
+      "title":"brokerChainAddress",
       "_type":"address",
       "description":"the public key address of the manager",
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
