@@ -44,7 +44,7 @@
       {
       "metadataId":"0030",
       "title":"onChainDate",
-      "_type":"integer",
+      "_type":"timestamp",
       "description":"ISO-8601 representation of intended date of creation of the token",
       "values":"1676038570"
    },
@@ -1151,7 +1151,7 @@
    {
       "metadataId":"1215",
       "title":"dataUpdateInterval",
-      "_type":"integer",
+      "_type":"timestamp",
       "description":"ISO-8601 representation of the interval of the data update",
       "values":"1676038570"
    },
@@ -1197,7 +1197,7 @@
    {
       "metadataId":"1802",
       "title":"propertyDate",
-      "_type":"integer",
+      "_type":"timestamp",
       "description":"ISO-8601 representation of when the property is created/constructed",
       "values":"1480464000"
    },
@@ -1260,7 +1260,7 @@
    {
       "metadataId":"2004",
       "title":"intendedDate",
-      "_type":"integer",
+      "_type":"timestamp",
       "description":"ISO-8601 representation of intended date of issuance of the security",
       "values":"1676038570"
    },
@@ -1298,7 +1298,7 @@
    {
       "metadataId":"2011",
       "title":"maturityPeriod",
-      "_type":"integer",
+      "_type":"timestamp",
       "description":"ISO 8601 seconds of the coupon period for the securities to be able to redeemed(unless not a callable bond)",
       "values":"31104000"
    },
@@ -1333,7 +1333,7 @@
    {
       "metadataId":"2022",
       "title":"couponPeriod",
-      "_type":"integer",
+      "_type":"timestamp",
       "description":"ISO 8601 seconds of the coupon period",
       "values":"2592000"
    },
@@ -1347,7 +1347,7 @@
    {
       "metadataId":"2031",
       "title":"interestPeriod",
-      "_type":"integer",
+      "_type":"timestamp",
       "description":"ISO 8601 seconds from the issuance during which holder will be accruing interest (till redemption time)",
       "values":"2592000"
    },
