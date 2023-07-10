@@ -1500,7 +1500,14 @@
       "metadataId":"2062",
       "title":"managmentFee",
       "_type":"percentage",
-      "description":"Fixed PPM interest rate for the holders (in PMM)",
+      "description":"Fees rate based on the amount (in PMM)",
+      "values":"60000"
+   },
+   {
+      "metadataId":"2062",
+      "title":"fixedFee",
+      "_type":"float",
+      "description":"Fixed Fees (in PMM)",
       "values":"60000"
    },
    {
