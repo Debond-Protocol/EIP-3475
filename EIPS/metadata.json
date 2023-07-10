@@ -1307,9 +1307,9 @@
    },
    {
       "metadataId":"2001",
-      "title":"Regulation",
+      "title":"brokerID",
       "_type":"string",
-      "description":"ISIN rugulation Id",
+      "description":"Broker ID",
       "values":"144A"
    },
    {
