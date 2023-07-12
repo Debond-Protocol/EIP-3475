@@ -1490,14 +1490,14 @@
    {
       "metadataId":"2060",
       "title":"APY",
-      "_type":"integer",
+      "_type":"percentage",
       "description":"Annual percentage yield (in PMM)",
       "values":"60000"
    },
    {
       "metadataId":"2061",
       "title":"APR",
-      "_type":"integer",
+      "_type":"percentage",
       "description":"Annual percentage rate (in PMM)",
       "values":"60000"
    },
