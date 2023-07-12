@@ -1611,6 +1611,20 @@
       "values":"424220"
    },
       {
+      "metadataId":"9001",
+      "title":"lotSize",
+      "_type":"integer",
+      "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
+      "values":"1000"
+   },
+      {
+      "metadataId":"9002",
+      "title":"minimumLotSize",
+      "_type":"integer",
+      "description":"The sustainable finance certification scheme pre-issuance stage certificate number",
+      "values":"2000"
+   },
+      {
       "metadataId":"9999",
       "title":"subscribeLink",
       "_type":"string",
