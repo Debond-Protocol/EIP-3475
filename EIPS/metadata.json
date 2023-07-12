@@ -1429,7 +1429,7 @@
    },
    {
       "metadataId":"2030",
-      "title":"fixed-rate",
+      "title":"fixedRate",
       "_type":"boolean",
       "description":"boolean identifying whether the bond is of type Fixed rate",
       "values":"True"
