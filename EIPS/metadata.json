@@ -1039,15 +1039,6 @@
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
    },
    {
-      "metadataId":"1100",
-      "title":"DOI",
-      "_type":"string",
-      "description":"Serie number of the publication",
-      "values":[
-         "0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
-      ]
-   },
-   {
       "metadataId":"1200",
       "title":"copyPrice",
       "_type":"float",
