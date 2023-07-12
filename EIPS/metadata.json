@@ -1,7 +1,7 @@
 [
    {
       "metadataId":"0000",
-      "title":"nonceProprity",
+      "title":"nonceProperty",
       "_type":"string",
       "description":"Name of the token",
       "values":"{0: ownership, 1: manuscript access, 2: data access, 3: algorithm access}"
