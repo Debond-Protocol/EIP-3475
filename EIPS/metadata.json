@@ -1428,8 +1428,8 @@
    {
       "metadataId":"2031",
       "title":"interestPeriod",
-      "_type":"timestamp",
-      "description":"ISO 8601 seconds from the issuance during which holder will be accruing interest (till redemption time)",
+      "_type":"second",
+      "description":"Seconds from the issuance during which holder will be accruing interest (till redemption time)",
       "values":"2592000"
    },
    {
