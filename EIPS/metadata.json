@@ -1218,8 +1218,8 @@
    {
       "metadataId":"1215",
       "title":"dataUpdateInterval",
-      "_type":"timestamp",
-      "description":"ISO-8601 representation of the interval of the data update",
+      "_type":"second",
+      "description":"the interval of the data update in second",
       "values":"1676038570"
    },
    {
@@ -1379,8 +1379,8 @@
    {
       "metadataId":"2011",
       "title":"maturityPeriod",
-      "_type":"timestamp",
-      "description":"ISO 8601 seconds of the coupon period for the securities to be able to redeemed(unless not a callable bond)",
+      "_type":"second",
+      "description":"seconds of the coupon period for the securities to be able to redeemed(unless not a callable bond)",
       "values":"31104000"
    },
    {
@@ -1414,8 +1414,8 @@
    {
       "metadataId":"2022",
       "title":"couponPeriod",
-      "_type":"timestamp",
-      "description":"ISO 8601 seconds of the coupon period",
+      "_type":"second",
+      "description":"Seconds of the coupon period",
       "values":"2592000"
    },
    {
