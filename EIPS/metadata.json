@@ -1419,10 +1419,17 @@
       "values":"2592000"
    },
    {
-      "metadataId":"2030",
+      "metadataId":"2025",
       "title":"fixedRate",
       "_type":"boolean",
       "description":"boolean identifying whether the bond is of type Fixed rate",
+      "values":"True"
+   },
+   {
+      "metadataId":"2030",
+      "title":"interest",
+      "_type":"boolean",
+      "description":"If the instrument is with interest",
       "values":"True"
    },
    {
