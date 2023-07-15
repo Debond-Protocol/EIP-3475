@@ -1448,13 +1448,10 @@
    },
    {
       "metadataId":"2034",
-      "title":"interestPaymentAsset",
-      "_type":"address[]",
-      "description":"defines the tokens/CBDC accepted by bond issuer to pay interest(if different from Accept Asset/ underlying collateral) ",
-      "values":[
-         "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
-         "0x55d398326f99059ff775485246999027b3197955"
-      ]
+      "title":"interestStartDate",
+      "_type":"timestamp",
+      "description":"the ISO timestamp of the start of the intrest payment",
+      "values":"1689426005"
    },
    {
       "metadataId":"2035",
