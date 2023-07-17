@@ -1297,6 +1297,13 @@
       "values":"133"
    },
    {
+      "metadataId":"1840",
+      "title":"propertyValue",
+      "_type":"float",
+      "description":"The value of the property",
+      "values":"133"
+   },
+   {
       "metadataId":"2001",
       "title":"brokerId",
       "_type":"string",
