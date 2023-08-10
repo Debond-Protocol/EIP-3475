@@ -1025,7 +1025,7 @@
       "metadataId":"0218",
       "title":"brokerIndustry",
       "_type":"string[]",
-      "description":"the registered industry the manager is associated",
+      "description":"the registered industry the broker is associated",
       "values":[
          "software development",
          "banking software development"
@@ -1035,7 +1035,83 @@
       "metadataId":"0219",
       "title":"brokerChainAddress",
       "_type":"address",
-      "description":"the public key address of the manager",
+      "description":"the public key address of the broker",
+      "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
+   },
+   {
+      "metadataId":"0220",
+      "title":"applicantName",
+      "_type":"string",
+      "description":"formal name of the applicant",
+      "values":"ABC "
+   },
+   {
+      "metadataId":"0221",
+      "title":"applicantType",
+      "_type":"string",
+      "description":"Organization‘s type",
+      "values":"LTD"
+   },
+   {
+      "metadataId":"0222",
+      "title":"applicantJurisdiction",
+      "_type":"string",
+      "description":"jurisdiction of the applicant",
+      "values":"US"
+   },
+   {
+      "metadataId":"0223",
+      "title":"applicantRegistrationAddress",
+      "_type":"string",
+      "description":"Address of the established office",
+      "values":"1st avenue NYK"
+   },
+   {
+      "metadataId":"0224",
+      "title":"applicantURL",
+      "_type":"string",
+      "description":"URL link of the website",
+      "values":"https://www.ABC.AI"
+   },
+   {
+      "metadataId":"0225",
+      "title":"applicantLogo",
+      "_type":"string",
+      "description":"URL of stored applicant logo/ media kit details in 64*64 pix png format",
+      "values":"https://www.ABC.AI/logo.png"
+   },
+   {
+      "metadataId":"0226",
+      "title":"applicantRegistrationNumber",
+      "_type":"string",
+      "description":"The registration number of the applicant’s entity",
+      "values":"000000000000"
+   },
+   {
+      "metadataId":"0227",
+      "title":"applicantDocURL",
+      "_type":"string",
+      "description":"link to the documents",
+      "values":[
+         "https://bit.ly/ABC_pitch.pdf",
+         "https://bit.ly/ABC_pitch.pdf"
+      ]
+   },
+   {
+      "metadataId":"0228",
+      "title":"applicantIndustry",
+      "_type":"string[]",
+      "description":"the registered industry the applicant is associated",
+      "values":[
+         "software development",
+         "banking software development"
+      ]
+   },
+   {
+      "metadataId":"0229",
+      "title":"applicantChainAddress",
+      "_type":"address",
+      "description":"the public key address of the applicant",
       "values":"0x9f91Cb042e4C6F4F9561d214Fd5741621027eFB4"
    },
    {
@@ -1245,6 +1321,32 @@
       "description":"Hash of the file of the diffrent version",
       "values":[
          "8470D01CE5F066B0C2C4A8DE49EE38166D66C7A8A78910D804635DC0BAD1AE0D"
+      ]
+   },
+   {
+      "metadataId":"1600",
+      "title":"warrantNumber",
+      "_type":"string",
+      "description":"Warrant number of the property",
+      "values":
+         "US3201249244"
+   },
+      {
+      "metadataId":"1650",
+      "title":"IPC",
+      "_type":"string[]",
+      "description":"IPC of the property https://www.wipo.int/edocs/mdocs/africa/en/wipo_ip_pre_16/wipo_ip_pre_16_t_8.pdf",
+      "values":[
+         "G01L1/04"
+      ]
+   },
+      {
+      "metadataId":"1651",
+      "title":"CPC",
+      "_type":"string[]",
+      "description":"CPC of the property https://www.wipo.int/edocs/mdocs/africa/en/wipo_ip_pre_16/wipo_ip_pre_16_t_8.pdf",
+      "values":[
+         "G01L1/04"
       ]
    },
    {
